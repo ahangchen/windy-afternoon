@@ -1,2 +1,0 @@
-# windy-afternoon
-blog
