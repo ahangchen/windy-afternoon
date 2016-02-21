@@ -13,6 +13,8 @@
  - [琐碎的一些tips](android/note.md)
 - [Java](java/README.md)
      - [java web](java/java-web/note.md)
+       - [Servlet部署](java/java-web/Servlet组织.md)
+       - [琐碎的tips](java/java-web/note.md)
      - [JNI](java/jni/note.md)
      - [Note](java/note.md)
 - [Python](python/README.md)
