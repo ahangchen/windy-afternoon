@@ -4,3 +4,4 @@
 
 https://www.gitbook.com/book/ahangchen/how-to-be-a-programmer-cn/details
 
+- [怎样打日志](log.md)
