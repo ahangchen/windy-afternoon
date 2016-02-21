@@ -12,15 +12,15 @@
  - [Android Project结构](android/Android_project结构.md)
  - [一个由Proguard与FastJson引起的血案](android/一个由PROGUARD与FASTJSON引起的血案.md)
  - [琐碎的一些tips](android/note.md)
- - Java
+- Java
      - [java web](java-web/README.md)
      - [JNI](jni/note.md)
      - [Note](note.md)
- - Python
+- Python
     - [django](django/note.md)
-  - [linux](linux/note.md)
-  - [git/github/gitbook](git/note.md)
-  - [kit](kit/README.md)
+- [linux](linux/note.md)
+- [git/github/gitbook](git/note.md)
+- [kit](kit/README.md)
      - [vim](kit/vim/note.md)
-  - [thinking-in-program](thinking-in-program/README.md)
+- [thinking-in-program](thinking-in-program/README.md)
     - [怎样打日志](log.md)
