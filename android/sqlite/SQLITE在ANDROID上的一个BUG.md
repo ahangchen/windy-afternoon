@@ -447,7 +447,7 @@ explain plan select * from A where A.a in (select b from B)
 
 在**unixOpenTempname**执行时用一个变量计算临时文件的打开次数，也可以发现确实是一打开这样的文件就会失败（在打开第一个的时候就失败）。
 
-解决方案(Solution)
+**解决方案(Solution)**
 
 那么最重要的事情来了，怎么修复呢？
 
@@ -456,4 +456,31 @@ explain plan select * from A where A.a in (select b from B)
 翻了翻sqlite的一些资料，找到了这样一个programa
 
 http://www.sqlite.org/c3ref/temp_directory.html
+```sql
+PRAGMA temp_store_directory = 'your dir'
+```
+这个东西仅对当前SqliteConncetion有效，
+
+在第一次建立sqlite连接的时候（我是重写了getReadabelDatabase()方法），设置一下临时文件目录，like this:
+
+```java
+private static boolean mainTmpDirSet = false;
+@Override
+    public SQLiteDatabase getReadableDatabase() {
+        if (!mainTmpDirSet) {
+            boolean rs = new File("/data/data/com.cmp.pkg/databases/main").mkdir();
+            Log.d("ahang", rs + "");
+            super.getReadableDatabase().execSQL("PRAGMA temp_store_directory = '/data/data/com.cmp.pkg/databases/main'");
+            mainTmpDirSet = true;
+            return super.getReadableDatabase();
+        } 
+        return super.getReadableDatabase();
+    }
+```
+然后再去执行那些繁重的查询，你会发现问题消失了，
+
+并且sqlite3会在不需要这个临时文件时自动删除它，所以你不需要做一套清理逻辑。
+
+于是问题解决!
+
 
