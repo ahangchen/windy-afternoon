@@ -16,7 +16,7 @@
  - [一个由Proguard与FastJson引起的血案](android/一个由PROGUARD与FASTJSON引起的血案.md)
  - [琐碎的一些tips](android/note.md)
 - [Java](java/README.md)
-     - [java web](java-web/README.md)
+     - [java web](java/java-web/note.md)
      - [JNI](java/jni/note.md)
      - [Note](java/note.md)
 - [Python](python/README.md)
