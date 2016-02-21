@@ -1,2 +1,2 @@
-# windy-afternoon
-blog
+# Python
+ - [django](django/note.md)
