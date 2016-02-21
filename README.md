@@ -1,5 +1,7 @@
 # 梦里风林
-> 做有意思的事
+> 开发中的点滴积累，既是分享，也是备忘。
+
+> 可能Android的东西会多一些
 
 - [Android](android/README.md)
  - [activity](android/activity/README.md)
