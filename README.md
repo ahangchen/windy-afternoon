@@ -7,7 +7,7 @@
 
 - 博客github地址 : https://github.com/ahangchen/windy-afternoon
 - 新浪微博：http://weibo.com/scutcs12cwh
-- 邮箱： 1418659400@qq.com
+- 邮箱： ahangchen@qq.com
 
 
 - ###[Android](android/README.md)
