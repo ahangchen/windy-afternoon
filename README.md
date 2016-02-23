@@ -11,7 +11,7 @@
 - [代码仓库](https://github.com/ahangchen)
 - 不断更新，欢迎Star
 
-|.|.|.|
+|→|_|→|
 | :-:| :-:  | :-:  |
 |[Android](android/README.md) | [Java](java/README.md) | [Python](python/README.md)|
 | [Linux](linux/note.md) | [Kit](kit/README.md) | [Thinking](thinking-in-program/README.md)|
