@@ -8,6 +8,8 @@
 - 博客github地址 : https://github.com/ahangchen/windy-afternoon
 - 新浪微博：http://weibo.com/scutcs12cwh
 - 邮箱： cweihang@foxmail.com
+- [代码仓库](https://github.com/ahangchen)
+- 最爱[Star](https://www.gitbook.com/book/ahangchen/windy-afternoon/stars)
 
 |[Android](android/README.md) | [Java](java/README.md) | [Python](python/README.md)|
 | :-:| :-:  | :-:  |
@@ -29,4 +31,4 @@
 
 - ####[【译】How to be a programmer](https://ahangchen.gitbooks.io/how-to-be-a-programmer-cn/content/)
 
-###代码仓库
+
