@@ -13,7 +13,7 @@
 
 |[Android](android/README.md) | [Java](java/README.md) | [Python](python/README.md)|
 | :-:| :-:  | :-:  |
-| [linux](linux/note.md) | [kit](kit/README.md) | [Thinking](thinking-in-program/README.md)|
+| [Linux](linux/note.md) | [Kit](kit/README.md) | [Thinking](thinking-in-program/README.md)|
 ###推荐阅读
 
  - ####[Activity](android/activity/README.md)
