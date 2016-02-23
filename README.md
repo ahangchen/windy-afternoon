@@ -9,10 +9,11 @@
 - 新浪微博：http://weibo.com/scutcs12cwh
 - 邮箱： cweihang@foxmail.com
 - [代码仓库](https://github.com/ahangchen)
-- 最爱[Star](https://www.gitbook.com/book/ahangchen/windy-afternoon/stars)
+- 不断更新，欢迎Star
 
-|[Android](android/README.md) | [Java](java/README.md) | [Python](python/README.md)|
+|.|.|.|
 | :-:| :-:  | :-:  |
+|[Android](android/README.md) | [Java](java/README.md) | [Python](python/README.md)|
 | [Linux](linux/note.md) | [Kit](kit/README.md) | [Thinking](thinking-in-program/README.md)|
 ###推荐阅读
 
