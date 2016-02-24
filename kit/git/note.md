@@ -1,5 +1,5 @@
-2016-1-9 
-**创建github repos并提交修改**
+##Git / github
+###创建github repos并提交修改（2016-1-9 ）
 
 在[这里](https://github.com/new)创建一个repos，
 
