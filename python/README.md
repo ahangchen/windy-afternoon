@@ -1,2 +1,2 @@
 # Python
- - [django](django/note.md)
+ - ##[django](django/note.md)
