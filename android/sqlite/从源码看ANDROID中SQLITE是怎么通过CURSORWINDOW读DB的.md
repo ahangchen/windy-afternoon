@@ -164,7 +164,8 @@ private void dispose() {
         nativeDispose(mWindowPtr);
         mWindowPtr = 0;
     }
-}```
+}
+```
 跟CursorWindow有关的路径里，最终调用nativeDispose()清空cursorWindow;
 
 当Cursor被GC回收时，会调用finalize：
@@ -189,7 +190,8 @@ protected void finalize() {
     } finally {
         super.finalize();
     }
-}```
+}
+```
 然而finalize()并没有释放CursorWindow，而super.finalize();里**也只是解绑了观察者，没有去释放cursorwindow**
 
 **所以不调用cursor.close(),最终会导致cursorWindow所在的共享内存(1M或2M)泄露。**
