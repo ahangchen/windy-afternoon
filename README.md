@@ -9,7 +9,7 @@
 - 新浪微博：http://weibo.com/scutcs12cwh
 - 邮箱： cweihang@foxmail.com
 - [代码仓库](https://github.com/ahangchen)
-- 不断更新，欢迎Star
+- 不定期更新，欢迎Star
 
 ||![](128.png)||
 | :-:| :-:  | :-:  |
@@ -31,5 +31,9 @@
  - [一个由Proguard与FastJson引起的血案](android/一个由PROGUARD与FASTJSON引起的血案.md)
 
 - ####[【译】How to be a programmer](https://ahangchen.gitbooks.io/how-to-be-a-programmer-cn/content/)
+
+
+###Help
+最近在翻译[Chromium的文档](https://github.com/ahangchen/Chromium_doc_zh)，有兴趣一起翻译的同学可以和我联系。
 
 
