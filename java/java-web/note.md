@@ -1,6 +1,4 @@
-2015-1-6：
-
-**IDEA servlet-api.jar**
+###**IDEA servlet-api.jar**(2015-1-6)
 
    idea从14升级到15后，发现
 ```java
@@ -12,9 +10,9 @@ import javax.servlet.AsyncContext;
 ![](780612-20160106145304106-1977121454.png)
 
 
-2016-1-12
 
-**tomcat允许跨域**
+
+###**tomcat允许跨域**(2016-1-12)
 
 参考 ： https://tomcat.apache.org/tomcat-7.0-doc/config/filter.html
 
