@@ -1,38 +1,40 @@
-**JNI note**
+##**JNI note**
 
-2016-1-15 **javah**
+###**javah**(2016-1-15)
 
 使用javah可以自动从java文件生成jni头文件，
 
-　　用法：javah [选项] <类>
+>　　用法：javah [选项] <类>
 
-　　其中 [选项] 包括：  
+>　　其中 [选项] 包括：  
 
-　　        -help                 输出此帮助消息并退出   
+>　　        -help                 输出此帮助消息并退出   
 
-　　        -classpath <路径>     用于装入类的路径   
+>　　        -classpath <路径>     用于装入类的路径   
 
-　　        -bootclasspath <路径> 用于装入引导类的路径   
+>　　        -bootclasspath <路径> 用于装入引导类的路径   
 
-　　        -d <目录>             输出目录   
+>　　        -d <目录>             输出目录   
 
-　　        -o <文件>             输出文件（只能使用 -d 或 -o 中的一个）   
+>　　        -o <文件>             输出文件（只能使用 -d 或 -o 中的一个）   
 
-　　        -jni                  生成 JNI样式的头文件（默认）   
+>　　        -jni                  生成 JNI样式的头文件（默认）   
 
-　　        -version              输出版本信息   
+>　　        -version              输出版本信息   
 
-　　        -verbose              启用详细输出   
+>　　        -verbose              启用详细输出   
 
-　　        -force                始终写入输出文件  
+>　　        -force                始终写入输出文件  
 
-Example：
+###Example：
 
 　　工程结构如下：
+　　
 　　
 　　![](780612-20160115145041647-1029786020.png)
 
 执行：
+
 ```shell
 javah -d lib -classpath out/production/VideoSvr -jni cwh.NVR.NVRNative
 ```
