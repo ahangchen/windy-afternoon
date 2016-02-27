@@ -25,3 +25,4 @@
      - [git/github/gitbook](kit/git/note.md)
 - [thinking-in-program](thinking-in-program/README.md)
     - [怎样打日志](thinking-in-program/log.md)
+- [呓语](pieces.md)
