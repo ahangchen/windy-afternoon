@@ -19,6 +19,8 @@
      - [Note](java/note.md)
 - [Python](python/README.md)
     - [django](python/django/note.md)
+- [web前端](web-front/README.md)
+    - [header div固定，content div填充父容器](web-front/head_content.md)
 - [linux](linux/note.md)
 - [kit](kit/README.md)
      - [vim](kit/vim/note.md)
