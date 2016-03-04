@@ -24,9 +24,13 @@
 * Adapter的设计
  - 方案一 Cursor读取DB，遍历Cursor把数据都放到一个list放在内存里，关掉cursor，listview访问list作为数据源
  优点：没有cursor关闭问题，以及cursorwindow被置换的风险
+
  缺点： 一次读出DB数据会占用大量内存空间，采取游标窗口的设计，需要实现java层的cursorwindow，成本太高
+ 
  - 方案二 Cursor读取DB，listview访问cursor作为数据源
  优点：cursor机制自动达到所取即所需的机制，不会占用太多内存。
+
  缺点：必须谨慎考虑关闭Cursor的时机。
+ 
 
 用方案二来满足上面几个需求：
