@@ -7,7 +7,7 @@
 > 底部加载更多，加载服务器数据
 > 无数据时显示空白页
 
-这里只做逻辑层讨论，UI层，比如下拉刷新如何实现，则不做不必要讨论。
+这里只做逻辑层讨论，UI层，则不做不必要讨论。
 
 * 分析
  - 首先，从服务器获取，就涉及异步写DB，以及在写DB时的并发读
@@ -34,3 +34,21 @@
  
 
 用方案二来满足上面几个需求：
+
+* Q 
+   什么时候关闭cursor？
+* A
+   在cursor不与listview相关联时才能关闭，否则listview滑动中，getView调用cursor.getXXX()方法会报IllegalStateException: attemp to open a database or cursor which is already closed
+* Q
+   怎样读取新数据？
+
+* A
+  点击加载更多时，重新查询DB，得到新的cursor（读DB线程），并将新的cursor交给listview的adapter（adapter.setCursor），然后adapter.notifyDataSetChanged()（UI主线程），这就引出另一个问题。
+
+* Q
+  adapter.setCursor应该在哪个线程做？
+
+* A
+  假设放在读DB线程，setCursor后，通知主线程adapter notify，那么在主线程执行notify前，DB线程setCursor后，这段时间内，如果listview的adapter执行getView，就会在onLayhout时产生IllegalStateException，item num of listview changed, but not notify。如果一定要放DB线程做setCursor也行，不过要在onLayout时，与setCursor线程竞争锁，一来影响体验，而来影响性能。所以应该放在主线程做。
+
+
