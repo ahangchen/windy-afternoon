@@ -36,16 +36,20 @@
 用方案二来满足上面几个需求：
 
 * Q 
+
    什么时候关闭cursor？
 * A
+
    在cursor不与listview相关联时才能关闭，否则listview滑动中，getView调用cursor.getXXX()方法会报IllegalStateException: attemp to open a database or cursor which is already closed
 * Q
+
    怎样读取新数据？
 
 * A
   点击加载更多时，重新查询DB，得到新的cursor（读DB线程），并将新的cursor交给listview的adapter（adapter.setCursor），然后adapter.notifyDataSetChanged()（UI主线程），这就引出另一个问题。
 
 * Q
+
   adapter.setCursor应该在哪个线程做？
 
 * A
