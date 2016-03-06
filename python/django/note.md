@@ -29,3 +29,5 @@ sudo pip install Django
  
  比如views.py引用a.py，a.py中执行了一个死循环执行一些监听操作，views.py引用a.py时，就会去执行那段死循环，导致runserver卡住
 
+####在bat中运行python脚本不显示黑框
+不用python，用pythonw
