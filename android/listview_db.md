@@ -53,6 +53,7 @@
   adapter.setCursor应该在哪个线程做？
 
 * A
-  假设放在读DB线程，setCursor后，通知主线程adapter notify，那么在主线程执行notify前，DB线程setCursor后，这段时间内，如果listview的adapter执行getView，就会在onLayhout时产生IllegalStateException，item num of listview changed, but not notify。如果一定要放DB线程做setCursor也行，不过要在onLayout时，与setCursor线程竞争锁，一来影响体验，而来影响性能。所以应该放在主线程做。
+
+  假设放在读DB线程，setCursor后，通知主线程adapter notify，那么在主线程执行notify前，DB线程setCursor后，这段时间内，如果listview的adapter执行getView，就会在onLayhout时产生IllegalStateException，item num of listview changed, but not notify。如果一定要放DB线程做setCursor也行，不过要在onLayout时，与setCursor线程竞争锁，一来影响体验，二来影响性能。所以应该放在主线程做。
 
 
