@@ -22,4 +22,10 @@ sudo pip install Django
 ####1.9中的deprecated接口
 
  https://docs.djangoproject.com/en/1.9/internals/deprecation/
+ 
+ ####django runserver, 停在performing System checking
+ 
+ 检查引用的py模块中，是否有自动执行的语句。
+ 
+ 比如views.py引用a.py，a.py中执行了一个死循环执行监听操作，views.py引用a.py时，就会去执行那段死循环，导致runserver卡住
 
