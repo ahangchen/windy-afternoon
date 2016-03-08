@@ -2,6 +2,8 @@
 
 转载请注明出处：https://ahangchen.gitbooks.io/windy-afternoon/content/kit/git/green_blush.html
 
+工程[地址](https://github.com/ahangchen/green)，欢迎star!!!
+
 首先github统计小绿点的逻辑是这样的：[戳](https://help.github.com/articles/why-are-my-contributions-not-showing-up-on-my-profile)
 
 然后，某次因为某些原因删工程，发现，对应的小绿点也不见了，并且streak时间也变了
