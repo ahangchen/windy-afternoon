@@ -26,6 +26,7 @@
 - [kit](kit/README.md)
      - [vim](kit/vim/note.md)
      - [git/github/gitbook](kit/git/note.md)
+       - [刷爆github小绿点](kit/git/green_blush.md)
 - [thinking-in-program](thinking-in-program/README.md)
     - [怎样打日志](thinking-in-program/log.md)
 - [呓语](pieces.md)
