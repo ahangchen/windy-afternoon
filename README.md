@@ -32,6 +32,8 @@
 
 - ####[【译】How to be a programmer](https://ahangchen.gitbooks.io/how-to-be-a-programmer-cn/content/)
 
+- #### [刷爆github小绿点]((kit/git/green_blush.md)
+
 
 ###Help
 最近在翻译[Chromium的文档](https://github.com/ahangchen/Chromium_doc_zh)，有兴趣一起翻译的同学可以和我联系。
