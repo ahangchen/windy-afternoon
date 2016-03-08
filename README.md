@@ -32,7 +32,7 @@
 
 - ####[【译】How to be a programmer](https://ahangchen.gitbooks.io/how-to-be-a-programmer-cn/content/)
 
-- #### [刷爆github小绿点]((kit/git/green_blush.md)
+- #### [刷爆github小绿点](kit/git/green_blush.md)
 
 
 ###Help
