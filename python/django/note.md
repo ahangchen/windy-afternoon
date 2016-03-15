@@ -31,3 +31,9 @@ sudo pip install Django
 
 ####在bat中运行python脚本不显示黑框
 不用python，用pythonw
+
+####修改DB
+```shell
+python manage.py makemigrations module_name
+python manage.py migrate
+```
