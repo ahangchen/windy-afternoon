@@ -38,3 +38,10 @@ git commit 冲突的文件 -m comment
 ```shell
 gitbook init
 ```
+
+###gitbook 支持disqus评论
+
+在你的gitbook工程根目录，添加一个book.json文件，内容：
+```json
+
+```
