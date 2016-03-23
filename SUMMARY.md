@@ -29,4 +29,5 @@
        - [刷爆github小绿点](kit/git/green_blush.md)
 - [thinking-in-program](thinking-in-program/README.md)
     - [怎样打日志](thinking-in-program/log.md)
+- [我的收藏](star.md)
 - [呓语](pieces.md)
