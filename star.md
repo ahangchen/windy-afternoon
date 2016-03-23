@@ -1,8 +1,8 @@
-书签栏
+##书签栏
 
 - [weibo](http://weibo.com/mygroups?gid=3500381630356365&wvr=6&leftnav=1)
 
-CodeSite
+##CodeSite
 
 - [开发者头条 - 开发者的首选阅读分享平台](http://toutiao.io/)
 
@@ -38,7 +38,53 @@ CodeSite
 
 - [梦里风林 · Profile · Disqus](https://disqus.com/by/ahangchen/?utm_campaign=0c1fe414-ed6b-11e5-acfa-002590f30436&utm_content=title&utm_source=note)
 
-python
+##entertain
+
+- [闪电侠第1季（更新至17集）-全集在线观看-电视剧-爱奇艺影视大全](http://www.iqiyi.com/lib/m_205326914.html?src=search)
+
+- [神探夏洛克第1季-神探夏洛克第1季全集-神探夏洛克第1季在线观看(1-3全)-搜狐视频 - 搜狐视频](http://tv.sohu.com/s2011/sherlock/)
+
+- [求加精win7极致仿mac系统主题！！（超详细图文教程)_thinkpad吧_百度贴吧](http://tieba.baidu.com/p/3016741632)
+
+- [抖S站 鼠绘漫画网](http://www.ishuhui.com/)
+
+- [静雅思听](http://www.justing.com.cn/#/books/350/audios)
+
+- [奇葩说第3季-在线观看-综艺-爱奇艺全网影视](http://www.iqiyi.com/lib/m_208505614.html)
+
+- [百度贴吧——全球最大的中文社区](http://tieba.baidu.com/)
+
+- [闪电侠 第二季 The Flash Season 2 (2015)[已更新15集][每周三更新][中英],欧美剧集_耐卡影音论坛_ncarbbs - Ncar Team!](http://bbs.ncar.cc/forum.php?mod=viewthread&tid=27391&page=1&extra=#pid482863)
+
+- [火影忍者+疾风传 动画及TV原创目录【Update to 672】_红袖添乱_L_新浪博客](http://blog.sina.com.cn/s/blog_673c13e60100vc4n.html)
+
+- [岳云鹏 – 搜库](http://www.soku.com/t/nisearch/%E5%B2%B3%E4%BA%91%E9%B9%8F?f=1&kb=05123040yv41000__)
+
+- [【多图】男士上衣折扣特卖,淘宝网男士上衣,品牌男士上衣特价包邮 - 折800](http://www.zhe800.com/ju_tag/taonanzhuang/jacket)
+
+##scut
+
+- [华南理工大学推荐免试研究生管理系统](http://www.scut.edu.cn/tuimian/)
+
+- [华南理工大学邮件系统](http://premail.scut.edu.cn/)
+
+- [华南理工大学毕业设计(论文)管理系统](http://110.65.10.209/index.aspx)
+
+- [华南理工大学图书馆OPAC](http://202.38.232.10/opac/servlet/opac.go?cmdACT=reader.info)
+
+- [华南理工大学教务处官网](http://jwc.scuteo.com/jiaowuchu/cms/index.do)
+
+- [关于2015-2016学年第一学期全日制硕士专业学位研究生毕业资格审核的有关通知](http://www2.scut.edu.cn/s/132/t/338/e9/29/info125225.htm)
+
+- [关于公布2015级全日制硕士生公共课表的通知](http://www2.scut.edu.cn/s/132/t/338/da/80/info121472.htm)
+
+- [关于修订2015年研究生培养方案的通知](http://www2.scut.edu.cn/s/132/t/338/b7/e8/info112616.htm)
+
+- [华南理工大学关于全日制硕士专业学位研究生专业实践的管理规定](http://www2.scut.edu.cn/s/132/t/338/bd/39/info113977.htm)
+
+- [华南理工大学网上营业厅](http://net.scut.edu.cn:8090/)
+
+##python
 
 - [What’s New In Python 3.0 — Python v3.1.5 documentation](https://docs.python.org/3.1/whatsnew/3.0.html#builtins)
 
@@ -92,7 +138,7 @@ python
 
 - [【django】生成 excel 文件 --xlwt - Magicbo-_-南极.北极 - 51Testing软件测试网 51Testing软件测试网-中国软件测试人的精神家园](http://www.51testing.com/html/17/527817-817449.html)
 
-实验室
+##实验室
 
 - [浙江大华技术股份有限公司](http://www.dahuatech.com/support_down-1094.html)
 
@@ -104,23 +150,23 @@ python
 
 - [海康大华网络监控摄像头web端无插件观看，支持安卓和苹果观看_极酷播放器官方网站](http://www.cuplayer.com/player/PlayerCode/RTMP/2015/10082101.html)
 
-go
+##go
 
 - [Go 语言的包依赖管理 | IO-meter](http://io-meter.com/2014/07/30/go's-package-management/)
 
-Java
+##Java
 
-反射
+##反射
 
 - [Java反射之访问私有属性或方法 - Walkingdog - 博客频道 - CSDN.NET](http://blog.csdn.net/vipwalkingdog/article/details/7684349)
 
 - [javadoc注释规范 - kelaocai - ITeye技术网站](http://kelaocai.iteye.com/blog/227822)
 
-book
+##book
 
 - [ Book Support](http://www.mindview.net/Books)
 
-solution
+##solution
 
 - [JAVA中判断char是否是中文的几种方法 - liqipan - ITeye技术网站](http://liqipan.iteye.com/blog/1564081)
 
@@ -128,7 +174,7 @@ solution
 
 - [java 中args 参数如何传递（Eclipse）不用cmd_百度知道](http://zhidao.baidu.com/link?url=BRv26rlhQdRFobrttMEKMPG5sR-dulkJro3YS4zmE-KCdNMOZNCXTOFnZFwcf3JVd42pSrq_CIPQ0ld200tecq)
 
-并发
+##并发
 
 - [java.util.ConcurrentModificationException - 我的JAVA学习笔记 - BlogJava](http://www.blogjava.net/EvanLiu/archive/2008/08/31/224453.html)
 
@@ -144,7 +190,7 @@ solution
 
 - [停止Tomcat webapp报错的尝试解决 - 千里之行，始于足下 - ITeye技术网站](http://fourfireliu.iteye.com/blog/2187584)
 
-jvm
+##jvm
 
 - [Java:对象的强、软、弱和虚引用 - 子 孑 - 51CTO技术博客](http://zhangjunhd.blog.51cto.com/113473/53092/)
 
@@ -152,7 +198,7 @@ jvm
 
 - [Java 7之基础 - 强引用、弱引用、软引用、虚引用 - 聚沙成塔、水滴石穿 - 博客频道 - CSDN.NET](http://blog.csdn.net/mazhimazh/article/details/19752475)
 
-新特性
+##新特性
 
 - [Java Lambda表达式入门 - renfufei的专栏 - 博客频道 - CSDN.NET](http://blog.csdn.net/renfufei/article/details/24600507)
 
@@ -164,7 +210,7 @@ jvm
 
 - [Java IO流关闭问题的深入研究 - Max的专栏 - 博客频道 - CSDN.NET](http://blog.csdn.net/maxwell_nc/article/details/49151005)
 
-jni
+##jni
 
 - [JNI：从C/C++（本地代码）中返回一个对象数组 - duyiwuer2009的专栏 - 博客频道 - CSDN.NET](http://blog.csdn.net/duyiwuer2009/article/details/7742128)
 
@@ -200,7 +246,7 @@ jni
 
 - [深入了解android平台的jni---本地多线程调用java代码 - 流星的博客 - 51CTO技术博客](http://staratsky.blog.51cto.com/2513234/1251639)
 
-io
+##io
 
 - [Java实现文件拷贝的4种方法_人鱼王子_新浪博客](http://blog.sina.com.cn/s/blog_628d4dd10100lxmh.html)
 
@@ -208,7 +254,7 @@ io
 
 - [Google Java Style 中文版 - To build a better world ! - BlogJava](http://www.blogjava.net/zh-weir/archive/2014/02/08/409608.html)
 
-web前端
+##web前端
 
 - [w3school 在线教程](http://www.w3school.com.cn/)
 
@@ -254,9 +300,9 @@ web前端
 
 - [Getting started - Grunt: JavaScript世界的构建工具 -- Grunt中文网](http://www.gruntjs.net/getting-started)
 
-Kit
+##Kit
 
-chrome
+##chrome
 
 - [让你用 Chrome 上网快到想哭：Vimium - 少数派](http://sspai.com/27723)
 
@@ -264,7 +310,7 @@ chrome
 
 - [APK Downloader [Latest] Download Directly | Chrome Extension v3 (Evozi Official)](http://apps.evozi.com/apk-downloader/?id=org.geometerplus.zlibrary.ui.android)
 
-clion
+##clion
 
 - [有没有哪里可以获得clion的注册码啊，不用打补丁的那种_百度知道](http://zhidao.baidu.com/link?url=rl6TiOVzidP1MQz10iEnQXx3utEbcrgbGngCqevguFFlpHquOXh2eF3C_SBlF9cbrollxHIAVuaI-6F_LDXHITKCaY_D0v8i3yzxdo5CQIS)
 
@@ -274,7 +320,7 @@ clion
 
 - [c++ - Where does CLion store executable files? - Stack Overflow](http://stackoverflow.com/questions/25836027/where-does-clion-store-executable-files)
 
-android studio
+##android studio
 
 - [Android Studio开发入门-引用jar及so文件 - Wuya - 博客园](http://www.cnblogs.com/xrwang/p/AndroidStudioImportJarAndSoLibrary.html)
 
@@ -304,11 +350,11 @@ android studio
 
 - [ASBBS](http://forum.android-studio.org/forum.php)
 
-idea
+##idea
 
 - [Android Studio where is Master Password stored? - Stack Overflow](http://stackoverflow.com/questions/23548418/android-studio-where-is-master-password-stored)
 
-eclipse for android
+##eclipse for android
 
 - [用ADT的FileExplorer查看android手机中的数据库 - 观千剑而后识器，操千曲而后晓声。 - 博客频道 - CSDN.NET](http://blog.csdn.net/shimiso/article/details/42713355)
 
@@ -322,9 +368,9 @@ eclipse for android
 
 - [Eclipse中使用正则屏蔽Logcat中的某些Tag - icyfox_bupt的专栏 - 博客频道 - CSDN.NET](http://blog.csdn.net/icyfox_bupt/article/details/11200177)
 
-tomcat
+##tomcat
 
-git
+##git
 
 - [Github如何上传本地项目代码_百度经验](http://jingyan.baidu.com/article/36d6ed1f512ffd1bcf4883ed.html)
 
@@ -344,7 +390,7 @@ git
 
 - [使用 | GitBook 简明教程](http://www.chengweiyang.cn/gitbook/basic-usage/README.html)
 
-markdown
+##markdown
 
 - [Cmd Markdown 编辑阅读器 - 作业部落出品](https://www.zybuluo.com/mdeditor)
 
@@ -354,7 +400,7 @@ markdown
 
 - [Introduction | Documentation](https://help.gitbook.com/)
 
-vim
+##vim
 
 - [普通人的编辑利器——Vim_善用佳软_新浪博客](http://blog.sina.com.cn/s/blog_46dac66f010005kw.html)
 
@@ -372,7 +418,7 @@ vim
 
 - [vim多标签和多窗口 - 小庞（C++/PHP/linux/mysql） - 博客频道 - CSDN.NET](http://blog.csdn.net/fuxingdaima/article/details/8658342)
 
-qt
+##qt
 
 - [Qt入门－控制台应用程序Hello World - xgbing - 博客频道 - CSDN.NET](http://blog.csdn.net/xgbing/article/details/7770822)
 
@@ -384,7 +430,7 @@ qt
 
 - [校园网更改MAC上网_百度文库](http://wenku.baidu.com/link?url=2r_bBZO--Q3W-XnEkCzvt9MHE1ItgmF1UYabixkjx3HmTo4QfSppfGxfHPVv_8q63ooQHCX2kSm2r0OlI66WsXWADwBKWpVOabNJGGQO3dq)
 
-genymotion
+##genymotion
 
 - [Genymotion与本地电脑共享文件夹的方法_扩散性ma台服吧_百度贴吧](http://tieba.baidu.com/p/2648405838)
 
@@ -392,9 +438,9 @@ genymotion
 
 - [解决Genymotion不能安装软件的问题 - 博客详情 - DannySite](http://www.dannysite.com/blog/164/)
 
-virtualbox
+##virtualbox
 
-goagent
+##goagent
 
 - [利用goagent 快速安装android SDK_testcrab_新浪博客](http://blog.sina.com.cn/s/blog_43a67e6b010172ee.html)
 
@@ -406,7 +452,7 @@ goagent
 
 - [国内顺利使用Google的另类技巧_郭小留_新浪博客](http://blog.sina.com.cn/s/blog_823128380102w3yc.html)
 
-gradle
+##gradle
 
 - [android Studio gradle so的加载 - look_down的专栏 - 博客频道 - CSDN.NET](http://blog.csdn.net/look_down/article/details/16370615)
 
@@ -432,7 +478,7 @@ gradle
 
 - [SQLite Editor v2.1.1 - 手机工具 - Android手机软件下载](http://soft.shouji.com.cn/down/19543.html)
 
-SVN
+##SVN
 
 - [RabbitVCS » install:ubuntu](http://wiki.rabbitvcs.org/wiki/install/ubuntu)
 
@@ -448,7 +494,7 @@ SVN
 
 - [八款Android 开发者必备的小工具 - 简书](http://www.jianshu.com/p/e4efec23d4d4)
 
-ndk
+##ndk
 
 - [(1)addr2line工具的使用_萝卜_排骨_新浪博客](http://blog.sina.com.cn/s/blog_61ece099010156q1.html)
 
@@ -458,7 +504,7 @@ ndk
 
 - [Ubuntu搭建Android交叉编译环境 - dhcxyj - 博客园](http://www.cnblogs.com/xieyajie/p/4727706.html)
 
-proguard
+##proguard
 
 - [Proguard 不混淆内部匿名类（keep Inner Anonymous Class） | 默默的点滴](http://www.mobibrw.com/?p=1277)
 
@@ -470,13 +516,13 @@ proguard
 
 - [s Leading Vendor of Professional Development Tools](https://www.jetbrains.com/)
 
-七牛
+##七牛
 
 - [内容管理 - 空间管理 - 七牛云存储](https://portal.qiniu.com/bucket/ahangstore/resource#1)
 
 - [资源列表 | 七牛云存储](http://developer.qiniu.com/download/index.html#tools)
 
-pycharm
+##pycharm
 
 - [pycharm 使用心得（一）安装和首次使用_python_脚本之家](http://www.jb51.net/article/50689.htm)
 
@@ -484,7 +530,7 @@ pycharm
 
 - [pycharm 如何添加自定义库路径？ - V2EX](https://www.v2ex.com/t/183690)
 
-正则
+##正则
 
 - [正则表达式30分钟入门教程](http://deerchao.net/tutorials/regex/regex.htm#getstarted)
 
@@ -496,7 +542,7 @@ pycharm
 
 - [【palm文件格式】什么意思_英语palm文件格式在线翻译_有道词典](http://dict.youdao.com/search?q=Palm%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F&keyfrom=web.top)
 
-服务器
+##服务器
 
 - [《Linux 多线程服务端编程：使用 muduo C++ 网络库》网上书店订购 - 陈硕的Blog - 博客频道 - CSDN.NET](http://blog.csdn.net/solstice/article/details/8493251)
 
@@ -506,7 +552,7 @@ pycharm
 
 - [PHP模拟登陆正方系统获取课表、成绩（一看就懂！！！）](http://www.blogfshare.com/php-curl-zhengfang.html)
 
-SSH
+##SSH
 
 - [Ubuntu安装配置Mysql - 武侯 - 博客园](http://www.cnblogs.com/wuhou/archive/2008/09/28/1301071.html)
 
@@ -562,9 +608,9 @@ SSH
 
 - [Android SDK使用指南](http://developer.qiniu.com/code/v7/sdk/android.html#api-reference)
 
-c++
+##c++
 
-make
+##make
 
 - [CMake 基本使用方法--写CMakeList.txt - blackstar8888的专栏 - 博客频道 - CSDN.NET](http://blog.csdn.net/blackstar8888/article/details/6865334)
 
@@ -576,7 +622,7 @@ make
 
 - [CMake的使用 - shenhailuanma - 开源中国社区](http://my.oschina.net/zhangxu0512/blog/222741)
 
-gramma
+##gramma
 
 - [C++虚函数及虚函数表解析 - 独酌逸醉 - 博客园](http://www.cnblogs.com/chinazhangjie/archive/2012/07/11/2586535.html)
 
@@ -586,7 +632,7 @@ gramma
 
 - [分配空间不足引起的错误：‘Stack smashing detected’ - 白永辉的专栏 - 博客频道 - CSDN.NET](http://blog.csdn.net/xiaobai1593/article/details/7376573)
 
-ubuntu
+##ubuntu
 
 - [ubuntu 14.04 安装chrome及给chromium 安装 flash player - LaineGates的专栏 - 博客频道 - CSDN.NET](http://blog.csdn.net/lainegates/article/details/27830333)
 
@@ -630,7 +676,7 @@ ubuntu
 
 - [Ubuntu终端颜色设置、路径名设置以及ls命令设置_Martin_288](http://blog.sina.cn/dpool/blog/s/blog_6d0cbb0301019egu.html?from=timeline&isappinstalled=0)
 
-linux
+##linux
 
 - [【C/C++】Linux下使用system()函数一定要谨慎 - 恋恋美食的个人空间 - 开源中国社区](http://my.oschina.net/renhc/blog/53580)
 
@@ -680,7 +726,7 @@ linux
 
 - [linux下解压命令大全 - eoiioe - 博客园](http://www.cnblogs.com/eoiioe/archive/2008/09/20/1294681.html)
 
-安全
+##安全
 
 - [Android网络防火墙实现初探](http://m.oschina.net/blog/145565)
 
@@ -688,7 +734,7 @@ linux
 
 - [一次Wi-Fi入侵实录 - FreeBuf.COM | 关注黑客与极客](http://www.freebuf.com/articles/wireless/41879.html)
 
-算法
+##算法
 
 - [睡眠理发师问题 - 悠游的日志 - 网易博客](http://zhangshijuyouyou.blog.163.com/blog/static/122911448201010810461666/)
 
@@ -700,13 +746,13 @@ linux
 
 - [JavaScript生成GUID的算法 - snandy - 博客园](http://www.cnblogs.com/snandy/p/3261754.html)
 
-hack
+##hack
 
 - [How do I set environment variables from Java? - Stack Overflow](http://stackoverflow.com/questions/318239/how-do-i-set-environment-variables-from-java/22315463#22315463)
 
 - [objdump 符号表输出格式 - Leo Chin - 博客园](http://www.cnblogs.com/hnrainll/archive/2011/10/21/2220057.html)
 
-android
+##android
 
 - [Introduction to Android | Android Developers](http://developer.android.com/guide/index.html)
 
@@ -714,7 +760,7 @@ android
 
 - [Manifest.permission | Android Developers](http://developer.android.com/intl/zh-cn/reference/android/Manifest.permission.html)
 
-blogs
+##blogs
 
 - [Blog](https://cwhgithub.github.io/)
 
@@ -728,7 +774,7 @@ blogs
 
 - [首页 - 美团点评技术团队](http://tech.meituan.com/)
 
-sqlite
+##sqlite
 
 - [Android全文检索FTS来提高数据库查询速度 - Android开发论坛 - 51CTO技术论坛_中国领先的IT技术社区](http://bbs.51cto.com/thread-1033525-1.html)
 
@@ -802,7 +848,7 @@ sqlite
 
 - [ubuntu下交叉编译sqlite3.7.16 - kang99827765的专栏 - 博客频道 - CSDN.NET](http://blog.csdn.net/kang99827765/article/details/8690114)
 
-solution
+##solution
 
 - [Android开发:GPU过度绘制的优化 | 应用开发笔记](http://www.pocketdigi.com/20140521/1325.html)
 
@@ -824,7 +870,7 @@ solution
 
 - [小米手机用USB连接电脑通过电脑宽带上网_小米手机1/1S_MIUI论坛](http://www.miui.com/thread-635168-1-1.html)
 
-Component
+##Component
 
 - [Android 官方推荐 : DialogFragment 创建对话框 - Hongyang - 博客频道 - CSDN.NET](http://blog.csdn.net/lmj623565791/article/details/37815413)
 
@@ -878,7 +924,7 @@ Component
 
 - [LoaderManager使用详解（三）---实现Loaders - DODO~下雨不打伞 - 博客频道 - CSDN.NET](http://blog.csdn.net/murphykwu/article/details/35288477)
 
-thirdparty
+##thirdparty
 
 - [消息推送方式 - 个推文档中心 - 个推](http://docs.getui.com/pages/viewpage.action?pageId=590238)
 
@@ -892,11 +938,11 @@ thirdparty
 
 - [JAMA: Java Matrix Package](http://math.nist.gov/javanumerics/jama/)
 
-buggly
+##buggly
 
 - [问题求解 - Powered by Bugly!](http://bugly.qq.com/bbs/forum.php?mod=forumdisplay&fid=46)
 
-rx
+##rx
 
 - [Grokking RxJava, Part 1: The Basics](http://blog.danlew.net/2014/09/15/grokking-rxjava-part-1/)
 
@@ -912,7 +958,7 @@ rx
 
 - [REST APIs | Twitter Developers](https://dev.twitter.com/rest/public)
 
-pinyin4j
+##pinyin4j
 
 - [Chinese to Pinyin | SourceForge.net](http://sourceforge.net/projects/pinyin4j/)
 
@@ -924,15 +970,15 @@ pinyin4j
 
 - [Pinyin4j的基本用法 - 玄机逸士的专栏 - 博客频道 - CSDN.NET](http://blog.csdn.net/pathuang68/article/details/6692882)
 
-qiniu
+##qiniu
 
 - [android开发游记：图片的上传下载-使用七牛云存储管理图片 - liaoinstan的博客 - 博客频道 - CSDN.NET](http://blog.csdn.net/liaoinstan/article/details/49275353)
 
-res
+##res
 
 - [[转载]Android 颜色对照表_哈奇_新浪博客](http://blog.sina.com.cn/s/blog_684a1d160100umuq.html)
 
-news
+##news
 
 - [贪吃的机器人 Android甜食家族回顾图赏](http://www.cctime.com/html/2014-12-3/20141231531141318.htm)
 
@@ -944,7 +990,7 @@ news
 
 - [Android 6.0 中新的新技术 | Jlog](http://www.race604.com/whats-new-in-android6.0/)
 
-优化
+##优化
 
 - [Android性能优化之渲染篇 - 胡凯](http://hukai.me/android-performance-render/)
 
@@ -964,19 +1010,19 @@ news
 
 - [Google的Android性能模式](http://www.infoq.com/cn/news/2015/01/google-android-performance?utm_reader=feedly#0-tsina-1-92503-397232819ff9a47a7b7e80a40613cfe1)
 
-connect
+##connect
 
 - [Android与IIS身份验证——Form验证 - 刘冬.NET - 博客园](http://www.cnblogs.com/GoodHelper/archive/2011/08/19/android_iis_02.html)
 
 - [Android与IIS身份验证——基本验证 - 刘冬.NET - 博客园](http://www.cnblogs.com/GoodHelper/archive/2011/08/17/2143437.html)
 
-example
+##example
 
 - [JavaApk-安卓应用游戏APP源码下载 - Android App Games Source Download.](http://www.javaapk.com/)
 
 - [Android APK反编译得到Java源代码和资源文件_程序人生_新浪博客](http://blog.sina.com.cn/s/blog_777c69930101emtu.html)
 
-learn
+##learn
 
 - [android listview 连续调用 getview问题分析及解决 - 应用开发 - 游戏开发者社区](http://bbs.9ria.com/thread-223395-1-1.html)
 
@@ -988,7 +1034,7 @@ learn
 
 - [在C/C++程序里打印调用栈信息 - 至虛極，守靜篤 - 博客频道 - CSDN.NET](http://blog.csdn.net/yetyongjin/article/details/7759144)
 
-UI design
+##UI design
 
 - [App structure - Patterns - Google design guidelines](https://www.google.com/design/spec/patterns/app-structure.html)
 
@@ -1036,13 +1082,13 @@ UI design
 
 - [入门指南 | Android Developers](http://developer.android.com/intl/zh-cn/training/material/get-started.html)
 
-源码分析
+##源码分析
 
 - [在Ubuntu上下载、编译和安装Android最新源代码 - 老罗的Android之旅 - 博客频道 - CSDN.NET](http://blog.csdn.net/luoshengyang/article/details/6559955)
 
 - [关于学习安卓底层，懂得进_百度知道](http://zhidao.baidu.com/link?url=TZqQAbcna28QI1wNotpqXsCOKkosDSTpHOF-z65Fivex-miZ47WspxryryRFb4CYIQXX6ata2layViKDGr8-qhuSNkt-NNxuTTWgLM4gk9_)
 
-文件
+##文件
 
 - [getCacheDir()和getFilesDir()方法区别. - 屁屁侠 - 博客园](http://www.cnblogs.com/liulipeng/archive/2013/02/22/2922733.html)
 
@@ -1058,7 +1104,7 @@ UI design
 
 - [Android Universal Image Loader 源码分析](http://codekk.com/open-source-project-analysis/detail/Android/huxian99/Android%20Universal%20Image%20Loader%20%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90)
 
-网络
+##网络
 
 - [快速Android开发系列网络篇之Retrofit - AngelDevil - 博客园](http://www.cnblogs.com/angeldevil/p/3757335.html)
 
@@ -1130,7 +1176,7 @@ UI design
 
 - [分布式系统浅析 - Full Stack Engineer - 博客频道 - CSDN.NET](http://blog.csdn.net/kinges/article/details/6097899)
 
-缓存
+##缓存
 
 - [关于缓存（上） « 搜索技术博客－淘宝](http://www.searchtb.com/2013/04/%E5%85%B3%E4%BA%8E%E7%BC%93%E5%AD%98%EF%BC%88%E4%B8%8A%EF%BC%89.html)
 
@@ -1148,7 +1194,7 @@ UI design
 
 - [Android gc垃圾回收研究学习 - 做一个有思想的人 - 博客频道 - CSDN.NET](http://blog.csdn.net/hnulwt/article/details/44903331)
 
-教程
+##教程
 
 - [专辑-ChinaGDG的频道-优酷视频](http://i.youku.com/u/UMjczOTc0NDkzNg==/playlists)
 
@@ -1160,21 +1206,21 @@ UI design
 
 - [zmywly8866/Worth-Reading-the-Android-technical-articles · GitHub](https://github.com/zmywly8866/Worth-Reading-the-Android-technical-articles)
 
-listview
+##listview
 
-多次getview
+##多次getview
 
 - [android ListView 在初始化时多次调用getView()原因分析 - 林J - 博客园](http://www.cnblogs.com/linjzong/p/3494090.html)
 
 - [android listview 连续调用 getview问题分析及解决。 - f8376904110的专栏 - 博客频道 - CSDN.NET](http://blog.csdn.net/f8376904110/article/details/6460934)
 
-convertView
+##convertView
 
 - [Android RecyclerView 的简单使用 - JarrahWu - 博客园](http://www.cnblogs.com/jarrah/p/4047774.html)
 
 - [[Android]使用RecyclerView替代ListView（一） - 天天_byconan - 博客园](http://www.cnblogs.com/tiantianbyconan/p/4232560.html)
 
-多布局
+##多布局
 
 - [listView中多个listItem布局时，convertView缓存及使用 - Yelbosh的专栏 - 博客频道 - CSDN.NET](http://blog.csdn.net/yelbosh/article/details/7849345)
 
@@ -1198,7 +1244,7 @@ convertView
 
 - [adapter | Android Tales](http://android.amberfog.com/?tag=adapter)
 
-过滤
+##过滤
 
 - [Android 实现ListView的A-Z字母排序和过滤搜索功能，实现汉字转成拼音 - Mobile Internet developer - 博客频道 - CSDN.NET](http://blog.csdn.net/xiaanming/article/details/12684155)
 
@@ -1206,7 +1252,7 @@ convertView
 
 - [使用 arrayadapter 来 filter 一个 listview -CSDN论坛-CSDN.NET-中国最大的IT技术社区](http://bbs.csdn.net/topics/390392211)
 
-源码分析
+##源码分析
 
 - [从源代码的角度分析--在BaseAdapter调用notifyDataSetChanged()之后发生了什么 - 陈哈哈 - 博客园](http://www.cnblogs.com/kissazi2/p/3721941.html)
 
@@ -1214,7 +1260,7 @@ convertView
 
 - [ListActivity源码分析 - 王三丰 - 博客园](http://www.cnblogs.com/wangsanfeng/archive/2012/11/17/2775050.html)
 
-优化
+##优化
 
 - [ListView加载网络图片的优化 - 一漫的专栏 - 博客频道 - CSDN.NET](http://blog.csdn.net/cxd520123/article/details/44103219)
 
@@ -1226,17 +1272,17 @@ convertView
 
 - [Android笔记-ListView总结(多选框ListViiew,动态加载，多线程更新ListView中的进度条) - xiangjai的专栏 - 博客频道 - CSDN.NET](http://blog.csdn.net/xiangjai/article/details/43482513)
 
-状态保存
+##状态保存
 
 - [ListView保存滑动状态 - spare_H - 博客频道 - CSDN.NET](http://blog.csdn.net/spare_h/article/details/6659010)
 
-View
+##View
 
 - [View的onSaveInstanceState和onRestoreInstanceState过程分析 - xiaoweiz - 博客园](http://www.cnblogs.com/xiaoweiz/p/3813914.html)
 
 - [【原创】【ViewFlow+GridView】Parameter must be a descendant of this view问题分析 - 陌上幽人 - 博客园](http://www.cnblogs.com/monodin/p/3675040.html)
 
-系统
+##系统
 
 - [Android 操作系统的内存回收机制](http://www.ibm.com/developerworks/cn/opensource/os-cn-android-mmry-rcycl/index.html)
 
@@ -1244,7 +1290,7 @@ View
 
 - [【原创】Android 系统稳定性 - OOM（一） - 美帝亡我之心不死，腐败终成抽心一烂。 - ITeye技术网站](http://rayleeya.iteye.com/blog/1956059)
 
-流程控制
+##流程控制
 
 - [Android View系统分析之从setContentView说开来(一) - Android移动开发技术文章_手机开发 - 红黑联盟](http://www.2cto.com/kf/201409/331824.html)
 
@@ -1252,7 +1298,7 @@ View
 
 - [android listView 滚动状态onScrollStateChanged（）回调的问题 - whb198900的日志 - 网易博客](http://whb198900.blog.163.com/blog/static/76645354201291910464691)
 
-数据库
+##数据库
 
 - [Android开发中的SQLite优化 - 求索 - 博客频道 - CSDN.NET](http://blog.csdn.net/horkychen/article/details/18892223)
 
@@ -1264,7 +1310,7 @@ View
 
 - [t read row 1, col 0 from CursorWindow. Make sure the Cursor is initialized correctly before accessing data fr - @Channe - 博客园](http://www.cnblogs.com/channe/p/3435836.html)
 
-cursor
+##cursor
 
 - [Activity.startManagingCursor方法_绿素潭竹_新浪博客](http://blog.sina.com.cn/s/blog_6f14deb60100wd2n.html)
 
@@ -1290,7 +1336,7 @@ cursor
 
 - [Android中Cursor关闭的问题--成都达内科技](http://www.sctarena.com/Article/Article.asp?nid=3268)
 
-多线程
+##多线程
 
 - [SQLite多线程读写实践及常见问题总结【半月谈投稿】 - Android开发论坛 - 51CTO技术论坛_中国领先的IT技术社区](http://bbs.51cto.com/thread-990260-1.html)
 
@@ -1340,13 +1386,13 @@ cursor
 
 - [Loaders | Android Developers](http://developer.android.com/guide/components/loaders.html)
 
-刷新
+##刷新
 
 - [（原创）你还在用notifyDataSetChanged？ - X-viking的日志 - Android开发论坛 - 安卓开发论坛 - Android开发 - 安卓论坛 - 移动互联网门户](http://www.apkbus.com/blog-47628-39784.html)
 
 - [Android开发 - 下拉刷新和分段头悬停列表 - plus plus Tong - 博客频道 - CSDN.NET](http://blog.csdn.net/tongcpp/article/details/40372521)
 
-锁
+##锁
 
 - [Java中的ReentrantLock和synchronized两种锁定机制的对比 - NowOrNever - 博客频道 - CSDN.NET](http://blog.csdn.net/fw0124/article/details/6672522)
 
@@ -1360,11 +1406,11 @@ cursor
 
 - [Java Object.wait()方法](http://www.yiibai.com/javalang/object_wait.html)
 
-特效
+##特效
 
 - [Android下拉刷新完全解析，教你如何一分钟实现下拉刷新功能 - 郭霖的专栏 - 博客频道 - CSDN.NET](http://blog.csdn.net/guolin_blog/article/details/9255575)
 
-分页
+##分页
 
 - [android中滑动SQLite数据库分页加载 - 水寒 - 博客频道 - CSDN.NET](http://blog.csdn.net/dawanganban/article/details/9989555)
 
@@ -1374,15 +1420,15 @@ cursor
 
 - [Android ListView从网络获取图片及文字显示 - daditao的专栏 - 博客频道 - CSDN.NET](http://blog.csdn.net/daditao/article/details/40717385)
 
-特效
+##特效
 
-imageLoader
+##imageLoader
 
 - [Android开源框架ImageLoader的完美例子 - zgz345 - 博客园](http://www.cnblogs.com/zgz345/p/3502315.html#3082834)
 
 - [Google推荐的图片加载库Glide介绍 - fancychendong的专栏 - 博客频道 - CSDN.NET](http://blog.csdn.net/fancylovejava/article/details/44747759)
 
-webview
+##webview
 
 - [Android WebView Memory Leak WebView内存泄漏 - 织布机 - 开源中国社区](http://my.oschina.net/zhibuji/blog/100580)
 
@@ -1466,13 +1512,13 @@ webview
 
 - [Tag Index – Legend(谭海燕)的专栏](http://www.fenesky.com/tags.html)
 
-编码
+##编码
 
 - [BOM 和 JavaScript 中的 trim](http://www.bubuko.com/infodetail-394105.html)
 
 - [浅谈 js 字符串 trim 方法之正则篇 - 乱码. - 博客园](http://www.cnblogs.com/52cik/p/js-regexp-s.html)
 
-句柄
+##句柄
 
 - [Linux下查看进程打开的文件句柄数 - 独自登高楼 望断天涯路 - 博客频道 - CSDN.NET](http://blog.csdn.net/lastsweetop/article/details/6440136)
 
@@ -1488,11 +1534,11 @@ webview
 
 - [OpenFilesLeakTest/AbstractCursor.moveToFirst.md at master · dxopt/OpenFilesLeakTest](https://github.com/dxopt/OpenFilesLeakTest/blob/master/bugs-show/AbstractCursor.moveToFirst.md)
 
-测试
+##测试
 
 - [Android自动测试之Monkey工具 - 子扬 - 博客园](http://www.cnblogs.com/yyangblog/archive/2011/03/10/1980068.html)
 
-图像处理
+##图像处理
 
 - [实现android图像识别的几种方法 - Working harder, getting stronger! - 博客频道 - CSDN.NET](http://blog.csdn.net/l_serein/article/details/16902279)
 
@@ -1500,7 +1546,7 @@ webview
 
 - [Audit - Rules - Threads and Synchronization | Codepro AnalytiX | Google Developers](https://developers.google.com/java-dev-tools/codepro/doc/features/audit/audit_rules_com.instantiations.assist.eclipse.auditGroup.threadsAndSynchronization)
 
-source code
+##source code
 
 - [Activity Class - Xamarin](http://developer.xamarin.com/api/type/Android.App.Activity/)
 
@@ -1522,15 +1568,15 @@ source code
 
 - [android-4.1.2_r2 identifier search: nativeExecuteForCursorWindow](http://osxr.org/android/ident?_i=nativeExecuteForCursorWindow)
 
-事件
+##事件
 
 - [lizhangqu/CoreLink · GitHub](https://github.com/lizhangqu/CoreLink)
 
 - [使用WiFi建立P2P连接 | Android官方培训课程中文版(v0.9.5)](http://hukai.me/android-training-course-in-chinese/connectivity/connect-devices-wireless/wifi-direct.html)
 
-流媒体
+##流媒体
 
-ffmpeg
+##ffmpeg
 
 - [详解FFMPEG API](http://www.360doc.com/content/12/0613/13/474846_217882148.shtml)
 
@@ -1568,7 +1614,7 @@ ffmpeg
 
 - [FFmpeg Formats Documentation](http://ffmpeg.org/ffmpeg-formats.html#hls-1)
 
-SDL
+##SDL
 
 - [目录 · SDL中文教程](http://kelvmiao.info/sdl-tutorial-cn/contents.html)
 
@@ -1582,11 +1628,11 @@ SDL
 
 - [draft-pantos-http-live-streaming-13 - HTTP Live Streaming](https://tools.ietf.org/html/draft-pantos-http-live-streaming-13#page-15)
 
-编程思想
+##编程思想
 
 - [老赵书托（2）：计算机程序的构造与解释 - Jeffrey Zhao - 博客园](http://www.cnblogs.com/JeffreyZhao/archive/2009/07/15/recommended-reading-2-sicp.html)
 
-kotlin
+##kotlin
 
 - [Kotlin awesome tricks for Android - Antonio Leiva](http://antonioleiva.com/kotlin-awesome-tricks-for-android/)
 
@@ -1600,7 +1646,7 @@ kotlin
 
 - [Manning | Kotlin in Action](https://manning.com/books/kotlin-in-action)
 
-chromium
+##chromium
 
 - [Chrome设计文档-多进程架构 - lotushy - 博客园](http://www.cnblogs.com/lotushy/p/3814948.html)
 
@@ -1612,11 +1658,7 @@ chromium
 
 - [[chrome] Index of /trunk](http://src.chromium.org/viewvc/chrome/trunk/)
 
-disqus
+##disqus
 
 - [s Blog](https://blog.jamespan.me/2015/04/18/goodbye-duoshuo/)
-
-- [购买 MacBook Pro - Apple (中国)](http://www.apple.com/cn/shop/buy-mac/macbook-pro)
-
-- [Google 翻译](http://translate.google.cn/)
 
