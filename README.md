@@ -30,10 +30,11 @@
    - [Chromium中文文档(writing)](https://www.gitbook.com/book/ahangchen/chromium_doc_zh)
  - [一个由Proguard与FastJson引起的血案](android/一个由PROGUARD与FASTJSON引起的血案.md)
 
-- ####[【译】How to be a programmer](https://ahangchen.gitbooks.io/how-to-be-a-programmer-cn/content/)
+- [【译】How to be a programmer](https://ahangchen.gitbooks.io/how-to-be-a-programmer-cn/content/)
 
-- #### [刷爆github小绿点](kit/git/green_blush.md)
+-  [刷爆github小绿点](kit/git/green_blush.md)
 
+[我的收藏]()
 
 ###Help
 最近在翻译[Chromium的文档](https://github.com/ahangchen/Chromium_doc_zh)，有兴趣一起翻译的同学可以和我联系。
