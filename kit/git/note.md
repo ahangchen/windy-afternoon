@@ -33,9 +33,4 @@ git commit 冲突的文件 -m comment
 
 教你刷爆小绿点：[戳](green_blush.md)
 
-###根据gitbook summary.md自动生成目录
-
-```shell
-gitbook init
-```
 
