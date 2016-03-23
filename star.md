@@ -1,42 +1,8 @@
-##书签栏
+#我的收藏
+>他山之石，可以攻玉
 
-- [weibo](http://weibo.com/mygroups?gid=3500381630356365&wvr=6&leftnav=1)
+开发过程中收藏在Chrome书签栏里的技术文章，独立出来
 
-##CodeSite
-
-- [开发者头条 - 开发者的首选阅读分享平台](http://toutiao.io/)
-
-- [博客后台管理 - 博客园](http://i.cnblogs.com/)
-
-- [Java编程语言（新版） - 实验楼](https://www.shiyanlou.com/courses/18)
-
-- [ahangchen (梦里风林)](https://github.com/ahangchen)
-
-- [My Books - GitBook](https://www.gitbook.com/@ahangchen/dashboard)
-
-- [推荐的文章 - SegmentFault](https://segmentfault.com/blogs)
-
-- [CSDN-markdown编辑器](http://write.blog.csdn.net/mdeditor)
-
-- [文章列表 - 博客频道 - CSDN.NET](http://write.blog.csdn.net/postlist)
-
-- [Android论坛-CSDN论坛-CSDN.NET-中国最大的IT技术社区](http://bbs.csdn.net/forums/Android)
-
-- [Emoji cheat sheet for GitHub, Basecamp and other services](http://www.emoji-cheat-sheet.com/)
-
-- [介紹 | 梦里风林](https://ahangchen.gitbooks.io/windy-afternoon/content/)
-
-- [独立Android开发者开发app如何盈利 - songjunyan的专栏 - 博客频道 - CSDN.NET](http://blog.csdn.net/songjunyan/article/details/38928761)
-
-- [Android - 知识库 - 你身边的技术百科全书 - CSDN](http://lib.csdn.net/base/15/structure)
-
-- [AlphaGo | Google DeepMind](https://deepmind.com/alpha-go.html)
-
-- [如何选择开源许可证？ - 阮一峰的网络日志](http://www.ruanyifeng.com/blog/2011/05/how_to_choose_free_software_licenses.html)
-
-- [Site Community Settings - Disqus Admin](https://ahangchen-blog.disqus.com/admin/settings/community/)
-
-- [梦里风林 · Profile · Disqus](https://disqus.com/by/ahangchen/?utm_campaign=0c1fe414-ed6b-11e5-acfa-002590f30436&utm_content=title&utm_source=note)
 
 ##python
 
