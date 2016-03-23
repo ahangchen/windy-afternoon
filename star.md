@@ -38,51 +38,6 @@
 
 [梦里风林 · Profile · Disqus](https://disqus.com/by/ahangchen/?utm_campaign=0c1fe414-ed6b-11e5-acfa-002590f30436&utm_content=title&utm_source=note)
 
-[entertain]()
-
-[闪电侠第1季（更新至17集）-全集在线观看-电视剧-爱奇艺影视大全](http://www.iqiyi.com/lib/m_205326914.html?src=search)
-
-[神探夏洛克第1季-神探夏洛克第1季全集-神探夏洛克第1季在线观看(1-3全)-搜狐视频 - 搜狐视频](http://tv.sohu.com/s2011/sherlock/)
-
-[求加精win7极致仿mac系统主题！！（超详细图文教程)_thinkpad吧_百度贴吧](http://tieba.baidu.com/p/3016741632)
-
-[抖S站 鼠绘漫画网](http://www.ishuhui.com/)
-
-[静雅思听](http://www.justing.com.cn/#/books/350/audios)
-
-[奇葩说第3季-在线观看-综艺-爱奇艺全网影视](http://www.iqiyi.com/lib/m_208505614.html)
-
-[百度贴吧——全球最大的中文社区](http://tieba.baidu.com/)
-
-[闪电侠 第二季 The Flash Season 2 (2015)[已更新15集][每周三更新][中英],欧美剧集_耐卡影音论坛_ncarbbs - Ncar Team!](http://bbs.ncar.cc/forum.php?mod=viewthread&tid=27391&page=1&extra=#pid482863)
-
-[火影忍者+疾风传 动画及TV原创目录【Update to 672】_红袖添乱_L_新浪博客](http://blog.sina.com.cn/s/blog_673c13e60100vc4n.html)
-
-[岳云鹏 – 搜库](http://www.soku.com/t/nisearch/%E5%B2%B3%E4%BA%91%E9%B9%8F?f=1&kb=05123040yv41000__)
-
-[【多图】男士上衣折扣特卖,淘宝网男士上衣,品牌男士上衣特价包邮 - 折800](http://www.zhe800.com/ju_tag/taonanzhuang/jacket)
-
-[scut]()
-
-[华南理工大学推荐免试研究生管理系统](http://www.scut.edu.cn/tuimian/)
-
-[华南理工大学邮件系统](http://premail.scut.edu.cn/)
-
-[华南理工大学毕业设计(论文)管理系统](http://110.65.10.209/index.aspx)
-
-[华南理工大学图书馆OPAC](http://202.38.232.10/opac/servlet/opac.go?cmdACT=reader.info)
-
-[华南理工大学教务处官网](http://jwc.scuteo.com/jiaowuchu/cms/index.do)
-
-[关于2015-2016学年第一学期全日制硕士专业学位研究生毕业资格审核的有关通知](http://www2.scut.edu.cn/s/132/t/338/e9/29/info125225.htm)
-
-[关于公布2015级全日制硕士生公共课表的通知](http://www2.scut.edu.cn/s/132/t/338/da/80/info121472.htm)
-
-[关于修订2015年研究生培养方案的通知](http://www2.scut.edu.cn/s/132/t/338/b7/e8/info112616.htm)
-
-[华南理工大学关于全日制硕士专业学位研究生专业实践的管理规定](http://www2.scut.edu.cn/s/132/t/338/bd/39/info113977.htm)
-
-[华南理工大学网上营业厅](http://net.scut.edu.cn:8090/)
 
 [python]()
 
