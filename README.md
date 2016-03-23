@@ -34,7 +34,7 @@
 
 -  [刷爆github小绿点](kit/git/green_blush.md)
 
-[我的收藏](star.md)
+###[我的收藏](star.md)
 
 ###Help
 最近在翻译[Chromium的文档](https://github.com/ahangchen/Chromium_doc_zh)，有兴趣一起翻译的同学可以和我联系。
