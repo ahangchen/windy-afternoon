@@ -4,10 +4,5 @@
         "disqus": {
             "shortName": "ahangchen-blog"
         }
-        "fontSettings": {
-            "theme": "sepia", "night" or "white",
-            "family": "serif" or "sans",
-            "size": 1 to 4
-        }
     }  
 }
