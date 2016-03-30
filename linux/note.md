@@ -2,7 +2,7 @@
 
 * 用 &&组合两个命令，比如：
 
-> cd dir && ls
+ > cd dir && ls
 
 * ubuntu换源后，务必执行
 > sudo apt-get clean && sudo apt-get autoremove
