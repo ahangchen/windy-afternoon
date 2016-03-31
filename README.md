@@ -40,7 +40,7 @@
 ###Help
 最近在翻译[Chromium的文档](https://github.com/ahangchen/Chromium_doc_zh)，有兴趣一起翻译的同学可以和我联系。
 
-如果觉得我的文章对您有帮助，请随意打赏～
+> 如果觉得我的文章对您有帮助，请随意打赏～
 
 ![](1792645569.jpg)
 
