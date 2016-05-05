@@ -7,6 +7,7 @@
 
 - 博客github地址 : https://github.com/ahangchen/windy-afternoon
 - 新浪微博：http://weibo.com/scutcs12cwh
+- 微信公众号：coding33
 - 邮箱： cweihang@foxmail.com
 - [代码仓库](https://github.com/ahangchen)
 - 不定期更新，欢迎Star
