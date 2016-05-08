@@ -36,6 +36,7 @@
 -  [刷爆github小绿点](kit/git/green_blush.md)
 -  [Markdown系列](kit/markdown/README.md)
 - [谷歌机器学习新手教程学习心得](https://github.com/ahangchen/GoogleML)
+- [谷歌深度学习教程笔记](https://github.com/ahangchen/GDLnotes)
 - [我的收藏](star.md)
 
 ###Help
