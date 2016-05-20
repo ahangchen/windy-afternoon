@@ -54,6 +54,13 @@ public class Line {
         id = builder.id;
         length = builder.length;
     }
+    public static void main(String[]args) {
+        Line line = new Line.Builder(0).length(1).build();
+    }
 }
 ```
+   - 传递构造参数时像setter一样明确
+   - build()调用构造器时，可以执行参数检查进行约束，在build之后才使用返回类，就能保证属性的完整性。
+   - 可以向Builder传递模板参数，让它的build()方法返回任意类型
+   - Class.newInstance调用无参构造函数，但无参构造函数不存在时，编译不会报错，而Builder的检查则弥补了这一点。
 
