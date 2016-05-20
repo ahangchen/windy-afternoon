@@ -64,3 +64,42 @@ public class Line {
    - 可以向Builder传递模板参数，让它的build()方法返回任意类型
    - Class.newInstance调用无参构造函数，但无参构造函数不存在时，编译不会报错，而Builder的检查则弥补了这一点。
 
+## 私有构造器或枚举类型实现单例
+- M1：
+```java
+public class Elvis {
+    public static final Elvis INSTANCE = new Elvis();
+    private Elvis() {}
+    public void leaveTheBuilding(){}
+}
+```
+
+> 反射可以调用到私有的构造器
+
+- M2:
+```java
+public class Elvis {
+    private static final Elvis INSTANCE = new Elvis();
+    private Elvis() {}
+    public static Elvis getInstance() {return INSTANCE;}
+    public void leaveTheBuilding() {}
+}
+```
+
+> 灵活，可以通过修改getInstance()方法，决定是否返回单例对象
+
+- 防止反序列化出错
+```java
+private Object readResolve() {
+    return INSTANCE;
+}
+```
+- 枚举单例（Java 1.5）
+```java
+public enum Elvis {
+    INSTANCE;
+    public void leaveTheBuilding() {}
+}
+```
+
+> 简洁，序列化，防止多实例化，最佳方法
