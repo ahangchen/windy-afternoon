@@ -23,4 +23,37 @@ Map<String, List<String>> m = HashMap.newInstance();
 - 常用名称：
 > valueOf, of, getInstance, newInstance, getType, newType
 
-## 构造参数多的时候，使用Constructor
+## 构造参数多的时候，使用Builder
+- M1: 多参数重载构造函数
+> 代码可读性差
+- M2：Java Bean（setter，getter）
+  - 简单
+  - set过程中对象属性不完整
+  - 不能单例化
+- M3:Builder
+```java
+public class Line {
+    private final int length;
+    private final int id;
+    public static class Builder {
+        private final int id;
+        private final int length = 0;
+        public Builder(int id) {
+            this.id = id;
+        }
+        
+        public Builder length(int len) {
+            length = len;
+            return this;
+        }
+        public Line build() {
+            return new Line(this);
+        }
+    }
+    private Line(Builder builder) {
+        id = builder.id;
+        length = builder.length;
+    }
+}
+```
+
