@@ -4,3 +4,4 @@
    - [琐碎的tips](java-web/note.md)
  - [JNI](jni/note.md)
  - [Note](note.md)
+ - [Effective Java笔记](ej.md)
