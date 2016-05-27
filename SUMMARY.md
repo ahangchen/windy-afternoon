@@ -18,7 +18,7 @@
        - [琐碎的tips](java/java-web/note.md)
      - [JNI](java/jni/note.md)
      - [Note](java/note.md)
-     - [Effective Java笔记](java/ej.md)
+     - [Effective Java笔记](java/ej/l1-new-delete.md)
 - [Python](python/README.md)
     - [django](python/django/note.md)
     - [原生模块](python/raw.md)
