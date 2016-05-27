@@ -17,3 +17,9 @@
 find . -iregex ".*\.\(cpp\|h\|java\|sh\)$" | xargs wc -l 
 ```
 想要增加统计的代码类型，就在正则表达式里填后缀就好
+
+* 开启后台进程并脱离terminal生命周期
+有时候我们会想要开启后台进程，往往会用&的符号，但这样开的进程在关闭terminal的时候也会被杀死，因此还要加一个disown，解绑进程和终端：
+```shell
+./test.sh & disown
+```
