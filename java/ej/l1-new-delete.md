@@ -103,3 +103,29 @@ public enum Elvis {
 ```
 
 > 简洁，序列化，防止多实例化，最佳方法
+
+## 私有构造器强化不可实例化
+只包含static method和static field的对象不希望被实例化，但实际上它有默认的无参构造器，我们仍然可能实例化它。
+
+因此通过将构造器变为私有防止实例化。
+```java
+public class UtilityClass {
+    private UtilityClass() {
+        throw new AssertionError();
+    }
+}
+```
+这种方法的一个缺点是，这种工具类无法被子类化。
+
+## 避免创建不必要的对象
+- String
+```java
+String s = new String("test");
+```
+上面这种写法每次都会重新创建两个String对象
+```java
+String s = "test";
+```
+JTS 3.10.5保证了相同内容的字符串重用同一个对象，而且只创建一次。
+- static执行开销大的代码块，存储执行结果重用
+对于一个类中，创建开销大，创建后不修改，但会多次读取的对象，
