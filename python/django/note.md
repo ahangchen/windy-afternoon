@@ -37,3 +37,6 @@ sudo pip install Django
 python manage.py makemigrations module_name
 python manage.py migrate
 ```
+
+#### Syncdb
+Django1.9中，不能使用syncdb，因为有了migration系统，使用makemigrations, migrate，代替之。
