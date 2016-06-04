@@ -40,3 +40,6 @@ python manage.py migrate
 
 #### Syncdb
 Django1.9中，不能使用syncdb，因为有了migration系统，使用makemigrations, migrate，代替之。
+
+#### Session
+Django的Session依赖于本地的数据库，使用Session前，需要执行makemigrations，migrate，Session才能正常工作。
