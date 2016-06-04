@@ -43,3 +43,6 @@ Django1.9中，不能使用syncdb，因为有了migration系统，使用makemigr
 
 #### Session
 Django的Session依赖于本地的数据库，使用Session前，需要执行makemigrations，migrate，Session才能正常工作。
+
+#### Django migrate
+migrate时，会去检查数据库里，django_migration表里执行的操作名，从而决定需要执行哪些migration，因此可以删掉这个表里的操作进行回退。
