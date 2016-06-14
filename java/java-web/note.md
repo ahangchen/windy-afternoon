@@ -38,3 +38,17 @@ import javax.servlet.AsyncContext;
 2.非全局方式
 
 在web app的web.xml里加上面这个filter就好了，记得要把url-pattern这一项改成对应的格式。
+
+### tomcat虚拟目录
+最简单的非侵入式的方式是：在tomcat/conf/Catalina/localhost目录下添加一个xml文件，内容如下：
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<Context  reloadable="true" docBase="/home/cwh/Software/learn_software" crossContext="true">
+</Context>
+```
+其中，
+- reloadable表示在启动tomcat后，目录内容改变时，是否允许不重启tomcat，仅刷新就得到新的内容，可以则为true
+- docBase即虚拟目录代表的本地目录
+- crossContext表示是否允许跨域，
+
+然后把xml命名成虚拟目录名，比如test，则可以通过url：http://localhost:8888/test访问docBase下的文件
