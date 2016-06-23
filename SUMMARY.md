@@ -26,6 +26,7 @@
     - [header div固定，content div填充父容器](web-front/head_content.md)
     - [json接口资源](web-front/json_res.md)
 - [linux](linux/note.md)
+  - [Ubuntu安装与初始配置](linux/ubuntu_init.md)
 - [kit](kit/README.md)
      - [vim](kit/vim/note.md)
      - [git/github](kit/git/note.md)
