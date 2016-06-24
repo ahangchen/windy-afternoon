@@ -74,3 +74,4 @@ sudo ./XX-Net/start
 - Gitbook
 
 ### 效果
+![](result.png)
