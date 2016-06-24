@@ -71,3 +71,6 @@ sudo ./XX-Net/start
 ## 开发篇
 - IDE推荐JetBrain系列：Idea，PyCharm，Clion,PhpStrom
 - Android Studio
+- Gitbook
+
+### 效果
