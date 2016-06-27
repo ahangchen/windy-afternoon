@@ -23,3 +23,7 @@ find . -iregex ".*\.\(cpp\|h\|java\|sh\)$" | xargs wc -l
 ```shell
 ./test.sh & disown
 ```
+
+* Ubuntu 全局代理
+
+系统设置-网络-代理设置-手动-填自己的代理服务器地址和端口即可
