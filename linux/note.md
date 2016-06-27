@@ -27,3 +27,16 @@ find . -iregex ".*\.\(cpp\|h\|java\|sh\)$" | xargs wc -l
 * Ubuntu 全局代理
 
 系统设置-网络-代理设置-手动-填自己的代理服务器地址和端口即可
+
+* Ubuntu desktop应用设置环境变量
+直接上代码
+
+```
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Pycharm
+Exec=env LD_LIBRARY_PATH=:/usr/local/cuda/lib64:/usr/local/cuda/lib64 /home/cwh/software/pycharm-2016.1.4/bin/pycharm.sh
+Icon=/home/cwh/software/pycharm-2016.1.4/bin/pycharm.png
+Name[zh_CN]=Pycharm
+```
