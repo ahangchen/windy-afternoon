@@ -66,6 +66,10 @@ sudo ./XX-Net/start
 - 安装[ubuntu-tweak](http://www.linuxidc.com/Linux/2014-04/100522.htm)，可以进行美化和清理
 - 安装美美的[Flatabulous主题](http://www.xulukun.cn/flatabulous-ubuntu.html)
 - 软件中心搜索安装system load indicator，实时查看cpu，内存，磁盘，网络的占用
+- 安装ssh
+```shell
+sudo apt-get install openssh-server
+```
 - 系统设置-详细信息-安装更新
 
 ## 开发篇
