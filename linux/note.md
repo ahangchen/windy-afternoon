@@ -40,3 +40,14 @@ Exec=env LD_LIBRARY_PATH=:/usr/local/cuda/lib64:/usr/local/cuda/lib64 /home/cwh/
 Icon=/home/cwh/software/pycharm-2016.1.4/bin/pycharm.png
 Name[zh_CN]=Pycharm
 ```
+
+* Ubuntu远程登陆另外的设备
+
+- 可以考虑remmina，或者rdesktop，
+- remmina是ubuntu自带的，启动和配置可以通过图形化界面实现，并且持久化配置信息
+- rdesktop需要自己另外安装
+```
+sudo apt-get install rdesktop
+```
+- 安装后通过参数启动远程，启动后的远程比remmina好看，例子:[使用rdesktop远程并设定分辨率](http://blog.sina.com.cn/s/blog_408184cf01010qpw.html)
+- 比较喜欢rdesktop，有空写一个shell程序来保存配置
