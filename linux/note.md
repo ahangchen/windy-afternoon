@@ -51,3 +51,11 @@ sudo apt-get install rdesktop
 ```
 - 安装后通过参数启动远程，启动后的远程比remmina好看，例子:[使用rdesktop远程并设定分辨率](http://blog.sina.com.cn/s/blog_408184cf01010qpw.html)
 - 比较喜欢rdesktop，有空写一个shell程序来保存配置
+
+* 共享代理给手机
+- 条件一：电脑能科学上网（我用了xx-net）
+- 条件二：电脑和手机处于同一个局域网里
+- 操作：在xx-net的目录中搜索proxy.ini，将ini中，127.0.0.1改成0.0.0.0
+- 查看自己电脑的ip
+- android手机wifi连接那里，设置代理，设置ip为电脑ip，端口为8087(xx-net的代理端口)
+- end
