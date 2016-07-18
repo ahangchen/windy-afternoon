@@ -70,6 +70,7 @@ sudo ./XX-Net/start
 ```shell
 sudo apt-get install openssh-server
 ```
+- 优化[内存策略](http://www.opensoce.com/904.html)
 - 系统设置-详细信息-安装更新
 - 系统设置-键盘-快捷键-系统-锁定屏幕-按backspace删掉快捷键，因为这个快捷键跟JetBrain系列产品的代码格式化快捷键冲突 
 
