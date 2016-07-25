@@ -38,6 +38,7 @@
 #### 工具相关
 -  [刷爆github小绿点](kit/git/green_blush.md)
 -  [Markdown系列](kit/markdown/README.md)
+-  [Ubuntu初始配置](linux/ubuntu_init.md)
 
 #### 机器学习
 - [谷歌机器学习新手教程学习心得](https://github.com/ahangchen/GoogleML)
