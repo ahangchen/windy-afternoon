@@ -2,6 +2,10 @@
 
 Ubuntu版本 14.04LTS 64位
 
+先上图
+
+![](result.png)
+
 ## 双系统安装
 
 1. [划分空闲磁盘，U盘安装ubuntu](http://jingyan.baidu.com/article/60ccbceb18624464cab197ea.html)
@@ -79,5 +83,4 @@ sudo apt-get install openssh-server
 - Android Studio
 - Gitbook
 
-### 效果
-![](result.png)
+
