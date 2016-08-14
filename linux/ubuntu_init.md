@@ -78,13 +78,25 @@ sudo ./XX-Net/start
 ```shell
 sudo apt-get install openssh-server
 ```
+## 系统配置
 - 优化[内存策略](http://www.opensoce.com/904.html)
 - 系统设置-详细信息-安装更新
 - 系统设置-键盘-快捷键-系统-锁定屏幕-按backspace删掉快捷键，因为这个快捷键跟JetBrain系列产品的代码格式化快捷键冲突 
+- 自动挂载其他系统的磁盘：http://blog.csdn.net/zhangyongjun_2012/article/details/9089669
 
 ## 开发篇
 - IDE推荐JetBrain系列：Idea，PyCharm，Clion,PhpStrom
 - Android Studio
+- 可以编辑desktop放到启动器里方便启动，example：
+```
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Pycharm
+Exec=/media/Software/learn_software/pycharm-2016.2/bin/pycharm.sh
+Icon=/media/Software/learn_software/pycharm-2016.2/bin/pycharm.png
+Name[zh_CN]=Pycharm
+```
 - Gitbook
 
 
