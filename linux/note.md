@@ -77,3 +77,6 @@ sudo service xrdp restart
 
 * Ubuntu 系统设置-网络-网络代理-手动-设置成xx-net的代理地址即可全局翻墙
 
+* Ubuntu nautilus 文件浏览器中，Ctrl + L可以将地址变为字符串方便复制
+
+
