@@ -32,7 +32,7 @@ blockquote {
 .book-summary {
    background: whitesmoke;
    -moz-box-shadow: 5px 0px 10px #bba; /* 老的 Firefox */
-   box-shadow: 5px 0px 10px #bba;
+   box-shadow: 5px 0px 10px #b8a;
 }
 .book-summary ul.summary li.active>a{
    color: #66bb6a;
