@@ -37,6 +37,10 @@ blockquote {
 .book-summary ul.summary li a {
    color: #333;
 }
+.book-header {
+   background: #FFB11B;
+   color: white;
+}
 .book-body {
    background: #fefefd;
 }
