@@ -25,6 +25,7 @@
 }
 .markdown-section pre {
   padding: 0;
+  background: #fdf6e3 !important;
 }
 
 .markdown-section code {
