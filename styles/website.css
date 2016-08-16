@@ -14,7 +14,7 @@
     color: #444;
 }
 .fa {
-   color: #ff8a65;
+   color: #353;
 }
 blockquote {
     padding: 10px 15px;
@@ -28,7 +28,8 @@ blockquote {
 }
 .book-summary {
    background: whitesmoke;
-   overflow-y: hidden;
+   -moz-box-shadow: 5px 0px 10px #bba; /* 老的 Firefox */
+   box-shadow: 5px 0px 10px #bba;
 }
 .book-summary ul.summary li.active>a{
    color: #66bb6a;
