@@ -1,8 +1,7 @@
 # 梦里风林
 
 > 开发中的点滴积累，既是分享，也是备忘。
-
-> 可能Android的东西会多一些
+可能Android的东西会多一些
 
 
 - 博客github地址 : https://github.com/ahangchen/windy-afternoon
