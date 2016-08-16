@@ -24,7 +24,7 @@ blockquote .comments-section {
 .book-summary {
    background: whitesmoke;
    -moz-box-shadow: 5px 0px 10px #bba; /* 老的 Firefox */
-   box-shadow: 5px 0px 10px #8b9;
+   box-shadow: 5px 0px 10px #ED784A;
 }
 .book-summary ul.summary li.active>a{
    color: #66bb6a;
