@@ -31,7 +31,8 @@ blockquote {
    color: #563F2E;
 }
 .book-header {
-   background: #ED784A;
+   /*background: #ED784A;*/
+   background: #00896C;
 }
 .book-header h1 a, .book-header h1 a:hover {
    color: white;
