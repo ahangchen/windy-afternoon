@@ -10,14 +10,14 @@
    color: white;
 }
 blockquote {
-    padding: 10px 15px;
+    padding: 20px 15px;
     margin-bottom: 20px;
     background-color: whitesmoke;
     border-left: 5px solid #2e7d32;
     word-break: break-word;
     font-size: 15px;
     font-weight: 100;
-    line-height: 30px;
+    line-height: 25px;
 }
 .markdown-section blockquote {
    border-left: 5px solid #2e7d32;
