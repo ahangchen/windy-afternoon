@@ -23,9 +23,7 @@ blockquote {
     font-weight: 100;
     line-height: 30px;
 }
-.markdown-section a {
-   color: #44cd07;
-}
+
 .markdown-section pre, code {
   font-size: 0.85em;
   font-family: Consolas, Inconsolata, Courier, monospace !important;
@@ -57,7 +55,7 @@ blockquote {
   display: block; /* added to counteract the Yahoo-specific `code` rule; without this, code blocks in Blogger are broken */
 }
 .markdown-section strong {
-   color: #ff6f00;
+   color: #44cd07;
 }
 
 h1, h2, h3, h4, h5, h6 {
