@@ -13,7 +13,16 @@
     sans-serif;
     color: #444;
 }
-
+blockquote {
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    background-color: whitesmoke;
+    border-left: 4px solid #999999;
+    word-break: break-word;
+    font-size: 15px;
+    font-weight: 100;
+    line-height: 30px;
+}
 .markdown-section a {
    color: #1b5e20;
 }
