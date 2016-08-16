@@ -1,23 +1,21 @@
-/*
- * NOTE:
- * - The use of browser-specific styles (-moz-, -webkit-) should be avoided.
- *   If used, they may not render correctly for people reading the email in
- *   a different browser than the one from which the email was sent.
- * - The use of state-dependent styles (like a:hover) don't work because they
- *   don't match at the time the styles are made explicit. (In email, styles
- *   must be explicitly applied to all elements -- stylesheets get stripped.)
- */
 
-/* This is the overall wrapper, it should be treated as the `body` section. */
-.markdown-here-wrapper {
-}
 
 /* To add site specific rules, you can use the `data-md-url` attribute that we
    add to the wrapper element. Note that rules like this are used depending
    on the URL you're *sending* from, not the URL where the recipient views it.
 */
 /* .markdown-here-wrapper[data-md-url*="mail.yahoo."] ul { color: red; } */
-
+* {
+    font-family: "Roboto",
+    "微软雅黑", "Microsoft YaHei",
+    "冬青黑体", "Hiragino Sans GB", "华文细黑", "STXihei",
+    "文泉驿微米黑", "WenQuanYi Micro Hei",
+    sans-serif;
+    color: #444;
+}
+a {
+   color: #64dd17;
+}
 pre, code {
   font-size: 0.85em;
   font-family: Consolas, Inconsolata, Courier, monospace;
@@ -51,17 +49,6 @@ pre code {
   display: block !important; /* added to counteract the Yahoo-specific `code` rule; without this, code blocks in Blogger are broken */
 }
 
-/* In edit mode, Wordpress uses a `* { font: ...;} rule+style that makes highlighted
-code look non-monospace. This rule will override it. */
-.markdown-here-wrapper[data-md-url*="wordpress."] code span {
-  font: inherit;
-}
-
-/* Wordpress adds a grey background to `pre` elements that doesn't go well with
-our syntax highlighting. */
-.markdown-here-wrapper[data-md-url*="wordpress."] pre {
-  background-color: transparent;
-}
 
 /* This spacing has been tweaked to closely match Gmail+Chrome "paragraph" (two line breaks) spacing.
 Note that we only use a top margin and not a bottom margin -- this prevents the
@@ -164,7 +151,6 @@ h5 {
 
 h6 {
   font-size: 0.9em;
-  color: #777;
 }
 
 table {
@@ -214,11 +200,11 @@ Orginal Style from ethanschoonover.com/solarized (c) Jeremy Hull <sourdrums@gmai
 */
 
 .hljs {
-  display: block;
-  overflow-x: auto;
-  padding: 0.5em;
-  background: #fdf6e3;
-  color: #657b83;
+  display: block !important;
+  overflow-x: auto !important;
+  padding: 0.5em !important; 
+  background: #fdf6e3 !important;
+  color: #657b83 !important;
   -webkit-text-size-adjust: none;
 }
 
@@ -229,7 +215,7 @@ Orginal Style from ethanschoonover.com/solarized (c) Jeremy Hull <sourdrums@gmai
 .hljs-pi,
 .lisp .hljs-string,
 .hljs-javadoc {
-  color: #93a1a1;
+  color: #93a1a1 !important;
 }
 
 /* Solarized Green */
@@ -241,7 +227,7 @@ Orginal Style from ethanschoonover.com/solarized (c) Jeremy Hull <sourdrums@gmai
 .hljs-request,
 .hljs-status,
 .nginx .hljs-title {
-  color: #859900;
+  color: #859900 !important;
 }
 
 /* Solarized Cyan */
@@ -256,7 +242,7 @@ Orginal Style from ethanschoonover.com/solarized (c) Jeremy Hull <sourdrums@gmai
 .hljs-regexp,
 .hljs-hexcolor,
 .hljs-link_url {
-  color: #2aa198;
+  color: #2aa198 !important;
 }
 
 /* Solarized Blue */
@@ -269,7 +255,7 @@ Orginal Style from ethanschoonover.com/solarized (c) Jeremy Hull <sourdrums@gmai
 .vhdl .hljs-literal,
 .hljs-id,
 .css .hljs-function {
-  color: #268bd2;
+  color: #268bd2 !important;
 }
 
 /* Solarized Yellow */
@@ -282,7 +268,7 @@ Orginal Style from ethanschoonover.com/solarized (c) Jeremy Hull <sourdrums@gmai
 .hljs-parent,
 .hljs-type,
 .hljs-link_reference {
-  color: #b58900;
+  color: #b58900 !important;
 }
 
 /* Solarized Orange */
@@ -299,20 +285,20 @@ Orginal Style from ethanschoonover.com/solarized (c) Jeremy Hull <sourdrums@gmai
 .hljs-cdata,
 .css .hljs-pseudo,
 .hljs-header {
-  color: #cb4b16;
+  color: #cb4b16 !important;
 }
 
 /* Solarized Red */
 .hljs-deletion,
 .hljs-important {
-  color: #dc322f;
+  color: #dc322f !important;
 }
 
 /* Solarized Violet */
 .hljs-link_label {
-  color: #6c71c4;
+  color: #6c71c4 !important;
 }
 
 .tex .hljs-formula {
-  background: #eee8d5;
+  background: #eee8d5 !important;
 }
