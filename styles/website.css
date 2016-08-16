@@ -33,7 +33,7 @@
   padding: 0.2em 0.3em;
   white-space: pre-wrap;
   border: 1px solid #EAEAEA;
-  background-color: #F8F8F8;
+  background: #fdf6e3 !important;
   border-radius: 3px;
   display: inline; /* added to fix Yahoo block display of inline code */
 }
