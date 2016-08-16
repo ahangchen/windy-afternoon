@@ -28,6 +28,7 @@ blockquote {
 }
 .book-summary {
    background: #fafefa;
+   overflow-y: hidden;
 }
 .book-summary ul.summary li.active>a{
    color: whitesmoke;
