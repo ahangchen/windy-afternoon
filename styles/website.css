@@ -27,10 +27,11 @@
   padding: 0;
   background: #fdf6e3 !important;
 }
-
+.markdown-section pre>code {
+   padding: 0.2em 0.3em;
+}
 .markdown-section code {
   margin: 0 0.15em;
-  padding: 0.2em 0.3em;
   white-space: pre-wrap;
   border: 1px solid #EAEAEA;
   background: #fdf6e3 !important;
