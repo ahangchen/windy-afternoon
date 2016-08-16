@@ -19,7 +19,7 @@
 blockquote {
     padding: 10px 15px;
     margin-bottom: 20px;
-    background-color: #f5fced;
+    background-color: whitesmoke;
     border-left: 5px solid #2e7d32;
     word-break: break-word;
     font-size: 15px;
@@ -35,7 +35,7 @@ blockquote {
    box-shadow: 5px 0px 10px #bba;
 }
 .book-summary ul.summary li.active>a{
-   color: #FB9966;
+   color: #66bb6a;
 }
 .book-summary ul.summary li a {
    color: #563F2E;
