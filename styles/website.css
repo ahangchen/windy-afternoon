@@ -13,7 +13,8 @@
     sans-serif;
     color: #444;
 }
-a {
+
+.markdown-section a {
    color: #64dd17;
 }
 pre, code {
