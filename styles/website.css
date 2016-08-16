@@ -38,13 +38,13 @@ blockquote {
    color: #563F2E;
 }
 .book-header {
-   background: #E3916E;
+   background: #ED784A;
 }
 .book-header h1 a, .book-header h1 a:hover {
    color: white;
 }
 .book-body {
-   background: #ED784A;
+   background: #fefefd;
 }
 .markdown-section pre, code {
   font-size: 0.85em;
