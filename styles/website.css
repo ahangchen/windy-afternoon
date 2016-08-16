@@ -14,7 +14,7 @@
     color: #444;
 }
 .fa {
-   color: #353;
+   color: #66bb6a;
 }
 blockquote {
     padding: 10px 15px;
@@ -30,7 +30,7 @@ blockquote {
    background: #fafefa;
 }
 .book-summary ul.summary li.active>a{
-   color: #ff7043;
+   color: whitesmoke;
 }
 .book-summary ul.summary li a {
    color: #003d20;
