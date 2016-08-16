@@ -17,7 +17,7 @@
 .markdown-section a {
    color: #64dd17;
 }
-pre, code {
+.markdown-section pre, code {
   font-size: 0.85em;
   font-family: Consolas, Inconsolata, Courier, monospace !important;
   color: #444444；
@@ -27,7 +27,7 @@ pre, code {
   background: #fdf6e3 !important;
 }
 
-code {
+.markdown-section code {
   margin: 0 0.15em;
   padding: 0 0.3em;
   white-space: pre-wrap;
@@ -37,15 +37,15 @@ code {
   display: inline; /* added to fix Yahoo block display of inline code */
 }
 
-p code {
+.markdown-section p code {
   color: #64dd17 
 }
-pre {
+.markdown-section pre {
   font-size: 1em;
   line-height: 1.2em;
 }
 
-pre code {
+.markdown-section pre code {
   white-space: pre;
   overflow: auto; /* fixes issue #70: Firefox/Thunderbird: Code blocks with horizontal scroll would have bad background colour */
   border-radius: 3px;
