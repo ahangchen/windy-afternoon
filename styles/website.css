@@ -39,6 +39,8 @@ blockquote {
 }
 .book-header {
    background: #E2943B;
+}
+.book-header h1 a, .book-header h1 a:hover {
    color: white;
 }
 .book-body {
