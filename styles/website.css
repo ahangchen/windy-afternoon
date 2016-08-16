@@ -27,7 +27,10 @@ blockquote {
    background: #fafefa;
 }
 .book-summary ul.summary li.active>a{
-   color: #66bb6a;
+   color: #ff7043;
+}
+.book-summary ul.summary li a {
+   color: #003d20;
 }
 .markdown-section pre, code {
   font-size: 0.85em;
