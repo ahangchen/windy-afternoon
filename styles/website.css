@@ -10,11 +10,11 @@
     "微软雅黑", "Microsoft YaHei",
     "冬青黑体", "Hiragino Sans GB", "华文细黑", "STXihei",
     "文泉驿微米黑", "WenQuanYi Micro Hei",
-    sans-serif !important;
+    sans-serif;
     color: #444;
 }
 a {
-   color: #64dd17 !important;
+   color: #64dd17;
 }
 pre, code {
   font-size: 0.85em;
@@ -44,10 +44,10 @@ pre {
 pre code {
   white-space: pre;
   overflow: auto; /* fixes issue #70: Firefox/Thunderbird: Code blocks with horizontal scroll would have bad background colour */
-  border-radius: 3px !important;
-  border: 1px solid #CCC !important;
+  border-radius: 3px;
+  border: 1px solid #CCC;
   padding: 0.5em 0.7em;
-  display: block !important; /* added to counteract the Yahoo-specific `code` rule; without this, code blocks in Blogger are broken */
+  display: block; /* added to counteract the Yahoo-specific `code` rule; without this, code blocks in Blogger are broken */
 }
 
 
