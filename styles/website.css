@@ -57,7 +57,9 @@ blockquote {
 .markdown-section strong {
    color: #44cd07;
 }
-
+.markdown-section a {
+   color: #44cd07;
+}
 h1, h2, h3, h4, h5, h6 {
   margin: 1.3em 0 1em;
   padding: 0;
