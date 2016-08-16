@@ -14,7 +14,7 @@
     color: #444;
 }
 .fa {
-   color: #66bb6a;
+   color: #ff8a65;
 }
 blockquote {
     padding: 10px 15px;
@@ -27,11 +27,11 @@ blockquote {
     line-height: 30px;
 }
 .book-summary {
-   background: #fafefa;
+   background: whitesmoke;
    overflow-y: hidden;
 }
 .book-summary ul.summary li.active>a{
-   color: whitesmoke;
+   color: #66bb6a;
 }
 .book-summary ul.summary li a {
    color: #003d20;
