@@ -24,7 +24,7 @@ blockquote {
     line-height: 30px;
 }
 .markdown-section a {
-   color: #1b5e20;
+   color: #44cd07;
 }
 .markdown-section pre, code {
   font-size: 0.85em;
@@ -56,7 +56,9 @@ blockquote {
   border: 1px solid #CCC;
   display: block; /* added to counteract the Yahoo-specific `code` rule; without this, code blocks in Blogger are broken */
 }
-
+.markdown-section strong {
+   color: #ff6f00;
+}
 
 h1, h2, h3, h4, h5, h6 {
   margin: 1.3em 0 1em;
