@@ -12,7 +12,7 @@
 blockquote {
     margin-bottom: 20px;
     background-color: whitesmoke;
-    border-left: 5px solid #2e7d32;
+    border-left: 5px solid #00896C;
     word-break: break-word;
 }
 .markdown-section blockquote p {
@@ -25,7 +25,7 @@ blockquote {
    background: whitesmoke;
 }
 .book-summary ul.summary li.active>a{
-   color: #66bb6a;
+   color: #00896C;
 }
 .book-summary ul.summary li a {
    color: #563F2E;
@@ -73,7 +73,7 @@ blockquote {
    color: #ff8a65;
 }
 .markdown-section a {
-   color: #66bb6a;
+   color: #00896C;
 }
 h1, h2, h3, h4, h5, h6 {
   margin: 1.3em 0 1em;
