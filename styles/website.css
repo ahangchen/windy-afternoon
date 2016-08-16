@@ -22,6 +22,9 @@ pre, code {
   color: #444444；
   background: #fdf6e3 !important;
 }
+.markdown-section pre {
+  background: #fdf6e3 !important;
+}
 
 code {
   margin: 0 0.15em;
