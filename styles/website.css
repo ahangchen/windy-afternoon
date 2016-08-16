@@ -45,11 +45,11 @@ blockquote {
   font-size: 0.85em;
   font-family: Consolas, Inconsolata, Courier, monospace !important;
   color: #444444；
-  background: #fdf6e3 !important;
+  background: #fdf6e3;
 }
 .markdown-section pre {
   padding: 0;
-  background: #fdf6e3 !important;
+  background: #fdf6e3;
 }
 .markdown-section pre>code {
    padding: 0.5em 0.8em;
@@ -58,7 +58,7 @@ blockquote {
   margin: 0 0.15em;
   white-space: pre-wrap;
   border: 1px solid #EAEAEA;
-  background: #fdf6e3 !important;
+  background: #fdf6e3;
   border-radius: 3px;
   display: inline; /* added to fix Yahoo block display of inline code */
 }
