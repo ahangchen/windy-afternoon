@@ -15,8 +15,8 @@ blockquote {
     border-left: 5px solid #2e7d32;
     word-break: break-word;
 }
-.markdown-section blockquote .comments-section {
-    margin-botttom: 9px;
+.markdown-section blockquote p {
+    margin-botttom: 8px;
 }
 .markdown-section blockquote {
     border-left: 5px solid #2e7d32;
