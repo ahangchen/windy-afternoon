@@ -10,47 +10,45 @@
    color: white;
 }
 blockquote {
-    padding: 20px 15px;
     margin-bottom: 20px;
     background-color: whitesmoke;
-    border-left: 5px solid #2e7d32;
+    border-left: 5px solid #00896C;
     word-break: break-word;
-    font-size: 15px;
-    font-weight: 100;
-    line-height: 25px;
+}
+.markdown-section blockquote p {
+    margin-botttom: 8px;
 }
 .markdown-section blockquote {
-   border-left: 5px solid #2e7d32;
+    border-left: 5px solid #00896C;
 }
 .book-summary {
    background: whitesmoke;
-   -moz-box-shadow: 5px 0px 10px #bba; /* 老的 Firefox */
-   box-shadow: 5px 0px 10px #b8a;
 }
 .book-summary ul.summary li.active>a{
-   color: #66bb6a;
+   color: #00896C;
 }
 .book-summary ul.summary li a {
    color: #563F2E;
 }
 .book-header {
-   background: #ED784A;
+   /*background: #FB9966;*/
+   background: #00896C;
 }
 .book-header h1 a, .book-header h1 a:hover {
    color: white;
 }
 .book-body {
-   background: #fefefd;
+   background: #fefdfa;
 }
 .markdown-section pre, code {
   font-size: 0.85em;
   font-family: Consolas, Inconsolata, Courier, monospace !important;
   color: #444444；
-  background: #fdf6e3 !important;
+  background: #fdf6e3;
 }
 .markdown-section pre {
   padding: 0;
-  background: #fdf6e3 !important;
+  background: #fdf6e3;
 }
 .markdown-section pre>code {
    padding: 0.5em 0.8em;
@@ -59,7 +57,7 @@ blockquote {
   margin: 0 0.15em;
   white-space: pre-wrap;
   border: 1px solid #EAEAEA;
-  background: #fdf6e3 !important;
+  background: #fdf6e3;
   border-radius: 3px;
   display: inline; /* added to fix Yahoo block display of inline code */
 }
@@ -76,13 +74,13 @@ blockquote {
    color: #ff8a65;
 }
 .markdown-section a {
-   color: #66bb6a;
+   color: #00896C;
 }
 h1, h2, h3, h4, h5, h6 {
   margin: 1.3em 0 1em;
   padding: 0;
   font-weight: bold;
-  color:#FC9F4D; 
+  color:#FB9966; 
 }
 
 h1 {
