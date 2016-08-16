@@ -32,9 +32,7 @@ blockquote {
 .book-summary ul.summary li a {
    color: #003d20;
 }
-.book-body {
-   background: #fffdf0;
-}
+
 .markdown-section pre, code {
   font-size: 0.85em;
   font-family: Consolas, Inconsolata, Courier, monospace !important;
