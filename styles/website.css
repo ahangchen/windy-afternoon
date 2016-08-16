@@ -24,13 +24,12 @@
   background: #fdf6e3 !important;
 }
 .markdown-section pre {
-  background: #fdf6e3 !important;
   padding: 0;
 }
 
 .markdown-section code {
   margin: 0 0.15em;
-  padding: 0 0.3em;
+  padding: 0.2em 0.3em;
   white-space: pre-wrap;
   border: 1px solid #EAEAEA;
   background-color: #F8F8F8;
@@ -38,13 +37,6 @@
   display: inline; /* added to fix Yahoo block display of inline code */
 }
 
-.markdown-section p code {
-  color: #64dd17 
-}
-.markdown-section pre {
-  font-size: 1em;
-  line-height: 1.2em;
-}
 
 .markdown-section pre code {
   white-space: pre;
