@@ -32,10 +32,10 @@ blockquote {
    box-shadow: 5px 0px 10px #bba;
 }
 .book-summary ul.summary li.active>a{
-   color: #66bb6a;
+   color: #FB9966;
 }
 .book-summary ul.summary li a {
-   color: #333;
+   color: #563F2E;
 }
 .book-header {
    background: #E2943B;
