@@ -23,7 +23,12 @@ blockquote {
     font-weight: 100;
     line-height: 30px;
 }
-
+.book-summary {
+   background: #fafefa;
+}
+.book-summary ul.summary li.active>a{
+   color: #66bb6a;
+}
 .markdown-section pre, code {
   font-size: 0.85em;
   font-family: Consolas, Inconsolata, Courier, monospace !important;
