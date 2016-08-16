@@ -55,7 +55,7 @@ blockquote {
   display: block; /* added to counteract the Yahoo-specific `code` rule; without this, code blocks in Blogger are broken */
 }
 .markdown-section strong {
-   color: #44cd07;
+   color: #4caf50;
 }
 .markdown-section a {
    color: #44cd07;
