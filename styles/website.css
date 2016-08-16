@@ -23,8 +23,8 @@ blockquote {
 }
 .book-summary {
    background: whitesmoke;
-   -moz-box-shadow: 5px 0px 10px #adf; /* 老的 Firefox */
-   box-shadow: 5px 0px 10px #adf;
+   -moz-box-shadow: 5px 0px 10px #bdc; /* 老的 Firefox */
+   box-shadow: 5px 0px 10px #bdc;
 }
 .book-summary ul.summary li.active>a{
    color: #66bb6a;
