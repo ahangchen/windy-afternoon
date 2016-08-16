@@ -13,8 +13,8 @@
     sans-serif;
     color: #444;
 }
-.fa {
-   color: #353;
+.book-header .fa {
+   color: white;
 }
 blockquote {
     padding: 10px 15px;
@@ -38,7 +38,7 @@ blockquote {
    color: #333;
 }
 .book-header {
-   background: #FFB11B;
+   background: #E2943B;
    color: white;
 }
 .book-body {
