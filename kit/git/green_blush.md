@@ -1,8 +1,10 @@
-# 刷爆小绿点
+# 刷遍小绿点
 
 转载请注明出处：https://ahangchen.gitbooks.io/windy-afternoon/content/kit/git/green_blush.html
 
 工程[地址](https://github.com/ahangchen/green)，欢迎star!!!
+
+> 大家都知道，可以从Github上的小绿点看到这个人在Github上的提交代码情况，然而，这天却发现了这样一个bug：
 
 首先github统计小绿点的逻辑是这样的：[戳](https://help.github.com/articles/why-are-my-contributions-not-showing-up-on-my-profile)
 
