@@ -86,3 +86,5 @@ if __name__ == '__main__':
 > 似乎是因为git commit的本地记录有上限，一次提交太多commit而没有push，最前面的一部分的commit会丢失，所以一次push的commit不要太多哦，否则就要改配置文件再push一下来补上了
 
 今天还发现一个现象，修改github上自己对应的邮箱，commit记录也会变化，也就是，如果关联了一个有很多commit记录的邮箱，就会自然地有很多小绿点了吧
+
+> 最后，致敬明知Streak有bug，但仍然坚持Streak的人。
