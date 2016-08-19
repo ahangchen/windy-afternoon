@@ -2,15 +2,14 @@
 
 > 开发中的点滴积累，既是分享，也是备忘。
 
-> 可能Android的东西会多一些
 
 
-- 博客github地址 : https://github.com/ahangchen/windy-afternoon
+- 我的Github：[ahangchen](https://github.com/ahangchen)
 - 新浪微博：http://weibo.com/scutcs12cwh
 - 微信公众号：coding33
 - 邮箱： cweihang@foxmail.com
-- [代码仓库](https://github.com/ahangchen)
-- 不定期更新，欢迎Star
+
+- 不定期更新，欢迎[Star](https://github.com/ahangchen/windy-afternoon)
 
 ||![](128.png)||
 | :-:| :-:  | :-:  |
