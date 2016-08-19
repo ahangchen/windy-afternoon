@@ -13,7 +13,7 @@
 
 ||![](128.png)||
 | :-:| :-:  | :-:  |
-|[Android](android/README.md) | [Java](java/README.md) | [Python](python/README.md)|
+|[Android](android/README.md) | [Java](java/README.md) | [TensorFlow](https://github.com/ahangchen/GDLnotes)|
 | [Linux](linux/note.md) | [Kit](kit/README.md) | [Thinking](thinking-in-program/README.md)|
 ###推荐阅读
 
