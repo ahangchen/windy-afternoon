@@ -28,7 +28,7 @@
    - [【源码】CursorWindow读DB](android/sqlite/从源码看ANDROID中SQLITE是怎么通过CURSORWINDOW读DB的.md)
    - [Sqlite在Android上的一个Bug](android/sqlite/SQLITE在ANDROID上的一个BUG.md)
  - [Chromium](android/chromium/README.md)
-   - [Chromium中文文档(writing)](https://ahangchen.gitbooks.io/chromium_doc_zh/content/zh//)
+   - [Chromium中文文档(writing)](https://ahangchen.gitbooks.io/chromium_doc_zh/content/zh/)
  - [一个由Proguard与FastJson引起的血案](android/一个由PROGUARD与FASTJSON引起的血案.md)
 
 #### 编程思想
