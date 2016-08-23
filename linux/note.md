@@ -41,21 +41,42 @@ Icon=/home/cwh/software/pycharm-2016.1.4/bin/pycharm.png
 Name[zh_CN]=Pycharm
 ```
 
-* Ubuntu远程登陆另外的设备
+* Ubuntu控制端远程登陆另外的设备
 
-- 可以考虑remmina，或者rdesktop，
-- remmina是ubuntu自带的，启动和配置可以通过图形化界面实现，并且持久化配置信息
-- rdesktop需要自己另外安装
+  - 可以考虑remmina，或者rdesktop，
+  - remmina是ubuntu自带的，启动和配置可以通过图形化界面实现，并且持久化配置信息
+  - rdesktop需要自己另外安装
 ```
 sudo apt-get install rdesktop
 ```
-- 安装后通过参数启动远程，启动后的远程比remmina好看，例子:[使用rdesktop远程并设定分辨率](http://blog.sina.com.cn/s/blog_408184cf01010qpw.html)
-- 比较喜欢rdesktop，有空写一个shell程序来保存配置
+  - 安装后通过参数启动远程，启动后的远程比remmina好看，例子:[使用rdesktop远程并设定分辨率](http://blog.sina.com.cn/s/blog_408184cf01010qpw.html)
+  - 比较喜欢rdesktop，有空写一个shell程序来保存配置
+
+* Ubuntu SSH带界面
+```
+ssh -XC user@host
+```
+
+* Ubuntu被控端允许远程
+  - sudo vino-preferences，允许远程
+  - 安装远程桌面环境
+```
+sudo apt-get install xfce4
+sudo apt-get install xrdp vnc4server
+echo "xfce4-session" >~/.xsession
+sudo service xrdp restart
+```
 
 * 共享代理给手机
-- 条件一：电脑能科学上网（我用了xx-net）
-- 条件二：电脑和手机处于同一个局域网里
-- 操作：在xx-net的目录中搜索proxy.ini，将ini中，127.0.0.1改成0.0.0.0
-- 查看自己电脑的ip
-- android手机wifi连接那里，设置代理，设置ip为电脑ip，端口为8087(xx-net的代理端口)
-- end
+  - 条件一：电脑能科学上网（我用了xx-net）
+  - 条件二：电脑和手机处于同一个局域网里
+  - 操作：在xx-net的目录中搜索proxy.ini，将ini中，127.0.0.1改成0.0.0.0
+  - 查看自己电脑的ip
+  - android手机wifi连接那里，设置代理，设置ip为电脑ip，端口为8087(xx-net的代理端口)
+  - end
+
+* Ubuntu 系统设置-网络-网络代理-手动-设置成xx-net的代理地址即可全局翻墙
+
+* Ubuntu nautilus 文件浏览器中，Ctrl + L可以将地址变为字符串方便复制
+
+

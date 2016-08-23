@@ -2,19 +2,18 @@
 
 > 开发中的点滴积累，既是分享，也是备忘。
 
-> 可能Android的东西会多一些
 
 
-- 博客github地址 : https://github.com/ahangchen/windy-afternoon
+- 我的Github：[ahangchen](https://github.com/ahangchen)
 - 新浪微博：http://weibo.com/scutcs12cwh
 - 微信公众号：coding33
 - 邮箱： cweihang@foxmail.com
-- [代码仓库](https://github.com/ahangchen)
-- 不定期更新，欢迎Star
+
+- 不定期更新，欢迎[Star](https://github.com/ahangchen/windy-afternoon)
 
 ||![](128.png)||
 | :-:| :-:  | :-:  |
-|[Android](android/README.md) | [Java](java/README.md) | [Python](python/README.md)|
+|[Android](android/README.md) | [Java](java/README.md) | [TensorFlow](https://github.com/ahangchen/GDLnotes)|
 | [Linux](linux/note.md) | [Kit](kit/README.md) | [Thinking](thinking-in-program/README.md)|
 ###推荐阅读
 
@@ -29,7 +28,7 @@
    - [【源码】CursorWindow读DB](android/sqlite/从源码看ANDROID中SQLITE是怎么通过CURSORWINDOW读DB的.md)
    - [Sqlite在Android上的一个Bug](android/sqlite/SQLITE在ANDROID上的一个BUG.md)
  - [Chromium](android/chromium/README.md)
-   - [Chromium中文文档(writing)](https://ahangchen.gitbooks.io/chromium_doc_zh/content/zh//)
+   - [Chromium中文文档(writing)](https://ahangchen.gitbooks.io/chromium_doc_zh/content/zh/)
  - [一个由Proguard与FastJson引起的血案](android/一个由PROGUARD与FASTJSON引起的血案.md)
 
 #### 编程思想
@@ -38,6 +37,7 @@
 #### 工具相关
 -  [刷爆github小绿点](kit/git/green_blush.md)
 -  [Markdown系列](kit/markdown/README.md)
+-  [Ubuntu初始配置](linux/ubuntu_init.md)
 
 #### 机器学习
 - [谷歌机器学习新手教程学习心得](https://github.com/ahangchen/GoogleML)

@@ -1,6 +1,12 @@
 # Ubuntu安装与初始配置
 
+转载请注明出处：https://github.com/ahangchen/windy-afternoon/blob/master/linux/ubuntu_init.md
+
 Ubuntu版本 14.04LTS 64位
+
+先上图
+
+![](result.png)
 
 ## 双系统安装
 
@@ -66,16 +72,31 @@ sudo ./XX-Net/start
 - 安装[ubuntu-tweak](http://www.linuxidc.com/Linux/2014-04/100522.htm)，可以进行美化和清理
 - 安装美美的[Flatabulous主题](http://www.xulukun.cn/flatabulous-ubuntu.html)
 - 软件中心搜索安装system load indicator，实时查看cpu，内存，磁盘，网络的占用
+- 配置vim：参考[这个配置](https://github.com/kaochenlong/eddie-vim)
+- 或者用[sublime-text](https://www.sublimetext.com/3)，不过要注意修复和fcitx的[兼容问题](http://html5beta.com/page/ubuntu-14-04-install-fcitx-sougoupinyin-sublime-text-3-chinese-input-fix.html)，也可以利用这个[工程](https://github.com/lyfeyaj/sublime-text-imfix)
 - 安装ssh
 ```shell
 sudo apt-get install openssh-server
 ```
+## 系统配置
+- 优化[内存策略](http://www.opensoce.com/904.html)
 - 系统设置-详细信息-安装更新
+- 系统设置-键盘-快捷键-系统-锁定屏幕-按backspace删掉快捷键，因为这个快捷键跟JetBrain系列产品的代码格式化快捷键冲突 
+- 自动挂载其他系统的磁盘：http://blog.csdn.net/zhangyongjun_2012/article/details/9089669
 
 ## 开发篇
 - IDE推荐JetBrain系列：Idea，PyCharm，Clion,PhpStrom
 - Android Studio
+- 可以编辑desktop放到启动器里方便启动，example：
+```
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Pycharm
+Exec=/media/Software/learn_software/pycharm-2016.2/bin/pycharm.sh
+Icon=/media/Software/learn_software/pycharm-2016.2/bin/pycharm.png
+Name[zh_CN]=Pycharm
+```
 - Gitbook
 
-### 效果
-![](result.png)
+
