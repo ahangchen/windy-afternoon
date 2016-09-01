@@ -79,4 +79,5 @@ sudo service xrdp restart
 
 * Ubuntu nautilus 文件浏览器中，Ctrl + L可以将地址变为字符串方便复制
 
-
+* Ubuntu 16.04发wifi
+  - 参考这个[教程](http://ubuntuhandbook.org/index.php/2016/04/create-wifi-hotspot-ubuntu-16-04-android-supported/)
