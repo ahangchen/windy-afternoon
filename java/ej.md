@@ -114,3 +114,47 @@ public class Util {
   }
 }
 ```
+
+## 避免创建不必要的昂贵对象
+- 方法
+  - 延迟初始化
+  - 单例
+  - 对象池
+  - 多态层连接单例层，不需要为每个多态层创建多个单例层
+  
+  > 多个查询可以共用一个数据库连接
+  
+  - 装箱基本类型代价比基本类型更昂贵，小心自动装箱
+- 注意
+  - 重用对象代价太重太复杂则没有明显优化
+  - 小对象的创建和销毁很廉价
+
+## 引用泄露
+java中没有内存泄露，只有引用泄露。比如一个Stack的实现：
+```java
+public class Stack {
+    private Object[] elements;
+    private int size = 0;
+    // ...
+    public Object pop() {
+        return elements[--size];
+    }
+    
+}
+```
+这里的pop操作只改变了size，而没有将elements[size-1]的引用移除，Stack对象一直持有element的引用，应该改为：
+```java
+public Object pop() {
+    Object result = elements[--size];
+    elemets[size] = null;
+    return result;
+}
+```
+通过置null去掉stack中elements数组对element对象的引用
+
+> 在这个例子中，由于Stack是自己在管理内存，存储池包含了对象引用单元（即elements数组）
+
+需要警惕引用泄露的情形：
+- 类中有对象引用单元
+- 缓存
+- 监听器与回调：bind而没有unbind，好的做法是只保存回调的弱引用。
