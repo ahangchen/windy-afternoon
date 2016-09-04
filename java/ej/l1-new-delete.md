@@ -170,3 +170,23 @@ public Object pop() {
 - 缓存
 - 监听器与回调：bind而没有unbind，好的做法是只保存回调的弱引用。
 
+## Avoid finalize
+- Note
+  - finalize不保证执行，尽量不要用
+  - System.gc和System.runFinalization只是增加finalize执行的机会
+  - finalize有严重的性能损失
+  - 通过try - catch - finally来显式释放资源
+- 合理用法
+  - 作为显式释放资源的backup，或者check
+  - 回收native peer
+- 父类finalize
+  - 显式调用super.finalize()
+  - 内部类强制子类执行
+```java
+public class Foo {
+    private final Object finalizeGuardian = new Object() {
+        @Override protected void finalize() throws Throwable {
+            Foo.finalize();
+        }
+    };
+}
