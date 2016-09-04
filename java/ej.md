@@ -103,3 +103,14 @@ public enum Elvis {
 ```
 
 > 简洁，序列化，防止多实例化，最佳方法
+
+## 私有构造器以保证不可实例化
+- 工具类常常是不希望被实例化的
+- 对于不希望实例化的类，可以将其构造方法设置为private
+```java
+public class Util {
+  private Util() {
+      throw new AssertionError();
+  }
+}
+```
