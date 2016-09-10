@@ -128,9 +128,65 @@ String s = "test";
 ```
 JTS 3.10.5保证了相同内容的字符串重用同一个对象，而且只创建一次。
 
+- 延迟初始化
+- 单例
+- 对象池
+- 多态层连接单例层，不需要为每个多态层创建多个单例层
 - static执行开销大的代码块，存储执行结果重用
 - 对于一个类中，创建开销大，创建后不修改，但会多次读取的对象，适合
 - 但如果static创建的对象很少使用，可以考虑延迟初始化，但延迟初始化实现复杂，也会影响性能
 - 有些对象初始化后可能改变，但改变后其功能是不变的，应当保持它为一个确定的引用，然后改变引用所指对象的内容，如Map中的keySet
 - 优先使用基本类型（int）而非装箱基本类型(Integer)，性能优化
 - 重对象才有必要尽可能避免创建，小对象可以由JVM很容易地构造和销毁，比自己维护对象池要好得多
+
+
+## 引用泄露
+java中没有内存泄露，只有引用泄露。比如一个Stack的实现：
+```java
+public class Stack {
+    private Object[] elements;
+    private int size = 0;
+    // ...
+    public Object pop() {
+        return elements[--size];
+    }
+    
+}
+```
+这里的pop操作只改变了size，而没有将elements[size-1]的引用移除，Stack对象一直持有element的引用，应该改为：
+```java
+public Object pop() {
+    Object result = elements[--size];
+    elemets[size] = null;
+    return result;
+}
+```
+通过置null去掉stack中elements数组对element对象的引用
+
+> 在这个例子中，由于Stack是自己在管理内存，存储池包含了对象引用单元（即elements数组）
+
+需要警惕引用泄露的情形：
+- 类中有对象引用单元
+- 缓存
+- 监听器与回调：bind而没有unbind，好的做法是只保存回调的弱引用。
+
+## Avoid finalize
+- Note
+  - finalize不保证执行，尽量不要用
+  - System.gc和System.runFinalization只是增加finalize执行的机会
+  - finalize有严重的性能损失
+  - 通过try - catch - finally来显式释放资源
+- 合理用法
+  - 作为显式释放资源的backup，或者check
+  - 回收native peer
+- 父类finalize
+  - 显式调用super.finalize()
+  - 内部类强制子类执行
+```java
+public class Foo {
+    private final Object finalizeGuardian = new Object() {
+        @Override protected void finalize() throws Throwable {
+            Foo.finalize();
+        }
+    };
+}
