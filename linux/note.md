@@ -81,3 +81,9 @@ sudo service xrdp restart
 
 * Ubuntu 16.04发wifi
   - 参考这个[教程](http://ubuntuhandbook.org/index.php/2016/04/create-wifi-hotspot-ubuntu-16-04-android-supported/)
+
+* 解压zip乱码
+  - 使用
+```shell
+unzip -O CP936 xxx.zip
+```
