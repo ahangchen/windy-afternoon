@@ -87,3 +87,17 @@ sudo service xrdp restart
 ```shell
 unzip -O CP936 xxx.zip
 ```
+
+* 导入全局证书
+```shell
+sudo cp your.crt /usr/share/ca-certificates/your.crt
+sudo dpkg-reconfigure ca-certificates
+```
+
+然后编辑 `/etc/ca-certificates.conf`
+
+然后 
+```python
+sudo update-ca-certificates
+sudo dpkg-reconfigure ca-certificates
+```
