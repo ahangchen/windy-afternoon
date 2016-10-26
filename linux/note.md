@@ -101,3 +101,8 @@ sudo dpkg-reconfigure ca-certificates
 sudo update-ca-certificates
 sudo dpkg-reconfigure ca-certificates
 ```
+
+* Ubuntu kernel 更新后无法登录循环登录
+- 新装了显卡驱动，然后发现过了几天重启就没法登录了，ssh可以登录，-X 登录提示 .Xauthority unwritable
+- 重装NVIDIA显卡驱动，home目录下删除.Xauthor\*几个目录
+- 重启，问题解决
