@@ -106,4 +106,8 @@ sudo dpkg-reconfigure ca-certificates
   - 新装了显卡驱动，然后发现过了几天重启就没法登录了，ssh可以登录，-X 登录提示 .Xauthority unwritable
   - 重装NVIDIA显卡驱动，home目录下删除.Xauthor\*几个目录
   - 重启，问题解决
+  
+* 卸载Nvidia官方驱动
+
+> 卸载，很简单，加上 --uninstall 选项再运行一遍安装程序就可以了。例如：假设你的安装程序是 NVIDIA-Linux-x86-169.12-pkg1.run 的话，在 root 下键入 ./NVIDIA-Linux-x86-169.12-pkg1.run --uninstall 就可以卸载了。欲了解安装程序的更多选项，请使用 ./NVIDIA-Linux-x86-169.12-pkg1.run -h 或 ./NVIDIA-Linux-x86-169.12-pkg1.run -A 进行查看。
 
