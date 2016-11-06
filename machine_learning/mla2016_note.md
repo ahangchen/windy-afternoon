@@ -263,8 +263,8 @@
     - 邀请牛人分享
     - workshop：bayesian, application, deep learning, new areas, others
     - Paper: 
-      - competitive distribution estimation: why is good-turing good
-      - fast convergence of regularized learning in games
+      - Competitive Distribution Estimation: Why is Good-Turing Gooding good
+      - Fast Convergence of Regularized Learning in Games
     - startup:
       - ai startup: openai was founded
     - hot areas: new models: optimization for dl , bayesian, reinference
@@ -286,8 +286,8 @@
     - on the expressive power of deep learning: a tensor analysis
     - 深层少节点可行，浅层多节点才行
     - Paper
-      - online learning in repeated auctions: 拍卖，true value unknow the true value
-      - learning simple autctions：证明多项式级样本可以达到买卖平衡
+      - Online Learning in Repeated Auctions: 拍卖，true value unknow the true value
+      - Learning Simple Auctions：证明多项式级样本可以达到买卖平衡
 - AI
   - AAAI
     - tripleAI
@@ -328,9 +328,10 @@
   - [ICDM](http://www.cs.uvm.edu/~icdm/Awards/BestPapers.shtml)
     - 数据挖掘blabla
     - 盲审,关注可重现性
-    - Fast Random Walk with Restart and its Applications
-    - Diamond Sampling for Approximate Maximum All-pairs Dot-product (MAD) Search 
-    - From Micro to Macro: Uncovering and Predicting Information Cascading Process with Behavioral Dynamics 
+    - Paper
+      - Fast Random Walk with Restart and its Applications
+      - Diamond Sampling for Approximate Maximum All-pairs Dot-product (MAD) Search 
+      - From Micro to Macro: Uncovering and Predicting Information Cascading Process with Behavioral Dynamics 
     - 新应用，正面的论文title，
     - 不要早于两周提交，
     - 多跨界合作
@@ -343,18 +344,18 @@
   - AI statistics↑
     - ai, ml, statistics
     - 在美国受认可
-    - <4人审核，逐层审核
+    - \<4人审核，逐层审核
     - 高斯，图模型，优化，在线学习，聚类，矩阵，推理，贝叶斯，压缩感知，稀疏编码，深度学习
     - 半监督，nonlinear embedding and manifold learning , semi-supervised learning ↓
     - Paper
-      - scalable geometric density Provalble bayesian inference via particle mirror descent
-      - multi resou
+      - Provable Bayesian Inference via Particle Mirror Descent
+
   - UAI
     - AI的不确定性
     - 图模型，贝叶斯，因果推断
     - Paper
-      + stability of causal inference 
-      + tomas
+      + Stability of Causal Inference
+      + Online learning with Erdos-Renyi side-observation graphs
     - bayesian, reinforce, optimization
     - 非凸问题，凸近似
     - 深度神经网络自由度
