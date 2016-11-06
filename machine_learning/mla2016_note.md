@@ -1,4 +1,4 @@
-# MLA2016 nanjing
+# MLA2016 南京
 ## 开幕式
 - ppt会在[网站](http://lamda.nju.edu.cn/conf/mla16/program.htm)上共享
 - 每年的会议也会由清华大学出版社整理为《机器学习及其应用》一书
