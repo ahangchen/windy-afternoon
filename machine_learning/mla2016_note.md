@@ -248,7 +248,9 @@
   - 行为模式得到轨迹
 
 ## Special Session
-- 顶会Review
+
+> 顶会Review(以下环节中paper部分表示很值得关注的paper)
+
 - ML
   - ICML
     - 神经网络，深度学习，优化，再增强学习，矩阵构造，无监督学习，在线学习，学习理论，应用
@@ -260,29 +262,32 @@
     - 顶会有tutorial，tensorflow，NVIDIA gpu介绍
     - 邀请牛人分享
     - workshop：bayesian, application, deep learning, new areas, others
-    - best paper: competitive distribution estimation: why is good-turing good
+    - Paper: 
+      - competitive distribution estimation: why is good-turing good
+      - fast convergence of regularized learning in games
     - startup:
-    - ai startup: openai was founded
+      - ai startup: openai was founded
     - hot areas: new models: optimization for dl , bayesian, reinference
     - adaptive data analysis: 实验不可泛化，需要避免
     - review: 每篇论文有六个reviewer，review会公开（重要）
-    - fast convergence of regularized learning in games
+    
   - COLT
     - 计算机理论文章进入这个圈子
     - 十大机构占半
     - 一小群数学家在这里开会
     - bandit, 计算机理论，online, 限制学习， 监督学习,pac
     - 两个invited talk
-    - best paper: mult-scale exploration of convex function jand bandit convex optimization
-    - best student paper:
-      - provably manipulation-resistant reputation systems： 协同过滤
+    - Paper: 
+      - Multi-scale exploration of convex functions and bandit convex optimization
+      - Provably manipulation-resistant reputation systems (协同过滤)
     - dl：理论：
     - the power of depth for feedforward neural networks
     - benefits of depth in neural networks
     - on the expressive power of deep learning: a tensor analysis
-    - 深层少节点可行，浅层多节点才醒
-    - online learning in repeated auctions: 拍卖，true value unknow the true value
-    - learning simple autctions：证明多项式级样本可以达到买卖平衡
+    - 深层少节点可行，浅层多节点才行
+    - Paper
+      - online learning in repeated auctions: 拍卖，true value unknow the true value
+      - learning simple autctions：证明多项式级样本可以达到买卖平衡
 - AI
   - AAAI
     - tripleAI
