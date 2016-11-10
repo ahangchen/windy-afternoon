@@ -72,7 +72,7 @@ sudo ./XX-Net/start
 - 安装[ubuntu-tweak](http://www.linuxidc.com/Linux/2014-04/100522.htm)，可以进行美化和清理
 - 安装美美的[Flatabulous主题](http://www.xulukun.cn/flatabulous-ubuntu.html)
 - 软件中心搜索安装system load indicator，实时查看cpu，内存，磁盘，网络的占用
-- 配置vim：参考[这个配置](https://github.com/kaochenlong/eddie-vim2)
+- 配置vim：参考[这个配置](https://github.com/kaochenlong/eddie-vim2)，开启airline状态栏需要安装powerline[字体](https://github.com/powerline/fonts)
 - 或者用[sublime-text](https://www.sublimetext.com/3)，不过要注意修复和fcitx的[兼容问题](http://html5beta.com/page/ubuntu-14-04-install-fcitx-sougoupinyin-sublime-text-3-chinese-input-fix.html)，也可以利用这个[工程](https://github.com/lyfeyaj/sublime-text-imfix)
 - 安装ssh
 ```shell
