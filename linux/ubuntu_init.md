@@ -53,8 +53,8 @@ sudo apt-get install git
 sudo apt-get install build-essential 
 ```
 - 安装XX-Net翻墙：
+打开 https://github.com/XX-net/XX-Net ，下载最新release版xx-net。
 ```shell
-git clone https://github.com/XX-net/XX-Net
 sudo chmod 777 -R XX-Net
 sudo ./XX-Net/start
 ```
