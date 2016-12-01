@@ -13,7 +13,6 @@
  - [一个由Proguard与FastJson引起的血案](android/一个由PROGUARD与FASTJSON引起的血案.md)
  - [琐碎的一些tips](android/note.md)
 - [Machine Learning](ml/README.md)
-  - [多模态数据融合](ml/Methodologies_for_Cross-Domain_Data_Fusion_An_Overview.pptx)
   - [Re-identification](ml/reid.md)
   - [Tensorflow学习笔记](https://github.com/ahangchen/GDLNotes)
 - [Java](java/README.md)
