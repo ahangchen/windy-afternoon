@@ -45,6 +45,7 @@
 
 #### 琐记
 - [我的收藏](star.md)
+- [读论文的心得](paper.md)
 
 ###Help
 最近在翻译[Chromium的文档](https://github.com/ahangchen/Chromium_doc_zh)，有兴趣一起翻译的同学可以和我联系。
