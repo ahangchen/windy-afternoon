@@ -42,4 +42,6 @@
 - [thinking-in-program](thinking-in-program/README.md)
     - [怎样打日志](thinking-in-program/log.md)
 - [我的收藏](star.md)
-- [呓语](pieces.md)
+- [琐记](pieces.md)
+  - [论文心得](paper.md)
+
