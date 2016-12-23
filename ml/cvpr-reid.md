@@ -46,6 +46,7 @@
 
 ## Cross-Dataset Transfer Learning
 - 用一个有标签数据集训练特征表达模型，分解出数据集共用的模式和数据集独有的模式
+- 字典学习，找到各个数据集共用的字典
 - 将模型应用在无标签无监督聚类上
 - VIPeR PRID CUHK01 CAVIAR iLIDS
 
