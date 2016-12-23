@@ -15,6 +15,7 @@
 - [Machine Learning](ml/README.md)
   - [Re-identification](ml/reid.md)
   - [Tensorflow学习笔记](https://github.com/ahangchen/GDLNotes)
+  - [CVPR-2016 Re-id](ml/cvpr-reid.md)
 - [Java](java/README.md)
      - [java web](java/java-web/note.md)
        - [Servlet部署](java/java-web/Servlet组织.md)
