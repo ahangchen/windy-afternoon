@@ -3,7 +3,7 @@
 - 同时调整特征提取和距离测量公式的参数
 - 提取身体部分的特征和全身特征作为一个特征
 
-![](part-based.png)
+![](part-base.png)
 
 - 使用[triplet loss](http://blog.csdn.net/tangwei2014/article/details/46788025)，同时缩小类内差异，增大类间差异
 
