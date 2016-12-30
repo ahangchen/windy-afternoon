@@ -133,3 +133,6 @@ sudo rar x abc.rar
 # 压缩
 sudo rar a abc.rar abc
 ```
+
+* MatlabR2015b卡在启动界面
+- 要用sudo运行 matlab
