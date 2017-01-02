@@ -162,8 +162,10 @@ server {
 cd /etc/nginx/conf.d
 sudo ln -s /your/conf/path/mywebsite.conf
 ```
+注意网站不能在/root目录下，否则一定会出现403
 
 重启nginx
 ```shell
 sudo nginx -s reload
 ```
+
