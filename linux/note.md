@@ -124,7 +124,7 @@ sudo ./NVIDIA-Linux-x86_64-367.57.run
 
 ### rar
  - ubuntu 默认的解压工具不能解压rar，需要安装rar和unrar
-
+ - 附上各种解压命令的[链接](http://alex09.iteye.com/blog/647128)
 ```
 sudo apt-get install rar
 sudo apt-get install unrar
@@ -136,3 +136,4 @@ sudo rar a abc.rar abc
 
 ### MatlabR2015b卡在启动界面
 - 要用sudo运行 matlab
+- 附上matlab安装[教程](http://www.jianshu.com/p/60038ffa8870)
