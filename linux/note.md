@@ -137,3 +137,33 @@ sudo rar a abc.rar abc
 ### MatlabR2015b卡在启动界面
 - 要用sudo运行 matlab
 - 附上matlab安装[教程](http://www.jianshu.com/p/60038ffa8870)
+
+
+## Ubuntu 安装nginx并配置web前端服务器
+
+```shell
+sudo apt-get install nginx
+vi mywebsite.conf
+```
+
+写入
+```
+server {
+	listen 8080;
+	charset utf-8;
+	root /home/your/wesite;
+	location / {
+	}
+}
+```
+配置到nginx
+
+```shell
+cd /etc/nginx/conf.d
+sudo ln -s /your/conf/path/mywebsite.conf
+```
+
+重启nginx
+```shell
+sudo nginx -s reload
+```
