@@ -67,6 +67,7 @@ echo "xfce4-session" >~/.xsession
 sudo service xrdp restart
 ```
 
+- 其中xfce4 tab键默认会因为键位冲突不能自动补全，需要执行 `xfwm4-settings`，在 按键 - 切换同一应用程序的窗口，清除它的快捷键 
 - 可以修改vncserver分辨率：
 
 ```
