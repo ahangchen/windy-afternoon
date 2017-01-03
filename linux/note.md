@@ -67,6 +67,41 @@ echo "xfce4-session" >~/.xsession
 sudo service xrdp restart
 ```
 
+- 可以修改vncserver分辨率：
+
+```
+sudo vi /etc/alternatives/vncserver
+```
+找到
+
+```shell
+$geometry = "1024x768";
+```
+
+改为
+
+
+```shell
+$geometry = "1024x768";
+```
+
+- 如果需要在mac上远程Ubuntu，需要在Ubuntu上开启vncserver: 命令行输入vncserver(初次运行输入设置密码)，并将~/.vnc/xstartup文件改为：
+
+```shell
+!/bin/sh
+
+# Uncomment the following two lines for normal desktop:
+unset SESSION_MANAGER
+exec /etc/X11/xinit/xinitrc
+
+[ -x /etc/vnc/xstartup ] && exec /etc/vnc/xstartup
+[ -r $HOME/.Xresources ] && xrdb $HOME/.Xresources
+xsetroot -solid grey
+vncconfig -iconic &
+x-terminal-emulator -geometry 80x24+10+10 -ls -title "$VNCDESKTOP Desktop" &
+gnome-session &
+```
+
 ### 共享代理给手机
   - 条件一：电脑能科学上网（我用了xx-net）
   - 条件二：电脑和手机处于同一个局域网里
