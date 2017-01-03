@@ -172,7 +172,12 @@ sudo rar a abc.rar abc
 ### MatlabR2015b卡在启动界面
 - 要用sudo运行 matlab
 - 附上matlab安装[教程](http://www.jianshu.com/p/60038ffa8870)
+- 如果启动matlab出现crash，段错误等等，执行：
+```
+sudo apt-get install matlab-support 
+```
 
+按提示执行并确认，rename什么的都要选yes
 
 ## Ubuntu 安装nginx并配置web前端服务器
 
