@@ -46,3 +46,27 @@ Django的Session依赖于本地的数据库，使用Session前，需要执行mak
 
 #### Django migrate
 migrate时，会去检查数据库里，django_migration表里执行的操作名，从而决定需要执行哪些migration，因此可以删掉这个表里的操作进行回退。
+
+#### 发邮件
+- 因为是服务端的问题所以也归在这里好了
+- 阿里云服务器上发邮件的时候，由于安全策略，必须使用SSL发邮件
+- 代码
+```python
+def send_163_mail(user, pwd, from_addr, to_addr, subject, content):
+    msg = MIMEText(content)
+    # 加邮件头
+    msg['to'] = to_addr
+    msg['from'] = from_addr
+    msg['subject'] = subject
+    # 发送邮件
+    try:
+        server = smtplib.SMTP_SSL('smtp.163.com', 465)
+        server.starttls()
+        server.set_debuglevel(1)
+        server.login(user, pwd)  # XXX为用户名，XXXXX为密码
+        server.sendmail(msg['from'], msg['to'], msg.as_string())
+        server.quit()
+        print('发送成功')
+    except smtplib.SMTPConnectError:
+        print('SMTPConnectError')
+```
