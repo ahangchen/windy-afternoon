@@ -213,3 +213,4 @@ sudo nginx -s reload
 ## ssh反向代理访问内网
 - 参考[>>](http://b.liuctic.com/2013/12/ssh%E6%AD%A3%E5%90%91%E5%8F%8D%E5%90%91%E8%BF%9E%E6%8E%A5%E7%9A%84%E5%BC%BA%E5%A4%A7%E5%8A%9F%E8%83%BD%E4%BB%A5%E5%8F%8Aautossh%E3%80%90%E8%BD%AC%E8%BD%BD%E4%B8%A4%E7%AF%87%E3%80%91/)，采用autossh
 - 需要注意设置GatewayPorts yes，参考[>>](http://www.netcan666.com/2016/09/28/ssh%E9%9A%A7%E9%81%93%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E5%AE%9E%E7%8E%B0%E5%86%85%E7%BD%91%E5%88%B0%E5%85%AC%E7%BD%91%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91/)
+- 其他内网穿透的方法还有teamviewer, openvpn, ngrok，有空再研究看看
