@@ -4,3 +4,4 @@
 - [多模态数据融合](Methodologies_for_Cross-Domain_Data_Fusion_An_Overview.pptx)
 - [Person Re-identification](reid.md)
 - [CVPR2016 Re-id](cvpr-reid.md)
+- [MLA 2016 南京 笔记](mla_2016.md)
