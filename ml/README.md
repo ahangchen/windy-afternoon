@@ -5,3 +5,4 @@
 - [Person Re-identification](reid.md)
 - [CVPR2016 Re-id](cvpr-reid.md)
 - [MLA 2016 南京 笔记](mla_2016.md)
+- [《机器学习（周志华）》笔记](zzh_ml_notes.md)
