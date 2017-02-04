@@ -6,7 +6,6 @@
 
 - 我的Github：[ahangchen](https://github.com/ahangchen)
 - 新浪微博：http://weibo.com/scutcs12cwh
-- 微信公众号：coding33
 - 邮箱： cweihang@foxmail.com
 
 - 不定期更新，欢迎[Star](https://github.com/ahangchen/windy-afternoon)
