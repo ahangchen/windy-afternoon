@@ -7,3 +7,4 @@
 
 
 - [怎样打日志](log.md)
+- [debug技巧](debug.md)
