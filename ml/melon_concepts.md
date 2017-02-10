@@ -1,4 +1,5 @@
-西瓜书概念（括号表示概念出现的其他页码）
+# 西瓜书概念
+括号表示概念出现的其他页码, 如有兴趣协同翻译，请到[issue](https://github.com/ahangchen/windy-afternoon/issues/2)中认领章节
 ## 第一章 绪论
 - Page2: 标记（label)
   示例结果的信息，例如“好瓜”，称为标记
