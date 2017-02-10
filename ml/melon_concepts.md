@@ -1,5 +1,5 @@
 # 西瓜书概念
-括号表示概念出现的其他页码, 如有兴趣协同翻译，请到[issue](https://github.com/ahangchen/windy-afternoon/issues/2)中认领章节
+括号表示概念出现的其他页码, 如有兴趣协同整理，请到[issue](https://github.com/ahangchen/windy-afternoon/issues/2)中认领章节
 ## 第一章 绪论
 - Page2: 标记（label)
   示例结果的信息，例如“好瓜”，称为标记
@@ -116,9 +116,11 @@
 同经验误差
 - Page24: 模型选择(model selection)
 选择学习算法与参数配置
-- Page25: 分层采样
-- Page25: 留出法
-- Page26: k折交叉验证
+- Page25: 分层采样(stratified sampling)
+如果从采样的角度看待数据集的划分过程，则保留类别比例的采样方式通常称为“分层采样”
+- Page25: 留出法（hold-out）
+直接将数据集D划分为两个互斥的集合，其中一个集合作为训练集S，另一个作为测试集T，在S上训练出模型后，用T来评估其测试误差，作为对泛化误差的估计。
+- Page26: k折交叉验证（）
 - Page26: 交叉验证法
 - Page27: 包外估计(179)
 - Page27: 自助法
