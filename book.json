@@ -4,7 +4,7 @@
         "disqus": {
             "shortName": "ahangchen-blog"
         }
-    }
+    },
     "plugins": [ "github" ],
     "pluginsConfig": {
         "github": {
