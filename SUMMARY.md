@@ -18,6 +18,7 @@
   - [CVPR-2016 Re-id](ml/cvpr-reid.md)
   - [MLA2016笔记](ml/mla_2016.md)
   - [《机器学习》（周志华）读书笔记](ml/zzh_ml_notes.md)
+  - [西瓜书概念整理](ml/melon_concepts.md)
 - [Java](java/README.md)
      - [java web](java/java-web/note.md)
        - [Servlet部署](java/java-web/Servlet组织.md)
