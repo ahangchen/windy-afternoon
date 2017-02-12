@@ -1,14 +1,12 @@
 {
-    "plugins": ["disqus"],
+    "plugins": ["disqus",
+    "github"],
     "pluginsConfig": {
         "disqus": {
             "shortName": "ahangchen-blog"
-        }
-    },
-    "plugins": [ "github" ],
-    "pluginsConfig": {
+        },
         "github": {
-            "url": "https://github.com/ahangchen/windy-afternoon"
+              "url": "https://github.com/zhaoda/webpack-handbook"
         }
     }
 }
