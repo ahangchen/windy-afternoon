@@ -1,7 +1,9 @@
 gitbook build . ../tmp_mysite
-rm -rf !(../ahangchen.github.io/.git/*) ../ahangchen.github.io
-rm -rf !(../mysite/.git/*) ../mysite
-cp -r ../tmp_mysite ../mysite
+cd ../mysite
+rm -rf `ls |grep -v .git`
+cd ../ahangchen.github.io
+rm -rf `ls |grep -v .git`
+cp -r ../tmp_mysite/* ../mysite
 cp -r ../tmp_mysite/* ../ahangchen.github.io
 rm -rf ../tmp_mysite
 cd ../mysite
