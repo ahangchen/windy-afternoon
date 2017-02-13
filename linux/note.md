@@ -28,6 +28,21 @@ find . -iregex ".*\.\(cpp\|h\|java\|sh\)$" | xargs wc -l
 
 系统设置-网络-代理设置-手动-填自己的代理服务器地址和端口即可
 
+### 导入全局证书
+```shell
+sudo cp your.crt /usr/share/ca-certificates/your.crt
+sudo dpkg-reconfigure ca-certificates
+```
+
+然后编辑 `/etc/ca-certificates.conf`
+
+然后
+```shell
+sudo update-ca-certificates
+sudo dpkg-reconfigure ca-certificates
+```
+
+
 ### Ubuntu desktop应用设置环境变量
 直接上代码
 
@@ -111,9 +126,6 @@ gnome-session &
   - android手机wifi连接那里，设置代理，设置ip为电脑ip，端口为8087(xx-net的代理端口)
   - end
 
-### Ubuntu全局翻墙
-
-- 系统设置-网络-网络代理-手动-设置成xx-net的代理地址即可全局翻墙
 
 ### Ubuntu nautilus 文件浏览器中，Ctrl + L可以将地址变为字符串方便复制
 
@@ -124,20 +136,6 @@ gnome-session &
   - 使用
 ```shell
 unzip -O CP936 xxx.zip
-```
-
-### 导入全局证书
-```shell
-sudo cp your.crt /usr/share/ca-certificates/your.crt
-sudo dpkg-reconfigure ca-certificates
-```
-
-然后编辑 `/etc/ca-certificates.conf`
-
-然后
-```python
-sudo update-ca-certificates
-sudo dpkg-reconfigure ca-certificates
 ```
 
 ### Ubuntu kernel 更新后无法登录循环登录
