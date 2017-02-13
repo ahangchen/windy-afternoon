@@ -11,10 +11,10 @@
 ### vsphere client 中修改ubuntu控制台大小
  - 先按这个link操作：http://jingyan.baidu.com/article/fc07f98977b60f12ffe5199b.html
  - 然后在系统设置中修改屏幕分辨率，就能调整到比较适合的尺寸。
- 
+
 ### 一行代码统计代码行数
 ```shell
-find . -iregex ".*\.\(cpp\|h\|java\|sh\)$" | xargs wc -l 
+find . -iregex ".*\.\(cpp\|h\|java\|sh\)$" | xargs wc -l
 ```
 想要增加统计的代码类型，就在正则表达式里填后缀就好
 
@@ -67,7 +67,7 @@ echo "xfce4-session" >~/.xsession
 sudo service xrdp restart
 ```
 
-- 其中xfce4 tab键默认会因为键位冲突不能自动补全，需要执行 `xfwm4-settings`，在 按键 - 切换同一应用程序的窗口，清除它的快捷键 
+- 其中xfce4 tab键默认会因为键位冲突不能自动补全，需要执行 `xfwm4-settings`，在 按键 - 切换同一应用程序的窗口，清除它的快捷键
 - 可以修改vncserver分辨率：
 
 ```
@@ -111,7 +111,9 @@ gnome-session &
   - android手机wifi连接那里，设置代理，设置ip为电脑ip，端口为8087(xx-net的代理端口)
   - end
 
-### Ubuntu 系统设置-网络-网络代理-手动-设置成xx-net的代理地址即可全局翻墙
+### Ubuntu全局翻墙
+
+- 系统设置-网络-网络代理-手动-设置成xx-net的代理地址即可全局翻墙
 
 ### Ubuntu nautilus 文件浏览器中，Ctrl + L可以将地址变为字符串方便复制
 
@@ -132,7 +134,7 @@ sudo dpkg-reconfigure ca-certificates
 
 然后编辑 `/etc/ca-certificates.conf`
 
-然后 
+然后
 ```python
 sudo update-ca-certificates
 sudo dpkg-reconfigure ca-certificates
@@ -142,8 +144,8 @@ sudo dpkg-reconfigure ca-certificates
   - 新装了显卡驱动，然后发现过了几天重启就没法登录了，ssh可以登录，-X 登录提示 .Xauthority unwritable
   - 重装NVIDIA显卡驱动，home目录下删除.Xauthor\*几个目录
   - 重启，问题解决
-  
-  
+
+
 ### 安装NVIDIA官方驱动
   - 根据自己显卡下载对应驱动:http://www.nvidia.cn/Download/index.aspx?lang=cn
   - ctrl alt f1进入命令行模式，运行如下命令：
@@ -153,7 +155,7 @@ sudo ./NVIDIA-Linux-x86_64-367.57.run
 ```
   - 一路确定
   - 然后sudo reboot
-  
+
 ### 卸载Nvidia官方驱动
 
 > 卸载，很简单，加上 --uninstall 选项再运行一遍安装程序就可以了。例如：假设你的安装程序是 NVIDIA-Linux-x86-169.12-pkg1.run 的话，在 root 下键入 ./NVIDIA-Linux-x86-169.12-pkg1.run --uninstall 就可以卸载了。欲了解安装程序的更多选项，请使用 ./NVIDIA-Linux-x86-169.12-pkg1.run -h 或 ./NVIDIA-Linux-x86-169.12-pkg1.run -A 进行查看。
@@ -165,7 +167,7 @@ sudo ./NVIDIA-Linux-x86_64-367.57.run
 sudo apt-get install rar
 sudo apt-get install unrar
 # 解压
-sudo rar x abc.rar 
+sudo rar x abc.rar
 # 压缩
 sudo rar a abc.rar abc
 ```
@@ -175,7 +177,7 @@ sudo rar a abc.rar abc
 - 附上matlab安装[教程](http://www.jianshu.com/p/60038ffa8870)
 - 如果启动matlab出现crash，段错误等等，执行：
 ```
-sudo apt-get install matlab-support 
+sudo apt-get install matlab-support
 ```
 
 按提示执行并确认，rename什么的都要选yes
