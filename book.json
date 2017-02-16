@@ -1,6 +1,5 @@
 {
-    "plugins": ["disqus",
-    "github"],
+    "plugins": ["disqus", "github", "toggle-chapters"],
     "pluginsConfig": {
         "disqus": {
             "shortName": "ahangchen-blog"
