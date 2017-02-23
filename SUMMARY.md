@@ -13,7 +13,11 @@
  - [一个由Proguard与FastJson引起的血案](android/一个由PROGUARD与FASTJSON引起的血案.md)
  - [琐碎的一些tips](android/note.md)
 - [Machine Learning](ml/README.md)
-  - [Re-identification](ml/reid.md)
+  - [Re-identification](ml/reid/README.md)
+    - [Person Re-identification](ml/reid/reid.md)
+    - [CVPR2016 Re-id](ml/reid/cvpr-reid.md)
+    - [Camera topology and Person Re-id](ml/reid/reid-topo.md)
+
   - [Tensorflow学习笔记](https://github.com/ahangchen/GDLNotes)
   - [CVPR-2016 Re-id](ml/cvpr-reid.md)
   - [MLA2016笔记](ml/mla_2016.md)
