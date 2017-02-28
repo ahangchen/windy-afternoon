@@ -1,5 +1,8 @@
 # 西瓜书概念
 括号表示概念出现的其他页码, 如有兴趣协同整理，请到[issue](https://github.com/ahangchen/windy-afternoon/issues/2)中认领章节
+
+完整版本见[这里](melon/README.md)。
+
 ## 第一章 绪论
 - Page2: 标记（label)
 
