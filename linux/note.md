@@ -118,6 +118,14 @@ x-terminal-emulator -geometry 80x24+10+10 -ls -title "$VNCDESKTOP Desktop" &
 gnome-session &
 ```
 
+- 关闭一个vncserver：
+
+```shell
+vncserver -kill :k
+```
+
+k是你的vncserver的编号，比如端口号5904的vncserver应该是4
+
 ### 共享代理给手机
   - 条件一：电脑能科学上网（我用了xx-net）
   - 条件二：电脑和手机处于同一个局域网里
