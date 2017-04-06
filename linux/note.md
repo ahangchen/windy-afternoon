@@ -126,6 +126,8 @@ vncserver -kill :k
 
 k是你的vncserver的编号，比如端口号5904的vncserver应该是4
 
+在各个平台上可以下载[vncviewer](https://www.realvnc.com/download/viewer/)来连接vncserver
+
 ### 共享代理给手机
   - 条件一：电脑能科学上网（我用了xx-net）
   - 条件二：电脑和手机处于同一个局域网里
