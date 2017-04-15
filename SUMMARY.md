@@ -17,8 +17,9 @@
     - [Person Re-identification](ml/reid/reid.md)
     - [CVPR2016 Re-id](ml/reid/cvpr-reid.md)
     - [Camera topology and Person Re-id](ml/reid/reid-topo.md)
-
-  - [Tensorflow学习笔记](https://github.com/ahangchen/GDLNotes)
+  - [工具](ml/kit/README.md)
+    - [Tensorflow学习笔记](https://github.com/ahangchen/GDLNotes)
+    - [mscnn](ml/kit/caffe/mscnn.md)
   - [MLA2016笔记](ml/mla_2016.md)
   - [《机器学习》（周志华）读书笔记](ml/zzh_ml_notes.md)
     - [西瓜书概念整理](ml/melon/README.md)
