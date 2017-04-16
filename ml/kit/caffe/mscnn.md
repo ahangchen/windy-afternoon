@@ -1,5 +1,6 @@
 # mscnn
 - [Source Code](https://github.com/zhaoweicai/mscnn)
+- 别人写的[教程](https://gist.github.com/arundasan91/b432cb011d1c45b65222d0fac5f9232c)
 
 ## Install
 - 从github下载mscnn工程
