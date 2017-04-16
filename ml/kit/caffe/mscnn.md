@@ -37,7 +37,7 @@ sudo apt-get install libgflags-dev libgoogle-glog-dev liblmdb-dev
 
   - Caffe在debian系列系统上对hdf5的支持导致的[一个坑>>](https://github.com/BVLC/caffe/issues/2347#issuecomment-118508564)
 
-- 编译
+## 编译
 ```shell
 make all
 make pycaffe
@@ -45,3 +45,23 @@ make matcaffe
 make test
 make runtest
 ```
+
+## 测试（Python版）
+- [源代码](https://github.com/GBJim/mscnn/blob/master/examples/caltech/run_mscnn_detection.py)
+- 前面是用apt安装的opencv和protobuf，没有安装Python包，所以直接运行会报cv2和protobuf找不到
+- 安装opencv python包：
+
+```shell
+sudo apt-get install python-opencv
+```
+
+- 这样会安装到系统默认的python解释器中，即`/usr/lib/python2.7/dist-packages`，我们把这里面跟opencv有关的复制到前面编译caffe指定的python解释器目录中，比如`~/anaconda2/lib/python2.7/site-packages`，同时注意改cv2的名字
+
+```shell
+sudo ln -s cv2.x86_64-linux-gnu.so cv2.so
+```
+
+搞定opencv的依赖
+
+- 安装protobuf python包: `pip install protobuf`（注意pip要和caffe对应的python解释器绑定）
+- 由于前面的那份python代码用了nms来做GPU调用，这个东西是来自py-faster-rcnn的，也是caffe的一个变种，复制[这个目录](https://github.com/rbgirshick/py-faster-rcnn/tree/master/lib/)，然后make，按上面的复制opencv的方法把nms目录复制到caffe对应的python解释器就好了
