@@ -36,3 +36,11 @@ sudo apt-get install libgflags-dev libgoogle-glog-dev liblmdb-dev
 
   - Caffe在debian系列系统上对hdf5的支持导致的[一个坑>>](https://github.com/BVLC/caffe/issues/2347#issuecomment-118508564)
 
+- 编译
+```shell
+make all
+make pycaffe
+make matcaffe
+make test
+make runtest
+```
