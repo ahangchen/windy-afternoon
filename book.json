@@ -1,5 +1,5 @@
 {
-    "plugins": ["disqus", "github", "toggle-chapters", "latex-codecogs"],
+    "plugins": ["disqus", "github", "toggle-chapters", "katex"],
     "pluginsConfig": {
         "disqus": {
             "shortName": "ahangchen-blog"
