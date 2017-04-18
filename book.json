@@ -1,11 +1,14 @@
 {
-    "plugins": ["disqus", "github", "toggle-chapters", "katex"],
+    "plugins": ["disqus", "github", "toggle-chapters", "mathjax"],
     "pluginsConfig": {
         "disqus": {
             "shortName": "ahangchen-blog"
         },
         "github": {
               "url": "https://github.com/ahangchen/windy-afternoon"
+        },
+        "mathjax": {
+            "forceSVG": true
         }
     }
 }
