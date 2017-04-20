@@ -15,7 +15,7 @@
 |[Android](android/README.md) | [Java](java/README.md) | [ML](ml/README.md)|
 | [Linux](linux/note.md) | [Kit](kit/README.md) | [Thinking](thinking-in-program/README.md)|
 
-###推荐阅读
+### 推荐阅读
 
 #### Android相关
  - [Activity](android/activity/README.md)
@@ -47,7 +47,7 @@
 - [我的收藏](star.md)
 - [读论文的心得](paper.md)
 
-###Help
+### Help
 最近在翻译[Chromium的文档](https://github.com/ahangchen/Chromium_doc_zh)，有兴趣一起翻译的同学可以和我联系。
 
 > 如果觉得我的文章对您有帮助，请随意打赏～
