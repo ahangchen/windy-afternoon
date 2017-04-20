@@ -1,4 +1,4 @@
-##Intent Flag
+## Intent Flag
 
 FLAG_与LaunchMode相比最大的不同是临时性
 
@@ -12,7 +12,7 @@ Developer.android.com的说法：
 
 >（3）效果与SingleTask相同。
 
-####**实验发现**
+#### **实验发现**
 * 只有从外部（另外的App）启动Activity，并添加FLAG_ACTIVITY_NEW_TASK标识时，表现才与上述相符；
 
 * 但不具有singleTask的clear_top效果。
