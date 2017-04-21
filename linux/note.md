@@ -1,5 +1,9 @@
 ## Linux Note
 
+### 临时切换到root用户
+
+> sudo su
+
 ### 用 &&组合两个命令，比如：
 
  > cd dir && ls
