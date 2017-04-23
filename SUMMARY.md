@@ -50,6 +50,8 @@
 - [Python](python/README.md)
     - [django](python/django/note.md)
     - [原生模块](python/raw.md)
+- [Matlab](matlab/README.md)
+    - [Matlab Remote IPC自动化数据处理](matlab/ripc_auto.md)
 - [web前端](web-front/README.md)
     - [header div固定，content div填充父容器](web-front/head_content.md)
     - [json接口资源](web-front/json_res.md)
