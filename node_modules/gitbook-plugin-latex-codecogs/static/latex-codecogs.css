@@ -1,0 +1,8 @@
+.latex-codecogs.mode-inline {
+    display: inline-block;
+}
+.latex-codecogs.mode-block {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}

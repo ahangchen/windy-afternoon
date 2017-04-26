@@ -1,5 +1,9 @@
 ## Linux Note
 
+### 临时切换到root用户
+
+> sudo su
+
 ### 用 &&组合两个命令，比如：
 
  > cd dir && ls
@@ -179,6 +183,12 @@ sudo rar x abc.rar
 # 压缩
 sudo rar a abc.rar abc
 ```
+### ssh免密码登录
+看这个[链接](https://my.oschina.net/aiguozhe/blog/33994)
+
+最关键的命令是
+
+> ssh-keygen -t rsa
 
 ### MatlabR2015b卡在启动界面
 - 要用sudo运行 matlab
