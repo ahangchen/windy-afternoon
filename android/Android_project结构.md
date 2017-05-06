@@ -1,4 +1,4 @@
-##一个android工程应该长什么样
+## 一个android工程应该长什么样
 - src
   - 各个功能模块的package（业务代码，包括activity）
   - utils（工具类）
