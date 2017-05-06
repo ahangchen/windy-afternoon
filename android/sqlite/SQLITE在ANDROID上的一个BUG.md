@@ -1,4 +1,4 @@
-##SQLITE在ANDROID上的一个BUG：
+## SQLITE在ANDROID上的一个BUG：
 > SQLiteCantOpenDatabaseException: unable to open database file
 
 先上log
