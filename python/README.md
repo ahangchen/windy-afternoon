@@ -4,3 +4,4 @@
  - [深度学习](https://github.com/ahangchen/GDLnotes)
  - [Python原生模块](raw.md)
  - [设计模式](design.md)
+ - [可视化](viz.md)
