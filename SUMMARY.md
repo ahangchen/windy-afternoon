@@ -50,6 +50,8 @@
 - [Python](python/README.md)
     - [django](python/django/note.md)
     - [原生模块](python/raw.md)
+    - [设计模式](python/design.md)
+    - [可视化](python/viz.md)
 - [Matlab](matlab/README.md)
     - [Matlab Remote IPC自动化数据处理](matlab/ripc_auto.md)
 - [web前端](web-front/README.md)
