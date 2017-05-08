@@ -1,5 +1,5 @@
-##Git / github
-###创建github repos并提交修改（2016-1-9 ）
+## Git / github
+### 创建github repos并提交修改（2016-1-9 ）
 
 在[这里](https://github.com/new)创建一个repos，
 
@@ -48,7 +48,7 @@ git commit 冲突的文件 -m comment
 git push origin master
 ```
 
-###将本地库和远程库关联
+### 将本地库和远程库关联
 由于我们常有这样的需求，在IDE里创建工程，然后想要推到自己的git服务器上，但IDE通常不支持直接推到github之外的git服务器，所以需要通过git命令来实现。
 
 以开源中国git为例：
@@ -65,8 +65,14 @@ git push origin master
 ```
 然后就可以愉快的在IDE里做正常的git操作了。
 
-###github streak终结者
+### github streak终结者
 
 教你刷爆小绿点：[戳](green_blush.md)
 
-
+### Git new branch
+```
+git checkout -b new_name
+## 如果没有新的远端就不用执行这句
+git remote add [name_of_your_remote]
+git push origin new_name
+```
