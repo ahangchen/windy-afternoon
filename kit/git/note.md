@@ -75,4 +75,6 @@ git checkout -b new_name
 ## 如果没有新的远端就不用执行这句
 git remote add [name_of_your_remote]
 git push origin new_name
+# 用来pull
+git branch --set-upstream-to origin/makfus makfus
 ```
