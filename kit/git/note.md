@@ -77,3 +77,6 @@ git push origin new_name
 # 用来pull
 git branch --set-upstream-to origin/makfus makfus
 ```
+
+### Git push Terminal免密码
+- 原理为ssh免密码登录，具体见SF这个[回答](http://stackoverflow.com/questions/8588768/git-push-username-password-how-to-avoid)
