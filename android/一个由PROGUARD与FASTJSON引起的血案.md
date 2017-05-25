@@ -1,4 +1,4 @@
-##一个由PROGUARD与FASTJSON引起的血案
+## 一个由PROGUARD与FASTJSON引起的血案
 
 更新微信sdk导致ComposeData中的内部类ComposeDataSender方法被混淆
 

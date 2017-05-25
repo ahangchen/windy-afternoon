@@ -1,15 +1,15 @@
-#ACTIVITY四种LAUNCHMODE
+# ACTIVITY四种LAUNCHMODE
 
 
-####**1.Standard**
+#### **1.Standard**
 
 默认模式，多次实例化，按序入栈出栈。
 
-####**2.SingleTop**
+#### **2.SingleTop**
 
 栈顶Activity不会被重复创建，会触发onNewIntent()事件，不在栈顶时可以多次实例化。
 
-####**3.SingleTask**
+#### **3.SingleTask**
 
 Developer.android.com的说法：
 
@@ -29,7 +29,7 @@ Developer.android.com的说法：
 
 如果不存在一个不同的task包含这个Activity的实例，但是在当前的task中本身就存在这个Activity实例，不会新建task，而会在当前task中，将这个Activity以上的Activity弹出，并且触发这个Activity的onNewIntent事件；
 
-####**4.SingleInstance**
+#### **4.SingleInstance**
 
 （1）如果没有一个task包含这个Activity的实例，会新建一个task，创建一个Activity；
 
