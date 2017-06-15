@@ -38,7 +38,7 @@ sudo cp your.crt /usr/share/ca-certificates/your.crt
 sudo dpkg-reconfigure ca-certificates
 ```
 
-然后编辑 `/etc/ca-certificates.conf`
+或者编辑 `/etc/ca-certificates.conf`
 
 然后
 ```shell
