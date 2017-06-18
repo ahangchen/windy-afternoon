@@ -1,5 +1,7 @@
 # 西瓜书概念
-括号表示概念出现的其他页码, 如有兴趣协同整理，请到[issue](https://github.com/ahangchen/windy-afternoon/issues/2)中认领章节
+- 括号表示概念出现的其他页码
+- 如有兴趣协同整理，请到[issue](https://github.com/ahangchen/windy-afternoon/issues/2)中认领章节
+- 公式采用latex编辑，github不能直接渲染，请到[gitbook页](https://ahangchen.gitbooks.io/windy-afternoon/content/ml/melon/)浏览
 
 ## 概念列表
 ## [第一章 绪论](ch01.md)
