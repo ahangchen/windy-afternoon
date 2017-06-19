@@ -1,7 +1,7 @@
 # Machine Learning
 
 - [基础](base/README.md)
-  - [《机器学习（周志华）》笔记](melon/README.md)
+  - [《机器学习（周志华）》笔记](melon @ 6ca43e9/README.md)
   - [MLA 2016 南京 笔记](mla_2016.md)
 - [工具包](kit/README.md)
   - [TensorFlow学习笔记](https://github.com/ahangchen/GDLNotes)
