@@ -1,5 +1,5 @@
 {
-    "plugins": ["disqus", "github", "toggle-chapters", "mathjax","mermaid", "mermaid-atom-mden"],
+    "plugins": ["disqus", "github", "toggle-chapters", "mathjax","mermaid"],
     "pluginsConfig": {
         "disqus": {
             "shortName": "ahangchen-blog"
