@@ -10,6 +10,5 @@
   - [Person Re-identification](reid/reid.md)
   - [CVPR2016 Re-id](reid/cvpr-reid.md)
   - [Camera topology and Person Re-id](reid/reid-topo.md)
-  - [Deep transfer learning person re-id](ml/reid/deep_transfer_learning_person_reid.pptx)
 - [集成学习](essemble/README.md)
   - [多模态数据融合](Methodologies_for_Cross-Domain_Data_Fusion_An_Overview.pptx)
