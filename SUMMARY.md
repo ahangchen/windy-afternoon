@@ -17,6 +17,7 @@
     - [Person Re-identification](ml/reid/reid.md)
     - [CVPR2016 Re-id](ml/reid/cvpr-reid.md)
     - [Camera topology and Person Re-id](ml/reid/reid-topo.md)
+    - [Deep transfer learning Person Re-id](ml/reid/deep_transfer_learning_person_reid.md)
   - [工具](ml/kit/README.md)
     - [Tensorflow学习笔记](https://github.com/ahangchen/GDLNotes)
     - [mscnn](ml/kit/caffe/mscnn.md)
