@@ -8,6 +8,7 @@
 
 ### Fine tuning一般步骤
 这是InceptionV4的图示
+
 ![](transfer_fig2.png)
 - 移除Softmax分类层
 - 换成与目标数据集输出维数相同的Softmax层
