@@ -43,7 +43,7 @@
 #### Co-Model
 - CNN计算得到深度特征： $$𝑦=\theta(𝑥)$$
 - Learn a subspace defined by a dictionary D and a new representation Z in the subspace.
-- $$(D^*, Z^*) = min_{D,Z} ||Y-DZ||_F^2 + \lambda\omega(Z)$$ s.t. ||d_i||_2^2 \leq 1
+- $$(D^*, Z^*) = min_{D,Z} ||Y-DZ||_F^2 + \lambda\omega(Z) s.t. ||d_i||_2^2 \leq 1 $$
 - 其中$$||Y-DZ||_F^2$$是reconstruction error
 - $$\omega(Z) = \sum_{i,j} W_{ij}||z_i - z_j||_2^2$$
   - 当$$y_i$$和$$y_j$$是最近邻时，$W_{ij}$为1，否则为0
@@ -55,6 +55,7 @@
 - Two-stepped VS one-stepped: 47.6%->56.3%(VIPeR)
 
 ### Supervised Transfer Learning Result
+
 |DataSet|State of the art|Transfer|
 | :-:| :-:  | :-:  |
 |CUHK03|75.3|85.4|
@@ -66,6 +67,7 @@
 (表中都是top1准确率)
 
 ### Unsupervised Transfer Learning Result
+
 |DataSet|State of the art|Transfer|
 | :-:| :-:  | :-:  |
 |VIPeR|33.5|45.1|
@@ -74,6 +76,7 @@
 
 ### Compare with other unsupervised method
 使用其他无监督方法进行实验对比
+
 |Method|Top1 acc|
 | :-:| :-:  | :-:  |
 |Self-training|42.8|
