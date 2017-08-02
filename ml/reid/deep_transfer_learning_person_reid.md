@@ -44,9 +44,9 @@
 #### Co-Model
 - CNN计算得到深度特征： $$𝑦=\theta(𝑥)$$
 - Learn a subspace defined by a dictionary D and a new representation Z in the subspace.
-- $$(D^*, Z^*) = min_{D,Z} ||Y-DZ||_F^2 + \lambda\omega(Z) s.t. ||d_i||_2^2 \leq 1 $$
+- $$(D^*, Z^*) = min_{D,Z} ||Y-DZ||_F^2 + \lambda\Omega(Z) s.t. ||d_i||_2^2 \leq 1 $$
 - 其中$$||Y-DZ||_F^2$$是reconstruction error
-- $$\omega(Z) = \sum_{i,j} W_{ij}||z_i - z_j||_2^2$$
+- $$\Omega(Z) = \sum_{i,j} W_{ij}||z_i - z_j||_2^2$$
   - 当$$y_i$$和$$y_j$$是最近邻时，$W_{ij}$为1，否则为0
   - 从而最小化最近邻的representation z的差异
 
