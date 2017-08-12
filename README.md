@@ -50,9 +50,7 @@
 ### Help
 最近在翻译[Chromium的文档](https://github.com/ahangchen/Chromium_doc_zh)，有兴趣一起翻译的同学可以和我联系。
 
-> 如果觉得我的文章对您有帮助，请随意打赏～
-
-<img src="1792645569.jpg" width = "400" height = "400" alt="图片名称" align=center />
+> 如果觉得我的文章对您有帮助，请随意[打赏](support.md)～
 
 
 
