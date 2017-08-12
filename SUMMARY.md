@@ -74,5 +74,5 @@
     - [怎样打日志](thinking-in-program/log.md)
 - [我的收藏](star.md)
 - [琐记](pieces.md)
-  - [论文心得](paper.md)
-
+  - [论文心得](paper.md)
+- [打赏支持](support.md)
