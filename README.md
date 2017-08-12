@@ -47,8 +47,11 @@
 - [我的收藏](star.md)
 - [读论文的心得](paper.md)
 
-### Help
-最近在翻译[Chromium的文档](https://github.com/ahangchen/Chromium_doc_zh)，有兴趣一起翻译的同学可以和我联系。
+### 协作
+空有一颗搞事情的心，时间却总是不够用
+
+- 翻译[Chromium的文档](https://github.com/ahangchen/Chromium_doc_zh)，有兴趣一起翻译的同学可以和我联系。
+- 整理《机器学习》一书的[概念](ml/melon/README.md)，有兴趣一起整理的同学可以在issue留言。
 
 > 如果觉得我的文章对您有帮助，请随意[打赏](support.md)～
 
