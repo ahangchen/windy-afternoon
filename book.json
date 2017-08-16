@@ -1,9 +1,6 @@
 {
-    "plugins": ["disqus", "github", "toggle-chapters", "mathjax","mermaid-gb3"],
+    "plugins": ["github", "toggle-chapters", "mathjax","mermaid-gb3"],
     "pluginsConfig": {
-        "disqus": {
-            "shortName": "ahangchen-blog"
-        },
         "github": {
               "url": "https://github.com/ahangchen/windy-afternoon"
         }
