@@ -53,6 +53,7 @@
     - [原生模块](python/raw.md)
     - [设计模式](python/design.md)
     - [可视化](python/viz.md)
+    - [常用库踩坑指南](python/libs.md)
 - [Matlab](matlab/README.md)
     - [Matlab Remote IPC自动化数据处理](matlab/ripc_auto.md)
 - [web前端](web-front/README.md)
