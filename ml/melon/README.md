@@ -3,6 +3,8 @@
 - 如有兴趣协同整理，请到[issue](https://github.com/ahangchen/windy-afternoon/issues/2)中认领章节
 - 公式采用latex编辑，github不能直接渲染，请到[gitbook页](https://ahangchen.gitbooks.io/windy-afternoon/content/ml/melon/)浏览
 
+整理by: [ahangchen](https://github.com/ahangchen), [luopengting](https://github.com/luopengting), [hscspring](https://github.com/hscspring)
+
 ## 概念列表
 
 |o|[绪论](ch01.md)|o|
