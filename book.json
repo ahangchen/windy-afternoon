@@ -3,6 +3,9 @@
     "pluginsConfig": {
         "github": {
               "url": "https://github.com/ahangchen/windy-afternoon"
+        },
+        "disqus": {
+              "shortName": "ahangchen-blog"
         }
     }
 }
