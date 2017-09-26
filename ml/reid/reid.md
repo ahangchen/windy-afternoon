@@ -38,6 +38,12 @@
 ![](reid2016.png)
 
 ---
+## Person Reid数据集收集
+http://www.liangzheng.org/Datasets.html
+
+https://robustsystems.coe.neu.edu/sites/robustsystems.coe.neu.edu/files/systems/projectpages/reiddataset.html
+
+---
 
 - 数据越来越多
 - 边界倾向于由行人检测器（DPM，ACF）生成，但这种检测器可能会错标，导致re-id准确率下降
