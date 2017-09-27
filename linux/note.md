@@ -254,3 +254,7 @@ sudo nginx -s reload
 sudo ln -s libhdf5_serial.so.8.0.2 libhdf5.so
 sudo ln -s libhdf5_serial_hl.so.8.0.2 libhdf5_hl.so
   ```
+- make pycaffe之后,需要添加pythonpath:
+```shell
+PYTHONPATH=/path/to/caffe/python:$PYTHONPATH
+```
