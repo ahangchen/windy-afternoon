@@ -241,3 +241,16 @@ sudo nginx -s reload
 
 `CMake fails to deterimine the bitness of target platform. opencv ubuntu`
 
+## Caffe官网安装教程没告诉你的东西
+- Ubuntu上,hdf5是带serial的,需要添加头文件和lib:
+  - 在Make.config中,修改:
+  ```shell
+  INCLUDE_DIRS := $(PYTHON_INCLUDE) /usr/local/include /usr/include/hdf5/serial/
+  ```
+  
+  - 连接hdf5的库:
+  ```shell
+  cd /usr/lib/x86_64-linux-gnu
+sudo ln -s libhdf5_serial.so.8.0.2 libhdf5.so
+sudo ln -s libhdf5_serial_hl.so.8.0.2 libhdf5_hl.so
+  ```
