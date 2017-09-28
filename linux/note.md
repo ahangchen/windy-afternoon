@@ -249,16 +249,20 @@ sudo nginx -s reload
   ```
   
   - 连接hdf5的库:
-  ```shell
-  cd /usr/lib/x86_64-linux-gnu
+  
+```shell
+cd /usr/lib/x86_64-linux-gnu
 sudo ln -s libhdf5_serial.so.8.0.2 libhdf5.so
 sudo ln -s libhdf5_serial_hl.so.8.0.2 libhdf5_hl.so
-  ```
+```
 - make pycaffe之后,需要在~/.bashrc添加pythonpath:
+
 ```shell
 export PYTHONPATH=/path/to/caffe/python:$PYTHONPATH
 ```
+
 - 如果pycaffe使用了anaconda的numpy,关联了mkl,则需要在~/.bashrc中添加mkl的preload
+
 ```shell
 export LD_PRELOAD=/opt/intel/mkl/lib/intel64/libmkl_core.so:/opt/intel/mkl/lib/intel64/libmkl_sequential.so
 ```
