@@ -262,3 +262,7 @@ export PYTHONPATH=/path/to/caffe/python:$PYTHONPATH
 ```shell
 export LD_PRELOAD=/opt/intel/mkl/lib/intel64/libmkl_core.so:/opt/intel/mkl/lib/intel64/libmkl_sequential.so
 ```
+
+## OpenCV GPU编译CUDA-8兼容问题
+
+https://github.com/thrust/thrust/issues/800
