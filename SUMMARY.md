@@ -17,6 +17,7 @@
     - [Person Re-identification](ml/reid/reid.md)
     - [CVPR2016 Re-id](ml/reid/cvpr-reid.md)
     - [Camera topology and Person Re-id](ml/reid/reid-topo.md)
+    - [Deep transfer learning Person Re-id](ml/reid/deep_transfer_learning_person_reid.md)
   - [工具](ml/kit/README.md)
     - [Tensorflow学习笔记](https://github.com/ahangchen/GDLNotes)
     - [mscnn](ml/kit/caffe/mscnn.md)
@@ -52,6 +53,7 @@
     - [原生模块](python/raw.md)
     - [设计模式](python/design.md)
     - [可视化](python/viz.md)
+    - [常用库踩坑指南](python/libs.md)
 - [Matlab](matlab/README.md)
     - [Matlab Remote IPC自动化数据处理](matlab/ripc_auto.md)
 - [web前端](web-front/README.md)
@@ -73,5 +75,5 @@
     - [怎样打日志](thinking-in-program/log.md)
 - [我的收藏](star.md)
 - [琐记](pieces.md)
-  - [论文心得](paper.md)
-
+  - [论文心得](paper.md)
+- [打赏支持](support.md)
