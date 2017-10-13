@@ -4,4 +4,4 @@
   - [vim](vim/note.md)
   - [git/github/gitbook](git/note.md)
   - [markdown](markdown/README.md)
-  - [Latex符号大全](Symbols.pdf)
+  - [Latex](latex/README.md)
