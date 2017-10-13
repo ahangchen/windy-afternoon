@@ -71,6 +71,7 @@
        - [gitbook添加disqus作为评论](kit/markdown/gitbook_disqus.md)
        - [导出chrome书签为Markdown](kit/markdown/chrome_mark2_md.md)
        - [Markdown here && 微信公众号](kit/markdown/wx_md.md)
+     - [LaTex](kit/latex/README.md)
 - [thinking-in-program](thinking-in-program/README.md)
     - [怎样打日志](thinking-in-program/log.md)
 - [我的收藏](star.md)
