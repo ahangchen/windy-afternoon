@@ -26,6 +26,8 @@ Towards perspective-free object counting with deep learning，这是一篇发在
   - 在摄像头捕捉到的连续视频帧里，目标移动时，在多个帧之间的位置比较相近，将这些运动物体在多帧图片之间做聚类，聚类中心的个数就是目标的个数
   - 不适用于静止物体
   - 优点：无监督
+  
+更多细节可看Related work部分的参考文献
 
 - Counting by Regression
 
@@ -39,7 +41,32 @@ Towards perspective-free object counting with deep learning，这是一篇发在
 - 回归对象数量
 - 回归对象密度图
 
-具体讲一下回归对象密度图的做法：
+具体讲一下对象密度图：
 
-  
-更多细节可看Related work部分的参考文献
+- 先给出原图和目标对象的坐标（可以根据坐标画出质心图）
+
+![](regress_density_origin.png)
+
+- 对质心图做一个高斯滤波，可以得到密度图，作为回归的目标，对质心图进行求和，反过来可以得到目标的数量
+
+![](regress_density_gas.png)
+
+> 进入正题，Hydra CCNN
+
+- 方法： 回归密度图，多尺度输入组合
+- 优势：不需要透视图，多尺度鲁棒性，训练简单，误差小
+
+![](hydra_ccnn.png)
+
+### CCNN(Counting CNN)
+- Regression: 用一个CNN将原始图像映射为对象密度图
+![](ccnn.png)
+
+$$D_{pred}^{(P)} = R(P|\omega)$$
+
+其中P是image patch，$$\omega$$是CNN参数
+
+- Conv1, Conv2, Conv3后面都跟着一个max pooling层
+- Conv4和Conv5都是卷积层（比全连接层更快，参数更少）
+- 对比论文中提到的另一种方法：Zhang et al：卷积后接全连接层，损失为密度图和数量的回归误差，两个损失交替进行优化，CCNN更快，并且训练更简单。
+
