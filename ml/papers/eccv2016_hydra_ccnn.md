@@ -69,4 +69,31 @@ $$D_{pred}^{(P)} = R(P|\omega)$$
 - Conv1, Conv2, Conv3后面都跟着一个max pooling层
 - Conv4和Conv5都是卷积层（比全连接层更快，参数更少）
 - 对比论文中提到的另一种方法：Zhang et al：卷积后接全连接层，损失为密度图和数量的回归误差，两个损失交替进行优化，CCNN更快，并且训练更简单。
+- Loss： $$l(\omega) = \frac{1}{2N}\sum_{n=1}^{N}||D_{pred}^{(P_n)}-D_{gt}^{(P_n)}||_2^2$$，gt是ground truth的意思，这个损失就是求每张图的密度图的预测插值的l2模，然后求平均，N为图片数量
+- 训练：滑动窗口将图片划分为多个网格，对每个网格做回归，将回归的密度图拼接成一个完整尺寸的密度图
 
+### Hydra CCNN
+
+Hydra: 海德拉是希腊神话中的九头蛇
+
+- Motivation: 多尺度范围内的对象大小不同，会导致计数出错
+- Solution: 用多个CCNN各自回归多个尺度的密度图，组合成最终密度图
+
+![](hydra_ccnn.png)
+
+举个例子：n=3时，也就是回归三个尺度的密度图，
+- S0: 整个patch（不是整张图，是一个patch，前面讲了会做滑窗划分）
+- S1：在中间抠出面积为2/3的图
+- S2：在中间抠出面积为1/3的图
+
+> 私以为这个地方还有改进空间
+
+### 实验结果
+#### 数据集
+- TRANCOS（汽车），UCSD（行人），UCF_CC_50（行人）
+- 评价指标：
+  - MAE（Mean Absolute Error）
+  - GAME(Grid Average Mean Absolute Error)：GAME(L) = \frac{1}{N}\sum_{n=1}^{N}\sum_{l=1}^{4^L}|D_{I_n}^{l}-D_{I_n^{gt}}^{l}|
+    - N是图片总数
+    - L: 对于每张图，划分成$$4^L$$个小格，计算每个小格的误差
+    - L为0时就是MAE
