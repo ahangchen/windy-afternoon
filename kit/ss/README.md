@@ -39,6 +39,6 @@ sslocal -c /path/to/your/config.json
 
 ### 需要上网的软件配置
 - Chrome：协议选择SOCK5，设置代理服务器ip为127.0.0.1，端口为1080即可，
-- 如果希望国内网站不走代理服务器，可以装一下switchomega插件，添加一个ss模式，改一下自带的自动切换模式，在匹配GFW规则的时候走ss模式
+- 如果希望国内网站不走代理服务器，可以装一下switchomega插件，直接使用X-Tunnel自动切换模式
 - ubuntu或mac可以配置全局代理
 
