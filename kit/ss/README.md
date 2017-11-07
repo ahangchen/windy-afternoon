@@ -8,7 +8,7 @@
 ```json
 {
        "server":"your.server.ip",
-       "server_port":yourserverport,
+       "server_port":"yourserverport",
        "local_address": "127.0.0.1",
        "local_port":1080,
        "password":"yoursspassword",
