@@ -37,3 +37,4 @@ card 1: Device [USB PnP Sound Device], device 0: USB Audio [USB Audio]
 
 ### Reference
 - https://www.raspberrypi.org/documentation/
+- https://www.yuanmas.com/info/DEzk2AdLOY.html
