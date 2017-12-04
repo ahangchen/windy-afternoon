@@ -139,6 +139,8 @@
 - 交互运动视频生成
 
 #### 视频检索的哈希学习
+> Learning Multifunctional Binary Codes for Both Category and Attribute Oriented Retrieval Tasks
+
 视频检索基于图像检索，大规模图像检索对性能要求较高
 - 图像检索
   - 任务：通常图像特征很大，直接检索特征太慢
@@ -150,6 +152,8 @@
 ![](p17_hash.png)
 
 #### 多媒体与知识图谱
+> Cross-media analysis and reasoning: advances and directions
+
 - 任务：
   - 将文本，图像，语音，视频及其交互属性进行混合
   - 多源融合+知识演化+系统演化
@@ -171,7 +175,7 @@
   - 深度学习+反馈（知识和规则进行反馈/强化学习）（黑箱方法）
   - 统计推理，贝叶斯推理（白盒方法）
 - 趋势：
-  - 知识表达理解，多媒体理解
+  - 知识表达理解，多媒体理解
 
 #### 基于锚图的视觉数据分析
 - 图学习
@@ -205,4 +209,25 @@
   - 用文本和图像特征一同训练生成答案
   - 用LSTM做时序推理
 
+### 细粒度分类
+- 任务：
+  - 识别图像同一大类中的子类
+- 挑战：
+  - 姿态视角不同导致类内差异大，外形颜色相似导致类间差异小
 
+#### 基于模型动态扩容的增量深度学习方法
+论文：Error-Driven Incremental Learning in Deep Convolutional Neural Network for Large-Scale Image Classification
+
+- 将目标的多个类别按相似度划分为几个大类，
+- 增加一个新的类别时，将其归入最相近的大类中，重用大类的参数，扩展小类分类层参数
+- 利用类别子集合划分实现模型动态扩容，利用特征迁移学习实现训练加速（对类别做聚类）
+![](cncc_cv_img/p23_incremental.png)
+
+## 局部两级注意力深度模型
+> The Application of Two-level Attention Models in Deep Convolutional Neural Network for Fine-grained Image Classification
+
+给定图片-类别，不给出对象位置（bounding box）和局部的位置(part location)，用Attention学习对象位置和局部特征
+
+- 首先用公开的数据集预训练模型，top-down地作用在整图上，选出跟目标相关的区域
+
+![](cncc_cv_img/p25_object.png)
