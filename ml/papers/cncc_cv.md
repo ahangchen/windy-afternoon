@@ -151,7 +151,7 @@
     - 对哈希值做高效的异或运算求相似度
     - 模型（添加了对二进制编码的约束，希望绝对值与1尽量相近）：
 
-![](p17_hash.png)
+![](cncc_cv_img/p17_hash.png)
 
 #### 多媒体与知识图谱
 > Cross-media analysis and reasoning: advances and directions
@@ -237,7 +237,7 @@
 - Part level: 
   - 对于Object level得到的模型，对卷积层的filter做相似度聚类，同一类的卷积层合为一个part detector，用来为具体的对象局部做识别
 
-![](cncc_cv_img/p25_part.png)
+![](cncc_cv_img/p25_local.png)
 
 - 结合总体评分和局部评分来对对象做细粒度分类
 
@@ -269,7 +269,7 @@
 - 在图片数据集的基础上，增加对图片的描述文本，利用这两个模态的数据提供更高精度的细粒度分类
 - 卷积做图像分类，CNN+LSTM做文本分类，两个分类结果合起来
 
-![](p28_vt.png)
+![](cncc_cv_img/p28_vt.png)
 
 
 ### 跨媒体关联与检索
