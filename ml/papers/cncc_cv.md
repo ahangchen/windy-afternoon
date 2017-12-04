@@ -1,4 +1,6 @@
 # CNCC2017中的深度学习与跨媒体智能
+转载请注明作者：[梦里茶](https://github.com/ahangchen)
+
 ## 目录
 - 机器学习与跨媒体智能
   - 传统方法与深度学习
@@ -223,11 +225,77 @@
 - 利用类别子集合划分实现模型动态扩容，利用特征迁移学习实现训练加速（对类别做聚类）
 ![](cncc_cv_img/p23_incremental.png)
 
-## 局部两级注意力深度模型
+#### 局部两级注意力深度模型
 > The Application of Two-level Attention Models in Deep Convolutional Neural Network for Fine-grained Image Classification
 
 给定图片-类别，不给出对象位置（bounding box）和局部的位置(part location)，用Attention学习对象位置和局部特征
 
-- 首先用公开的数据集预训练模型，top-down地作用在整图上，选出跟目标相关的区域
+- Object level: 首先用公开的数据集预训练模型，top-down地作用在整图上，选出跟目标相关的区域（响应度最高的区域），相当于抠图，对抠过的区域再加上类别标签进行迁移学习。
 
 ![](cncc_cv_img/p25_object.png)
+
+- Part level: 
+  - 对于Object level得到的模型，对卷积层的filter做相似度聚类，同一类的卷积层合为一个part detector，用来为具体的对象局部做识别
+
+![](cncc_cv_img/p25_part.png)
+
+- 结合总体评分和局部评分来对对象做细粒度分类
+
+#### 空间约束的显著性部件选择模型
+> Weakly Supervised Learning of Part Selection Model with Spatial Constraints for Fine-grained Image Classification
+
+- 显著性提取和协同分割定位对象
+- 先通过显著性聚类提出备选局部，
+- 再对局部位置关系提出两个空间约束：局部和整体必须有尽可能多的重叠，局部之间有尽可能少的重叠。
+
+![](cncc_cv_img/p26_constraint.png)
+
+上面两篇都是不需要局部组件的标注，就学到了局部的特征和约束
+
+#### 显著性引导的细粒度辨识性定位方法
+> Fine-grained Discriminative Localization via Saliency-guided Faster R-CNN
+
+结合分类模型和检测模型做更高精度的细粒度分类
+
+- 显著性模型提供弱标记的图片训练faster r-cnn检测模型
+- 检测模型提供更精确的备选区域进行分类
+
+
+![](cncc_cv_img/p27_rcnn.png)
+
+#### 视觉文本联合建模的图像细粒度表示
+> Fine-grained Image Classification via Combining Vision and Language
+
+- 在图片数据集的基础上，增加对图片的描述文本，利用这两个模态的数据提供更高精度的细粒度分类
+- 卷积做图像分类，CNN+LSTM做文本分类，两个分类结果合起来
+
+![](p28_vt.png)
+
+
+### 跨媒体关联与检索
+- 跨媒体统一表征学习：使用相同的特征类型表征不同媒体的数据
+- 跨媒体相似度计算：通过分析跨媒体关联关系，计算不同媒体数据的语义相似性
+
+#### 跨媒体关联传递方法
+> IJCV2013： Exhaustive and Efficient Constraint Propagation
+
+#### 基于稀疏和半监督的统一表征方法
+> Learning Cross-Media Joint Representation With Sparse and Semisupervised Regularization
+
+#### 基于跨媒体语义单元的统一表征方法
+> Semi-Supervised Cross-Media Feature Learning with Unified Patch Graph Regularization
+
+#### 基于跨媒体多深度网络的统一表征方法
+> Cross-media Shared Representation by Hierarchical Learning with Multiple Deep Networks
+
+#### 基于多粒度层级网络跨媒体关联学习方法
+> CCL: Cross-modal Correlation Learning with Multi-grained Fusion by Hierarchical Network
+
+#### 跨媒体混合迁移网络方法
+> Cross-modal Common Representation Learning by Hybrid Transfer Network, IJCAI2017
+
+#### 跨媒体检索数据集PKU-XMedia
+- www.icst.pku.edu.cn/mlpl/XMedia
+- 五种媒体类型（图像、文本、视频、音频、3D）
+- 10万标注数据，200个语义类别，基于wordNet的层次结构
+- 来自Wikipedia, Flickr, Youtube, Findsounds, Freesound, Yobi3D
