@@ -25,6 +25,7 @@
   - [讲座论文系列](ml/papers/README.md)
     - [CNCC2017 琐记](ml/papers/cncc2017.md)
     - [ECCV 2016 Hydra CCNN](ml/papers/eccv2016_hydra_ccnn.md)   
+    - [CNCC2017深度学习与跨媒体智能](ml/papers/cncc_cv.md)
     - [MLA2016笔记](ml/mla_2016.md)
   - [《机器学习》（周志华）读书笔记](ml/zzh_ml_notes.md)
     - [西瓜书概念整理](ml/melon/README.md)
