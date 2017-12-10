@@ -35,6 +35,9 @@ card 1: Device [USB PnP Sound Device], device 0: USB Audio [USB Audio]
   Subdevice #0: subdevice #0
 ```
 
+- 通过noobs安装raspbian的时候，千万不要联网！不要连wifi也不要插网线，否则会从网上重新下载镜像，超级慢！本来6.3MB/s的事情变成200kB/s
+
+
 ### Reference
 - https://www.raspberrypi.org/documentation/
 - https://www.yuanmas.com/info/DEzk2AdLOY.html
