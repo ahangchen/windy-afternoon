@@ -110,3 +110,5 @@ pi@raspberrypi:~ $ sudo ifconfig wlan1 up
 
 ## 总结
 想要在树莓派3B+上使用RTL8188CUS开启无线网卡监听模式，就把rtl8192的驱动禁用掉，把rtlwifi的驱动开起来就好了
+
+> 喜欢请[star](https://github.com/ahangchen/windy-afternoon)，转载请注明作者[梦里茶](https://github.com/ahangchen)
