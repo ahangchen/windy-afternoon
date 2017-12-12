@@ -37,6 +37,7 @@ card 1: Device [USB PnP Sound Device], device 0: USB Audio [USB Audio]
 
 - 通过noobs安装raspbian的时候，千万不要联网！不要连wifi也不要插网线，否则会从网上重新下载镜像，超级慢！本来6.3MB/s的事情变成200kB/s
 
+- [树莓派3B+上RTL8188CUS无线网卡启用monitor模式](rtlwifi.md)
 
 ### Reference
 - https://www.raspberrypi.org/documentation/
