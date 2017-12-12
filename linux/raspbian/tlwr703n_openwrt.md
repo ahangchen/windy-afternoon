@@ -1,5 +1,7 @@
 # TP-LINK TL-WR703N v1.7 openwrt flashing
 
+> 喜欢请[star](https://github.com/ahangchen/windy-afternoon)，转载请注明作者[梦里茶](https://github.com/ahangchen)
+
 TP-LINK TL-WR703N是一个小型的路由器，可以有线转WiFi，3G转WiFi，很多人拿它刷openwrt系统，然后可以在上面各种搞事。
 
 ### V1.7以前
