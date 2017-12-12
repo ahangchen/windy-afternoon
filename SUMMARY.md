@@ -68,7 +68,7 @@
   - [Ubuntu安装与初始配置](linux/ubuntu_init.md)
   - [树莓派相关](linux/raspbian/README.md)
     - [树莓派3B+无线网卡监听模式](linux/raspbian/rtlwifi.md)
-    - [TP-LINK TL-WR703N v1.7 openwrt flashing](linux/raspbian/tlwr703_openwrt.md)
+    - [TP-LINK TL-WR703N v1.7 openwrt flashing](linux/raspbian/tlwr703n_openwrt.md)
 - [UI](UI/README.md)
 - [kit](kit/README.md)
      - [vim](kit/vim/note.md)
