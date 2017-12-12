@@ -37,6 +37,7 @@ sudo launchctl start com.apple.tftpd
 ```
 
 - 测试，在另一台电脑上，以Ubuntu为例，安装tftp客户端
+
 ```shell
 cwh@cwh-Matrimax-PC:sudo apt-get install tftp
 cwh@cwh-Matrimax-PC:~$ tftp
@@ -107,6 +108,7 @@ reboot -f # 重启，会启动openwrt
 - 在tftp服务器上（连接到路由器的另外一台机器也行）执行
 
 - 修改密码为admin42
+
 ```shell
 curl -o - -b 'tLargeScreenP=1; subType=pcSub; Authorization=Basic%20YWRtaW46YWRtaW40Mg%3D%3D; ChgPwdSubTag=true' 'http://192.168.1.1/'
 ```
@@ -114,6 +116,7 @@ curl -o - -b 'tLargeScreenP=1; subType=pcSub; Authorization=Basic%20YWRtaW46YWRt
 注意这里的192.168.1.1是路由器的ip地址, 这个步骤只会更改路由器家长控制的默认密码，刷完openwrt之后会恢复为openwrt的默认密码的
 
 - 启用家长控制（利用漏洞）
+
 ```shell
 curl -o - -b 'tLargeScreenP=1; subType=pcSub; Authorization=Basic%20YWRtaW46YWRtaW40Mg%3D%3D; ChgPwdSubTag=' --referer 'http://192.168.1.1/userRpm/ParentCtrlRpm.htm' 'http://192.168.1.1/userRpm/ParentCtrlRpm.htm?ctrl_enable=1&parent_mac_addr=00-00-00-00-00-02&Page=1'
 ```
