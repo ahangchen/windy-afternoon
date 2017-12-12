@@ -4,7 +4,7 @@ TP-LINK TL-WR703N是一个小型的路由器，可以有线转WiFi，3G转WiFi�
 
 ### V1.7以前
 通常刷openwrt的做法是，
-- 下载一个openwrt [factory镜像](http://downloads.openwrt.org/attitude_adjustment/12.09/ar71xx/generic/openwrt-ar71xx-generic-tl-wr703n-v1-squashfs-factory.bin)
+- 下载一个openwrt [factory固件](http://downloads.openwrt.org/attitude_adjustment/12.09/ar71xx/generic/openwrt-ar71xx-generic-tl-wr703n-v1-squashfs-factory.bin)
 - 打开路由器，
 - 笔记本连接路由器发出来的WiFi，比如：TP-LINK-90-1B-18
 - 在浏览器输入192.168.1.1，选择左边“系统工具”-“软件升级”-“浏览”
@@ -55,5 +55,17 @@ curl https://busybox.net/downloads/binaries/1.21.1/busybox-mips > busybox
 ```
 
 链接有可能失效，可以谷歌搜索busybox binary download，下载mips版本的
+
+- 下载openwrt固件并拆分成两份（因为wr703n的内存很小，可能传输的时候传不了整个文件）
+
+```shell
+curl https://downloads.openwrt.org/snapshots/trunk/ar71xx/generic/openwrt-ar71xx-generic-tl-wr703n-v1-squashfs-factory.bin -o openwrt-ar71xx-generic-tl-wr703n-v1-squashfs-factory.bin
+dd if=openwrt-ar71xx-generic-tl-wr703n-v1-squashfs-factory.bin of=i1 bs=1 count=1048576
+dd if=openwrt-ar71xx-generic-tl-wr703n-v1-squashfs-factory.bin of=i2 bs=1 skip=1048576
+```
+
+- 将生成的
+
+
 
 ### 编写
