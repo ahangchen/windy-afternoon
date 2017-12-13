@@ -4,6 +4,8 @@
 
 TP-LINK TL-WR703N是一个小型的路由器，可以有线转WiFi，3G转WiFi，很多人拿它刷openwrt系统，然后可以在上面各种搞事。
 
+![TL-WR703N](wr703n.jpg)
+
 ### V1.7以前
 通常刷openwrt的做法是，
 - 下载一个openwrt [factory固件](http://downloads.openwrt.org/attitude_adjustment/12.09/ar71xx/generic/openwrt-ar71xx-generic-tl-wr703n-v1-squashfs-factory.bin)
