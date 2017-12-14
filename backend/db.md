@@ -20,3 +20,6 @@ ALTER DATABASE db_name DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 
 ALTER TABLE db_table CONVERT TO CHARACTER SET utf8 COLLATE utf8_general_ci;
 ```
+
+## MongoDB
+- [教程](http://www.runoob.com/mongodb/mongodb-connections.html)
