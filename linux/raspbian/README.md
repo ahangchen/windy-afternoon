@@ -23,6 +23,19 @@ card 1: Device [USB PnP Sound Device], device 0: USB Audio [USB Audio]
 
 - [树莓派3B+上RTL8188CUS无线网卡启用monitor模式](rtlwifi.md)
 
+- 树莓派开启telnet
+
+```shell
+sudo apt-get install telnet
+sudo apt-get install telnetd
+```
+
+- 树莓派安装opencv
+
+https://www.pyimagesearch.com/2016/04/18/install-guide-raspberry-pi-3-raspbian-jessie-opencv-3/
+
+make -j4一步到99%的时候可能会因为树莓派温度过高卡住，各种反应迟钝，可以暂停（断电也行），不要开四线程，直接make，后边的时间不会特别长。
+
 ### 树莓派开发实战
 
 > Simon Monk著 人民邮电出版社
