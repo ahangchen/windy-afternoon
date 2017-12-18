@@ -23,6 +23,13 @@ card 1: Device [USB PnP Sound Device], device 0: USB Audio [USB Audio]
 
 - [树莓派3B+上RTL8188CUS无线网卡启用monitor模式](rtlwifi.md)
 
+- 树莓派开启telnet
+
+```shell
+sudo apt-get install telnet
+sudo apt-get install telnetd
+```
+
 ### 树莓派开发实战
 
 > Simon Monk著 人民邮电出版社
