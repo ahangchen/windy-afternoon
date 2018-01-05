@@ -24,30 +24,18 @@ ALTER TABLE db_table CONVERT TO CHARACTER SET utf8 COLLATE utf8_general_ci;
 ## MongoDB
 - [教程](http://www.runoob.com/mongodb/mongodb-connections.html)
 - 常用命令
-  
-  - 启动mongodb后端
-  
-```shell
- mongod
-```
-  - 连接mongodb
-  
-```shell
+
+```shell  
+# 启动mongodb后端
+mongod
+# 连接mongodb
 mongo
 mongodb://user:psw@ip[:port]/dbname
-```
-  
-  - 查看与切换数据库（不存在会创建），展示所有的文档
-
-```shell
+# 查看与切换数据库（不存在会创建），展示所有的文档
 show dbs
 use reid
 db.getCollectionNames()
-```
-  
-  - 查询文档（传统意义的表）
-  
-```shell
+# 查询文档（传统意义的表）
 db.col_name.find()
 ```
 
