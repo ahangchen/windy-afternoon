@@ -24,7 +24,8 @@ ALTER TABLE db_table CONVERT TO CHARACTER SET utf8 COLLATE utf8_general_ci;
 ## MongoDB
 - [教程](http://www.runoob.com/mongodb/mongodb-connections.html)
 - 常用命令
-  - 启动mongodb后端
+  
+  - 启动mongodb后端
   
 ```shell
  mongod
