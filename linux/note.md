@@ -81,7 +81,7 @@ ssh -XC user@host
   - 安装远程桌面环境
 ```
 sudo apt-get install xfce4
-sudo apt-get install xrdp vnc4server
+sudo apt-get install xrdp tightvncserver
 echo "xfce4-session" >~/.xsession
 sudo service xrdp restart
 ```
@@ -91,37 +91,20 @@ sudo service xrdp restart
 - 可以修改vncserver分辨率：
 
 ```
-sudo vi /etc/alternatives/vncserver
+vncserver -geometry 1920x1080
 ```
-找到
+这样就能启动一个指定分辨率为1920x1080的vnc会话
 
-```shell
-$geometry = "1024x768";
-```
-
-改为
-
-
-```shell
-$geometry = "1024x768";
-```
 
 - 如果需要在mac上远程Ubuntu，需要在Ubuntu上开启vncserver: 命令行输入vncserver(初次运行输入设置密码)，并将~/.vnc/xstartup文件改为：
 
 ```shell
-!/bin/sh
-
-# Uncomment the following two lines for normal desktop:
-unset SESSION_MANAGER
-exec /etc/X11/xinit/xinitrc
-
-[ -x /etc/vnc/xstartup ] && exec /etc/vnc/xstartup
-[ -r $HOME/.Xresources ] && xrdb $HOME/.Xresources
-xsetroot -solid grey
-vncconfig -iconic &
-x-terminal-emulator -geometry 80x24+10+10 -ls -title "$VNCDESKTOP Desktop" &
-gnome-session &
+#!/bin/bash
+xrdb $HOME/.Xresources
+startxfce4 &
 ```
+
+以此解决花屏问题
 
 - 关闭一个vncserver：
 
