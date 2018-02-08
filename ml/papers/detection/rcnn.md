@@ -83,20 +83,28 @@ D. 不等比例缩放到224x224
 ### Bounding-box regression
 这部分是在附录C展开阐述的（CVPR篇幅限制）。首先，为每个类训练一个bounding box regressor，类似DPM中的bounding box regression，每个类的regressor可以为每个图输出一个响应图，代表图中各个部分对这个类的响应度。DPM中的Regressor则是用图像的几何特征（HOG）计算的；不同于DPM，RCNN-BB中这种响应度(activation)是用CNN来计算的，输入也有所不同，DPM输入是原图，输出是响应图（从而得到bbox的位置），RCNN-BB的Regressor输入是Region Proposals的位置和原图，输出是bounding box的位置。
 
-定义一个region proposal的位置为P=(Px, Py, Pw, Ph)，x,y为region prosal的中心点，w,h为region proposal的宽高，对应的bounding box的位置为G=(Gx,Gy,Gw,Gh)，Regressor的训练目标就是学习一个P->G的映射，将这个映射拆解为四个部分：
-![P->G](http://upload-images.jianshu.io/upload_images/1828517-7a0ceb62fead60a7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+定义一个region proposal的位置为$$P=(P_x, P_y, P_w, P_h)$$，x,y为region prosal的中心点，w,h为region proposal的宽高，对应的bounding box的位置为$$G=(G_x,G_y,G_w,G_h)$$，Regressor的训练目标就是学习一个P->G的映射，将这个映射拆解为四个部分：
 
-其中，dx(P)，dy(P),  dw(P), dh(P)是四个线性函数，输入为P经过前面说的fine tune过的CNN后得到的pool5特征，输出为一个实数
-![](http://upload-images.jianshu.io/upload_images/1828517-a36d59eacde39e75.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+$$\hat{G}_x=P_wd_x(P)+P_x$$
+$$\hat{G}_y=P_hd_x(P)+P_x$$
+$$\hat{G}_w=P_wexp(d_w(P))$$
+$$\hat{G}_h=P_hexp(d_h(P))$$
+
+其中，$$d_*(P)$$是四个线性函数，输入为P经过前面说的fine tune过的CNN后得到的pool5特征，输出为一个实数，即$$d_*(P) = w^T_*\phi_5(P)$$
 
 训练就是解一个最优化问题，求出四个w向量，使得预测的G和真实的G相差最小，用差平方之和代表距离，化简后的形式为：
-![Train Regressor](http://upload-images.jianshu.io/upload_images/1828517-418739b151a19cd6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+$$w_x = argmin\limits_{\hat{w}_*} \sum\limits_i^N(t_*^i-\hat{w}_*^T\phi_5(P^i))^2 + \lambda||\hat{w}_*||^2$$
 
 其中，
-![Target variable](http://upload-images.jianshu.io/upload_images/1828517-689b2a188bcb435d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+$$t_x = (G_x - P_x)/P_w$$
+$$t_y = (G_y - P_y)/P_h$$
+$$t_w = log(G_w/P_w)$$
+$$t_h = log(G_h/P_h)$$
 
 跟前边的四个映射是对应的，
-同时加上了对w的l2正则约束，抑制过拟合
+同时加上了\lambda||\hat{w}_*||^2，对w的l2正则约束，抑制过拟合
 
 训练得到四个映射关系后，测试时用这四个映射就能够对预测的Region Proposals位置做精细的修正，提升检测框的位置准确率了。
 
