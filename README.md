@@ -17,6 +17,11 @@
 
 ### 推荐阅读
 
+#### 机器学习与数据挖掘
+- [谷歌机器学习新手教程学习心得](https://github.com/ahangchen/GoogleML)
+- [谷歌深度学习教程笔记](https://github.com/ahangchen/GDLnotes)
+- [读论文系列](ml/papers/README.md)
+
 #### Android相关
  - [Activity](android/activity/README.md)
    - [Activity四种启动模式](android/activity/Activity四种启动模式.md)
@@ -38,10 +43,6 @@
 -  [刷爆github小绿点](kit/git/green_blush.md)
 -  [Markdown系列](kit/markdown/README.md)
 -  [Ubuntu初始配置](linux/ubuntu_init.md)
-
-#### 机器学习
-- [谷歌机器学习新手教程学习心得](https://github.com/ahangchen/GoogleML)
-- [谷歌深度学习教程笔记](https://github.com/ahangchen/GDLnotes)
 
 #### 琐记
 - [我的收藏](star.md)
