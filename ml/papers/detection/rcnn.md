@@ -86,25 +86,31 @@ D. 不等比例缩放到224x224
 定义一个region proposal的位置为$$P=(P_x, P_y, P_w, P_h)$$，x,y为region prosal的中心点，w,h为region proposal的宽高，对应的bounding box的位置为$$G=(G_x,G_y,G_w,G_h)$$，Regressor的训练目标就是学习一个P->G的映射，将这个映射拆解为四个部分：
 
 $$\hat{G}_x=P_wd_x(P)+P_x$$
+
 $$\hat{G}_y=P_hd_x(P)+P_x$$
+
 $$\hat{G}_w=P_wexp(d_w(P))$$
+
 $$\hat{G}_h=P_hexp(d_h(P))$$
 
 其中，$$d_*(P)$$是四个线性函数，输入为P经过前面说的fine tune过的CNN后得到的pool5特征，输出为一个实数，即$$d_*(P) = w^T_*\phi_5(P)$$
 
 训练就是解一个最优化问题，求出四个w向量，使得预测的G和真实的G相差最小，用差平方之和代表距离，化简后的形式为：
 
-$$w_x = argmin\limits_{\hat{w}_*} \sum\limits_i^N(t_*^i-\hat{w}_*^T\phi_5(P^i))^2 + \lambda||\hat{w}_*||^2$$
+$$w_x = argmin_{\hat{w}_*} \sum_i^N(t_*^i-\hat{w}_*^T\phi_5(P^i))^2 + \lambda||\hat{w}_*||^2$$
 
 其中，
 
 $$t_x = (G_x - P_x)/P_w$$
+
 $$t_y = (G_y - P_y)/P_h$$
+
 $$t_w = log(G_w/P_w)$$
+
 $$t_h = log(G_h/P_h)$$
 
 跟前边的四个映射是对应的，
-同时加上了\lambda||\hat{w}_*||^2，对w的l2正则约束，抑制过拟合
+同时加上了$$\lambda||\hat{w}_*||^2$$，对w的l2正则约束，抑制过拟合
 
 训练得到四个映射关系后，测试时用这四个映射就能够对预测的Region Proposals位置做精细的修正，提升检测框的位置准确率了。
 
