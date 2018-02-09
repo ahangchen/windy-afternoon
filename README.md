@@ -23,12 +23,6 @@
 - [读论文系列](ml/papers/README.md)
 
 #### Android相关
- - [Activity](android/activity/README.md)
-   - [Activity四种启动模式](android/activity/Activity四种启动模式.md)
-   - [Intent Flag](android/activity/INTENT_FLAG.md)
-   - [多task的应用](android/activity/多TASK的应用.md)
-   - [Task和回退栈](android/activity/Task和回退栈.md)
-
  - [Sqlite](android/sqlite/README.md)
    - [【源码】CursorWindow读DB](android/sqlite/从源码看ANDROID中SQLITE是怎么通过CURSORWINDOW读DB的.md)
    - [Sqlite在Android上的一个Bug](android/sqlite/SQLITE在ANDROID上的一个BUG.md)
@@ -44,9 +38,6 @@
 -  [Markdown系列](kit/markdown/README.md)
 -  [Ubuntu初始配置](linux/ubuntu_init.md)
 
-#### 琐记
-- [我的收藏](star.md)
-- [读论文的心得](paper.md)
 
 ### 协作
 空有一颗搞事情的心，时间却总是不够用
