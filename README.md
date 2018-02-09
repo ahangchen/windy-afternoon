@@ -20,7 +20,6 @@
 #### 机器学习与数据挖掘
 - [读论文系列](ml/papers/README.md)
 - [谷歌深度学习教程笔记](https://github.com/ahangchen/GDLnotes)
-- [谷歌机器学习新手教程学习心得](https://github.com/ahangchen/GoogleML)
 
 
 #### Android相关
