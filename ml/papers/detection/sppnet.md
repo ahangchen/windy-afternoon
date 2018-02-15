@@ -25,7 +25,7 @@
 
 SPP中SP（Spatial Pyramid）的思想来源于SPM（Spatial Pyramid Matching），可以参考[这篇文章](http://blog.csdn.net/jwh_bupt/article/details/9625469)，正如论文Conclusion中说的， Our studies also show that many time-proven techniques/insights in computer vision can still play important roles in deep-networks-based recognition.
 
-SPM是在不同的分辨率（尺度）下，对图片进行分割，然后对每个局部提取特征，将这些特征整合成一个最终的特征，这个特征有宏观有微观（多尺度金字塔），保留了区域特性（不同的区域特征不同），然后用特征之间的相似度进行图片间的匹配（matching）。先前我们提到过，每个filter会得到一个feature map，SPP的输入则是卷积后的这些feature map，每次将一个feature map在不同尺度下进行分割，尺度L将图片分割为2^L^个小格子（其实格子数也可以自己定，不一定要分成2^L^个），L为0代表全图；对每个小格子的做pooling，论文中是max pooling, 实际中也可以用其他，这里不像SPM需要做SIFT之类的特征提取，因为feature map已经是卷积层提取过的特征了，将pooling得到的结果拼接起来，就可以得到固定尺寸的feature map。
+SPM是在不同的分辨率（尺度）下，对图片进行分割，然后对每个局部提取特征，将这些特征整合成一个最终的特征，这个特征有宏观有微观（多尺度金字塔），保留了区域特性（不同的区域特征不同），然后用特征之间的相似度进行图片间的匹配（matching）。先前我们提到过，每个filter会得到一个feature map，SPP的输入则是卷积后的这些feature map，每次将一个feature map在不同尺度下进行分割，尺度L将图片分割为$$2^L$$个小格子（其实格子数也可以自己定，不一定要分成$$2^L$$个），L为0代表全图；对每个小格子的做pooling，论文中是max pooling, 实际中也可以用其他，这里不像SPM需要做SIFT之类的特征提取，因为feature map已经是卷积层提取过的特征了，将pooling得到的结果拼接起来，就可以得到固定尺寸的feature map。
 
 ![Spatial Pyramid](http://upload-images.jianshu.io/upload_images/1828517-f2287a903cc156a9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
