@@ -266,6 +266,7 @@ sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.4 20
 //#endif /* __GNUC__ > 5 || (__GNUC__ == 5 && __GNUC_MINOR__ > 1) */
 ```
 
+- caffe编译时只兼容apt-get的protobuf，不兼容其他高版本的，如果做了上面的修改仍然有问题，需要将系统中（比如anaconda中）的其他protobuf卸载
 
 ## OpenCV GPU编译CUDA-8兼容问题
 
