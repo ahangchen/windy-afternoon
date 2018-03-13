@@ -271,3 +271,9 @@ sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.4 20
 ## OpenCV GPU编译CUDA-8兼容问题
 
 https://github.com/thrust/thrust/issues/800
+
+## 查看端口占用
+
+```shell
+ netstat -ap | grep 8080
+ ```
