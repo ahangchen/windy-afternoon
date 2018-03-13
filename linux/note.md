@@ -250,6 +250,23 @@ export PYTHONPATH=/path/to/caffe/python:$PYTHONPATH
 export LD_PRELOAD=/opt/intel/mkl/lib/intel64/libmkl_core.so:/opt/intel/mkl/lib/intel64/libmkl_sequential.so
 ```
 
+- apt-get 安装的protobuf是跟随ubuntu g++版本的，但cuda的安装是落后于g++版本的，如果g++降级过，用这个低版本g++编译caffe时，会导致找不到高版本的protobuf，应当将g++升级回来:
+
+```shell
+sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.4 20
+```
+
+但是g++升级又会导致编译时cuda不兼容，实际上cuda不是完全不兼容，只要把`/usr/local/cuda/include/host_config.h`中的这三行注释掉就行：
+
+```c++
+//#if __GNUC__ > 5 || (__GNUC__ == 5 && __GNUC_MINOR__ > 3)
+
+//#error -- unsupported GNU version! gcc versions later than 5.3 are not supported!
+
+//#endif /* __GNUC__ > 5 || (__GNUC__ == 5 && __GNUC_MINOR__ > 1) */
+```
+
+
 ## OpenCV GPU编译CUDA-8兼容问题
 
 https://github.com/thrust/thrust/issues/800
