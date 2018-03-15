@@ -227,10 +227,17 @@ sudo nginx -s reload
 ## Caffe官网安装教程没告诉你的东西
 - Ubuntu上,hdf5是带serial的,需要添加头文件和lib:
   - 在Make.config中,修改:
-  ```shell
-  INCLUDE_DIRS := $(PYTHON_INCLUDE) /usr/local/include /usr/include/hdf5/serial/
-  ```
   
+```shell
+INCLUDE_DIRS := $(PYTHON_INCLUDE) /usr/local/include /usr/include/hdf5/serial/
+```
+
+或者直接运行
+
+```shell
+find . -type f -exec sed -i -e 's^"hdf5.h"^"hdf5/serial/hdf5.h"^g' -e 's^"hdf5_hl.h"^"hdf5/serial/hdf5_hl.h"^g' '{}' \;
+```
+
   - 连接hdf5的库:
   
 ```shell
@@ -268,6 +275,11 @@ sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.4 20
 
 - caffe编译时只兼容apt-get的protobuf，不兼容其他高版本的，如果做了上面的修改仍然有问题，需要将系统中（比如anaconda中）的其他protobuf卸载
 
+- caffe python3, make pycaffe会提示找不到-lboost_python3，需要：
+
+```shell
+sudo ln -s libboost_python-py35.so libboost_python3.so
+```
 ## OpenCV GPU编译CUDA-8兼容问题
 
 https://github.com/thrust/thrust/issues/800
