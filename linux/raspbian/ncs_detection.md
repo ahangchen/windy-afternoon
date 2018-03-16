@@ -5,8 +5,10 @@
 ![NCS Pi](https://upload-images.jianshu.io/upload_images/1828517-1cda688b0ed4638e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 代码: 
+
 训练数据预处理：
 https://gist.github.com/ahangchen/ae1b7562c1f93fdad1de58020e94fbdf
+
 测试：https://github.com/ahangchen/ncs_detection
 
 > Star是一种美德。
