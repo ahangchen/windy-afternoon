@@ -6,4 +6,4 @@
 - [ECCV 2016, Hydra CCNN](eccv2016_hydra_ccnn.md)
 - [CNCC 2017琐记](cncc2017.md)
 - [CNCC2017中的深度学习与跨媒体智能](cncc_cv.md)
-- [TFusion技术实现](TFusion.md)
+- [CVPR2018:TFusion](TFusion.md)
