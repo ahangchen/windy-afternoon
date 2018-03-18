@@ -449,6 +449,9 @@ C(o<sub>bc</sub>) = -P'<sub>bc</sub>ln P<sub>bc</sub> - (1-P'<sub>bc</sub>)ln (1
 
 
 ## 后记
+
+![My Github streak](https://upload-images.jianshu.io/upload_images/1828517-d413ef3d25204476.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 调研，可视化，找思路，找数据集，做实验，Debug，调参，写论文，九个月写一篇CVPR，这也是我们实验室第一篇CCF A类论文，算是来之不易的开山之作了。现在我们在Person Reid领域继续探索，正在搭建一个基于树莓派的摄像头网络，构造自己的数据集，并在这个基础上开展行人检测，多模态数据融合，轻量级深度模型，分布式协同终端，视频哈希，图像索引等一系列研究，欢迎follow我的[Github](https://github.com/ahangchen)，也欢迎持续关注我们[实验室的博客](http://blog.so-link.org)
 
 看了人家这么久，还不给我[Github](https://github.com/ahangchen/TFusion)点star！
