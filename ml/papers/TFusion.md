@@ -1,7 +1,24 @@
 # CVPR2018：Unsupervised Cross-dataset Person Re-identification by Transfer Learning of Spatio-temporal Patterns完全解析
 
 
+## Citation
+
+Please cite this paper in your publications if it helps your research:
+
+```bib
+@article{
+  title={Unsupervised Cross-dataset Person Re-identification by Transfer Learning of Spatial-Temporal Patterns},
+  author={Jianming, Lv and Weihang, Chen and Qing, Li and Can, Yang},
+  journal={CVPR},
+  year={2018}
+}
+```    
+
 论文可以在arxiv下载，老板一作，本人二作，也是我们实验室第一篇CCF A类论文，这个方法我们称为TFusion。
+
+
+
+> 转载请注明作者[梦里茶](https://github.com/ahangchen)
 
 代码：https://github.com/ahangchen/TFusion
 
@@ -13,8 +30,6 @@
 - 实验效果上，超越了所有无监督Person reid方法，逼近有监督方法，在部分数据集上甚至超越有监督方法
 
 本文为你解读CVPR2018 TFusion
-
-> 转载请注明作者[梦里茶](https://github.com/ahangchen)
 
 ## Task
 行人重识别(Person Re-identification)是一个图像检索问题，给定一组图片集(probe)，对于probe中的每张图片，从候选图片集（gallery）中找到最可能属于同一个行人的图片。
