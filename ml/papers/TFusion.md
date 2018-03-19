@@ -148,7 +148,7 @@ Please cite this paper in your publications if it helps your research:
 
 于是我们可视化了一下随机的delta分布
 
-
+![Random Distribution](https://upload-images.jianshu.io/upload_images/1828517-2f9896e3a7bed9c7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 可以发现，
 - 确实与估计模型和真实模型不同
