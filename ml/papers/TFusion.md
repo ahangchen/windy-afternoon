@@ -14,7 +14,7 @@ Please cite this paper in your publications if it helps your research:
 }
 ```    
 
-论文可以近期会挂到arxiv供大家下载，老板一作，本人二作，也是我们实验室第一篇CCF A类论文，这个方法我们称为TFusion。
+论文可以在[arxiv下载](https://arxiv.org/abs/1803.07293)，老板一作，本人二作，也是我们实验室第一篇CCF A类论文，这个方法我们称为TFusion。
 
 
 
