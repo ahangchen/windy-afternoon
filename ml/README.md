@@ -7,6 +7,7 @@
 - [工具包](kit/README.md)
   - [TensorFlow学习笔记](https://github.com/ahangchen/GDLNotes)
 - [技巧](trick/README.md)
+- [实践](detection/ncs.md)
 - [Person Re-id](reid/README.md)
   - [Person Re-identification](reid/reid.md)
   - [CVPR2016 Re-id](reid/cvpr-reid.md)
