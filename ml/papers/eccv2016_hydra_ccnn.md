@@ -8,30 +8,30 @@ Towards perspective-free object counting with deep learning，这是一篇发在
 
 给定一张图片，输出图片中目标对象的个数，比如下面两张图，左图有36个车，右图有8个猪
 
-![](cncc_cv_img/obj_cnt_exp.png)
+![](ccnn_img/obj_cnt_exp.png)
 
 #### 常用方法
 
 - Counting by detection
 用检测器去检测图中有多少个对象，检测到多少个就认为是多少个
 
-![](cncc_cv_img/detection_cnt.png)
+![](ccnn_img/detection_cnt.png)
 
 检测有三种方法，整体的检测（图a，检测整个人），部分的检测（图b，检测头），形状的匹配（图c，人的形状抽象成几何图形）
 
 - Counting by Clustering
 
-![](cncc_cv_img/cluster_cnt.png)
+![](ccnn_img/cluster_cnt.png)
 
   - 在摄像头捕捉到的连续视频帧里，目标移动时，在多个帧之间的位置比较相近，将这些运动物体在多帧图片之间做聚类，聚类中心的个数就是目标的个数
   - 不适用于静止物体
   - 优点：无监督
-  
+
 更多细节可看Related work部分的参考文献
 
 - Counting by Regression
 
-![](cncc_cv_img/regression_cnt.png)
+![](ccnn_img/regression_cnt.png)
 
   - 给定输入图片，ROI，透视图（场景中由远及近的几何关系，用于缩放对象）
   - 提取特征（背景分离，边缘检测，纹理识别）
@@ -45,22 +45,22 @@ Towards perspective-free object counting with deep learning，这是一篇发在
 
 - 先给出原图和目标对象的坐标（可以根据坐标画出质心图）
 
-![](cncc_cv_img/regress_density_origin.png)
+![](ccnn_img/regress_density_origin.png)
 
 - 对质心图做一个高斯滤波，可以得到密度图，作为回归的目标，对质心图进行求和，反过来可以得到目标的数量
 
-![](cncc_cv_img/regress_density_gas.png)
+![](ccnn_img/regress_density_gas.png)
 
 > 进入正题，Hydra CCNN
 
 - 方法： 回归密度图，多尺度输入组合
 - 优势：不需要透视图，多尺度鲁棒性，训练简单，误差小
 
-![](cncc_cv_img/hydra_ccnn.png)
+![](ccnn_img/hydra_ccnn.png)
 
 ### CCNN(Counting CNN)
 - Regression: 用一个CNN将原始图像映射为对象密度图
-![](ccnn.png)
+![](ccnn_img/ccnn.png)
 
 $$D_{pred}^{(P)} = R(P|\omega)$$
 
@@ -79,7 +79,7 @@ Hydra: 海德拉是希腊神话中的九头蛇
 - Motivation: 多尺度范围内的对象大小不同，会导致计数出错
 - Solution: 用多个CCNN各自回归多个尺度的密度图，组合成最终密度图
 
-![](cncc_cv_img/hydra_ccnn.png)
+![](ccnn_img/hydra_ccnn.png)
 
 举个例子：n=3时，也就是回归三个尺度的密度图，
 - S0: 整个patch（不是整张图，是一个patch，前面讲了会做滑窗划分）
