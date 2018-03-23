@@ -25,6 +25,7 @@
     - [CNCC2017深度学习与跨媒体智能](ml/papers/cncc_cv.md)
     - [MLA2016笔记](ml/mla_2016.md)
     - [Re-identification](ml/reid/README.md)
+      - [CVPR2018:TFusion完全解读](ml/papers/TFusion.md)
       - [Person Re-identification](ml/reid/reid.md)
       - [CVPR2016 Re-id](ml/reid/cvpr-reid.md)
       - [Camera topology and Person Re-id](ml/reid/reid-topo.md)

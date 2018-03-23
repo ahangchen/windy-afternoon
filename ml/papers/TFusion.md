@@ -12,7 +12,7 @@ Please cite this paper in your publications if it helps your research:
   journal={CVPR},
   year={2018}
 }
-```    
+```
 
 论文可以在[arxiv下载](https://arxiv.org/abs/1803.07293)，老板一作，本人二作，也是我们实验室第一篇CCF A类论文，这个方法我们称为TFusion。
 
@@ -162,58 +162,59 @@ Please cite this paper in your publications if it helps your research:
 
 
 ## 基于贝叶斯推断的模型融合
-首先看时空模型和图像模型的融合， 我们有一个视觉相似度P<sub>v</sub>，一个时空概率P<sub>st</sub>，一个直观的想法是，联合评分可以是P<sub>v</sub> * P<sub>st</sub>，如果要再抑制随机的评分P<sub>random</sub>，可以做个除法，就是P<sub>v</sub> * P<sub>st</sub> / P<sub>random</sub>
+首先看时空模型和图像模型的融合， 我们有一个视觉相似度$$P_{v}$$，一个时空概率$$P_{st}$$，一个直观的想法是，联合评分可以是$$P_{v} * P_{st}$$，如果要再抑制随机的评分$$P_{random}$$，可以做个除法，就是$$P_{v} * P_{st} / P_{random}$$
 
 这样一看，像不像条件概率公式？于是我们开始推导（大量公式预警）：
 
-先看看我们手上的资源：现在我们有一个弱的图像分类器，可以为两张图片提取两个视觉特征v<sub>i</sub>,  v<sub>j</sub>, 有两个时空点，空间特征为两个摄像头编号c<sub>i</sub>,  c<sub>j</sub>，时间特征为两张图片拍摄的时间差∆<sub>ij</sub>，假定两张图对应的person id分别为P<sub>i</sub>,  P<sub>j</sub>，那么我们的目标就是求，在给定这些特征的条件下，两张图属于同一个人的概率 
+先看看我们手上的资源：现在我们有一个弱的图像分类器，可以为两张图片提取两个视觉特征$$v_{i},  v_{j}$$, 有两个时空点，空间特征为两个摄像头编号$$c_{i},  c_{j}$$，时间特征为两张图片拍摄的时间差$$∆_{ij}$$，假定两张图对应的person id分别为$$P_{i},  P_{j}$$，那么我们的目标就是求，在给定这些特征的条件下，两张图属于同一个人的概率
 
-> Pr(P<sub>i</sub>=P<sub>j</sub>|v<sub>i</sub>,v<sub>j</sub>,c<sub>i</sub>,c<sub>j</sub>,∆<sub>ij</sub>)（论文公式6）
+$$Pr(P_{i}=P_{j}|v_{i},v_{j},c_{i},c_{j},∆_{ij})$$（论文公式6）
 
 由条件概率公式P(A|B) = P(B|A)*P(A)/P(B)，可得
-> Pr(P<sub>i</sub>=P<sub>j</sub>|v<sub>i</sub>,v<sub>j</sub>,c<sub>i</sub>,c<sub>j</sub>,∆<sub>ij</sub>)
-= Pr(v<sub>i</sub>,v<sub>j</sub>,c<sub>i</sub>,c<sub>j</sub>,∆<sub>ij</sub>|P<sub>i</sub>=P<sub>j</sub>) *Pr(P<sub>i</sub>=P<sub>j</sub>)/ Pr(v<sub>i</sub>,v<sub>j</sub>,c<sub>i</sub>,c<sub>j</sub>,∆<sub>ij</sub>)
+
+$$ Pr(P_{i}=P_{j}|v_{i},v_{j},c_{i},c_{j},∆_{ij})$$
+$$= Pr(v_{i},v_{j},c_{i},c_{j},∆_{ij}|P_{i}=P_{j}) *Pr(P_{i}=P_{j})/ Pr(v_{i},v_{j},c_{i},c_{j},∆_{ij}) $$
 
 由时空分布和图像分布的独立性假设（长得像的人运动规律不一定像），我们可以拆解第一项，得到
-> = Pr(v<sub>i</sub>,v<sub>j</sub>|P<sub>i</sub>=P<sub>j</sub>)*Pr(c<sub>i</sub>,c<sub>j</sub>,∆<sub>ij</sub>|P<sub>i</sub>=P<sub>j</sub>) *Pr(P<sub>i</sub>=P<sub>j</sub>)/ Pr(v<sub>i</sub>,v<sub>j</sub>,c<sub>i</sub>,c<sub>j</sub>,∆<sub>ij</sub>)
+$$ = Pr(v_{i},v_{j}|P_{i}=P_{j})*Pr(c_{i},c_{j},∆_{ij}|P_{i}=P_{j}) *Pr(P_{i}=P_{j})/ Pr(v_{i},v_{j},c_{i},c_{j},∆_{ij})$$
 
-其中Pr(P<sub>i</sub>=P<sub>j</sub>)是一个不好求的项，我们试着把它换掉，
+其中$$Pr(P_{i}=P_{j})$$是一个不好求的项，我们试着把它换掉，
 
 先交换顺序（乘法交换律）
 
-> = Pr(v<sub>i</sub>,v<sub>j</sub>|P<sub>i</sub>=P<sub>j</sub>) * Pr(P<sub>i</sub>=P<sub>j</sub>)*Pr(c<sub>i</sub>,c<sub>j</sub>,∆<sub>ij</sub>|P<sub>i</sub>=P<sub>j</sub>) / Pr(v<sub>i</sub>,v<sub>j</sub>,c<sub>i</sub>,c<sub>j</sub>,∆<sub>ij</sub>)
+$$= Pr(v_{i},v_{j}|P_{i}=P_{j}) * Pr(P_{i}=P_{j})*Pr(c_{i},c_{j},∆_{ij}|P_{i}=P_{j}) / Pr(v_{i},v_{j},c_{i},c_{j},∆_{ij})$$
 
-由条件概率公式P(A|B)*P(B) = P(B|A) * P(A)可得
+由条件概率公式$$P(A|B)*P(B) = P(B|A) * P(A)$$可得
 
-> = Pr(P<sub>i</sub>=P<sub>j</sub>|v<sub>i</sub>,v<sub>j</sub>) * Pr(v<sub>i</sub>=v<sub>j</sub>)*Pr(c<sub>i</sub>,c<sub>j</sub>,∆<sub>ij</sub>|P<sub>i</sub>=P<sub>j</sub>) / Pr(v<sub>i</sub>,v<sub>j</sub>,c<sub>i</sub>,c<sub>j</sub>,∆<sub>ij</sub>)
+$$ = Pr(P_{i}=P_{j}|v_{i},v_{j}) * Pr(v_{i}=v_{j})*Pr(c_{i},c_{j},∆_{ij}|P_{i}=P_{j}) / Pr(v_{i},v_{j},c_{i},c_{j},∆_{ij})$$
 
 
 可以看到
-- Pr(P<sub>i</sub>=P<sub>j</sub>|v<sub>i</sub>,v<sub>j</sub>)可理解为两张图从视觉特征相似度上判定为同一人的概率
-- Pr(c<sub>i</sub>,c<sub>j</sub>,∆<sub>ij</sub>|P<sub>i</sub>=P<sub>j</sub>)就是两个时空点是同一个人移动产生的概率
+- $$Pr(P_{i}=P_{j}|v_{i},v_{j})$$可理解为两张图从视觉特征相似度上判定为同一人的概率
+- $$Pr(c_{i},c_{j},∆_{ij}|P_{i}=P_{j})$$就是两个时空点是同一个人移动产生的概率
 
 再次利用时空分布和图像分布的独立性假设，拆解分母
 
->  = Pr(P<sub>i</sub>=P<sub>j</sub>|v<sub>i</sub>,v<sub>j</sub>) * Pr(v<sub>i</sub>=v<sub>j</sub>)*Pr(c<sub>i</sub>,c<sub>j</sub>,∆<sub>ij</sub>|P<sub>i</sub>=P<sub>j</sub>) / Pr(v<sub>i</sub>,v<sub>j</sub>) * P(c<sub>i</sub>,c<sub>j</sub>,∆<sub>ij</sub>)
+$$ = Pr(P_{i}=P_{j}|v_{i},v_{j}) * Pr(v_{i}=v_{j})*Pr(c_{i},c_{j},∆_{ij}|P_{i}=P_{j}) / Pr(v_{i},v_{j}) * P(c_{i},c_{j},∆_{ij}) $$
 
-约掉Pr(v<sub>i</sub>=v<sub>j</sub>)，
+约掉$$Pr(v_{i}=v_{j})$$，
 
-> = Pr(P<sub>i</sub>=P<sub>j</sub>|v<sub>i</sub>,v<sub>j</sub>) * Pr(c<sub>i</sub>,c<sub>j</sub>,∆<sub>ij</sub>|P<sub>i</sub>=P<sub>j</sub>) /P(c<sub>i</sub>,c<sub>j</sub>,∆<sub>ij</sub>)
+$$ = Pr(P_{i}=P_{j}|v_{i},v_{j}) * Pr(c_{i},c_{j},∆_{ij}|P_{i}=P_{j}) /P(c_{i},c_{j},∆_{ij})$$
 
 也就是
 
 > = 视觉相似度*同一人产生这种移动的概率/任意两个时空点组成这种移动的概率
 
-这也就是论文公式(7)，也就是我们一开始的猜想：P<sub>v</sub> * P<sub>st</sub> / P<sub>random</sub>
+这也就是论文公式(7)，也就是我们一开始的猜想：$$P_{v} * P_{st} / P_{random}$$
 
 看着好像很接近我们手头掌握的资源了，但是，
-- 我们并不知道理想的两张图的视觉相似度 Pr(P<sub>i</sub>=P<sub>j</sub>|v<sub>i</sub>,v<sub>j</sub>) ，只有我们的图像分类器判定的两张图的视觉相似度 Pr(S<sub>i</sub>=S<sub>j</sub>|v<sub>i</sub>,v<sub>j</sub>) ，
-- 我们并不能计算同一人产生这种移动的真实概率Pr(c<sub>i</sub>,c<sub>j</sub>,∆<sub>ij</sub>|P<sub>i</sub>=P<sub>j</sub>) ，我们只有依据视觉分类器估算的时空概率Pr(c<sub>i</sub>,c<sub>j</sub>,∆<sub>ij</sub>|S<sub>i</sub>=S<sub>j</sub>) ，
-- 我们倒是确实有数据集中任意两个时空点产生这种移动的概率P(c<sub>i</sub>,c<sub>j</sub>,∆<sub>ij</sub>)
+- 我们并不知道理想的两张图的视觉相似度$$ Pr(P_{i}=P_{j}|v_{i},v_{j})$$ ，只有我们的图像分类器判定的两张图的视觉相似度$$Pr(S_{i}=S_{j}|v_{i},v_{j})$$ ，
+- 我们并不能计算同一人产生这种移动的真实概率$$Pr(c_{i},c_{j},∆_{ij}|P_{i}=P_{j})$$ ，我们只有依据视觉分类器估算的时空概率$$Pr(c_{i},c_{j},∆_{ij}|S_{i}=S_{j})$$ ，
+- 我们倒是确实有数据集中任意两个时空点产生这种移动的概率$$P(c_{i},c_{j},∆_{ij})$$
 
-于是我们想用Pr(c<sub>i</sub>,c<sub>j</sub>,∆<sub>ij</sub>|S<sub>i</sub>=S<sub>j</sub>) ，P(c<sub>i</sub>,c<sub>j</sub>,∆<sub>ij</sub>)去近似，得到
+于是我们想用$$Pr(c_{i},c_{j},∆_{ij}|S_{i}=S_{j}) ，P(c_{i},c_{j},∆_{ij})$$去近似，得到
 
-> = Pr(S<sub>i</sub>=S<sub>j</sub>|v<sub>i</sub>,v<sub>j</sub>) * Pr(c<sub>i</sub>,c<sub>j</sub>,∆<sub>ij</sub>|S<sub>i</sub>=S<sub>j</sub>) /P(c<sub>i</sub>,c<sub>j</sub>,∆<sub>ij</sub>)
+$$= Pr(S_{i}=S_{j}|v_{i},v_{j}) * Pr(c_{i},c_{j},∆_{ij}|S_{i}=S_{j}) /P(c_{i},c_{j},∆_{ij})$$
 
 看到这里其实就大致理解我们的融合原理了，实际上我们大部分实验也是用的这个近似公式算的。
 
@@ -221,66 +222,66 @@ Please cite this paper in your publications if it helps your research:
 
 > 但这个近似能不能做呢？我们来做一下误差分析（大量推导，不感兴趣可以跳到接下来出现的第二张图，不影响后面的理解，只是分析一波会更加严谨）。
 
-实际上，误差是由图像分类器引入的，假设图像分类器判定两张图是同一个人的错判率为E<sub>p</sub>，图像分类器判定两张图不是同一人的错判率为E<sub>n</sub>，
+实际上，误差是由图像分类器引入的，假设图像分类器判定两张图是同一个人的错判率为$$E_{p}$$，图像分类器判定两张图不是同一人的错判率为$$E_{n}$$，
 
 则有，
 
-> E<sub>p</sub> = Pr(P<sub>i</sub>≠P<sub>j</sub>|S<sub>i</sub>=S<sub>j</sub>)（论文公式1）
+$$ E_{p} = Pr(P_{i}≠P_{j}|S_{i}=S_{j})$$（论文公式1）
 
-> E<sub>n</sub> = Pr(P<sub>i</sub>=P<sub>j</sub>|S<sub>i</sub>≠S<sub>j</sub>)（论文公式2）
+$$ E_{n} = Pr(P_{i}=P_{j}|S_{i}≠S_{j})$$（论文公式2）
 
 
 
-则Pr(P<sub>i</sub>=P<sub>j</sub>|v<sub>i</sub>,v<sub>j</sub>) 与 Pr(S<sub>i</sub>=S<sub>j</sub>|v<sub>i</sub>,v<sub>j</sub>) 的关系可以表示为：
+则$$Pr(P_{i}=P_{j}|v_{i},v_{j})$$ 与 $$Pr(S_{i}=S_{j}|v_{i},v_{j})$$ 的关系可以表示为：
 
-> Pr(P<sub>i</sub>=P<sub>j</sub>|v<sub>i</sub>,v<sub>j</sub>)
-= Pr(P<sub>i</sub>=P<sub>j</sub>|S<sub>i</sub>=S<sub>j</sub>) * Pr(S<sub>i</sub>=S<sub>j</sub>|v<sub>i</sub>,v<sub>j</sub>) + Pr(P<sub>i</sub>=P<sub>j</sub>|S<sub>i</sub>≠S<sub>j</sub>) * Pr(S<sub>i</sub>≠S<sub>j</sub>|v<sub>i</sub>,v<sub>j</sub>) 
-= (1-E<sub>p</sub>) * Pr(S<sub>i</sub>=S<sub>j</sub>|v<sub>i</sub>,v<sub>j</sub>) +  E<sub>n</sub>* (1-Pr(S<sub>i</sub>=S<sub>j</sub>|v<sub>i</sub>,v<sub>j</sub>) )
-= (1-E<sub>p</sub>-E<sub>n</sub>) * Pr(S<sub>i</sub>=S<sub>j</sub>|v<sub>i</sub>,v<sub>j</sub>) +  E<sub>n</sub> （论文公式8）
+$$ Pr(P_{i}=P_{j}|v_{i},v_{j})$$
+$$= Pr(P_{i}=P_{j}|S_{i}=S_{j}) * Pr(S_{i}=S_{j}|v_{i},v_{j}) + Pr(P_{i}=P_{j}|S_{i}≠S_{j}) * Pr(S_{i}≠S_{j}|v_{i},v_{j})  $$
+$$= (1-E_{p}) * Pr(S_{i}=S_{j}|v_{i},v_{j}) +  E_{n}* (1-Pr(S_{i}=S_{j}|v_{i},v_{j}) )$$
+$$= (1-E_{p}-E_{n}) * Pr(S_{i}=S_{j}|v_{i},v_{j}) +  E_{n}$$ （论文公式8）
 
-推导，Pr(c<sub>i</sub>,c<sub>j</sub>,∆<sub>ij</sub>|P<sub>i</sub>=P<sub>j</sub>) 和Pr(c<sub>i</sub>,c<sub>j</sub>,∆<sub>ij</sub>|S<sub>i</sub>=S<sub>j</sub>) 的关系（这个没法像视觉相似度那样直接推导，因为因果关系不同）
+推导，$$Pr(c_{i},c_{j},∆_{ij}|P_{i}=P_{j})$$ 和$$Pr(c_{i},c_{j},∆_{ij}|S_{i}=S_{j})$$ 的关系（这个没法像视觉相似度那样直接推导，因为因果关系不同）
 
-> Pr(c<sub>i</sub>,c<sub>j</sub>,∆<sub>ij</sub>|S<sub>i</sub>=S<sub>j</sub>) 
-= Pr(c<sub>i</sub>,c<sub>j</sub>,∆<sub>ij</sub>|P<sub>i</sub>=P<sub>j</sub>) * (Pr(P<sub>i</sub>=P<sub>j</sub>)|S<sub>i</sub>=S<sub>j</sub>)  +  Pr(c<sub>i</sub>,c<sub>j</sub>,∆<sub>ij</sub>|P<sub>i</sub>≠P<sub>j</sub>) * (Pr(P<sub>i</sub>=P<sub>j</sub>)|S<sub>i</sub>≠S<sub>j</sub>) 
-= Pr(c<sub>i</sub>,c<sub>j</sub>,∆<sub>ij</sub>|P<sub>i</sub>=P<sub>j</sub>) * (1- E<sub>p</sub>)  +  Pr(c<sub>i</sub>,c<sub>j</sub>,∆<sub>ij</sub>|P<sub>i</sub>≠P<sub>j</sub>) * E<sub>p</sub>
+$$ Pr(c_{i},c_{j},∆_{ij}|S_{i}=S_{j}) $$
+$$= Pr(c_{i},c_{j},∆_{ij}|P_{i}=P_{j}) * (Pr(P_{i}=P_{j})|S_{i}=S_{j})  +  Pr(c_{i},c_{j},∆_{ij}|P_{i}≠P_{j}) * (Pr(P_{i}=P_{j})|S_{i}≠S_{j}) $$
+$$= Pr(c_{i},c_{j},∆_{ij}|P_{i}=P_{j}) * (1- E_{p})  +  Pr(c_{i},c_{j},∆_{ij}|P_{i}≠P_{j}) * E_{p}$$
 
 同样可以得到
 
-> Pr(c<sub>i</sub>,c<sub>j</sub>,∆<sub>ij</sub>|S<sub>i</sub>≠S<sub>j</sub>) 
-= Pr(c<sub>i</sub>,c<sub>j</sub>,∆<sub>ij</sub>|P<sub>i</sub>=P<sub>j</sub>) * E<sub>n</sub>  +  Pr(c<sub>i</sub>,c<sub>j</sub>,∆<sub>ij</sub>|P<sub>i</sub>≠P<sub>j</sub>) * (1 - E<sub>p</sub>)
+$$ Pr(c_{i},c_{j},∆_{ij}|S_{i}≠S_{j}) $$
+$$= Pr(c_{i},c_{j},∆_{ij}|P_{i}=P_{j}) * E_{n}  +  Pr(c_{i},c_{j},∆_{ij}|P_{i}≠P_{j}) * (1 - E_{p})$$
 
-联立上面两个式子解方程，消掉Pr(c<sub>i</sub>,c<sub>j</sub>,∆<sub>ij</sub>|S<sub>i</sub>≠S<sub>j</sub>) 可以得到
+联立上面两个式子解方程，消掉$$Pr(c_{i},c_{j},∆_{ij}|S_{i}≠S_{j}) $$可以得到
 
-> Pr(c<sub>i</sub>,c<sub>j</sub>,∆<sub>ij</sub>|P<sub>i</sub>=P<sub>j</sub>) 
-= (1 - E<sub>p</sub> - E<sub>n</sub>)<sup>-1</sup>(1-E<sub>n</sub>) * Pr(c<sub>i</sub>,c<sub>j</sub>,∆<sub>ij</sub>|S<sub>i</sub>=S<sub>j</sub>)  - E<sub>p</sub> * Pr(c<sub>i</sub>,c<sub>j</sub>,∆<sub>ij</sub>|S<sub>i</sub>≠S<sub>j</sub>)  （论文公式5）
+$$Pr(c_{i},c_{j},∆_{ij}|P_{i}=P_{j}) $$
+$$= (1 - E_{p} - E_{n})^{-1}(1-E_{n}) * Pr(c_{i},c_{j},∆_{ij}|S_{i}=S_{j})  - E_{p} * Pr(c_{i},c_{j},∆_{ij}|S_{i}≠S_{j})$$  （论文公式5）
 
-其中有个新概念Pr(c<sub>i</sub>,c<sub>j</sub>,∆<sub>ij</sub>|S<sub>i</sub>≠S<sub>j</sub>) ，意味着图像分类器认为不是同一个人的时候，这种时空点出现的概率，实现上也不难，统计视觉相似度top10以后的点对应的时间差，作为反时空概率模型即可。
+其中有个新概念$$Pr(c_{i},c_{j},∆_{ij}|S_{i}≠S_{j})$$ ，意味着图像分类器认为不是同一个人的时候，这种时空点出现的概率，实现上也不难，统计视觉相似度top10以后的点对应的时间差，作为反时空概率模型即可。
 
 
 我们把两个近似（公式5和公式8）代进公式7，
 
 可以得到
 
-> Pr(P<sub>i</sub>=P<sub>j</sub> | v<sub>i</sub>, v<sub>j</sub>, ∆<sub>ij</sub>, c<sub>i</sub>, c<sub>j</sub>)
-= (M<sub>1</sub> + E<sub>n</sub>/(1 - E<sub>n</sub> - E<sub>p</sub>))((1-E<sub>n</sub>)M<sub>2</sub> - E<sub>p</sub>M<sub>3</sub>)/Pr(∆<sub>ij</sub>, c<sub>i</sub>, c<sub>j</sub>))（论文公式9）
+$$ Pr(P_{i}=P_{j} | v_{i}, v_{j}, ∆_{ij}, c_{i}, c_{j})$$
+$$= (M_{1} + E_{n}/(1 - E_{n} - E_{p}))((1-E_{n})M_{2} - E_{p}M_{3})/Pr(∆_{ij}, c_{i}, c_{j}))$$（论文公式9）
 
 其中，
 
-> M<sub>1</sub> = Pr(S<sub>i</sub>=S<sub>j</sub>|v<sub>i</sub>,v<sub>j</sub>)，视觉相似度
+$$ M_{1} = Pr(S_{i}=S_{j}|v_{i},v_{j})$$，视觉相似度
 
-> M<sub>2</sub> = Pr(∆<sub>ij</sub>,c<sub>i</sub>,c<sub>j</sub>|S<sub>i</sub>=S<sub>j</sub>)，正时空概率模型
+$$ M_{2} = Pr(∆_{ij},c_{i},c_{j}|S_{i}=S_{j})$$，正时空概率模型
 
-> M<sub>3</sub> = Pr(∆<sub>ij</sub>,c<sub>i</sub>,c<sub>j</sub>|S<sub>i</sub>≠S<sub>j</sub>)，反时空概率模型
+$$ M_{3} = Pr(∆_{ij},c_{i},c_{j}|S_{i}≠S_{j})$$，反时空概率模型
 
-分母Pr(∆<sub>ij</sub>, c<sub>i</sub>, c<sub>j</sub>))为随机概率模型
+分母$$Pr(∆_{ij}, c_{i}, c_{j}))$$为随机概率模型
 
 以上四项都是可以从无标签目标数据集中结合图像分类器求解到的，并且，当En=Ep=0时（意味着图像分类器完全准确），这个公式可以退化为近似解：
 
-> Pr(S<sub>i</sub>=S<sub>j</sub>|v<sub>i</sub>,v<sub>j</sub>) * Pr(c<sub>i</sub>,c<sub>j</sub>,∆<sub>ij</sub>|S<sub>i</sub>=S<sub>j</sub>) /P(c<sub>i</sub>,c<sub>j</sub>,∆<sub>ij</sub>)
+$$Pr(S_{i}=S_{j}|v_{i},v_{j}) * Pr(c_{i},c_{j},∆_{ij}|S_{i}=S_{j}) /P(c_{i},c_{j},∆_{ij})$$
 
-到这里，你是不是以为我们就可以用公式9算融合评分了？非也，公式9中，还有个问题：E<sub>p</sub>，E<sub>n</sub>是未知的！
+到这里，你是不是以为我们就可以用公式9算融合评分了？非也，公式9中，还有个问题：$$E_{p}，E_{n}$$是未知的！
 
-如果想要正儿八经地算E<sub>p</sub>，E<sub>n</sub>，要求目标数据集有标签，然后我们用图像分类器先算一遍，数数哪些算错了，才能把E<sub>p</sub>，E<sub>n</sub>算出来。因此我们用两个常数α和β分别替代E<sub>p</sub>，E<sub>n</sub>，整个模型的近似就都集中在了这两个常数上。
+如果想要正儿八经地算$$E_{p}，E_{n}$$，要求目标数据集有标签，然后我们用图像分类器先算一遍，数数哪些算错了，才能把$$E_{p}，E_{n}$$算出来。因此我们用两个常数α和β分别替代$$E_{p}，E_{n}$$，整个模型的近似就都集中在了这两个常数上。
 
 在论文Table1,2,3,4,Fig6相关的实验中，α=β=0，并且，在Fig5中，我们设置了其他常数来检查模型对于这种近似的敏感性
 
@@ -288,7 +289,7 @@ Please cite this paper in your publications if it helps your research:
 
 可以看到，虽然α和β较大时，准确率会有所下降，但是仍然能保持一定的水准，当你看到纯图像分类器的准确率之后，还会发现融合模型的准确率一直高于纯图像分类器。
 
-你可能注意到了，图中α+β都是小于1的，这是因为，只有当E<sub>p</sub>+E<sub>n</sub><1且α+β<1时，融合模型的E<sub>p</sub>+E<sub>n</sub>才会小于图像模型的E<sub>p</sub>+E<sub>n</sub>，说人话就是，只有图像模型不是特别糟糕，且近似的参数也比较正常的时候，融合模型才会比单个的图像模型要准，融合才有意义。这个定理的具体的证明放到论文附录里了，有兴趣的可以邮件私信我拿附录去看，这里摆出来就太多了。
+你可能注意到了，图中α+β都是小于1的，这是因为，只有当$$E_{p}+E_{n}<1$$且$$α+β<1$$时，融合模型的$$E_{p}+E_{n}$$才会小于图像模型的$$E_{p}+E_{n}$$，说人话就是，只有图像模型不是特别糟糕，且近似的参数也比较正常的时候，融合模型才会比单个的图像模型要准，融合才有意义。这个定理的具体的证明放到论文附录里了，有兴趣的可以邮件私信我拿附录去看，这里摆出来就太多了。
 
 > 于是我们得到了一个由条件概率推断支撑的多模态数据融合方法，称为贝叶斯融合
 
@@ -343,12 +344,12 @@ Please cite this paper in your publications if it helps your research:
 
 ### Pair-wise Ranking
 
-- 给定样本x<sub>i</sub>，其排序得分为o<sub>i</sub>，
- - 给定样本x<sub>j</sub>，其排序得分为o<sub>j</sub>，
-- 定义o<sub>ij</sub>=o<sub>i</sub> - o<sub>j</sub>，如果o<sub>ij</sub>>0说明x<sub>i</sub>的排名高于x<sub>j</sub>，
-- 将这个排名概率化，定义P<sub>ij</sub> = e<sup>o<sub>ij</sub></sup>/(1+e<sup>o<sub>ij</sub></sup>)，为x<sub>i</sub>排名高于x<sub>j</sub>的概率。
-- 对于任何一个长度为n的排列，只要知道n-1个相邻item的概率P<sub>i,i+1</sub>，就可以推断出来任何两个item的排序概率
-- 例如，已知P<sub>ik</sub>和P<sub>kj</sub>，P<sub>ij</sub> = P<sub>ik</sub> * P<sub>kj</sub> = e<sup>o<sub>ik</sub>+o<sub>kj</sub></sup>/(1 + e<sup>o<sub>ik</sub>+o<sub>kj</sub></sup>)，其中o<sub>ik</sub>=ln(P<sub>ik</sub>/(1 - P<sub>ik</sub>))
+- 给定样本$$x_{i}$$，其排序得分为$$o_{i}$$，
+ - 给定样本$$x_{j}$$，其排序得分为$$o_{j}$$，
+- 定义$$o_{ij}=o_{i} - o_{j}$$，如果$$o_{ij}>0$$说明$$x_{i}$$的排名高于$$x_{j}$$，
+- 将这个排名概率化，定义$$P_{ij} = e^{o_{ij}}/(1+e^{o_{ij}})$$，为$$x_{i}$$排名高于$$x_{j}$$的概率。
+- 对于任何一个长度为n的排列，只要知道n-1个相邻item的概率$$P_{i,i+1}$$，就可以推断出来任何两个item的排序概率
+- 例如，已知$$P_{ik}和P_{kj}$$，$$P_{ij} = P_{ik} * P_{kj} = e^{o_{ik}+o_{kj}}/(1 + e^{o_{ik}+o_{kj}})$$，其中$$o_{ik}=ln(P_{ik}/(1 - P_{ik}))$$
 
 ### RankNet: Pair-wise Learning to Rank
 RankNet是Pair-wise Learning to Rank的一种方法，用一个神经网络去学习输入的两个样本（还有一个query样本）与其排序概率（上面定义的）的映射关系。
@@ -356,7 +357,7 @@ RankNet是Pair-wise Learning to Rank的一种方法，用一个神经网络去�
 具体到我们这个问题里
 
 - 给定查询图片A，给定待匹配图片B和C
-- 用神经网络预测AB之间的相似度S<sub>ab</sub>为B的绝对排序得分，计算AC之间的相似度S<sub>ac</sub>为C的绝对排序得分
+- 用神经网络预测AB之间的相似度$$S_{ab}$$为B的绝对排序得分，计算AC之间的相似度$$S_{ac}$$为C的绝对排序得分
 
 > 具体的神经网络用[Keras实现](https://github.com/ahangchen/rank-reid/blob/master/transfer/simple_rank_transfer.py)并可视化出来长这样：
 
@@ -368,11 +369,11 @@ RankNet是Pair-wise Learning to Rank的一种方法，用一个神经网络去�
 
 - 则B排序高于C的概率为：
 
-P<sub>bc</sub>= e<sup>o<sub>bc</sub></sup>/(1+ e<sup>o<sub>bc</sub></sup>) = e<sup>S<sub>ab- S<sub>ac</sub></sup> / (1 +  e<sup>S<sub>ab- S<sub>ac</sub></sup>)
+$$P_{bc}= e^{o_{bc}}/(1+ e^{o_{bc}}) = e^{S_{ab}- S_{ac}} / (1 +  e^{S_{ab}- S_{ac}})$$
 
-- 用预测概率P<sub>bc</sub>去拟合真实的排序概率，回归损失用预测概率和真实概率的交叉熵表达
+- 用预测概率P_{bc}去拟合真实的排序概率，回归损失用预测概率和真实概率的交叉熵表达
 
-C(o<sub>bc</sub>) = -P'<sub>bc</sub>ln P<sub>bc</sub> - (1-P'<sub>bc</sub>)ln (1 - P<sub>bc</sub>)
+$$C(o_{bc}) = -P'_{bc}ln P_{bc} - (1-P'_{bc})ln (1 - P_{bc})$$
 
 网络实现超级简单，主要麻烦在样本三元组构造
 
@@ -383,7 +384,7 @@ C(o<sub>bc</sub>) = -P'<sub>bc</sub>ln P<sub>bc</sub> - (1-P'<sub>bc</sub>)ln (1
 
 ![Learning to rank](https://upload-images.jianshu.io/upload_images/1828517-e6de1301e73c60a6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-我们用融合分类器为目标数据集中的图片对评分，构造三元组输入RankNet，其中S<sub>i</sub>是查询图，S<sub>j</sub>是在与S<sub>i</sub>融合相似度top1 - top25中抽取的图片，S<sub>k</sub>是在与S<sub>i</sub>融合相似度top25 - top50中抽取的图片，喂给RankNet学习，使得resnet52部分卷积层能充分学习到目标场景上的视觉特征。
+我们用融合分类器为目标数据集中的图片对评分，构造三元组输入RankNet，其中S_{i}是查询图，S_{j}是在与S_{i}融合相似度top1 - top25中抽取的图片，S_{k}是在与S_{i}融合相似度top25 - top50中抽取的图片，喂给RankNet学习，使得resnet52部分卷积层能充分学习到目标场景上的视觉特征。
 
 ### Learning to Rank效果
 |源数据集|目标数据集|纯|图像|结果||融合|时空|结果|
