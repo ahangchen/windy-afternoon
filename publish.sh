@@ -14,4 +14,4 @@ cd ../ahangchen.github.io
 git add -A
 git commit -a -m 'update from gitbook'
 git push origin master
-ssh wemeet@wemeet.tech "cd mysite;git pull"
+ssh wemeet@cweihang.cn "cd mysite;git pull"
