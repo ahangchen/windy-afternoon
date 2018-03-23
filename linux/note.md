@@ -289,3 +289,7 @@ https://github.com/thrust/thrust/issues/800
 ```shell
  netstat -ap | grep 8080
  ```
+
+## ubuntu 破解密码
+
+http://blog.topspeedsnail.com/archives/6042
