@@ -74,18 +74,19 @@ SPP-net中则提出只过一遍图，从最后的feature map裁剪出需要的�
 
 ## Multi-task loss
 - L<sub>cls</sub>:  SoftMax多分类Loss，没啥好说的
-- L<sub>Ioc</sub>：bounding box regression loss
+- L<sub>loc</sub>：bounding box regression loss
 
 定义真实的bounding box为(v<sub>x</sub>, v<sub>y</sub>, v<sub>w</sub>, v<sub>h</sub>)，预测的bounding box位置（由第二个fc层输出，有K个类，每个类分别有4个值，分别为）t<sub>x</sub><sup>k</sup>，t<sub>y</sub><sup>k</sup>，t<sub>w</sub><sup>k</sup>, t<sub>h</sub><sup>k</sup>
 
->  L<sub>Ioc</sub>(t<sup>k</sup>, v) = ∑<sub>i∈{x,y,w,h}</sub> smooth<sub>L<sub>1</sub></sub>(t<sub>i</sub><sup>k</sup> - v<sub>i</sub>)
+>  L<sub>loc</sub>(t<sup>k</sup>, v) = ∑<sub>i∈{x,y,w,h}</sub> smooth<sub>L<sub>1</sub></sub>(t<sub>i</sub><sup>k</sup> - v<sub>i</sub>)
 
 即预测位置和真实位置四个值的差值求和，其中
 
  > smooth<sub>L<sub>1</sub></sub>(x) = 0.5x<sup>2</sup> if |x|<1 otherwise |x|-0.5
 
 是一个软化的L1（画一下图像可以看出来，在(-1,1)的范围内是抛物线，没L1那么尖锐），如果采用L2 loss，需要仔细调节学习率防止梯度爆炸。
-![smooth L1](https://upload-images.jianshu.io/upload_images/1828517-917c6116de81339b.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+![Smooth L1](https://upload-images.jianshu.io/upload_images/1828517-2d68b41954bb7a55.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
 
@@ -123,7 +124,7 @@ SPP-net中则提出只过一遍图，从最后的feature map裁剪出需要的�
 
 W ≈ U∑<sub>t</sub>V<sup>T</sup>
 
-将u×v大小的矩阵W分解为三个矩阵相乘，其中，U是一个u×t的矩阵，包含W的前t个左奇异向量，∑<sub>t</sub>是一个t×t的对角矩阵，包含W的前t个上奇异向量，V<sup>T</sup>是一个v×t的矩阵，包含W的钱t个右奇异向量，参数数量从uv变成t(u+v)，当t远小于min(u,v)时，参数数量就显著少于W。
+将u×v大小的矩阵W分解为三个矩阵相乘，其中，U是一个u×t的矩阵，包含W的前t个左奇异向量，∑<sub>t</sub>是一个t×t的对角矩阵，包含W的前t个上奇异向量，V<sup>T</sup>是一个v×t的矩阵，包含W的前t个右奇异向量，参数数量从uv变成t(u+v)，当t远小于min(u,v)时，参数数量就显著少于W。
 
 具体实现上，将一个权重为W的全连接层拆成两个，第一层的权重矩阵为∑<sub>t</sub>V<sup>T</sup>（并且没有bias），第二层的权重矩阵为U（带上W原来的bias）。
 
