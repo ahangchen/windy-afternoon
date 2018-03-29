@@ -1,13 +1,10 @@
 # 读论文系列：Object Detection ICCV2015 Fast RCNN
 
-> 转载请注明作者:[梦里茶](https://github.com/ahangchen)
-
-Fast RCNN是对RCNN的性能优化版本，彼时Ross Girshick已经在Microsoft Research了，在VGG16上，Fast R-CNN训练速度是RCNN的9倍, 测试速度是RCNN213倍；训练速度是SPP-net的3倍，测试速度是SPP-net的3倍，并且达到了更高的准确率，本文为您解读Fast RCNN。
+Fast RCNN是对RCNN的性能优化版本，在VGG16上，Fast R-CNN训练速度是RCNN的9倍, 测试速度是RCNN213倍；训练速度是SPP-net的3倍，测试速度是SPP-net的3倍，并且达到了更高的准确率，本文为您解读Fast RCNN。
 
 ## Overview
 
-
-Fast rcnn直接从单张图的feature map中提取对应的feature map，用卷积神经网络做分类，做bounding box regressor，不需要额外磁盘空间，避免重复计算，速度更快，准确率也更高。
+Fast rcnn直接从单张图的feature map中提取RoI对应的feature map，用卷积神经网络做分类，做bounding box regressor，不需要额外磁盘空间，避免重复计算，速度更快，准确率也更高。
 
 ## Related work
 ### RCNN缺点
@@ -21,25 +18,31 @@ Fast rcnn直接从单张图的feature map中提取对应的feature map，用卷�
 - 目标检测很慢
 Region proposal很慢，VGG16每张图需要花47秒的时间
 
-总结来说，RCNN就是慢！最主要的原因在于不同的Region Proposal有着大量的重复区域，导致大量的重复计算。
+总结：RCNN就是慢！最主要的原因在于不同的Region Proposal有着大量的重复区域，导致大量的feature map重复计算。
 
 ### SPP-net
-SPP-net中则提出只过一遍图，从最后的feature map裁剪出需要的特征，然后由Spatial pyramid pooling层将其转为固定尺寸特征，由于没有重复计算，训练速度提升3倍，测试速度提升了10-100倍。
+SPP-net中则提出只过一遍图，从最后的feature map裁剪出需要的特征，然后由Spatial pyramid pooling层将其转为固定尺寸特征，由于没有重复计算feature map，训练速度提升3倍，测试速度提升了10-100倍。
 
-但是SPP-net也有缺点，SPP-net的fine-tune不能越过SPP层，只能fine-tune全连接层，tune不到卷积层，所以在一些较深的网络上准确率上不去。
+但是SPP-net也有缺点，SPP-net的fine-tune不能越过SPP层，因为pyramid BP开销太大了，只能fine-tune全连接层，tune不到卷积层，所以在一些较深的网络上准确率上不去。
 
-> 具体原因在2.3中说明了：通过SPP层映射回原图，每个RoI会对应很大的一个感受野，通常这个感受野会 
+
 
 ## Fast RCNN architecture
 
 ![Fast RCNN](https://upload-images.jianshu.io/upload_images/1828517-59eabb44802971e9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-首先将整个图片输入到一个基础卷积网络，经过max pooling得到整张图的feature map，然后用一个RoI pooling层为region proposal从feature map中提取一个固定长度的特征向量，每个特征会输入到一系列全连接层，得到一个RoI特征向量，再分叉传入两个全连接层输出，其中一个是传统softmax层进行分类，另一个是bounding box regressor，根据RoI特征向量（其中包含了原图中的空间信息）和原来的Region Proposal位置回归真实的bounding box位置（如RCNN做的那样，但是是用神经网络来实现）。
+- 首先将整个图片输入到一个基础卷积网络，经过max pooling得到整张图的feature map，
+- 然后用一个RoI pooling层为region proposal从feature map中提取一个**固定长度**的特征向量，
+- 每个特征会输入到一系列全连接层，得到一个RoI特征向量，
+- 再分叉传入两个全连接层输出，
+  - 其中一个是传统softmax层进行分类，
+  - 另一个是bounding box regressor，
+- 根据RoI特征向量（其中包含了原图中的空间信息）和原来的Region Proposal位置回归真实的bounding box位置（如RCNN做的那样，但是是用神经网络来实现）。
 
-可以看到，最重要的创新就是RoI pooling层。
+其他都是一目了然的，接下来主要讲RoI pooling
 
 ## RoI pooling
-- 我们可以根据卷积运算的规则，推算出原图的一部分对应feature map中的哪一部分。但是这些feature map往往具有不同的形状大小，因为原图的大小就是各种各样的。
+ 我们可以根据卷积运算的规则，推算出原图的region对应feature map中的哪一部分。但是因为原图region的大小不一，这些region对应的feature map尺寸是不固定的，RoI pooling就是为了得到固定大小的feature map。
 - RoI pooling层使用max pooling将不同的RoI对应的feature map转为固定大小的feature map。
   - 首先将h * w的feature map划分为H * W个格子
   - 对每个格子中的元素做max pooling
@@ -50,10 +53,15 @@ SPP-net中则提出只过一遍图，从最后的feature map裁剪出需要的�
 
 其中
 
-- i <sup>*</sup>(r, j) = argmax<sub>i'∈R(r,j)  </sub>x<sub>i'</sub>，也就是在R(r, j)这个区域中做max pooling， i =  i <sup> * </sup>(r, j) 是一个条件表达式，如果这个区域中的这个值跟Max pooling结果不相等，输出的梯度就传不到这个值上面（只会传到max pooling对应的那个值上）
-
+- i <sup>*</sup>(r, j) = argmax<sub>i'∈R(r,j)  </sub>x<sub>i'</sub>，也就是在R(r, j)这个区域中做max pooling得到的结果，
+-  i =  i <sup> * </sup>(r, j) 是一个条件表达式，就是判断input的x<sub>i</sub>是否是max pooling的结果，如果不是，输出的梯度就不传到这个值上面
+- r是RoI数量，j是在一个region中，与x对应的输出个数
 - y<sub>rj</sub>是第j个跟x对应的输出
-- r是RoI数量
+
+举例：
+
+![RoI pooling BP](https://upload-images.jianshu.io/upload_images/1828517-d6e9454ed136a247.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 
 > 也就是说，将Loss对输出的梯度，传回到max pooling对应的那个feature unit上，再往回传
 
@@ -77,6 +85,9 @@ SPP-net中则提出只过一遍图，从最后的feature map裁剪出需要的�
  > smooth<sub>L<sub>1</sub></sub>(x) = 0.5x<sup>2</sup> if |x|<1 otherwise |x|-0.5
 
 是一个软化的L1（画一下图像可以看出来，在(-1,1)的范围内是抛物线，没L1那么尖锐），如果采用L2 loss，需要仔细调节学习率防止梯度爆炸。
+![smooth L1](https://upload-images.jianshu.io/upload_images/1828517-917c6116de81339b.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+
 
 整个模型的Loss就是：
 
@@ -85,6 +96,7 @@ SPP-net中则提出只过一遍图，从最后的feature map裁剪出需要的�
 - p代表预测类别，k代表真实类别
 - k≥1意味着不算0类（也就是背景类）的bounding box loss，因为背景的bounding box没啥意义
 - λ是超参数，在论文的实验中设为1
+
 
 
 ## 训练
