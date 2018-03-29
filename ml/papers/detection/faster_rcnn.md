@@ -62,14 +62,14 @@ Faster RCNN则是专门训练了一个卷积神经网络来回归bounding box，
 - p<sub>i</sub>是一个batch中的多个anchor属于前景/后景的预测概率向量，t<sub>i</sub>是一个batch中正anchor对应的bounding box位置向量
 - L<sub>cls</sub>是softmax二分类损失
 - L<sub>reg</sub>跟Fast RCNN中的bounding box regression loss一样，乘一个p<sub>i</sub>*，意味着只有前景计算bounding box regression loss
-- 论文中说N<sub>cls</sub>为256，也就是mini-batch size，N<sub>reg</sub>约为256*9=2304（论文中说约等于2400）,这意味着一对p对应9个t，这种对应关系也体现在全连接层的输出个数上，由于两个task输出数量差别比较大，所以要做一下归一化。
+- 论文中说N<sub>cls</sub>为256，也就是mini-batch size，N<sub>reg</sub>约为256 * 9=2304（论文中说约等于2400）,这意味着一对p对应9个t，这种对应关系也体现在全连接层的输出个数上，由于两个task输出数量差别比较大，所以要做一下归一化。
 
 > 但这就意味着loss中的mini-batch size是以3x3的slide window为单位的，因为只有slide window和anchor的个数才有这种1:9的关系，而挑选训练样本讲的mini-batch size却是以anchor为单位的，所以我猜实际操作是这样的：
 - 先选256个anchor，
 - 然后找它们对应的256个slide window，
 - 然后再算这256个slide window对应的256×9个anchor的loss，每个slide window对应一个256特征，有一个L<sub>cls</sub>，同时对应9个anchor，有9个L<sub>reg</sub>
 
-论文这里讲得超级混乱：
+论文这里讲得超级混乱，可以感受下：
 
 ![minibatch anchor](https://upload-images.jianshu.io/upload_images/1828517-f3ed1471a7298350.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
@@ -88,8 +88,8 @@ Faster RCNN则是专门训练了一个卷积神经网络来回归bounding box，
   - 再次将剩下的anchor按照anchor score从高到低排序（仍然可能有背景anchor的），取前300个作为proposals输出，如果不足300个就…也没啥关系，比如只有100个就100个来用，其实不足300个的情况很少的，你想Selective Search都有2000个。
 
 ## Fast RCNN
-接下来就是按照Fast RCNN的模式来训练了，我们可以为每张图前向传播从proposal_layer出来得到300个proposals，然后
-- 取一张图的128个proposal作为样本，一张图可以取多次，直到proposal用完
+接下来就是按照Fast RCNN的模式来训练了，我们可以为每张图前向传播从proposal_layer出来得到最多300个proposals，然后
+- 取一张图的128个proposal作为样本（有正有负），一张图可以取多次，直到proposal用完
 
 ![](https://upload-images.jianshu.io/upload_images/1828517-59eabb44802971e9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700)
 
