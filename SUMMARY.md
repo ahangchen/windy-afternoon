@@ -34,6 +34,8 @@
     - [Object Detection](ml/papers/detection/README.md)
       - [读论文系列·干货满满的RCNN](ml/papers/detection/rcnn.md)
       - [读论文系列·SPP-net](ml/papers/detection/sppnet.md)
+      - [读论文系列·Fast RCNN](ml/papers/detection/fast_rcnn.md)
+      - [读论文系列·Faster RCNN](ml/papers/detection/faster_rcnn.md)
   - [《机器学习》（周志华）读书笔记](ml/zzh_ml_notes.md)
     - [西瓜书概念整理](ml/melon/README.md)
       - [绪论](ml/melon/ch01.md)
