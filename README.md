@@ -20,6 +20,7 @@
 #### 机器学习与数据挖掘
 - [读论文系列](ml/papers/README.md)
 - [谷歌深度学习教程笔记](https://github.com/ahangchen/GDLnotes)
+- [CVPR 2018 TFusion](ml/papers/TFusion.md)
 
 
 #### Android相关
@@ -32,6 +33,21 @@
 
 #### 编程思想
 - [【译】How to be a programmer](https://ahangchen.gitbooks.io/how-to-be-a-programmer-cn/content/)
+
+#### 读论文系列
+- [读论文系列](ml/papers/README.md)
+  - [MLA 2016 南京 笔记](ml/papers/mla_2016.md)
+  - [CNCC2017中的深度学习与跨媒体智能](ml/papers/cncc_cv.md)
+  - [Person Re-id](ml/reid/README.md)
+    - [Person Re-identification](ml/reid/reid.md)
+    - [CVPR2016 Re-id](ml/reid/cvpr-reid.md)
+    - [Camera topology and Person Re-id](ml/reid/reid-topo.md)
+    - [Deep transfer learning Person Re-id](ml/reid/deep_transfer_learning_person_reid.md)
+  - [Object Detection](ml/papers/detection/README.md)
+    - [RCNN](ml/papers/detection/rcnn.md)
+    - [SPPNet](ml/papers/detection/sppnet.md)
+    - [Fast RCNN](ml/papers/detection/fast_rcnn.md)
+    - [Faster RCNN](ml/papers/detection/faster_rcnn.md)
 
 #### 工具相关
 -  [刷爆github小绿点](kit/git/green_blush.md)
