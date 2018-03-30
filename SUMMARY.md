@@ -13,7 +13,7 @@
  - [一个由Proguard与FastJson引起的血案](android/一个由PROGUARD与FASTJSON引起的血案.md)
  - [琐碎的一些tips](android/note.md)
 - [Machine Learning](ml/README.md)
-  - [实践](ml/detection/ncs.md)
+  - [实践](ml/pratice/ncs.md)
   - [工具](ml/kit/README.md)
     - [Tensorflow学习笔记](https://github.com/ahangchen/GDLNotes)
     - [mscnn](ml/kit/caffe/mscnn.md)
