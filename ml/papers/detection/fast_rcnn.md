@@ -78,11 +78,11 @@ SPP-net中则提出只过一遍图，从最后的feature map裁剪出需要的�
 
 定义真实的bounding box为(v<sub>x</sub>, v<sub>y</sub>, v<sub>w</sub>, v<sub>h</sub>)，预测的bounding box位置（由第二个fc层输出，有K个类，每个类分别有4个值，分别为）t<sub>x</sub><sup>k</sup>，t<sub>y</sub><sup>k</sup>，t<sub>w</sub><sup>k</sup>, t<sub>h</sub><sup>k</sup>
 
->  L<sub>loc</sub>(t<sup>k</sup>, v) = ∑<sub>i∈{x,y,w,h}</sub> smooth<sub>L<sub>1</sub></sub>(t<sub>i</sub><sup>k</sup> - v<sub>i</sub>)
+>  L<sub>loc</sub>(t<sup>k</sup>, v) = ∑<sub>i∈{x,y,w,h}</sub> smooth<sub>L1</sub>(t<sub>i</sub><sup>k</sup> - v<sub>i</sub>)
 
 即预测位置和真实位置四个值的差值求和，其中
 
- > smooth<sub>L<sub>1</sub></sub>(x) = 0.5x<sup>2</sup> if |x|<1 otherwise |x|-0.5
+ > smooth<sub>L1</sub>(x) = 0.5x<sup>2</sup> if |x|<1 otherwise |x|-0.5
 
 是一个软化的L1（画一下图像可以看出来，在(-1,1)的范围内是抛物线，没L1那么尖锐），如果采用L2 loss，需要仔细调节学习率防止梯度爆炸。
 
