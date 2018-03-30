@@ -15,6 +15,7 @@
     - [CVPR2016 Re-id](reid/cvpr-reid.md)
     - [Camera topology and Person Re-id](reid/reid-topo.md)
     - [Deep transfer learning Person Re-id](reid/deep_transfer_learning_person_reid.md)
+    - [CVPR 2018 TFusion完全解读](papers/TFusion.md)
   - [Object Detection](papers/detection/README.md)
     - [RCNN](papers/detection/rcnn.md)
     - [SPPNet](papers/detection/sppnet.md)
