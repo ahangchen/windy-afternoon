@@ -3,7 +3,7 @@
 - [SPPNet](sppnet.md)
 - [Fast RCNN](fast_rcnn.md)
 - [Faster RCNN](faster_rcnn.md)
-- YOLO
+- [YOLO](yolo.md)
 - SSD
 - YOLO2
 - YOLO3
