@@ -4,6 +4,6 @@
 - [Fast RCNN](fast_rcnn.md)
 - [Faster RCNN](faster_rcnn.md)
 - [YOLO](yolo.md)
-- SSD
+- [SSD](ssd.md)
 - YOLO2
 - YOLO3
