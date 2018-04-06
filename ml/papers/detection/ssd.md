@@ -1,5 +1,3 @@
-# 读论文系列：Object Detection ECCV2016 SSD
-
 转载请注明作者：[梦里茶](https://github.com/ahangchen)
 
 > Single Shot MultiBox Detector
@@ -20,7 +18,7 @@
 - 经过VGG-16（只到conv4_3这一层）
 - 经过几层卷积，得到多层尺寸逐渐减小的feature map
 - 每层feature map分别做3x3卷积，每个feature map cell(又称slide window)对应k个类别和4个bounding box offset，同时对应原图中6（或4）个anchor(又称default box)
-  - 38x38, 最后3x3, 1x1三个feature map的每个feature map cell只对应4个anchor，分别为宽高比: 1:1两种，1:2, 2:1两种，因此总共有38*38*4+19*19*6+10*10*6+5*5*6+3*3*4+1*1*4=8732个anchor
+  - 38x38, 最后3x3, 1x1三个feature map的每个feature map cell只对应4个anchor，分别为宽高比: 1:1两种，1:2, 2:1两种，因此总共有 38 * 38 * 4 + 19 * 19 * 6 + 10 * 10 * 6 + 5 * 5 * 6 + 3 * 3 * 4 + 1 * 1 * 4 = 8732 个anchor
   - 其他feature map的feature map cell对应6个anchor，分别为宽高比: 1:1两种，1:2, 2:1两种，1:3， 3:1两种
   - 每层的feature map cell对应的anchor计算方法如下
    -  位置：假设当前feature map cell是位于第i行，第j列，则anchor的中心为 ((i+0.5)/|f<sub>k</sub>|,(j+0.5)/|f<sub>k</sub>|), f<sub>k</sub>是第k层feature map的size（比如38）
@@ -32,7 +30,8 @@
 
     ![height](https://upload-images.jianshu.io/upload_images/1828517-4898e977cc483570.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
     
-    其中，a<sub>r</sub>∈{1,2,3,1/2,1/3}，可以理解为在缩放因子选择好anchor尺寸后，用a<sub>r</sub>来控制anchor形状，从而得到多尺度的各种anchor
+    其中，a<sub>r</sub>∈{1,2,3,1/2,1/3}，可以理解为在缩放因子选择好anchor尺寸后，用a<sub>r</sub>来控制anchor形状，从而得到多尺度的各种anchor，当a<sub>r</sub>=1时，增加一种 s<sub>k</sub>=sqrt(s<sub>k-1</sub>s<sub>k+1</sub>)，于是每个feature map cell通常对应6种anchor。
+
 
 - 网络的训练目标就是，回归各个anchor对应的类别和位置
 
