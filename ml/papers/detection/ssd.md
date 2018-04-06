@@ -23,9 +23,12 @@
   - 每层的feature map cell对应的anchor计算方法如下
    -  位置：假设当前feature map cell是位于第i行，第j列，则anchor的中心为 ((i+0.5)/|f<sub>k</sub>|,(j+0.5)/|f<sub>k</sub>|), f<sub>k</sub>是第k层feature map的size（比如38）
     - 缩放因子: 
+    
     ![Scale](https://upload-images.jianshu.io/upload_images/1828517-91ef6530e5dce4b2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+    
     其中s<sub>min</sub>为0.2，s<sub>max</sub>为0.9，m为添加的feature map的层数，缩放因子就是为不同feature map选择不同的大小的anchor，要求小的feature map对应的anchor尽量大，因为越小的feature map，其feature map cell的感受野就越大
   - anchor宽高：
+  
     ![width](https://upload-images.jianshu.io/upload_images/1828517-ba128e30ed7637e3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
     ![height](https://upload-images.jianshu.io/upload_images/1828517-4898e977cc483570.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
