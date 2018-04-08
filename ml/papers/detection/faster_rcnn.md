@@ -51,8 +51,8 @@ Faster RCNN则是专门训练了一个卷积神经网络来回归bounding box，
 理论上我们可以用上面这个流程去训练RPN，但训练RPN的时候，一个batch会直接跑20K个anchor开销太大了。
 - 因此每个batch是采一张图里的256个anchor来训练全连接层和卷积层；
 - 这256个anchor里正负样本比例为1:1，正样本128个，负样本128个，
-- 如果正样本不足128个，用负样本填充，这也意味着并非所有的背景anchor都会拿来训练RPN，因为前景的anchor会远少于背景的anchor，丢掉一些背景anchor才能保证样本平衡，丢背景anchor的时候
-- 具体实现上，先算所有anchor，再算所有anchor与bounding box的重叠率，然后选择batch中的256个anchor，参与训练。同一张图会多次参与训练，直到图中的正anchor用完。
+- 如果正样本不足128个，用负样本填充，这也意味着并非所有的背景anchor都会拿来训练RPN，因为前景的anchor会远少于背景的anchor，丢掉一些背景anchor才能保证样本平衡，丢背景anchor的时候是以slide window为单位丢的，下面会说明。
+- 具体实现上，先算所有anchor，再算所有anchor与bounding box的重叠率，按重叠率区分正负样本，然后选择batch中的256个anchor，参与训练。同一张图会多次参与训练，直到图中的正anchor用完。
 
 因此最终的一个mini batch的训练损失函数为：
 
@@ -61,7 +61,7 @@ Faster RCNN则是专门训练了一个卷积神经网络来回归bounding box，
 其中，
 - p<sub>i</sub>是一个batch中的多个anchor属于前景/后景的预测概率向量，t<sub>i</sub>是一个batch中正anchor对应的bounding box位置向量
 - L<sub>cls</sub>是softmax二分类损失
-- L<sub>reg</sub>跟Fast RCNN中的bounding box regression loss一样，乘一个p<sub>i</sub>*，意味着只有前景计算bounding box regression loss
+- L<sub>reg</sub>跟Fast RCNN中的bounding box regression loss一样，乘一个p<sub>i</sub>* ，意味着只有前景计算bounding box regression loss
 - 论文中说N<sub>cls</sub>为256，也就是mini-batch size，N<sub>reg</sub>约为256 * 9=2304（论文中说约等于2400）,这意味着一对p对应9个t，这种对应关系也体现在全连接层的输出个数上，由于两个task输出数量差别比较大，所以要做一下归一化。
 
 > 但这就意味着loss中的mini-batch size是以3x3的slide window为单位的，因为只有slide window和anchor的个数才有这种1:9的关系，而挑选训练样本讲的mini-batch size却是以anchor为单位的，所以我猜实际操作是这样的：
