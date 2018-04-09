@@ -23,19 +23,19 @@
   - 38x38, 最后3x3, 1x1三个feature map的每个feature map cell只对应4个anchor，分别为宽高比: 1:1两种，1:2, 2:1两种，因此总共有 38 * 38 * 4 + 19 * 19 * 6 + 10 * 10 * 6 + 5 * 5 * 6 + 3 * 3 * 4 + 1 * 1 * 4 = 8732 个anchor
   - 其他feature map的feature map cell对应6个anchor，分别为宽高比: 1:1两种，1:2, 2:1两种，1:3， 3:1两种
   - 每层的feature map cell对应的anchor计算方法如下
-   -  位置：假设当前feature map cell是位于第i行，第j列，则anchor的中心为 ((i+0.5)/|f<sub>k</sub>|,(j+0.5)/|f<sub>k</sub>|), f<sub>k</sub>是第k层feature map的size（比如38）
-    - 缩放因子: 
-    
+   -  位置：假设当前feature map cell是位于第i行，第j列，则anchor的中心为 $$\frac{i+0.5}{|f_{k}|},\frac{j+0.5}{|f_{k}|}$$, $$f_{k}$$是第k层feature map的size（比如38）
+    - 缩放因子:
+
     ![Scale](https://upload-images.jianshu.io/upload_images/1828517-91ef6530e5dce4b2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-    
-    其中s<sub>min</sub>为0.2，s<sub>max</sub>为0.9，m为添加的feature map的层数，缩放因子就是为不同feature map选择不同的大小的anchor，要求小的feature map对应的anchor尽量大，因为越小的feature map，其feature map cell的感受野就越大
+
+    其中$$s_{min}$$为0.2，$$s_{max}$$为0.9，m为添加的feature map的层数，缩放因子就是为不同feature map选择不同的大小的anchor，要求小的feature map对应的anchor尽量大，因为越小的feature map，其feature map cell的感受野就越大
   - anchor宽高：
-  
+
     ![width](https://upload-images.jianshu.io/upload_images/1828517-ba128e30ed7637e3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
     ![height](https://upload-images.jianshu.io/upload_images/1828517-4898e977cc483570.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-    
-    其中，a<sub>r</sub>∈{1,2,3,1/2,1/3}，可以理解为在缩放因子选择好anchor尺寸后，用a<sub>r</sub>来控制anchor形状，从而得到多尺度的各种anchor，当a<sub>r</sub>=1时，增加一种 s<sub>k</sub>=sqrt(s<sub>k-1</sub>s<sub>k+1</sub>)，于是每个feature map cell通常对应6种anchor。
+
+    其中，$$a_{r}∈\{1,2,3,1/2,1/3\}$$，可以理解为在缩放因子选择好anchor尺寸后，用$$a_{r}$$来控制anchor形状，从而得到多尺度的各种anchor，当$$a_{r}=1$$时，增加一种$$ s_{k}=sqrt(s_{k-1}s_{k+1})$$，于是每个feature map cell通常对应6种anchor。
 
 
 - 网络的训练目标就是，回归各个anchor对应的类别和位置
@@ -53,8 +53,8 @@ Hard negative mining：由于负样本很多，需要去掉一部分负样本，
 
 ![SSD Loss](https://upload-images.jianshu.io/upload_images/1828517-d6d2d65d71a11cb9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-- x是x<sub>ij</sub><sup>p</sup>的集合x<sub>ij</sub><sup>p</sup>={1,0}，用于判断第i个anchor是否是第j个bounding box上的p类样本
-- c是c<sub>i</sub><sup>p</sup>的集合，c<sub>i</sub><sup>p</sup>是第i个anchor预测为第p类的概率
+- $$x$$是$$x_{ij}^{p}$$的集合$$x_{ij}^{p}={1,0}$$，用于判断第i个anchor是否是第j个bounding box上的p类样本
+- $$c$$是$$c_{i}^{p}$$的集合，$$c_{i}^{p}$$是第i个anchor预测为第p类的概率
 - l是预测的bounding box集合
 - g是ground true bounding box集合
 
