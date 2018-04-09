@@ -48,6 +48,8 @@
     - [SPPNet](ml/papers/detection/sppnet.md)
     - [Fast RCNN](ml/papers/detection/fast_rcnn.md)
     - [Faster RCNN](ml/papers/detection/faster_rcnn.md)
+    - [YOLO](ml/papers/detection/yolo.md)
+    - [SSD](ml/papers/detection/ssd.md)
 
 #### 工具相关
 -  [刷爆github小绿点](kit/git/green_blush.md)
