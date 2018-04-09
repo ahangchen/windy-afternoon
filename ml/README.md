@@ -21,9 +21,9 @@
     - [SPPNet](papers/detection/sppnet.md)
     - [Fast RCNN](papers/detection/fast_rcnn.md)
     - [Faster RCNN](papers/detection/faster_rcnn.md)
-    - YOLO
-    - SSD
-    - YOLO2
-    - YOLO3
+    - [YOLO](papers/detection/yolo.md)
+    - [SSD](papers/detection/ssd.md)
+    - [YOLOv2&YOLOv3](papers/detection/yolo23.md)
+    - [Other](papers/detection/other.md)
   - [集成学习](essemble/README.md)
     - [多模态数据融合](Methodologies_for_Cross-Domain_Data_Fusion_An_Overview.pptx)
