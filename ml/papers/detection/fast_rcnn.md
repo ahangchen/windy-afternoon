@@ -53,10 +53,10 @@ SPP-net中则提出只过一遍图，从最后的feature map裁剪出需要的�
 
 其中
 
-- i <sup>*</sup>(r, j) = argmax<sub>i'∈R(r,j)  </sub>x<sub>i'</sub>，也就是在R(r, j)这个区域中做max pooling得到的结果，
--  i =  i <sup> * </sup>(r, j) 是一个条件表达式，就是判断input的x<sub>i</sub>是否是max pooling的结果，如果不是，输出的梯度就不传到这个值上面
+- $$i ^{*}(r, j) = argmax_{i'∈R(r,j)  }x_{i'}$$，也就是在$$R(r, j)$$这个区域中做max pooling得到的结果，
+-  $$i =  i ^{ * }(r, j)$$ 是一个条件表达式，就是判断input的$$x_{i}$$是否是max pooling的结果，如果不是，输出的梯度就不传到这个值上面
 - r是RoI数量，j是在一个region中，与x对应的输出个数
-- y<sub>rj</sub>是第j个跟x对应的输出
+- $$y_{rj}$$是第j个跟x对应的输出
 
 举例：
 
@@ -73,16 +73,16 @@ SPP-net中则提出只过一遍图，从最后的feature map裁剪出需要的�
 但是这种Pyramid方法计算代价比较大，所以Fast RCNN中只在小模型上有这样做
 
 ## Multi-task loss
-- L<sub>cls</sub>:  SoftMax多分类Loss，没啥好说的
-- L<sub>loc</sub>：bounding box regression loss
+- $$L_{cls}$$:  SoftMax多分类Loss，没啥好说的
+- $$L_{loc}$$：bounding box regression loss
 
-定义真实的bounding box为(v<sub>x</sub>, v<sub>y</sub>, v<sub>w</sub>, v<sub>h</sub>)，预测的bounding box位置（由第二个fc层输出，有K个类，每个类分别有4个值，分别为）t<sub>x</sub><sup>k</sup>，t<sub>y</sub><sup>k</sup>，t<sub>w</sub><sup>k</sup>, t<sub>h</sub><sup>k</sup>
+定义真实的bounding box为($$v_{x}, v_{y}, v_{w}, v_{h}$$)，预测的bounding box位置（由第二个fc层输出，有K个类，每个类分别有4个值，分别为）$$t_{x}^{k}，t_{y}^{k}，t_{w}^{k}, t_{h}^{k}$$
 
->  L<sub>loc</sub>(t<sup>k</sup>, v) = ∑<sub>i∈{x,y,w,h}</sub> smooth<sub>L1</sub>(t<sub>i</sub><sup>k</sup> - v<sub>i</sub>)
+$$L_{loc}(t^{k}, v) = ∑_{i∈{x,y,w,h}} smooth_{L1}(t_{i}^{k} - v_{i})$$
 
 即预测位置和真实位置四个值的差值求和，其中
 
- > smooth<sub>L1</sub>(x) = 0.5x<sup>2</sup> if |x|<1 otherwise |x|-0.5
+$$smooth_{L1}(x) = 0.5x^{2} if |x|<1 otherwise |x|-0.5$$
 
 是一个软化的L1（画一下图像可以看出来，在(-1,1)的范围内是抛物线，没L1那么尖锐），如果采用L2 loss，需要仔细调节学习率防止梯度爆炸。
 
@@ -92,7 +92,7 @@ SPP-net中则提出只过一遍图，从最后的feature map裁剪出需要的�
 
 整个模型的Loss就是：
 
-> L(p,  k,  t<sup>k</sup>, v) = L<sub>cls</sub>(p, k) + λ|k ≥ 1| L<sub>Ioc</sub>(t<sup>u</sup>, v)
+$$L(p,  k,  t^{k}, v) = L_{cls}(p, k) + λ|k ≥ 1| L_{Ioc}(t^{u}, v)$$
 
 - p代表预测类别，k代表真实类别
 - k≥1意味着不算0类（也就是背景类）的bounding box loss，因为背景的bounding box没啥意义
@@ -122,11 +122,11 @@ SPP-net中则提出只过一遍图，从最后的feature map裁剪出需要的�
 
 - Truncated SVD
 
-W ≈ U∑<sub>t</sub>V<sup>T</sup>
+$$W ≈ U∑_{t}V^{T}$$
 
-将u×v大小的矩阵W分解为三个矩阵相乘，其中，U是一个u×t的矩阵，包含W的前t个左奇异向量，∑<sub>t</sub>是一个t×t的对角矩阵，包含W的前t个上奇异向量，V<sup>T</sup>是一个v×t的矩阵，包含W的前t个右奇异向量，参数数量从uv变成t(u+v)，当t远小于min(u,v)时，参数数量就显著少于W。
+将$$u×v$$大小的矩阵W分解为三个矩阵相乘，其中，$$U$$是一个$$u×t$$的矩阵，包含$$W$$的前$$t$$个左奇异向量，$$∑_{t}$$是一个$$t×t$$的对角矩阵，包含$$W$$的前$$t$$个上奇异向量，$$V^{T}$$是一个$$v*t$$的矩阵，包含$$W$$的前$$t$$个右奇异向量，参数数量从$$uv$$变成$$t(u+v)$$，当$$t$$远小于$$min(u,v)$$时，参数数量就显著少于$$W$$。
 
-具体实现上，将一个权重为W的全连接层拆成两个，第一层的权重矩阵为∑<sub>t</sub>V<sup>T</sup>（并且没有bias），第二层的权重矩阵为U（带上W原来的bias）。
+具体实现上，将一个权重为W的全连接层拆成两个，第一层的权重矩阵为∑_{t}V^{T}（并且没有bias），第二层的权重矩阵为U（带上W原来的bias）。
 
 在Fast RCNN中，Truncated SVD减少了30%的训练时间。
 
@@ -143,7 +143,7 @@ W ≈ U∑<sub>t</sub>V<sup>T</sup>
 
 - Multi Loss(Softmax + bb regressor)是否比Single task（只用Softmax loss）更优？stage-wise和Multi Task同时进行(end2end)哪个更优？
 
-在VOC07上，end2end + bb regressor > stage-wise+ bb regressor > end2end 
+在VOC07上，end2end + bb regressor > stage-wise+ bb regressor > end2end
 
 - Image Pyramid是否必须？
 实际上，使用Pyramid在Fast RCNN上只提升了1%左右，所以这个也没被列为正式的创新点

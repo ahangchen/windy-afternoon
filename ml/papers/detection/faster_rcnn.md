@@ -28,8 +28,10 @@ Faster RCNN则是专门训练了一个卷积神经网络来回归bounding box，
   - 九个区域有九种尺寸分别是
 
   > 128x128    128x64      64x128
-256x256    256x128   128x256
-512x512    512x256   256x512
+
+  > 256x256    256x128   128x256
+
+  > 512x512    512x256   256x512
 
   - 这九个区域我们也成为9个anchor，或者9个reference box
   - 如此，每个特征就能和原图上形状和尺寸各异的区域对应起来了
@@ -59,15 +61,15 @@ Faster RCNN则是专门训练了一个卷积神经网络来回归bounding box，
 ![RPN Loss](https://upload-images.jianshu.io/upload_images/1828517-ee7376ecb88a3b64.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 其中，
-- p<sub>i</sub>是一个batch中的多个anchor属于前景/后景的预测概率向量，t<sub>i</sub>是一个batch中正anchor对应的bounding box位置向量
-- L<sub>cls</sub>是softmax二分类损失
-- L<sub>reg</sub>跟Fast RCNN中的bounding box regression loss一样，乘一个p<sub>i</sub>* ，意味着只有前景计算bounding box regression loss
-- 论文中说N<sub>cls</sub>为256，也就是mini-batch size，N<sub>reg</sub>约为256 * 9=2304（论文中说约等于2400）,这意味着一对p对应9个t，这种对应关系也体现在全连接层的输出个数上，由于两个task输出数量差别比较大，所以要做一下归一化。
+- $$p_{i}$$是一个batch中的多个anchor属于前景/后景的预测概率向量，$$t_{i}$$是一个batch中正anchor对应的bounding box位置向量
+- $$L_{cls}$$是softmax二分类损失
+- $$L_{reg}$$跟Fast RCNN中的bounding box regression loss一样，乘一个$$p_{i}*$$ ，意味着只有前景计算bounding box regression loss
+- 论文中说$$N_{cls}$$为256，也就是mini-batch size，$$N_{reg}$$约为256 * 9=2304（论文中说约等于2400）,这意味着一对p对应9个t，这种对应关系也体现在全连接层的输出个数上，由于两个task输出数量差别比较大，所以要做一下归一化。
 
 > 但这就意味着loss中的mini-batch size是以3x3的slide window为单位的，因为只有slide window和anchor的个数才有这种1:9的关系，而挑选训练样本讲的mini-batch size却是以anchor为单位的，所以我猜实际操作是这样的：
 - 先选256个anchor，
 - 然后找它们对应的256个slide window，
-- 然后再算这256个slide window对应的256×9个anchor的loss，每个slide window对应一个256特征，有一个L<sub>cls</sub>，同时对应9个anchor，有9个L<sub>reg</sub>
+- 然后再算这256个slide window对应的256×9个anchor的loss，每个slide window对应一个256特征，有一个$$L_{cls}$$，同时对应9个anchor，有9个$$L_{reg}$$
 
 论文这里讲得超级混乱，可以感受下：
 
