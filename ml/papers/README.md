@@ -1,9 +1,20 @@
 # 讲座论文系列
 - [Person Re-id](../reid/README.md)
+  - [Person Re-identification Overview](../reid/reid.md)
+  - [CVPR2016 Re-id](../reid/cvpr-reid.md)
+  - [Camera topology and Person Re-id](../reid/reid-topo.md)
+  - [Deep transfer learning person re-id](../reid/deep_transfer_learning_person_reid.md)
+  - [CVPR2018:TFusion](TFusion.md)
 - [Object Detection](detection/README.md)
   - [RCNN](detection/rcnn.md)
   - [SPP-net](detection/sppnet.md)
-- [ECCV 2016, Hydra CCNN](eccv2016_hydra_ccnn.md)
-- [CNCC 2017琐记](cncc2017.md)
-- [CNCC2017中的深度学习与跨媒体智能](cncc_cv.md)
-- [CVPR2018:TFusion](TFusion.md)
+  - [Fast RCNN](detection/fast_rcnn.md)
+  - [Faster RCNN](detection/faster_rcnn.md)
+  - [YOLO](detection/yolo.md)
+  - [SSD](detection/ssd.md)
+- Object Counting
+  - [ECCV 2016, Hydra CCNN](eccv2016_hydra_ccnn.md)
+- 大杂烩
+  - [CNCC 2017琐记](cncc2017.md)
+  - [CNCC2017中的深度学习与跨媒体智能](cncc_cv.md)
+
