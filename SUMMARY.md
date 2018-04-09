@@ -38,6 +38,8 @@
       - [读论文系列·Faster RCNN](ml/papers/detection/faster_rcnn.md)
       - [读论文系列·YOLO](ml/papers/detection/yolo.md)
       - [读论文系列·SSD](ml/papers/detection/ssd.md)
+      - [读论文系列·YOLOv2 & YOLOv3](ml/papers/detection/yolo23.md)
+      - [读论文系列·detection其他文章推荐](ml/papers/detection/other.md)
   - [《机器学习》（周志华）读书笔记](ml/zzh_ml_notes.md)
     - [西瓜书概念整理](ml/melon/README.md)
       - [绪论](ml/melon/ch01.md)
