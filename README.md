@@ -51,9 +51,9 @@
     - [YOLO](ml/papers/detection/yolo.md)
     - [SSD](ml/papers/detection/ssd.md)
 
-#### 工具相关
--  [刷爆github小绿点](kit/git/green_blush.md)
--  [Markdown系列](kit/markdown/README.md)
+#### Linux系列
+-  [刷爆github小绿点](kit/git/green_blush.md)
+-  [树莓派](linux/raspbian/ncs_detection.md)
 -  [Ubuntu初始配置](linux/ubuntu_init.md)
 
 
