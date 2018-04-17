@@ -38,7 +38,7 @@ sudo cp your.crt /usr/share/ca-certificates/your.crt
 sudo dpkg-reconfigure ca-certificates
 ```
 
-然后编辑 `/etc/ca-certificates.conf`
+或者编辑 `/etc/ca-certificates.conf`
 
 然后
 ```shell
@@ -81,7 +81,7 @@ ssh -XC user@host
   - 安装远程桌面环境
 ```
 sudo apt-get install xfce4
-sudo apt-get install xrdp vnc4server
+sudo apt-get install xrdp tightvncserver
 echo "xfce4-session" >~/.xsession
 sudo service xrdp restart
 ```
@@ -91,37 +91,20 @@ sudo service xrdp restart
 - 可以修改vncserver分辨率：
 
 ```
-sudo vi /etc/alternatives/vncserver
+vncserver -geometry 1920x1080
 ```
-找到
+这样就能启动一个指定分辨率为1920x1080的vnc会话
 
-```shell
-$geometry = "1024x768";
-```
-
-改为
-
-
-```shell
-$geometry = "1024x768";
-```
 
 - 如果需要在mac上远程Ubuntu，需要在Ubuntu上开启vncserver: 命令行输入vncserver(初次运行输入设置密码)，并将~/.vnc/xstartup文件改为：
 
 ```shell
-!/bin/sh
-
-# Uncomment the following two lines for normal desktop:
-unset SESSION_MANAGER
-exec /etc/X11/xinit/xinitrc
-
-[ -x /etc/vnc/xstartup ] && exec /etc/vnc/xstartup
-[ -r $HOME/.Xresources ] && xrdb $HOME/.Xresources
-xsetroot -solid grey
-vncconfig -iconic &
-x-terminal-emulator -geometry 80x24+10+10 -ls -title "$VNCDESKTOP Desktop" &
-gnome-session &
+#!/bin/bash
+xrdb $HOME/.Xresources
+startxfce4 &
 ```
+
+以此解决花屏问题
 
 - 关闭一个vncserver：
 
@@ -235,3 +218,78 @@ sudo nginx -s reload
 - 参考[>>](http://b.liuctic.com/2013/12/ssh%E6%AD%A3%E5%90%91%E5%8F%8D%E5%90%91%E8%BF%9E%E6%8E%A5%E7%9A%84%E5%BC%BA%E5%A4%A7%E5%8A%9F%E8%83%BD%E4%BB%A5%E5%8F%8Aautossh%E3%80%90%E8%BD%AC%E8%BD%BD%E4%B8%A4%E7%AF%87%E3%80%91/)，采用autossh
 - 需要注意设置GatewayPorts yes，参考[>>](http://www.netcan666.com/2016/09/28/ssh%E9%9A%A7%E9%81%93%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E5%AE%9E%E7%8E%B0%E5%86%85%E7%BD%91%E5%88%B0%E5%85%AC%E7%BD%91%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91/)
 - 其他内网穿透的方法还有teamviewer, openvpn, ngrok，有空再研究看看
+
+## 编译opencv
+- 当opencv放在ntfs格式的磁盘上,并在ubuntu上编译时,会有如下错误:
+
+`CMake fails to deterimine the bitness of target platform. opencv ubuntu`
+
+## Caffe官网安装教程没告诉你的东西
+- Ubuntu上,hdf5是带serial的,需要添加头文件和lib:
+  - 在Make.config中,修改:
+  
+```shell
+INCLUDE_DIRS := $(PYTHON_INCLUDE) /usr/local/include /usr/include/hdf5/serial/
+```
+
+或者直接运行
+
+```shell
+find . -type f -exec sed -i -e 's^"hdf5.h"^"hdf5/serial/hdf5.h"^g' -e 's^"hdf5_hl.h"^"hdf5/serial/hdf5_hl.h"^g' '{}' \;
+```
+
+  - 连接hdf5的库:
+  
+```shell
+cd /usr/lib/x86_64-linux-gnu
+sudo ln -s libhdf5_serial.so.8.0.2 libhdf5.so
+sudo ln -s libhdf5_serial_hl.so.8.0.2 libhdf5_hl.so
+```
+- make pycaffe之后,需要在~/.bashrc添加pythonpath:
+
+```shell
+export PYTHONPATH=/path/to/caffe/python:$PYTHONPATH
+```
+
+- 如果pycaffe使用了anaconda的numpy,关联了mkl,则需要在~/.bashrc中添加mkl的preload
+
+```shell
+export LD_PRELOAD=/opt/intel/mkl/lib/intel64/libmkl_core.so:/opt/intel/mkl/lib/intel64/libmkl_sequential.so
+```
+
+- apt-get 安装的protobuf是跟随ubuntu g++版本的，但cuda的安装是落后于g++版本的，如果g++降级过，用这个低版本g++编译caffe时，会导致找不到高版本的protobuf，应当将g++升级回来:
+
+```shell
+sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.4 20
+```
+
+但是g++升级又会导致编译时cuda不兼容，实际上cuda不是完全不兼容，只要把`/usr/local/cuda/include/host_config.h`中的这三行注释掉就行：
+
+```c++
+//#if __GNUC__ > 5 || (__GNUC__ == 5 && __GNUC_MINOR__ > 3)
+
+//#error -- unsupported GNU version! gcc versions later than 5.3 are not supported!
+
+//#endif /* __GNUC__ > 5 || (__GNUC__ == 5 && __GNUC_MINOR__ > 1) */
+```
+
+- caffe编译时只兼容apt-get的protobuf，不兼容其他高版本的，如果做了上面的修改仍然有问题，需要将系统中（比如anaconda中）的其他protobuf卸载
+
+- caffe python3, make pycaffe会提示找不到-lboost_python3，需要：
+
+```shell
+sudo ln -s libboost_python-py35.so libboost_python3.so
+```
+## OpenCV GPU编译CUDA-8兼容问题
+
+https://github.com/thrust/thrust/issues/800
+
+## 查看端口占用
+
+```shell
+ netstat -ap | grep 8080
+ ```
+
+## ubuntu 破解密码
+
+http://blog.topspeedsnail.com/archives/6042

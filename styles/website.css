@@ -4,7 +4,7 @@
     "冬青黑体", "Hiragino Sans GB", "华文细黑", "STXihei",
     "文泉驿微米黑", "WenQuanYi Micro Hei",
     sans-serif;
-    color: #444;
+    color: #000;
 }
 .book-header .fa {
    color: white;
@@ -14,6 +14,17 @@ blockquote {
     background-color: whitesmoke;
     border-left: 5px solid #00896C;
     word-break: break-word;
+}
+.markdown-section h6{
+    width: fit-content;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.markdown-section img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 .markdown-section blockquote p {
     margin-botttom: 8px;
@@ -39,7 +50,7 @@ blockquote {
    color: white;
 }
 .book-body {
-   background: #fefdfa;
+   background: #ffffff;
 }
 .markdown-section pre, code {
   font-size: 0.85em;

@@ -5,11 +5,11 @@
 
 syncdb command is deprecated in django 1.7. Use the python manage.py migrate instead.
 
-####推荐一个较新版本的django中文文档 
+####推荐一个较新版本的django中文文档
 
 http://python.usyiyi.cn/django/intro/tutorial01.html
 
- 
+
 
 ####install django for python3
 
@@ -22,11 +22,11 @@ sudo pip install Django
 ####1.9中的deprecated接口
 
  https://docs.djangoproject.com/en/1.9/internals/deprecation/
- 
+
  ####django runserver, 停在performing System checking
- 
+
  检查引用的py模块中，是否有自动执行的语句。
- 
+
  比如views.py引用a.py，a.py中执行了一个死循环执行一些监听操作，views.py引用a.py时，就会去执行那段死循环，导致runserver卡住
 
 ####在bat中运行python脚本不显示黑框
@@ -70,3 +70,6 @@ def send_163_mail(user, pwd, from_addr, to_addr, subject, content):
     except smtplib.SMTPConnectError:
         print('SMTPConnectError')
 ```
+
+#### 多APP外键双向依赖
+ - makemigrations和migrate时不指定app名，可以自动处理

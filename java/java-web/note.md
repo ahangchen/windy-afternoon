@@ -1,4 +1,4 @@
-###**IDEA servlet-api.jar**(2015-1-6)
+### **IDEA servlet-api.jar**(2015-1-6)
 
    idea从14升级到15后，发现
 ```java
@@ -12,7 +12,7 @@ import javax.servlet.AsyncContext;
 
 
 
-###**tomcat允许跨域**(2016-1-12)
+### **tomcat允许跨域**(2016-1-12)
 
 参考 ： https://tomcat.apache.org/tomcat-7.0-doc/config/filter.html
 
@@ -51,4 +51,8 @@ import javax.servlet.AsyncContext;
 - docBase即虚拟目录代表的本地目录
 - crossContext表示是否允许跨域，
 
-然后把xml命名成虚拟目录名，比如test，则可以通过url：http://localhost:8888/test访问docBase下的文件
+然后把xml命名成虚拟目录名，比如test，则可以通过url：http://localhost:8888/test 访问docBase下的文件
+
+如果需要以目录的形式访问文件，需要在server.xml中配置[listing为true](http://blog.csdn.net/istend/article/details/52892208)
+
+如果需要支持中文文件，需要[在server.xml中配置](http://blog.csdn.net/istend/article/details/52892208)Context的URLEncoding为UTF-8
