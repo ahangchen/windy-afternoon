@@ -14,6 +14,7 @@
  - [琐碎的一些tips](android/note.md)
 - [Machine Learning](ml/README.md)
   - [技巧](ml/trick/README.md)
+    - [FaceBook: 1 hour training ImageNet](ml/trick/imgnet_1h.md)
     - [L2 Norm与L2 normalize](ml/trick/l2_normalize.md)
   - [实践](ml/pratice/ncs.md)
   - [工具](ml/kit/README.md)
