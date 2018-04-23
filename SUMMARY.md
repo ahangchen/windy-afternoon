@@ -13,6 +13,8 @@
  - [一个由Proguard与FastJson引起的血案](android/一个由PROGUARD与FASTJSON引起的血案.md)
  - [琐碎的一些tips](android/note.md)
 - [Machine Learning](ml/README.md)
+  - [技巧](ml/trick/README.md)
+    - [L2 Norm与L2 normalize](ml/trick/l2_normalize.md)
   - [实践](ml/pratice/ncs.md)
   - [工具](ml/kit/README.md)
     - [Tensorflow学习笔记](https://github.com/ahangchen/GDLNotes)
