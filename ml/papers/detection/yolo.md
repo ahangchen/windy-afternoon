@@ -34,7 +34,7 @@ YOLO，You Only Look Once，摒弃了RCNN系列方法中的region proposal步骤
 - 第三行为一个bounding box属于前景时的置信度回归loss，
   - 当格子中有对象出现时，真实$$C_{i}$$为1，
   - $$1_{ij}^{obj}$$是一个条件表达式，当bounding box“负责(is responsible for)”图中一个真实对象时为1，否则为0，
-  - 所谓“负责”，指的是在当前这个格子前向传播预测出的所有bounding box中，这个bounding box与真实的bounding box重叠率最大
+  - 所谓“负责”，指的是在当前这个格子[前向传播（有代码依据）](https://github.com/pjreddie/darknet/blob/master/src/detection_layer.c#L120)预测出的所有bounding box中，这个bounding box与真实的bounding box重叠率最大
 - 第四行为一个bounding box属于背景时的置信度回归loss，
   - 为了避免负样本过多导致模型跑偏， $$\lambda_{noobj}=0.5$$，
   - $$1_{ij}^{noobj}$$是一个条件表达式，为$$1_{ij}^{obj}$$取反
