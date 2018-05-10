@@ -15,14 +15,14 @@ YOLO，You Only Look Once，摒弃了RCNN系列方法中的region proposal步骤
 
 ![CNN](https://upload-images.jianshu.io/upload_images/1828517-02e0f65d4bbd1ef3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-- 将图片划分为$$SxS$$个格子，$$S=7$$
-- 输出一个$$SxS$$大小的class probability map，为图片上每个格子所属的分类
+- 将图片划分为$$S*S$$个格子，$$S=7$$
+- 输出一个$$S*S$$大小的class probability map，为图片上每个格子所属的分类
 
 ![Model](https://upload-images.jianshu.io/upload_images/1828517-da68332415c4cb7e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 - 输出为每个格子输出B个bounding box，每个bounding box由x,y,w,h表示，为每个bounding box输出一个confidence，即属于前景的置信度
 
-> 于是输出可以表示为一个$$SxSx(B*(4+1)+C)$$的tensor，训练只需要根据数据集准备好这样的tensor进行regression就行
+> 于是输出可以表示为一个$$S*S*(B*(4+1)+C)$$的tensor，训练只需要根据数据集准备好这样的tensor进行regression就行
 
 - 对所有bounding box按照confidence做非极大抑制，得到检测结果
 
