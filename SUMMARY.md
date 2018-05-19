@@ -39,9 +39,9 @@
       - [读论文系列·SSD](ml/papers/detection/ssd.md)
       - [读论文系列·YOLOv2 & YOLOv3](ml/papers/detection/yolo23.md)
       - [读论文系列·detection其他文章推荐](ml/papers/detection/other.md)
-    - Hashing
+    - [Hashing]((ml/papers/hashing/ssah.md))
       - [CVPR2018: SSAH](ml/papers/hashing/ssah.md)
-    - 大杂烩
+    - [大杂烩](ml/papers/cncc_cv.md)
       - [CNCC2017 琐记](ml/papers/cncc2017.md)
       - [ECCV 2016 Hydra CCNN](ml/papers/eccv2016_hydra_ccnn.md)
       - [CNCC2017深度学习与跨媒体智能](ml/papers/cncc_cv.md)
