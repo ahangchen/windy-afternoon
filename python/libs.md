@@ -17,3 +17,9 @@ print(result)
 # 关闭连接
 ssh.close()
 ```
+
+- jupyter notebook启动
+
+```shell
+~/anaconda2/bin/jupyter notebook --ip=0.0.0.0 --port=8081
+```
