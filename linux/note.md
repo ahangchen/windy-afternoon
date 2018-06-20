@@ -293,3 +293,22 @@ https://github.com/thrust/thrust/issues/800
 ## ubuntu 破解密码
 
 http://blog.topspeedsnail.com/archives/6042
+
+## screen 常用命令
+- detach and kill session:
+
+`$ screen -X -S [session # you want to kill] quit`
+
+- detach current session
+
+`$ screen -d [session id]`
+
+- switch to other session
+
+`$ screen -r session id`
+
+- show sessions
+
+`$ screen -r`
+
+`screen -list`
