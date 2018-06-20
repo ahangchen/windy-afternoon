@@ -295,6 +295,10 @@ https://github.com/thrust/thrust/issues/800
 http://blog.topspeedsnail.com/archives/6042
 
 ## screen 常用命令
+- start new session
+
+`screen -S sessionname`
+
 - detach and kill session:
 
 `$ screen -X -S [session # you want to kill] quit`
