@@ -23,3 +23,7 @@ ssh.close()
 ```shell
 ~/anaconda2/bin/jupyter notebook --ip=0.0.0.0 --port=8081
 ```
+
+- 用ipdb在命令行里debug
+
+https://xmfbit.github.io/2017/08/21/debugging-with-ipdb/
