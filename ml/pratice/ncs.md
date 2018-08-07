@@ -114,6 +114,8 @@ if ''_new' in name:
 ```
 于是就能编译生成graph了，你会看到一个名为ncs_mobilenet_ssd_graph的文件。
 
+> 这个解决方案在新版本的ncsdk中不被支持，建议修改prototxt，详情见这个[issue](https://github.com/ahangchen/windy-afternoon/issues/17#issuecomment-410917202)
+
 上边这个bug我已经跟NCSDK的工程师讲了，他们在跟进修这个bug：
 ![NCS bug](https://upload-images.jianshu.io/upload_images/1828517-0339d113ef259dbb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
