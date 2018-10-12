@@ -316,3 +316,6 @@ http://blog.topspeedsnail.com/archives/6042
 `$ screen -r`
 
 `screen -list`
+
+## GCC降级
+`sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.8 100`
