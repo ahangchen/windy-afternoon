@@ -25,6 +25,8 @@
   - [讲座论文系列](ml/papers/README.md)
     - [Re-identification](ml/reid/README.md)
       - [CVPR2018:TFusion完全解读](ml/papers/TFusion.md)
+      - [ECCV2018:TAUDL](ml/reid/eccv2018_taudl.md)
+      - [CVPR2018:Graph+reid](ml/reid/graph/cuhk_sentimes.md)
       - [Person Re-identification](ml/reid/reid.md)
       - [CVPR2016 Re-id](ml/reid/cvpr-reid.md)
       - [Camera topology and Person Re-id](ml/reid/reid-topo.md)
