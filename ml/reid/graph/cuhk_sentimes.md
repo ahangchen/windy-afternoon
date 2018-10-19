@@ -23,7 +23,7 @@ person reid这个任务是为probe图像在gallery图片集中寻找属于同一
 ## Deep Group-shuffling Random Walk 
 与其他Reid方法一样，首先训练一个图像模型提取图像特征，对特征计算相似度可以得到probe中所有图片与gallery中所有图片之间的相似度，与其他Reid方法不同，但与reranking相同的是，我们也可以计算出所有gallery图片之间的相似度。给定一张probe图片，它和所有gallery之间的相似度向量为y，所有gallery之间的相似度矩阵为W，我们将一张probe图片和所有gallery图片合起来看成一个图，根据random walk的思想，probe图片这个节点walk到第j张gallery图片的概率是y<sub>j</sub>，接着，从probe节点出发，经过其他节点k，再到达gallery图片j的概率是y<sub>k</sub> * W<sub>kj</sub>，那么，从probe节点出发，走两步（包含了所有中间节点的可能）到达图片j的概率就是：
 
-$$∑_{k=1}^n W_{kj}\*y^k$$
+$$∑_{k=1}^n W_{kj}*y^k$$
 
 到达所有图片j的概率拼成一个新的向量，我们就可以得到：
 
@@ -31,7 +31,7 @@ $$y^{(t+1)} = Wy^(t)$$
 
 论文里讲t拓展到了无穷大，并加入了权重因子λ对walk前后的概率进行了平衡，最终化简为了这样的形式：
 
-$$y^(\infty)=(1-\lambda)(I-\lambdaW)^{-1}y^{(0)}$$
+$$y^(\infty)=(1-\lambda )(I-\lambda W)^{-1}y^{(0)}$$
 
 但根本的道理就是上面所述的Random walk思想。
 
