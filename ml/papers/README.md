@@ -5,6 +5,8 @@
   - [Camera topology and Person Re-id](../reid/reid-topo.md)
   - [Deep transfer learning person re-id](../reid/deep_transfer_learning_person_reid.md)
   - [CVPR2018:TFusion](TFusion.md)
+  - [ECCV2018:TAUDL](../reid/eccv2018_taudl.md)
+  - [CVPR2018:Graph+reid](../reid/graph/cuhk_sentimes.md)
 - [Object Detection](detection/README.md)
   - [RCNN](detection/rcnn.md)
   - [SPP-net](detection/sppnet.md)
