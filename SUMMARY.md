@@ -110,6 +110,7 @@
      - [LaTex](kit/latex/README.md)
        - [LaTex琐记](kit/latex/note.md)
      - [科学上网](kit/ss/README.md)
+     - [虚拟机](kit/vmware.md)
 - [thinking-in-program](thinking-in-program/README.md)
     - [怎样打日志](thinking-in-program/log.md)
 - [我的收藏](star.md)
