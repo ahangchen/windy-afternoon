@@ -80,3 +80,6 @@ git branch --set-upstream-to origin/makfus makfus
 
 ### Git push Terminal免密码
 - 原理为ssh免密码登录，具体见SF这个[回答](http://stackoverflow.com/questions/8588768/git-push-username-password-how-to-avoid)
+
+### GitTalk做博客评论插件
+https://knightcai.github.io/2017/12/19/%E4%B8%BA%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0-Gitalk-%E8%AF%84%E8%AE%BA%E6%8F%92%E4%BB%B6/
