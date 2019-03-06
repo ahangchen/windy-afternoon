@@ -10,10 +10,6 @@
 
 - 不定期更新，欢迎[Star](https://github.com/ahangchen/windy-afternoon)
 
-||![](128.png)||
-| :-:| :-:  | :-:  |
-|[Android](android/README.md) | [Java](java/README.md) | [ML](ml/README.md)|
-| [Linux](linux/note.md) | [Kit](kit/README.md) | [Thinking](thinking-in-program/README.md)|
 
 ### 推荐阅读
 
@@ -36,8 +32,8 @@
 
 #### 读论文系列
 - [读论文系列](ml/papers/README.md)
-  - [MLA 2016 南京 笔记](ml/papers/mla_2016.md)
-  - [CNCC2017中的深度学习与跨媒体智能](ml/papers/cncc_cv.md)
+  - [MLA 2016 南京 笔记](ml/papers/overview/mla_2016.md)
+  - [CNCC2017中的深度学习与跨媒体智能](ml/papers/overview/cncc_cv.md)
   - [Person Re-id](ml/reid/README.md)
     - [Person Re-identification](ml/reid/reid.md)
     - [CVPR2016 Re-id](ml/reid/cvpr-reid.md)
