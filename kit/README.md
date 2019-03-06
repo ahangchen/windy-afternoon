@@ -6,3 +6,4 @@
   - [markdown](markdown/README.md)
   - [Latex](latex/README.md)
   - [科学上网](ss/README.md)
+  - [虚拟机](vmware.md)
