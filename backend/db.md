@@ -17,7 +17,6 @@ spool off (关闭)
 - MySql默认charset是瑞典的，应该这样修改：
 ```sql
 ALTER DATABASE db_name DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-
 ALTER TABLE db_table CONVERT TO CHARACTER SET utf8 COLLATE utf8_general_ci;
 ```
 
@@ -25,7 +24,7 @@ ALTER TABLE db_table CONVERT TO CHARACTER SET utf8 COLLATE utf8_general_ci;
 - [教程](http://www.runoob.com/mongodb/mongodb-connections.html)
 - 常用命令
 
-```shell  
+```shell
 # 启动mongodb后端
 mongod
 # 连接mongodb
