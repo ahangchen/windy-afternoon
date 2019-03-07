@@ -68,7 +68,7 @@
       - [强化学习](ml/melon/ch16.md)
       - [附录](ml/melon/ch17.md)
 - [Java](java/README.md)
-     - [java web](java/java-web/note.md)
+     - [java web](java/java-web/README.md)
        - [Servlet部署](java/java-web/Servlet组织.md)
        - [琐碎的tips](java/java-web/note.md)
      - [JNI](java/jni/note.md)
