@@ -1,5 +1,5 @@
 # Python
- - [Django](django/note.md)
+ - [Django](django/README.md)
  - [机器学习](https://github.com/ahangchen/GoogleML)
  - [深度学习](https://github.com/ahangchen/GDLnotes)
  - [Python原生模块](raw.md)
