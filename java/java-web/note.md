@@ -53,6 +53,6 @@ import javax.servlet.AsyncContext;
 
 然后把xml命名成虚拟目录名，比如test，则可以通过url：http://localhost:8888/test 访问docBase下的文件
 
-如果需要以目录的形式访问文件，需要在server.xml中配置[listing为true](http://blog.csdn.net/istend/article/details/52892208)
+如果需要以目录的形式访问文件，需要在conf/web.xml中配置[listing为true](http://blog.csdn.net/istend/article/details/52892208)
 
 如果需要支持中文文件，需要[在server.xml中配置](http://blog.csdn.net/istend/article/details/52892208)Context的URLEncoding为UTF-8
