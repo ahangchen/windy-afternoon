@@ -20,7 +20,7 @@
 - [【译】How to be a programmer](https://ahangchen.gitbooks.io/how-to-be-a-programmer-cn/content/)
 
 ### Paper List
-- Jianming Lv, **Weihang Chen**, Qing Li, Can Yang. Unsupervised Cross-dataset person Re-identification by Transfer Learning of Spatial-temporal Patterns, CVPR 2018. (CCF A类会议) [paper](http://openaccess.thecvf.com/content_cvpr_2018/papers/Lv_Unsupervised_Cross-Dataset_Person_CVPR_2018_paper.pdf) [code](https://github.com/ahangchen/TFusion)
+- Jianming Lv, **Weihang Chen**, Qing Li, Can Yang. Unsupervised Cross-dataset person Re-identification by Transfer Learning of Spatial-temporal Patterns, CVPR 2018. (CCF A类会议) [[paper]](http://openaccess.thecvf.com/content_cvpr_2018/papers/Lv_Unsupervised_Cross-Dataset_Person_CVPR_2018_paper.pdf) [[code]](https://github.com/ahangchen/TFusion)
 - Jianming Lv, Jiajie Zhong, **Weihang Chen**, Qinzhe Xiao, Zhenguo Yang and Qing Li. Homepage Augmentation by Predicting Links in Heterogenous Networks. CIKM 2018. (CCF B类会议)
 
 
