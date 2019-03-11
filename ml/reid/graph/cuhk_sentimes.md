@@ -92,6 +92,7 @@ $$d_i^{t+1}=(1-α)d_i^{t+1}+α\sum_{j=1}^N h(d_i,d_j)t_i^t$$
 跟别的方法对比就不用看了，我们来看Ablation Study
 
 DGRW
+
 ![DGRW result](https://upload-images.jianshu.io/upload_images/1828517-ed3760233b72cdbc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 baseline rank1就91%了我还能说什么，流下了不会调参的泪水，不过看baseline+triplet居然还掉了，说明他们的hack泛化能力其实不强，另外针对两个主要的创新点，group shuffle也没有比dropout效果要好多少，random walk也没有比reranking好多少。不过有一个现象，mAP比top1提高的多，说明这种基于g2g关系的方法，通常是用得分较高的gallery图像把gallery中得分比较低的对象拉上来了。
