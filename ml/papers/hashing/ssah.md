@@ -24,6 +24,7 @@
 ![sign](https://upload-images.jianshu.io/upload_images/1828517-067eff3299d37791.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ## SSAH
+
 ![image](http://upload-images.jianshu.io/upload_images/1828517-78aeab1dc451c61d.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 这篇论文提出了一个结合对抗学习的深度神经网络：
@@ -45,7 +46,9 @@
 ![image](http://upload-images.jianshu.io/upload_images/1828517-832d8b664cb769d3.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 训练目标由这个Loss约束完成：
+
 ![image](http://upload-images.jianshu.io/upload_images/1828517-d40b4c163ccd9531.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 首先解释一下符号（以下数学符号用LaTeX格式显示，简书不支持公式编辑，更好的阅读体验请查看[cweihang.io](http://cweihang.io)），
 
 
@@ -179,29 +182,39 @@ $$\theta_{adv}=argmax_{\theta_{adv}} L_{gen}(\hat{B}, \hat{\theta}^{v,t,l})-L_{a
 
 - Hamming Ranking
   - 按照哈希码海明距离进行Ranking，计算mAP
+
 ![image](http://upload-images.jianshu.io/upload_images/1828517-537088c3d6bde863.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 > 可以看到使用VGG作为图像基础网络时，SSAH准确率领先其他方法很多。
 
 - Hash Lookup
   - 海明距离小于某个值认为是正样本，这个值称为Hamming Radius，改变Radius可以改变Precision-Recall的值，于是可以得到P-R曲线，P-R曲线与坐标轴围成的面积越大，说明效果越好
+
 ![image](http://upload-images.jianshu.io/upload_images/1828517-cf6c2cc28313e657.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 > SSAH的PR曲线基本都是在其他模型的曲线之上
 
   - 对Ranking的结果计算TopN的命中率（不过这个文中好像没讲）
 
 - Training efficiency
   - 达到相同的效果所需训练时间
+
 ![image](http://upload-images.jianshu.io/upload_images/1828517-0c715d3ea9e69bc6.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 > 相对于另一种深度学习方法DCMH，SSAH只要比较短的时间就能得到比较好的效果
 
 - Sensitivity analysis
   - 超参数改变时的结果变化
+
 ![image](http://upload-images.jianshu.io/upload_images/1828517-3032fe8924ccae8b.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 > 可以看到，超参数变化时，准确率依然能维持在比较高的水平
 
 - Ablation study
   - 去除不同组件对效果的影响
+
 ![image](http://upload-images.jianshu.io/upload_images/1828517-76e628657a7d3a1d.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 > 其中，
 SSAH-1: remove LabNet
 SSAH-2: TxtNet改成三层全连接
