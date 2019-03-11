@@ -118,6 +118,7 @@ $$t_h = log(G_h/P_h)$$
 
 ### 玄学时间
 在论文中还打开RCNN中卷积层分析它们的功能，在AlexNet的论文中，Hinton已经用可视化的方式为我们展示了第一层卷积描述的是对象的轮廓和颜色，但后面的层因为已经不能表示成图像，所以不能直接可视化，RBG的方法是，输入一张图片的各个区域，看pool5（最后一层卷积层的max pooling输出）中每个单元的响应度，将响应程度高的区域框出来：
+
 ![Top regions for six pool5 units](http://upload-images.jianshu.io/upload_images/1828517-46008e67d22cc701.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 pool5的feature map大小为6x6x256，图中每行的16张图代表一个unit响应度最高的16张图，将每张图响应度较高的区域用白色框框出来了，这里只挑了6个unit进行展示（所以只有6行）。一个unit是6x6x256的张量中的一个实数，这个数越大，意味着对输入的响应越高。
@@ -125,6 +126,7 @@ pool5的feature map大小为6x6x256，图中每行的16张图代表一个unit响
 可以看到不同的unit有不同的分工，第一行的unit对person响应度比较高，第二行的unit对dog和dot array（点阵）的响应度比较高，可以从这个角度出发，用每个unit充当单独的一种object detector。
 
 附录D中还有更多的可视化结果
+
 ![activation](http://upload-images.jianshu.io/upload_images/1828517-1823cf7e204207bc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 之所以说是玄学是因为，虽然这种可视化一定程度上体现了CNN学习到的东西，但是仍然没有说明白为什么是这个单元学习到这种信息。
