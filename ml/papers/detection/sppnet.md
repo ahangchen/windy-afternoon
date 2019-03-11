@@ -6,6 +6,7 @@
 
 ## Motivation
 神经网络在计算机视觉方面的成功得益于卷积神经网络，然而，现有的许多成功的神经网络结构都要求输入为一个固定的尺寸（比如224x224,299x299），传入一张图像，需要对它做拉伸或者裁剪，再输入到网络中进行运算。
+
 ![image.png](http://upload-images.jianshu.io/upload_images/1828517-cd7d289a0d97c9b9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 然而，裁剪可能会丢失信息，拉伸会使得图像变形，这些因素都提高了视觉任务的门槛，因此，如果能有一种模型能够接收各种尺度的输入，应当能够让视觉任务更加容易完成。
@@ -21,6 +22,7 @@
 全卷积和卷积的区别在于最后不是用全连接层进行分类， 而是用卷积层，假设我们要将一个16x16的feature map转为10x1的one-hot分类，则可以使用10个1x1卷积核，每个卷积核对应一个分类，参数数量少了很多，但是…实验结果表明还挺有效的，并且，全卷积+反卷积开辟了图像分割的新思路，可以说是一个开创新的工作了，感兴趣的同学可以看[这篇博客](http://blog.csdn.net/taigw/article/details/51401448)
 
 这里我们详细讲一下SPP
+
 ![SPP-net](http://upload-images.jianshu.io/upload_images/1828517-331144212396ac49.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 SPP中SP（Spatial Pyramid）的思想来源于SPM（Spatial Pyramid Matching），可以参考[这篇文章](http://blog.csdn.net/jwh_bupt/article/details/9625469)，正如论文Conclusion中说的， Our studies also show that many time-proven techniques/insights in computer vision can still play important roles in deep-networks-based recognition.
