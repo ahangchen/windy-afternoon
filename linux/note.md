@@ -318,6 +318,7 @@ http://blog.topspeedsnail.com/archives/6042
 `screen -list`
 
 - screen中滚动屏幕
+
 ctrl+a+\[进入复制模式，然后就可以上下左右键控制了
 
 ## GCC降级
