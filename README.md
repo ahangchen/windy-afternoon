@@ -1,7 +1,7 @@
 # 梦里茶
 
 
-> 华南理工大学本硕一枚，目前关注计算机视觉相关研究。曾经在腾讯QQ邮箱、腾讯AI Lab实习，Github star 3K，即将入职大疆。
+> 华南理工大学本硕一枚，目前关注计算机视觉相关研究。曾经在腾讯QQ邮箱、腾讯AI Lab实习，Github star 3K，现就职于深圳大疆创新。
 
 - 我的Github：[ahangchen](https://github.com/ahangchen)
 - 知乎：[梦里风林](https://www.zhihu.com/people/meng-li-feng-lin/activities)
