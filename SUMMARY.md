@@ -21,7 +21,7 @@
     - [Tensorflow学习笔记](https://github.com/ahangchen/GDLNotes)
     - [MXNet踩坑手记](ml/kit/mxnet/README.md)
     - [PyTorch踩坑手记](ml/kit/pytorch/README.md)
-    - [Keras踩坑手记](ml/kit//README.md)
+    - [Keras踩坑手记](ml/kit/keras/README.md)
     - [mscnn](ml/kit/caffe/mscnn.md)
     - [Matlab](ml/matlab/README.md)
       - [Matlab Remote IPC自动化数据处理](ml/matlab/ripc_auto.md)
