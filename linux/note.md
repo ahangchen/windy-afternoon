@@ -329,7 +329,8 @@ ctrl+a+\[进入复制模式，然后就可以上下左右键控制了
 make，使得生成的文件都在build里，CMakeLists.txt例子：
 ```
 project(hello_world)
+add_library(lib0 lib0.cpp)
 add_executable(hello_world hello_world.cpp)
-add_library(/usr/local/cuda/lib64)
+target_link_library(hello_world lib0)
 ```
 
