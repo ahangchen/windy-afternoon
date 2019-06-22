@@ -324,3 +324,12 @@ ctrl+a+\[进入复制模式，然后就可以上下左右键控制了
 ## GCC降级
 `sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.8 100`
 
+## cmake
+编写CMakeLists.txt，然后`cmake .`，然后make，也可以建立一个build目录，在里边`cmake ..`，然后
+make，使得生成的文件都在build里，CMakeLists.txt例子：
+```
+project(hello_world)
+add_executable(hello_world hello_world.cpp)
+add_library(/usr/local/cuda/lib64)
+```
+
