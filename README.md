@@ -27,4 +27,4 @@
 ### 协作
 - 翻译[Chromium的文档](https://github.com/ahangchen/Chromium_doc_zh)，有兴趣一起翻译的同学可以和我联系。
 
-> 如果觉得我的文章对您有帮助，请随意[打赏](support.md)～
+> 如果觉得我的文章对您有帮助，请随意[打赏](support.md)
