@@ -88,6 +88,7 @@ sudo service xrdp restart
 
 - 其中xfce4 tab键默认会因为键位冲突不能自动补全，需要执行 `xfwm4-settings`，在 按键 - 切换同一应用程序的窗口，清除它的快捷键
 - xfce4-settings-manager, Prefered applications,可以修改默认的终端和文件管理器
+- 用windows远程ubuntu时，mstsc命令后加/span，可以实现多屏扩展
 - 可以[修改xfce的主题](https://blog.gtwang.org/linux/xfce-theme-manager-xubuntu/)
 - 可以修改vncserver分辨率：
 
