@@ -1,8 +1,9 @@
-## 常用库踩坑笔记
+# 常用库踩坑指南
 
-- paramiko远程环境变量
+* paramiko远程环境变量
+
   由于使用非交互模式ssh，不会加载~/.bashrc或者/etc/profile中的环境变量，需要手动执行source，example:
-  
+
 ```python
 import paramiko
 # 创建SSH对象
@@ -18,12 +19,13 @@ print(result)
 ssh.close()
 ```
 
-- jupyter notebook启动
+* jupyter notebook启动
 
-```shell
+```text
 ~/anaconda2/bin/jupyter notebook --ip=0.0.0.0 --port=8081
 ```
 
-- 用ipdb在命令行里debug
+* 用ipdb在命令行里debug
 
-https://xmfbit.github.io/2017/08/21/debugging-with-ipdb/
+[https://xmfbit.github.io/2017/08/21/debugging-with-ipdb/](https://xmfbit.github.io/2017/08/21/debugging-with-ipdb/)
+

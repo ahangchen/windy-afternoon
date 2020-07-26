@@ -1,4 +1,6 @@
+# 打赏支持
 
-<img src="1792645569.jpg" width = "400" height = "400" alt="图片名称" align=center />
+![&#x56FE;&#x7247;&#x540D;&#x79F0;](.gitbook/assets/1792645569.jpg)
 
 谢谢支持！离我的四路1080ti台式机又近了一步
+

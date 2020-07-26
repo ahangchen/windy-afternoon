@@ -1,11 +1,11 @@
-#导出Chrome书签转为markdown
+# 导出chrome书签为Markdown
 
-- 首先打开Chrome[书签管理器](chrome://bookmarks/#1),
+* 首先打开Chrome[书签管理器](chrome://bookmarks/#1),
+* 整理 - 书签导出html
 
-- 整理 - 书签导出html
+![](../../.gitbook/assets/chrome_mark.png)
 
-![](chrome_mark.png)
-- 用python解析html，读取h3标签和a标签，写入文件，代码：
+* 用python解析html，读取h3标签和a标签，写入文件，代码：
 
 ```python
 import os
@@ -76,9 +76,9 @@ def get_links():
 
 
 get_links()
-
 ```
 
 其中fileutil是我的一个文件操作模块，可以在[这里](https://github.com/ahangchen/CodeCounter/blob/master/utils/file/file_utils.py)看到对应的代码，
 
 转换的效果即本博客中的[我的收藏](../../star.md)部分
+
