@@ -17,7 +17,9 @@
 
 > ICLR2019，思路和mvsnet基本一致，同时发表，但是代码是pytorch的，看得出是在MVDepthNet上改的，代码质量比较高
 
-- 
+- Depth Estimation by Learning Triangulation and Densification of Sparse Points for Multi-view Stereo
+
+arxiv 2020.5月的一篇，用superpoint提描述子，做point match，利用稀疏的匹配点和一些随机点做三角测量（也可以理解为稀疏的cost volume），然后用unet encode-decode把稀疏的深度图变成dense的，相同效果下，计算量小于cost volume的方法，不过只做了室内的实验。
 
 ## 其他Depth相关的论文
 - Depth Sensing Beyond LiDAR Range
