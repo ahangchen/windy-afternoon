@@ -27,7 +27,7 @@ arxiv 2020.5月的一篇，用superpoint提描述子，做point match，利用�
 
 - Upgrading Optical Flow to 3D Scene Flow Through Optical Expansion-Supplementary Material
 
-> CVPR2020，推导出optical expansion(物体长度在像素坐标系上的变化)和motion in depth的反比关系
+> CVPR2020，推导出optical expansion(物体长度在像素坐标系上的变化)和motion in depth的反比关系（只在没有旋转只有平移时成立），用一个encoder-decoder输出光流，通过一个local affine layer得到初始的expansion，再通过一个encoder-decoder得到refine的expansion，再用一个encoder-decoder得到motion-in-depth，为了得到真正的motion in depth，还需要用一个单目网络出frame1的depth，再用motion in depth换算出frame2的depth，motion in depth的思路比较新奇，但并不怎么实用。
 
 ## 其他Depth相关的论文
 - Depth Sensing Beyond LiDAR Range
