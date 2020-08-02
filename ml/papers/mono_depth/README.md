@@ -32,9 +32,14 @@ arxiv 2020.5月的一篇，用superpoint提描述子，做point match，利用�
 
 > CVPR2020，特征提取层天然会缩小feature map，在小的feature map上做plane sweep，得到winner takes all depth，nearest upsample得到大分辨率depth map，再用原图输出一个kxk的卷积核，根据这个卷积核，用周围的信息丰富depth map，再用warp loss refine depth map，少了encode-decode层，计算量少了很多，plane sweep部分在小分辨率上做的，计算量也小。
 
+- Cost Volume Pyramid Based Depth Inference for Multi-View Stereo
+
+> CVPR2020, 提取feature pyrammid，现在最小scale的feature上，对所有depth range做plane sweep，接3d卷积出depth，再对更大scale的feature，在已经估计出来的depth附近几个channel做plane sweep，接3d卷积出原depth的残差，加在原depth上作为refine，从而得到multi scale，且计算量还不会太大（因为后面只在周围的depth搜索）的cost volume。
+
 - Upgrading Optical Flow to 3D Scene Flow Through Optical Expansion-Supplementary Material[[code(pytorch)]](https://github.com/gengshan-y/expansion)[[paper]](https://openaccess.thecvf.com/content_CVPR_2020/papers/Yang_Upgrading_Optical_Flow_to_3D_Scene_Flow_Through_Optical_Expansion_CVPR_2020_paper.pdf)
 
 > CVPR2020，推导出optical expansion(物体长度在像素坐标系上的变化)和motion in depth的反比关系（只在没有旋转只有平移时成立），用一个encoder-decoder输出光流，通过一个local affine layer得到初始的expansion，再通过一个encoder-decoder得到refine的expansion，再用一个encoder-decoder得到motion-in-depth，为了得到真正的motion in depth，还需要用一个单目网络出frame1的depth，再用motion in depth换算出frame2的depth，motion in depth的思路比较新奇，但并不怎么实用。
+
 
 ## 其他Depth相关的论文
 - Depth Sensing Beyond LiDAR Range
