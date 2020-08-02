@@ -25,6 +25,10 @@ arxiv 2020.5月的一篇，用superpoint提描述子，做point match，利用�
 
 > CVPR2020，特征提取层天然会缩小feature map，在小的feature map上做plane sweep，得到winner takes all depth，nearest upsample得到大分辨率depth map，再用原图输出一个kxk的卷积核，根据这个卷积核，用周围的信息丰富depth map，再用warp loss refine depth map，少了encode-decode层，计算量少了很多，plane sweep部分在小分辨率上做的，计算量也小。
 
+- Upgrading Optical Flow to 3D Scene Flow Through Optical Expansion-Supplementary Material
+
+> CVPR2020，推导出optical expansion(物体长度在像素坐标系上的变化)和motion in depth的反比关系
+
 ## 其他Depth相关的论文
 - Depth Sensing Beyond LiDAR Range
 
