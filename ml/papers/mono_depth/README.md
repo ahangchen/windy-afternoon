@@ -32,7 +32,7 @@ arxiv 2020.5月的一篇，用superpoint提描述子，做point match，利用�
 
 > CVPR2020，特征提取层天然会缩小feature map，在小的feature map上做plane sweep，得到winner takes all depth，nearest upsample得到大分辨率depth map，再用原图输出一个kxk的卷积核，根据这个卷积核，用周围的信息丰富depth map，再用warp loss refine depth map，少了encode-decode层，计算量少了很多，plane sweep部分在小分辨率上做的，计算量也小。
 
-- Cost Volume Pyramid Based Depth Inference for Multi-View Stereo[[code](pytorch)](https://github.com/JiayuYANG/CVP-MVSNet)[[paper]](https://arxiv.org/abs/1912.08329)
+- Cost Volume Pyramid Based Depth Inference for Multi-View Stereo [[code(pytorch)]](https://github.com/JiayuYANG/CVP-MVSNet) [[paper]](https://arxiv.org/abs/1912.08329)
 
 > CVPR2020, 提取feature pyrammid，现在最小scale的feature上，对所有depth range做plane sweep，接3d卷积出depth，再对更大scale的feature，在已经估计出来的depth附近几个channel做plane sweep，接3d卷积出原depth的残差，加在原depth上作为refine，从而得到multi scale，且计算量还不会太大（因为后面只在周围的depth搜索）的cost volume。
 
