@@ -2,7 +2,14 @@
 单目深度可以分为两个小领域，一个是Mono depth estimation，是真单目，从图像语义出depth，输出的depth scale通常和真实世界是不对齐的，另一个是Multi view stereo，利用前后帧图像和pose（pose也可能真实模型估出来的），通过对极几何出深度。
 
 ## Mono Depth Estimation
-- 可以参考知乎上这篇综述，挺完整的：https://zhuanlan.zhihu.com/p/111759578
+- Before 2020: 可以参考知乎上这篇综述，挺完整的：https://zhuanlan.zhihu.com/p/111759578
+- Predicting Sharp and Accurate Occlusion Boundaries in Monocular Depth Estimation Using Displacement Fields[[code(pytorch)]](https://github.com/dulucas/Displacement_Field)[[paper]](https://arxiv.org/abs/2002.12730)
+
+> CVPR2020,通过计算displacement，对depth做refine，所谓displacement，即将周围一定范围内的某个像素的depth挪过来作为自己的depth，网络为每个像素输出要挪的目标像素坐标，从而削弱CNN depth的边缘模糊现象。
+
+- Self-supervised Monocular Trained Depth Estimation using Self-attention and Discrete Disparity Volume
+
+> CVPR2020, 将回归的目标从inverse depth换成了disparity，用softmax probability乘disp求和的方式回归disparity，同时加了一块attention模块对disparity做修正，和其他单目文章类似，多次decode得到更大尺寸的disparity。这篇论文也是做自监督，文章中提到一个操作比较实用：计算warp loss时，如果warp的右图的cost比原始右图还大，就认为这个地方是移动物体之类的无效区域。
 
 ## Multi view stereo
 - MVDepthNet: Real-time Multiview Depth Estimation Neural Network [[code(pytorch)]](https://github.com/HKUST-Aerial-Robotics/MVDepthNet)[[paper]](https://arxiv.org/abs/1807.08563)
@@ -25,7 +32,7 @@ arxiv 2020.5月的一篇，用superpoint提描述子，做point match，利用�
 
 > CVPR2020，特征提取层天然会缩小feature map，在小的feature map上做plane sweep，得到winner takes all depth，nearest upsample得到大分辨率depth map，再用原图输出一个kxk的卷积核，根据这个卷积核，用周围的信息丰富depth map，再用warp loss refine depth map，少了encode-decode层，计算量少了很多，plane sweep部分在小分辨率上做的，计算量也小。
 
-- Upgrading Optical Flow to 3D Scene Flow Through Optical Expansion-Supplementary Material
+- Upgrading Optical Flow to 3D Scene Flow Through Optical Expansion-Supplementary Material[[code(pytorch)]](https://github.com/gengshan-y/expansion)[[paper]](https://openaccess.thecvf.com/content_CVPR_2020/papers/Yang_Upgrading_Optical_Flow_to_3D_Scene_Flow_Through_Optical_Expansion_CVPR_2020_paper.pdf)
 
 > CVPR2020，推导出optical expansion(物体长度在像素坐标系上的变化)和motion in depth的反比关系（只在没有旋转只有平移时成立），用一个encoder-decoder输出光流，通过一个local affine layer得到初始的expansion，再通过一个encoder-decoder得到refine的expansion，再用一个encoder-decoder得到motion-in-depth，为了得到真正的motion in depth，还需要用一个单目网络出frame1的depth，再用motion in depth换算出frame2的depth，motion in depth的思路比较新奇，但并不怎么实用。
 
