@@ -29,3 +29,6 @@ ssh.close()
 
 [https://xmfbit.github.io/2017/08/21/debugging-with-ipdb/](https://xmfbit.github.io/2017/08/21/debugging-with-ipdb/)
 
+* pycuda安装，找不到cuda.h
+
+> sudo pip3 install --global-option=build_ext --global-option="-I/usr/local/cuda-10.0/targets/aarch64-linux/include/" --global-option="-L/usr/local/cuda-10.0/targets/aarch64-linux/lib/" pycuda
