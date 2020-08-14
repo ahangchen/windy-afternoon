@@ -1,2 +1,5 @@
 # windy-afternoon
-blog
+
+## git change remote url
+
+> git remote set-url origin your_url
