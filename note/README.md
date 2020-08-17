@@ -35,6 +35,12 @@ find . -iregex ".*\.\(cpp\|h\|java\|sh\)$" | xargs wc -l
 ./test.sh & disown
 ```
 
+## ubuntu搜索软件源
+
+```
+sudo apt-cache search ros(关键字)
+```
+
 ### Ubuntu 全局代理
 
 系统设置-网络-代理设置-手动-填自己的代理服务器地址和端口即可
