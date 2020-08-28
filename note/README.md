@@ -379,3 +379,6 @@ add_executable(hello_world hello_world.cpp)
 target_link_library(hello_world lib0)
 ```
 
+# nvidia解占用
+
+> fuser -v /dev/nvidia*
