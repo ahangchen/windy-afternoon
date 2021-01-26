@@ -10,6 +10,18 @@
 
 > cd dir && ls
 
+### chown
+
+> chown user:group filename
+
+### chmod 
+
+> chmod +x file
+
+### add sudo user
+
+> sudo usermod -aG sudo newuser
+
 ### ubuntu换源后，务必执行
 
 > sudo apt-get clean && sudo apt-get autoremove 清除cache
