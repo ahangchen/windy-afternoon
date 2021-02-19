@@ -150,6 +150,14 @@ k是你的vncserver的编号，比如端口号5904的vncserver应该是4
 
 在各个平台上可以下载[vncviewer](https://www.realvnc.com/download/viewer/)来连接vncserver
 
+### ubuntu18.04远程
+
+如果是ubuntu18.04，则不需要安装xfce，可以直接通过xorg远程原生ubuntu：
+
+```
+sudo apt-get install xrdp
+```
+
 ### 共享代理给手机
 
 * 条件一：电脑能科学上网（我用了xx-net）
