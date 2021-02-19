@@ -158,6 +158,9 @@ k是你的vncserver的编号，比如端口号5904的vncserver应该是4
 sudo apt-get install xrdp
 ```
 
+参考：https://zhuanlan.zhihu.com/p/93438433
+
+
 ### 共享代理给手机
 
 * 条件一：电脑能科学上网（我用了xx-net）
