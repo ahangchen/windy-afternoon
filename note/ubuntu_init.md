@@ -57,6 +57,12 @@ Ubuntu版本 14.04LTS 64位
   sudo apt-get install build-essential
   ```
 
+* 安装可分屏的终端
+
+```bash
+sudo apt-get install terminator
+```
+
 * 安装XX-Net翻墙：
 
   打开 [https://github.com/XX-net/XX-Net](https://github.com/XX-net/XX-Net) ，下载最新release版xx-net。
