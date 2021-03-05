@@ -405,3 +405,7 @@ target_link_library(hello_world lib0)
 # nvidia解占用
 
 > fuser -v /dev/nvidia*
+ 
+# 过滤想要的文本行
+
+> awk 'NR%10==0' file 
