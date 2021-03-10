@@ -29,6 +29,7 @@
     * [Matlab](ml/kit/matlab/README.md)
       * [Matlab Remote IPC自动化数据处理](ml/kit/matlab/ripc_auto.md)
   * [Papers](ml/papers/README.md)
+    * [Classification](ml/papers/classification/README.md)
     * [Re-identification](ml/papers/reid/README.md)
       * [CVPR2018:TFusion完全解读](ml/papers/reid/tfusion.md)
       * [ECCV2018:TAUDL](ml/papers/reid/eccv2018_taudl.md)
