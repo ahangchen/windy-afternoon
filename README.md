@@ -4,13 +4,23 @@ description: weihang.chen's blog
 
 # Introduction
 
-> 华南理工大学本硕一枚，Github star 3K，目前关注计算机视觉相关研究。曾经在腾讯QQ邮箱、腾讯AI Lab实习，现就职于深圳大疆创新。
+> 华南理工大学本硕毕业，目前关注计算机视觉相关研究。曾经在腾讯QQ邮箱、腾讯AI Lab实习，现就职于深圳大疆创新。
 
 * 我的Github：[ahangchen](https://github.com/ahangchen)
 * 知乎：[梦里风林](https://www.zhihu.com/people/meng-li-feng-lin/activities)
 * 邮箱： cweihang@foxmail.com
 
 > 博客记录工作学习生活中的点滴，既是积累，也是备忘。不定期更新，欢迎[Star](https://github.com/ahangchen/windy-afternoon)
+
+
+## Github Stats
+<a href="https://github.com/Zhenye-Na/Zhenye-Na">
+  <img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=ahangchen&hide=c%2B%2B,c,html" alt="weihang's GitHub Stats" />
+</a>
+
+<a href="https://github.com/Zhenye-Na/Zhenye-Na">
+  <img align="center" src="https://github-readme-stats.vercel.app/api?username=ahangchen&show_icons=true&line_height=27&count_private=true" alt="weihang's GitHub Stats" />
+</a>
 
 ## 推荐阅读
 
