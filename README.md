@@ -13,12 +13,6 @@ description: weihang.chen's blog
 > 博客记录工作学习生活中的点滴，既是积累，也是备忘。不定期更新，欢迎[Star](https://github.com/ahangchen/windy-afternoon)
 
 
-## Github Stats
-
-<a href="https://github.com/Zhenye-Na/Zhenye-Na">
-  <img align="center" src="https://github-readme-stats.vercel.app/api?username=ahangchen&show_icons=true&line_height=27&count_private=true" alt="weihang's GitHub Stats" />
-</a>
-
 ## 推荐阅读
 
 * [2019秋招面经](https://zhuanlan.zhihu.com/p/42936891)
@@ -33,7 +27,4 @@ description: weihang.chen's blog
 
 * Jianming Lv, **Weihang Chen**, Qing Li, Can Yang. Unsupervised Cross-dataset person Re-identification by Transfer Learning of Spatial-temporal Patterns, CVPR 2018. \(CCF A类会议\) [\[paper\]](http://openaccess.thecvf.com/content_cvpr_2018/papers/Lv_Unsupervised_Cross-Dataset_Person_CVPR_2018_paper.pdf) [\[code\]](https://github.com/ahangchen/TFusion)
 * Jianming Lv, Jiajie Zhong, **Weihang Chen**, Qinzhe Xiao, Zhenguo Yang and Qing Li. Homepage Augmentation by Predicting Links in Heterogenous Networks. CIKM 2018. \(CCF B类会议\)
-
-### Github Trophy
-[![trophy](https://github-profile-trophy.vercel.app/?username=ahangchen&column=7)](https://github.com/ahangchen/windy-afternoon)
 
