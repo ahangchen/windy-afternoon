@@ -9,8 +9,8 @@
 - 把Student当成Teacher，迭代，效果最好的是迭代三次
 
 特别的地方在于：
-- Student比Teacher大，多了Dropout和stochastic depth(model noise)
-- 训练数据加Data augumentation（data noise）
+- model noise: Student比Teacher大，多了Dropout和stochastic depth(训练时，重复的block中，某些会被设置成identity)
+- data noise:训练数据加Data augumentation（）
 - 一些trick：
   - Teacher网络置信度低的，不会用于训练；
   - ImageNet每个类的图像数量差不多，因此带伪标签的unlabel data也在类别上做了平衡，数量多的类只保存一部分，数量少的类多复制几份
