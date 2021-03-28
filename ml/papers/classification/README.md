@@ -1,4 +1,26 @@
 # 分类网络最新进展
+## Self-training with Noisy Student improves ImageNet classification
+
+> CVPR2020
+
+### Method
+- 在有标签数据上训练Teacher,在无标签数据上预测伪标签
+- 用有标签数据和伪标签数据从头训练一个Student模型，Student模型
+- 把Student当成Teacher，迭代，效果最好的是迭代三次
+
+特别的地方在于：
+- Student比Teacher大，多了Dropout和stochastic depth(model noise)
+- 训练数据加Data augumentation（data noise）
+- 一些trick：
+  - Teacher网络置信度低的，不会用于训练；
+  - ImageNet每个类的图像数量差不多，因此带伪标签的unlabel data也在类别上做了平衡，数量多的类只保存一部分，数量少的类多复制几份
+
+### 效果
+感觉其实这些操作平平无奇，效果比有监督的EfficientNet-L2（480M，85.5%）提升了一点：（480M，88.7%）
+
+
+
+
 
 ## Meta Pseudo Labels
 ### Motivation
@@ -31,4 +53,5 @@ $$\theta_{S}^PL = argmin_{\theta_S} L_u(\theta_T, \theta_S)$$
 
 
 ### 效果
-在ImageNet上首次干到了90%的top1 ACC
+在ImageNet上首次干到了90.2%的top1 ACC
+
