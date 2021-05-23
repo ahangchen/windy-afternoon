@@ -55,3 +55,29 @@ $$\theta_{S}^PL = argmin_{\theta_S} L_u(\theta_T, \theta_S)$$
 ### 效果
 在ImageNet上首次干到了90.2%的top1 ACC
 
+## EfficientNet: Rethinking model scaling for convolutional neural networks
+### Motivation
+这篇论文我更愿意称其为实验报告，研究了如何扩展网络的input resolution, width(channel数)， depth(layer数)，才能得到性价比最高的网络
+
+### Observation
+这篇文章基于两个observation来调整网络规模：
+
+- 增加输入/宽度/深度，都能提高模型效果，但存在边际效应，加的太多提升不明显；
+- 因此，与其把多出来的算力堆在单个维度上，不如同时扩张三个维度；
+
+### Method
+具体的扩张策略如下：
+- 假设depth变成$$\alpha$$倍，那么FLOPS会变为$$\alpha$$倍，假设width(卷积的输入和输出通道数)变为$$\beta$$倍，那么FLOPS会变为$$\beta^2$$倍，假设输入宽度变为$$\gamma$$，那么FLOPS变为$$\gamma^2$$；
+- 我们希望调整参数后，FLOPS变为$$2^{\phi}$$，那么就要求$$\alpha * \beta^2 * \gamma^2=2$$，因此具体的调整策略就变成了：
+- depth: $$d=\alpha^\phi$$
+- width: $$w=\beta^\phi$$
+- resolution: $$r = \gamma^\phi$$
+- st: $$\alpha * \beta^2 * \gamma^2=2$$, $$\alpha>1, \beta>1, \gamma>1$$
+
+### Network
+在各种基础网络上试了这个策略，发现Mnas上改出来的最好，网络结构大概长这样，但是size会有所不同，比如EfficientNet-B0就是
+
+![](mnasnet.png)
+
+### Result
+![](efficentnet.png)
