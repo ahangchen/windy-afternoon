@@ -409,3 +409,6 @@ target_link_library(hello_world lib0)
 # 过滤想要的文本行
 
 > awk 'NR%10==0' file 
+
+# Ubuntu 18.04录屏
+ctrl+shift+alt+r 开启和关闭录制
