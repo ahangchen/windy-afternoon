@@ -81,3 +81,30 @@ $$\theta_{S}^PL = argmin_{\theta_S} L_u(\theta_T, \theta_S)$$
 
 ### Result
 ![](efficentnet.png)
+
+## MLP-Mixer: An all-MLP Architecture for Vision
+使用MLP代替卷积，保留skip connection和normalization，在ImageNet上最高达到87.94%
+
+### Method
+- 将图像分成S个PxP大小的patch，每个patch（n c p p） reshape成(n c p*p)的tensor
+- 用一个矩阵乘法先将每个patch处理一下reproject到n * C,所有 patch合起来就是n * S * C的tensor X
+- 接下来开始mlp：
+  - $$U=X+W_2\sigma(W_1 Layer Norm(X))$$
+  - 对X做layer norm
+  - 先对每个patch做乘法，$$WX$$，变成$$n*S1*C$$
+  - 做一个非线性变换$$\sigma$$，这里用的是GELU
+  - 再做一个乘法，从$$n*S1*C$$变成$$n*S*C$$
+  - 再做一个残差加上X
+  - 这里不同channel之间的权重是共享的，用来减少参数数量
+  - 由于中间token数量变了，patch数目没变，起一个花里胡哨的名字，把patch叫做token，乘法叫做token-mixing，也就是将同个通道不同token先混合一下
+  - 再做一个MLP：$$Y=U+W_4\sigma(W_3 Layer Norm(U))$$
+  - 也是一样的操作，不同之处在于中间是channel数量变了，后面又变回来，所以叫channel-mixing
+- 每个mlp-mixer block都做四次乘法，把$$n*S*C$$的tensor变成$$n*S*C$$
+- 网络最后接一个Global Average Pooling做分类
+- 训练的时候也是一样预训练+finetune
+
+### MLP-Mixer的卷积本质
+- 一开始分不同patch，其实就是一个$$P*P$$，stride为$$P*P$$的卷积
+- 不同位置相同通道的混合，可以用深度可分离卷积代替
+·- 同个位置不同通道的混合，可以用一个1x1的卷积代替
+
