@@ -412,3 +412,6 @@ target_link_library(hello_world lib0)
 
 # Ubuntu 18.04录屏
 ctrl+shift+alt+r 开启和关闭录制
+
+# VSCode离线安装插件
+> code --install-extension xxx.vsix
