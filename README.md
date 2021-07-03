@@ -33,7 +33,7 @@ description: weihang.chen's blog
 ## Github Stats
 
 <a href="https://github.com/Zhenye-Na/Zhenye-Na">
-  <img align="center" src="https://github-readme-stats.vercel.app/api?username=ahangchen&show_icons=true&line_height=27&count_private=true" alt="weihang's GitHub Stats" />
+  <img align="center" src="https://github-readme-stats.vercel.app/api?username=ahangchen&show_icons=true&count_private=true" alt="weihang's GitHub Stats" />
 </a>
 
 
