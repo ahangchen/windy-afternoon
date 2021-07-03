@@ -412,3 +412,33 @@ target_link_library(hello_world lib0)
 
 # Ubuntu 18.04录屏
 ctrl+shift+alt+r 开启和关闭录制
+
+# VSCode离线安装插件
+> code --install-extension xxx.vsix
+
+# Ubuntu-server 18.04 安装图形化界面环境
+1.安装x－windows的基础
+
+> sudo apt-get install -fy x-window-system-core
+
+2.安装gnome基础
+
+> sudo apt-get install -fy gnome-core
+
+3.安装中文显示(建议安装）
+
+> sudo apt install language-pack-gnome-zh language-pack-zh language-support-zh-hans language-support-zh-hant language-support-zh
+
+4.安装中文输入法
+
+> sudo apt install ibus-pinyin
+> sudo apt install ibus-libpinyin
+> sudo apt install fcitx 
+
+5.进入图形界面：startx
+
+6.退出图形桌面：ctrl + alt + backspace
+
+7.卸载gnome桌面环境
+
+> sudo apt-get –purge remove liborbit2
