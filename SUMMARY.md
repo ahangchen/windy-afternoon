@@ -15,6 +15,8 @@
   * [Android Project结构](android/androidproject-jie-gou.md)
   * [一个由Proguard与FastJson引起的血案](android/yi-ge-you-proguard-yu-fastjson-yin-qi-de-xie-an.md)
   * [琐碎的一些tips](android/note.md)
+* [Computer Vision](cv/README.md)
+  * [特征提取](cv/feature.md)
 * [Machine Learning](ml/README.md)
   * [技巧](ml/trick/README.md)
     * [FaceBook: 1 hour training ImageNet](ml/trick/imgnet_1h.md)
