@@ -7,9 +7,9 @@
 ## torch.unfold
 给定一个NCHW的tensor，构造一个k1\*k2的滑动窗口，按照一定的padding, dilation, stride在这个tensor上滑动L次，
 
-$$L = \prod_d \left\lfloor\frac{\text{output\_size}[d] + 2 \times \text{padding}[d] % - \text{dilation}[d] \times (\text{kernel\_size}[d] - 1) - 1}{\text{stride}[d]} + 1\right\rfloor$$
+$$L = \prod_d \left\lfloor\frac{\text{output_size}[d] + 2 \times \text{padding}[d] % - \text{dilation}[d] \times (\text{kernel\_size}[d] - 1) - 1}{\text{stride}[d]} + 1\right\rfloor$$
 
-滑动时，将窗口内C\*H\*W个元素flatten，就能得到一个N* (C\*H\*W) * L的tensor；
+滑动时，将窗口内$$C*H*W$$个元素flatten，就能得到一个$$N* (C*H*W) * L$$的tensor；
 
 unfold有什么用呢？可以看到它跟卷积操作很像，如果我们给窗口内flatten后的元素乘上一些权重再求和，再把L个元素变成二维的，那它就跟卷积一样了；
 
