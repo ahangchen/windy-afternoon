@@ -129,5 +129,5 @@
 * [我的收藏](star.md)
 * [琐记](pieces/README.md)
   * [论文心得](pieces/paper.md)
-* [打赏支持](support.md)
+* [赞赏支持](support.md)
 
