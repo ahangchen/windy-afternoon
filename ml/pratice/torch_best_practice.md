@@ -38,14 +38,10 @@ def parse_common_args(parser):
     parser.add_argument('--gpus', nargs='+', type=int)
     return parser
 
-
-
 def parse_train_args(parser):
     parser = parse_common_args(parser)
     ...
     return parser
-
-
 
 def parse_test_args(parser):
     parser = parse_common_args(parser)
@@ -53,12 +49,27 @@ def parse_test_args(parser):
     return parser
 ```
 
-我会在外面初始化一个parser，先用parse_common_args添加训练测试共用的一些参数，在parse_train_args和parse_test_args中调用这个公共的函数，这样可以避免有些参数在训练时写了，测试时忘了写，一跑就报错。在这个部分，会放这些参数：
+我会在外面初始化一个parser，先用parse_common_args添加训练测试共用的一些参数，在parse_train_args和parse_test_args中调用这个公共的函数，这样可以避免有些参数在训练时写了，测试时忘了写，一跑就报错。parse_train_args解析训练相关的参数，parse_test_args解析测试相关的参数；具体参数和用途如下：
 
-- `model_type`: 模型的名字，配合model目录和model_entry.py使用；
-- `data_type`：数据集的名字，配合data目录和data_entry.py使用；
-- `save_prefix`：训练时：实验的名字，可以备注自己改了那些重要组件，具体的参数，会用于创建保存模型的目录；测试时：测试的名字，可以备注测试时做了哪些配置，会用于创建保存测试结果的目录；
-- `load_model_path`：模型加载路径，训练时，作为预训练模型路径，测试时，作为待测模型路径，有的人喜欢传入一个模型名字，再传入一个epoch，但其实没啥必要，就算要循环测多个目录，我们也可以写shell生成对应的load_model_path，而且通常只需要测最后一个epoch的模型；
-- `load_not_strict`：我写了一个`load_match_dict`函数（utils/torch_utils.py），允许加载的模型和当前模型的参数不完全匹配，可多可少，如果打开这个选项，就会调用此函数，这样我们就可以修改模型的某个组件，然后用之前的模型来做预训练啦！如果关闭，就会用torch原本的加载逻辑，要求比较严格的参数匹配；
-- `val_list`: 训练时可以传入验证集list，测试时可以传入测试集list；
-- `gpus`：可以配置训练或测试时使用的显卡编号，在多卡训练时需要用到，测试时也可以指定显卡编号，绕开其他正在用的显卡，当然你也可以在命令行里export CUDA_VISIBLE_DEVICES这个环境变量来控制
+- parse_common_args
+  - `model_type`: 模型的名字，配合model目录和model_entry.py使用；
+  - `data_type`：数据集的名字，配合data目录和data_entry.py使用；
+  - `save_prefix`：训练时：实验的名字，可以备注自己改了那些重要组件，具体的参数，会用于创建保存模型的目录；测试时：测试的名字，可以备注测试时做了哪些配置，会用于创建保存测试结果的目录；
+  - `load_model_path`：模型加载路径，训练时，作为预训练模型路径，测试时，作为待测模型路径，有的人喜欢传入一个模型名字，再传入一个epoch，但其实没啥必要，就算要循环测多个目录，我们也可以写shell生成对应的load_model_path，而且通常只需要测最后一个epoch的模型；
+  - `load_not_strict`：我写了一个`load_match_dict`函数（utils/torch_utils.py），允许加载的模型和当前模型的参数不完全匹配，可多可少，如果打开这个选项，就会调用此函数，这样我们就可以修改模型的某个组件，然后用之前的模型来做预训练啦！如果关闭，就会用torch原本的加载逻辑，要求比较严格的参数匹配；
+  - `val_list`: 训练时可以传入验证集list，测试时可以传入测试集list；
+  - `gpus`：可以配置训练或测试时使用的显卡编号，在多卡训练时需要用到，测试时也可以指定显卡编号，绕开其他正在用的显卡，当然你也可以在命令行里export CUDA_VISIBLE_DEVICES这个环境变量来控制
+
+- parse_train_args
+  - `lr`，`momentum`, `beta`, `weight-decay`: optmizer相关参数，在train.py中初始化optimizer
+  - `model_dir`：模型的存储目录，留空，不用传入，会在`get_train_model_dir`函数中确定这个字段的值，创建对应的目录，填充到args中，方便其他模块获得模型路径
+  - `train_list`：训练集list路径
+  - `batch_size`：训练时的batch size，有人可能会问，为啥测试时不用设置batch size？主要是出于测试时的可视化需求，往往测试需要一张一张forward，所以我习惯将测试batch size为1
+
+  - parse_test_args
+    - `save_viz`：控制是否保存可视化结果的开关
+    - `result_dir`：可视化结果和测试结果的存储目录，留空，不用传入，会在`get_test_result_dir`中自动生成，自动创建目录，这个目录通常位于模型路径下，形如checkpoints/model_name/checkpoint_num/val_info_save_prefix
+
+使用时，调用`prepare_train_args`，就会创建一个包含所有公共参数和训练参数的parser，然后创建一个模型目录，并调用`save_args`函数保存所有参数，返回对应的args。保存参数这一步十分重要，能够避免模型训练完成之后，脚本或命令找不到，忘记自己训练的模型配置这种尴尬局面。
+
+测试时也类似，调用`prepare_test_args`，创建parser，创建目录，保存参数，并返回对应的args。
