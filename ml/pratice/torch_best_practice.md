@@ -22,7 +22,7 @@ torch_base
 └── utils       # 各种工具代码
 ```
 
-checkpoints比较简单，每次训练的模型各自放在一个目录里，其他都是代码目录，下面会逐一讲解。
+checkpoints比较简单，每次训练的模型各自放在一个目录里，scripts目录可以放每次训练或测试用的命令脚本，README.md往往是这个repo的门面，可以放一些介绍性的内容；其他都是代码目录，下面会逐一讲解。
 
 ## options
 首先要介绍的是options.py这个文件，因为这里定义了各种实验参数，其他模块多多少少都会与它有关，受它控制；通常我们需要把各种参数通过某种方式传给程序，比如命令行参数，或者yaml配置文件，我比较习惯用命令行参数，配合pycharm的configuration使用，或者写在scripts目录的脚本里边，都很方便清晰。命令行传参用到了`argparse`这个lib，这里lib的详细介绍可以看[官网教程](https://docs.python.org/3/library/argparse.html)，这里只挑重点来讲一下：
@@ -89,11 +89,27 @@ def parse_test_args(parser):
 
 与data_entry类似，我们有一个[model_entry.py](https://github.com/ahangchen/torch_base/blob/main/model/model_entry.py)，在`select_model`函数中也是通过字典实现参数名和模型的对应，在`equip_multi_gpu`函数中，可以方便的实现单机多卡，至于多机多卡，我自己用得不多，因为我大多是训练面向无人机上的模型，参数量和计算量要求很小，我们的单机服务器足够train绝大多数模型了，如果是为了更大的batch size加速训练，不如在另一台机器上多跑一组别的实验，总体效率更高。如果大家想看这方面教程，可以留言，我可以补一下对应的代码。
 
+## utils
+存放各种可复用的util函数或者类，比如一些通用的可视化代码放到[viz.py](https://github.com/ahangchen/torch_base/blob/main/utils/viz.py)，一些pytorch魔改函数放到[torch_utils.py](https://github.com/ahangchen/torch_base/blob/main/utils/torch_utils.py)，还有基于tensorboard的存图存曲线的[logger.py](https://github.com/ahangchen/torch_base/blob/main/utils/logger.py)，这里主要介绍一下这个日志组件：
+
+### Recoder
+一个数据统计工具，在循环里record每次迭代的数据（比如各种评价指标`metrics`），在每个epoch训练完成后，调用summary，得到之前统计的指标各自的均值。这个工具在训练时嵌入到Logger中使用，在测试时由于不需要调用tensorboard，所以直接被eval.py调用。
+
+### Logger
+将tensorboard的SummaryWritter包了一层，包含一个recorder，还有一个SummaryWritter；在训练或验证的每个step以name-value的形式record一下对应的曲线数据，name最好用`train/xxx`，`val/xxx`这种形式，这样训练和测试的曲线会显示在两个图中，在每个epoch的最后一个step在每次训练或验证的epoch循环结束时，调用一次save_curves保存曲线，调用一次save_checkpoint保存模型参数；这些操作都在下面的train.py中体现。
+
 ## train.py
 终于来到核心的训练代码环节，这里我整了一个trainer，将训练中固定的操作封装成一些函数，需要按实际情况修改的操作封装成另外的函数，这样有新任务来了，只需要修改这些函数就行。现在依次介绍这些函数：
 
-- `__init__.py`：构造函数，初始化了命令行参数`args`，日志工具（基于tensorboard的存图存曲线的[Logger](https://github.com/ahangchen/torch_base/blob/main/utils/logger.py)对象）`logger`，训练验证的两个dataloader，参数优化器`optimizer`，以及模型本身`model`，这里我们有三种方式初始化模型：1. 根据模型的构造函数初始化模型参数，2. 使用torch.load加载模型参数，这种方式要求模型参数和我们的模型定义完全匹配，3. 使用[load_match_dict](https://github.com/ahangchen/torch_base/blob/main/utils/torch_utils.py#L4)加载模型参数，可以找到模型参数和模型定义中，参数量和名字相同的部分进行初始化，适合只改了部分网络结构的模型初始化，作为一种局部pretrain。
+- `__init__`：构造函数，初始化了命令行参数`args`，日志工具（[Logger](https://github.com/ahangchen/torch_base/blob/main/utils/logger.py)对象）`logger`，训练验证的两个dataloader，参数优化器`optimizer`，以及模型本身`model`，这里我们有三种方式初始化模型：1. 根据模型的构造函数初始化模型参数，2. 使用torch.load加载模型参数，这种方式要求模型参数和我们的模型定义完全匹配，3. 使用[load_match_dict](https://github.com/ahangchen/torch_base/blob/main/utils/torch_utils.py#L4)加载模型参数，可以找到模型参数和模型定义中，参数量和名字相同的部分进行初始化，适合只改了部分网络结构的模型初始化，作为一种局部pretrain。
 - `train`：训练入口，迭代epochs次，每次调用train_per_epoch, val_per_epoch执行训练和测试，再调用logger存储曲线和图像。
 - `train_per_epoch`：训练核心代码，将模型切换到训练模式，遍历整个train_loader，调用step进行数据拆包，不同loader返回的数据不同，拆包方式也有差异，还需要用Variable对数据再打包一下，这些操作都独立到step函数里，方便单独修改；再执行模型forward，获取结果，调用compute_metrics计算metrics（训练中也需要观察各种指标，这些指标的计算推荐放在[metrics.py](https://github.com/ahangchen/torch_base/blob/main/metrics.py)），计算loss（各种花里胡哨的loss请放到[loss.py](https://github.com/ahangchen/torch_base/blob/main/loss.py)），反向传播，在每次迭代中都调用logger的record函数，记录metrics，在最后一个step，调用gen_imgs_to_write，将torch的数据转成图像可视化，各种可视化可以写在[viz.py](https://github.com/ahangchen/torch_base/blob/main/utils/viz.py)再调用图像的存储（曲线的存储可以放到外面，每个epoch存一次，但图像不行，除非把图传出去，比较蛋疼）。最后根据print_freq，每隔一段时间打印日志方便观察。
 - `val_per_epoch`：与训练类似，差别就是模型在eval模式下，不用计算loss和反向传播；
 
+## eval.py
+最后介绍的是测试代码，我把测试的过程包成了一个Evaluator，和trainer也比较类似：
+- `__init__`：构造函数，初始化命令行参数`args`，加载模型`model`并切换到eval模式，初始化测试集的data_loader，设置一个recorder用于统计各种评估指标；
+- `eval`：测试核心代码，遍历整个测试集，执行forward，得到输入，输出，真值，调用compute_metrics，调用recorder做记录，根据viz_freq，决定这个step是否调用`viz_per_epoch`可视化并保存结果（与训练不同，往往测试集可视化的内容是要向领导/导师/甲方汇报的，不能存到tensorboard里），循环结束时，调用recorder得到所有的评估指标，并将所有metrics写到`result.txt`里，避免测试窗口一关就找不到测试结果了。
+
+## 总结
+至此，[torch_base](https://github.com/ahangchen/torch_base)这个工程就基本介绍完了，主要还是实践中遇到的各种大坑小坑，逼着自己给工程加上了亿点点小细节，如果基于这个工程去开发新的任务，可以省去一些的脚手架开发工作，专注于model&&data&&metric&&loss&&viz相关的一些内容，让炼丹bring up更快，效率更高，对我来说还是挺有用的，不知道有没有给你一些启发？如果有什么建议也欢迎在[issue](https://github.com/ahangchen/torch_base/issues)或者[知乎评论区]()告诉我，感谢你的阅读~
