@@ -112,4 +112,4 @@ def parse_test_args(parser):
 - `eval`：测试核心代码，遍历整个测试集，执行forward，得到输入，输出，真值，调用compute_metrics，调用recorder做记录，根据viz_freq，决定这个step是否调用`viz_per_epoch`可视化并保存结果（与训练不同，往往测试集可视化的内容是要向领导/导师/甲方汇报的，不能存到tensorboard里），循环结束时，调用recorder得到所有的评估指标，并将所有metrics写到`result.txt`里，避免测试窗口一关就找不到测试结果了。
 
 ## 总结
-至此，[torch_base](https://github.com/ahangchen/torch_base)这个工程就基本介绍完了，主要还是实践中遇到的各种大坑小坑，逼着自己给工程加上了亿点点小细节，如果基于这个工程去开发新的任务，可以省去一些的脚手架开发工作，专注于model&&data&&metric&&loss&&viz相关的一些内容，让炼丹bring up更快，效率更高，对我来说还是挺有用的，不知道有没有给你一些启发？如果有什么建议也欢迎在[issue](https://github.com/ahangchen/torch_base/issues)或者[知乎评论区]()告诉我，感谢你的阅读~
+至此，[torch_base](https://github.com/ahangchen/torch_base)这个工程就基本介绍完了，主要还是实践中遇到的各种大坑小坑，逼着自己给工程加上了亿点点小细节，如果基于这个工程去开发新的任务，可以省去一些的脚手架开发工作，专注于model&&data&&metric&&loss&&viz相关的一些内容，让炼丹bring up更快，效率更高，对我来说还是挺有用的，不知道有没有给你一些启发？如果有什么建议也欢迎在[issue](https://github.com/ahangchen/torch_base/issues)或者[知乎评论区](https://zhuanlan.zhihu.com/p/409662511)告诉我，感谢你的阅读~
