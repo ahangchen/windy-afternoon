@@ -442,3 +442,13 @@ ctrl+shift+alt+r 开启和关闭录制
 7.卸载gnome桌面环境
 
 > sudo apt-get –purge remove liborbit2
+
+# cmake upgrade without uninstall older version
+```
+cd ~/Downloads/cmake-3.12.0-rc3/   # or wherever you downloaded cmake
+./bootstrap --prefix=$HOME/cmake-install
+make 
+make install
+export PATH=$HOME/cmake-install/bin:$PATH
+export CMAKE_PREFIX_PATH=$HOME/cmake-install:$CMAKE_PREFIX_PATH
+```
