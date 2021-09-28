@@ -1,4 +1,4 @@
-# 计算机视觉常用工具知识点
+# 机器视觉常用工具知识点
 
 ## Eigen
 - [将Eigen中的vector4f变成vector3f](https://stackoverflow.com/questions/25104665/best-way-to-convert-an-eigen-vector4-type-to-vector3)
