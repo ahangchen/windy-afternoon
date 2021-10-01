@@ -4,8 +4,7 @@
 
 > 转载请注明作者[梦里茶](https://github.com/ahangchen)
 
-![NCS Pi](https://upload-images.jianshu.io/upload_images/1828517-1cda688b0ed4638e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-
+![](ncs_detection_0.png)
 代码: 
 
 训练数据预处理：
@@ -18,8 +17,7 @@ https://gist.github.com/ahangchen/ae1b7562c1f93fdad1de58020e94fbdf
 ## Background
 最近在做一个项目，要在树莓派上分析视频中的图片，检测目标，统计目标个数，这是一张样例图片：
 
-![Cattle Counting](https://upload-images.jianshu.io/upload_images/1828517-7405ed85dce8bfde.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-
+![](ncs_detection_1.png)
 ## Motivation
 当下效果最好的目标检测都是基于神经网络来做的，包括faster rcnn， ssd, yolo2等等，要在树莓派这种资源紧张的设备上运行检测模型，首先想到的就是用最轻量的MobileNet SSD，使用Tensorflow object detection api实现的MobileNet SSD虽然已经非常轻，但在树莓派上推导一张1280x720的图仍然需要2秒，有兴趣的同学可以参考这两个项目：
 - armv7版Tensorflow（必须是1.4及以上）:https://github.com/lhelontra/tensorflow-on-arm/releases
@@ -30,8 +28,7 @@ https://gist.github.com/ahangchen/ae1b7562c1f93fdad1de58020e94fbdf
 
 ## Hardware 
 极限的模型仍然不能满足性能需求，就需要请出我们今天的主角了，[Intel Movidius Neural Computing Stick](https://developer.movidius.com/)
-![Intel Movidius Neural Computing Stick](https://upload-images.jianshu.io/upload_images/1828517-91b7cdc17798b7ef.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-
+![](ncs_detection_2.png)
 |处理器|Intel Movidius VPU|
 | :-:| :-:  |
 |支持框架|TensorFlow, Caffe|
@@ -119,8 +116,7 @@ if ''_new' in name:
 于是就能编译生成graph了，你会看到一个名为ncs_mobilenet_ssd_graph的文件。
 
 上边这个bug我已经跟NCSDK的工程师讲了，他们在跟进修这个bug：
-![NCS bug](https://upload-images.jianshu.io/upload_images/1828517-0339d113ef259dbb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-
+![](ncs_detection_3.png)
 
 ### 测试端
 #### NCSDK

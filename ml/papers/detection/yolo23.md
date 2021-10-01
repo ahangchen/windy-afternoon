@@ -27,14 +27,12 @@ YOLOv3也是一个单纯的改进性工作。。没啥创新性，但是效果�
 
 作者也觉得这不算是一篇正式paper，只是一个工作报告，所以论文写得跟玩儿似的
 
-![YOLOv3](https://upload-images.jianshu.io/upload_images/1828517-b1678d695ed524f1.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240)
-
+![](yolo23_0.png)
 改进点list
 
 * 使用更多的shotcut，构造更深的darknet-53（ResNet提出来的）
 
-![YOLOv3&#x7F51;&#x7EDC;&#x7ED3;&#x6784;](https://upload-images.jianshu.io/upload_images/1828517-5373d58bf51475f4.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240)
-
+![](yolo23_1.png)
 * 使用三层feature map分别对应不同尺度的anchor（SSD，FPN已经这样做过了）
 * 由于softmax分类loss前提假设是每个对象只属于一个分类，对于有包含关系的类别，softmax没那么适用，于是yolov3使用了逻辑回归的方法做分类，同时回归一个anchor属于多个类的概率，ground truth值是0或1，分别代表一个anchor是否与ground truth box相匹配。
 

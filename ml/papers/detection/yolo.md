@@ -4,8 +4,7 @@
 
 转载请注明作者：[梦里茶](https://github.com/ahangchen)
 
-![YOLO detection system](https://upload-images.jianshu.io/upload_images/1828517-a88772a3cbb2c9a7.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240)
-
+![](yolo_0.png)
 YOLO，You Only Look Once，摒弃了RCNN系列方法中的region proposal步骤，将detection问题转为一个回归问题
 
 ## 网络结构
@@ -13,13 +12,11 @@ YOLO，You Only Look Once，摒弃了RCNN系列方法中的region proposal步骤
 * 输入图片：resize到448x448
 * 整张图片输入卷积神经网络（24层卷积+2层全连接，下面这张示意图是Fast YOLO的）
 
-![CNN](https://upload-images.jianshu.io/upload_images/1828517-02e0f65d4bbd1ef3.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240)
-
+![](yolo_1.png)
 * 将图片划分为$$S*S$$个格子，$$S=7$$
 * 输出一个$$S*S$$大小的class probability map，为图片上每个格子所属的分类
 
-![Model](https://upload-images.jianshu.io/upload_images/1828517-da68332415c4cb7e.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240)
-
+![](yolo_2.png)
 * 输出为每个格子输出B个bounding box，每个bounding box由x,y,w,h表示，为每个bounding box输出一个confidence，即属于前景的置信度
 
 > 于是输出可以表示为一个$$S*S*(B*(4+1)+C)$$的tensor，训练只需要根据数据集准备好这样的tensor进行regression就行
@@ -30,8 +27,7 @@ YOLO，You Only Look Once，摒弃了RCNN系列方法中的region proposal步骤
 
 ### Loss
 
-![YOLO Loss Function](https://upload-images.jianshu.io/upload_images/1828517-0f9a4a9aa50514a2.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240)
-
+![](yolo_3.png)
 * 前两行为定位loss，$$\lambda_{coord}$$为定位loss的权重，论文中取5
 * 第三行为一个bounding box属于前景时的置信度回归loss，
   * 当格子中有对象出现时，真实$$C_{i}$$为1，
@@ -53,10 +49,8 @@ YOLO里最核心的东西就讲完了，其实可以把YOLO看作固定region pr
 
 对比Relu和leaky Relu
 
-![Relu](https://upload-images.jianshu.io/upload_images/1828517-0828da0d1164c024.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240)
-
-![Leaky Relu](https://upload-images.jianshu.io/upload_images/1828517-6fa61d70fdc248c5.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240)
-
+![](yolo_4.png)
+![](yolo_5.png)
 在x小于0的时候，用了0.1x，避免使用relu的时候有些单元永远得不到激活（Dead ReLU Problem）
 
 ### Fast YOLO
@@ -67,14 +61,12 @@ YOLO里最核心的东西就讲完了，其实可以把YOLO看作固定region pr
 
 * 对比当前最好方法：
 
-![SOA](https://upload-images.jianshu.io/upload_images/1828517-3d2bdaa25f96ee6d.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240)
-
+![](yolo_6.png)
 Fast YOLO速度最快，准确率不太高，但还是比传统方法好，YOLO则比较中庸，速度不慢，准确率也不太高，但也还行。
 
 * 再看看具体是在哪些类型的图片上出错的：
 
-![Error Analysis](https://upload-images.jianshu.io/upload_images/1828517-5da87baf34a44e0a.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240)
-
+![](yolo_7.png)
 主要是定位不准（毕竟没有精细的region proposal），但是在背景上出错较少（不容易把背景当成对象）
 
 ## 缺点

@@ -8,8 +8,7 @@
 
 神经网络在计算机视觉方面的成功得益于卷积神经网络，然而，现有的许多成功的神经网络结构都要求输入为一个固定的尺寸（比如224x224,299x299），传入一张图像，需要对它做拉伸或者裁剪，再输入到网络中进行运算。
 
-![image.png](http://upload-images.jianshu.io/upload_images/1828517-cd7d289a0d97c9b9.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240)
-
+![](sppnet_0.png)
 然而，裁剪可能会丢失信息，拉伸会使得图像变形，这些因素都提高了视觉任务的门槛，因此，如果能有一种模型能够接收各种尺度的输入，应当能够让视觉任务更加容易完成。
 
 ## 什么限制了输入的尺寸
@@ -27,14 +26,12 @@
 
 这里我们详细讲一下SPP
 
-![SPP-net](http://upload-images.jianshu.io/upload_images/1828517-331144212396ac49.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240)
-
+![](sppnet_1.png)
 SPP中SP（Spatial Pyramid）的思想来源于SPM（Spatial Pyramid Matching），可以参考[这篇文章](http://blog.csdn.net/jwh_bupt/article/details/9625469)，正如论文Conclusion中说的， Our studies also show that many time-proven techniques/insights in computer vision can still play important roles in deep-networks-based recognition.
 
 SPM是在不同的分辨率（尺度）下，对图片进行分割，然后对每个局部提取特征，将这些特征整合成一个最终的特征，这个特征有宏观有微观（多尺度金字塔），保留了区域特性（不同的区域特征不同），然后用特征之间的相似度进行图片间的匹配（matching）。先前我们提到过，每个filter会得到一个feature map，SPP的输入则是卷积后的这些feature map，每次将一个feature map在不同尺度下进行分割，尺度L将图片分割为$$2^L$$个小格子（其实格子数也可以自己定，不一定要分成$$2^L$$个），L为0代表全图；对每个小格子的做pooling，论文中是max pooling, 实际中也可以用其他，这里不像SPM需要做SIFT之类的特征提取，因为feature map已经是卷积层提取过的特征了，将pooling得到的结果拼接起来，就可以得到固定尺寸的feature map。
 
-![Spatial Pyramid](http://upload-images.jianshu.io/upload_images/1828517-f2287a903cc156a9.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240)
-
+![](sppnet_2.png)
 举个例子，一个具有256个filter的卷积层，输出了256个feature map，对于一个640x320的图片，输出的feature map可能是32x16的，对于一个640x640的图片，输出的feature map可能是32x32的，对256个feature map中的每个feature map，我们在4个尺度下对它们做切割，在最粗糙的尺度下切为1个图，次之切为2个子图，接下来是4个子图，8个, 对每个子图做max pooling，得到其中最大的数，放到最终的特征里，可以得到一个1+2+4+8=15这么长的特征，256个feature则可以得到最终256\*15这么长的特征，可以看到，最终的特征尺寸只跟卷积层结构和SP尺度L有关，跟输入图片无关，从而保证了对不同尺寸的图片都输出一样大小的特征。
 
 其实看到这里，你可能发现了，对不同尺寸输出相同尺寸特征这个特性，是由pooling操作决定的，像max pooling，sum pooling这些，就是将多个输入聚合为一个值的运算；而Spatial Pyramid只是让特征有更好的组织形式而已。当然，能找到这种有效的特征组织形式也是很值得肯定的。但这里有东西仍然值得商榷，max pooling实际上还是丢了一些信息，虽然通过多层的特征可以将这些信息弥补回来。
@@ -53,8 +50,7 @@ SPM是在不同的分辨率（尺度）下，对图片进行分割，然后对�
 
 由于整张图只过了一遍卷积，所以比原来的RCNN快了很多，准确率也不差
 
-![Detection results \(mAP\) on Pascal VOC 2007](http://upload-images.jianshu.io/upload_images/1828517-45f9e0e2be0c4482.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240)
-
+![](sppnet_3.png)
 ## Summary
 
 严格来讲SPP-net不是为detection而生的模型，但是SPP-net为RCNN进化到Fast-RCNN起了很大的借鉴作用，值得一读。SPP-net的想法很有意思，SPP（Spatial Pyramid Pooling）是对网络结构的一种改进，可能因为是华人写的论文，感觉很好读，含金量个人感觉没有RCNN或者DPM的论文高，但是实验很丰富，从分类任务和检测任务上的各种网络结构证明SPP的有效性

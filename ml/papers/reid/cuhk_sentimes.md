@@ -16,8 +16,7 @@ person reid这个任务是为probe图像在gallery图片集中寻找属于同一
 
 ### Overview
 
-![Graph+Reid](https://upload-images.jianshu.io/upload_images/1828517-3eeab806b8db617e.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240)
-
+![](cuhk_sentimes_0.png)
 这两篇文章是同一班人马写的，所以其实整体结构上都很像，我们结合起来分析：
 
 * DGRW是用Random Walk的方式将G2G的相似度信息用来更新P2G的**相似度关系**，在反向传播时通过G2G这个很多相似度关联的图对原来的图像模型提供更多的训练。
@@ -43,8 +42,7 @@ $$y^(\infty)=(1-\lambda )(I-\lambda W)^{-1}y^{(0)}$$
 
 论文里还有一个创新点是，将视觉特征分成了K个group，每个group的特征都可以单独拿出来用，这样我们就可以做K个上边提到的random walk，于是监督信号更多了，同时因为视觉特征被拆成了K份，每一份都只是原特征的一小部分，相当于dropout了一部分信息，也能很大程度上防止过拟合。但其实这个方法并不见得比dropout优雅，实验效果也差不多。
 
-![Group shuffle](https://upload-images.jianshu.io/upload_images/1828517-60e2f4a1af81c017.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240)
-
+![](cuhk_sentimes_1.png)
 实现上还有一个小的细节，把所有图片构成一个graph的话，开销太大了，所以训练时graph其实只是所有图片的一个子图，
 
 * 首先每个batch有64个人，每个人有4张图，这样batch size就是256（流下了贫穷的泪水），
@@ -74,8 +72,7 @@ $$t_i=F(d_i)$$
 
 这个F就是d到t的映射，
 
-![F](https://upload-images.jianshu.io/upload_images/1828517-50343f1495032758.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240)
-
+![](cuhk_sentimes_2.png)
 如图，通过两层FC+BN+ReLU，将相似度特征d映射为一个能够根据相似度矩阵W修正特征向量的消息向量t，由于权重是可训练的，所以下面这个式子就成立了：
 
 $$d_i^{t+1}=(1-α)d_i^{t+1}+αWt_i^t$$
@@ -101,14 +98,12 @@ $$d_i^{t+1}=(1-α)d_i^{t+1}+α\sum_{j=1}^N h(d_i,d_j)t_i^t$$
 
 DGRW
 
-![DGRW result](https://upload-images.jianshu.io/upload_images/1828517-ed3760233b72cdbc.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240)
-
+![](cuhk_sentimes_3.png)
 baseline rank1就91%了我还能说什么，流下了不会调参的泪水，不过看baseline+triplet居然还掉了，说明他们的hack泛化能力其实不强，另外针对两个主要的创新点，group shuffle也没有比dropout效果要好多少，random walk也没有比reranking好多少。不过有一个现象，mAP比top1提高的多，说明这种基于g2g关系的方法，通常是用得分较高的gallery图像把gallery中得分比较低的对象拉上来了。
 
 SGGNN
 
-![SGGNN result](https://upload-images.jianshu.io/upload_images/1828517-bee386b73d9e9d3e.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240)
-
+![](cuhk_sentimes_4.png)
 结果也跟random walk类似。
 
 ### 总结

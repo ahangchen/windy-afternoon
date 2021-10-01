@@ -10,8 +10,7 @@
 
 > Unsupervised Person Re-identification by Deep Learning Tracklet Association
 
-![TAUDL](https://upload-images.jianshu.io/upload_images/1828517-f3309eb4eb45fc12.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240)
-
+![](eccv2018_taudl_0.png)
 TAUDL是Tracklet Association Unsupervised Deep Learning的缩写，通过利用无监督的单摄像头轨迹信息（比如用detection和tracking的方法来提取监控视频中的行人轨迹）来训练端到端的神经网络，然后用这个图像模型对跨摄像头的图像进行自动标注和学习。具体如下：
 
 ## 无监督单摄像头轨迹标注
@@ -32,8 +31,7 @@ Person Re-id数据集通常用监控摄像头采集得到，所以有很多视�
 
 ## 无监督跨摄像头轨迹关联学习
 
-![&#x8F68;&#x8FF9;&#x5173;&#x8054;](https://upload-images.jianshu.io/upload_images/1828517-2e035a443f1c58b9.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240)
-
+![](eccv2018_taudl_1.png)
 由于我们之前是为每个摄像头的数据独立分配轨迹id的，比较直接的思路是把不同摄像头的id都当做不一样的，但这样训练出来可能效果不好，因为同个人可能出现在不同摄像头里，将这种跨摄像头的正样本当成负样本去训练会出问题，所以我们希望能同时学习同摄像头内不同人的差异性以及不同摄像头内的同个人的关联性。
 
 PCTD（单摄像头）：具体而言，假设有T个摄像头，我们有T个轨迹标记集，我们用T个集合训练出一个多任务（T个任务）图像模型，这T个任务共享用于特征表达的卷积层，但各自拥有自己的分类层，因为它们的ID是独立的，这种策略其实也平平无奇，是迁移学习常用的套路，而且计算量有点大，通过这种方式更多的是对单摄像头的数据做特征表达，还没将不同摄像头的数据关联起来。

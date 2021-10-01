@@ -31,7 +31,7 @@
 
 图像分割是医疗图像中一个很重要的任务，通常分为分割，配准，可视化几个子任务。这里贴一张广义的图像分割的图：
 
-![](https://github.com/ahangchen/windy-afternoon/tree/561227bf302967a9b5058b73d55131efdfca78d6/ml/papers/overview/cncc_cv_img/p3-segment.jpg)
+![](cncc_cv_img/p3-segment.jpg)
 
 #### 存在的困难：
 
@@ -97,13 +97,13 @@
 
 #### 模型
 
-![](https://github.com/ahangchen/windy-afternoon/tree/561227bf302967a9b5058b73d55131efdfca78d6/ml/papers/overview/cncc_cv_img/p9_zhusuan.png)
+![](cncc_cv_img/p9_zhusuan.png)
 
 给定一个输入z，用神经网络学习变量x的分布的参数（均值和方差），约束生成样本与真实样本的相似性
 
 #### 有约束的GAN
 
-![](https://github.com/ahangchen/windy-afternoon/tree/561227bf302967a9b5058b73d55131efdfca78d6/ml/papers/overview/cncc_cv_img/p10_gan.png)
+![](cncc_cv_img/p10_gan.png)
 
 在GAN的基础上，加一个分类器C，对生成器G生成的对象加中间约束，使得生成的对象更符合实际需求，比如生成不同姿态的人脸，要求不同人的人脸尽量不同，同个人的人脸尽量相同。
 
@@ -169,7 +169,7 @@
     * 对哈希值做高效的异或运算求相似度
     * 模型（添加了对二进制编码的约束，希望绝对值与1尽量相近）：
 
-![](https://github.com/ahangchen/windy-afternoon/tree/561227bf302967a9b5058b73d55131efdfca78d6/ml/papers/overview/cncc_cv_img/p17_hash.png)
+![](cncc_cv_img/p17_hash.png)
 
 #### 多媒体与知识图谱
 
@@ -246,7 +246,7 @@
 * 增加一个新的类别时，将其归入最相近的大类中，重用大类的参数，扩展小类分类层参数
 * 利用类别子集合划分实现模型动态扩容，利用特征迁移学习实现训练加速（对类别做聚类）
 
-  ![](https://github.com/ahangchen/windy-afternoon/tree/561227bf302967a9b5058b73d55131efdfca78d6/ml/papers/overview/cncc_cv_img/p23_incremental.png)
+  ![](cncc_cv_img/p23_incremental.png)
 
 #### 局部两级注意力深度模型
 
@@ -256,12 +256,12 @@
 
 * Object level: 首先用公开的数据集预训练模型，top-down地作用在整图上，选出跟目标相关的区域（响应度最高的区域），相当于抠图，对抠过的区域再加上类别标签进行迁移学习。
 
-![](https://github.com/ahangchen/windy-afternoon/tree/561227bf302967a9b5058b73d55131efdfca78d6/ml/papers/overview/cncc_cv_img/p25_object.png)
+![](cncc_cv_img/p25_object.png)
 
 * Part level: 
   * 对于Object level得到的模型，对卷积层的filter做相似度聚类，同一类的卷积层合为一个part detector，用来为具体的对象局部做识别
 
-![](https://github.com/ahangchen/windy-afternoon/tree/561227bf302967a9b5058b73d55131efdfca78d6/ml/papers/overview/cncc_cv_img/p25_local.png)
+![](cncc_cv_img/p25_local.png)
 
 * 结合总体评分和局部评分来对对象做细粒度分类
 
@@ -273,7 +273,7 @@
 * 先通过显著性聚类提出备选局部，
 * 再对局部位置关系提出两个空间约束：局部和整体必须有尽可能多的重叠，局部之间有尽可能少的重叠。
 
-![](https://github.com/ahangchen/windy-afternoon/tree/561227bf302967a9b5058b73d55131efdfca78d6/ml/papers/overview/cncc_cv_img/p26_constraint.png)
+![](cncc_cv_img/p26_constraint.png)
 
 上面两篇都是不需要局部组件的标注，就学到了局部的特征和约束
 
@@ -286,7 +286,7 @@
 * 显著性模型提供弱标记的图片训练faster r-cnn检测模型
 * 检测模型提供更精确的备选区域进行分类
 
-![](https://github.com/ahangchen/windy-afternoon/tree/561227bf302967a9b5058b73d55131efdfca78d6/ml/papers/overview/cncc_cv_img/p27_rcnn.png)
+![](cncc_cv_img/p27_rcnn.png)
 
 #### 视觉文本联合建模的图像细粒度表示
 
@@ -295,7 +295,7 @@
 * 在图片数据集的基础上，增加对图片的描述文本，利用这两个模态的数据提供更高精度的细粒度分类
 * 卷积做图像分类，CNN+LSTM做文本分类，两个分类结果合起来
 
-![](https://github.com/ahangchen/windy-afternoon/tree/561227bf302967a9b5058b73d55131efdfca78d6/ml/papers/overview/cncc_cv_img/p28_vt.png)
+![](cncc_cv_img/p28_vt.png)
 
 ### 跨媒体关联与检索
 

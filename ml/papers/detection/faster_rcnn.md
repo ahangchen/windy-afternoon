@@ -14,8 +14,7 @@ Faster RCNN则是专门训练了一个卷积神经网络来回归bounding box，
 
 ## RPN
 
-![RPN](https://upload-images.jianshu.io/upload_images/1828517-955cf7abb99e8de2.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240)
-
+![](faster_rcnn_0.png)
 训练数据就是图片和bounding box
 
 * 输入任意尺寸的图片，缩放到1000×600
@@ -57,8 +56,7 @@ Faster RCNN则是专门训练了一个卷积神经网络来回归bounding box，
 
 因此最终的一个mini batch的训练损失函数为：
 
-![RPN Loss](https://upload-images.jianshu.io/upload_images/1828517-ee7376ecb88a3b64.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240)
-
+![](faster_rcnn_1.png)
 其中，
 
 * $$p_{i}$$是一个batch中的多个anchor属于前景/后景的预测概率向量，$$t_{i}$$是一个batch中正anchor对应的bounding box位置向量
@@ -74,8 +72,7 @@ Faster RCNN则是专门训练了一个卷积神经网络来回归bounding box，
 
 论文这里讲得超级混乱，可以感受下：
 
-![minibatch anchor](https://upload-images.jianshu.io/upload_images/1828517-f3ed1471a7298350.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240)
-
+![](faster_rcnn_2.png)
 ## Proposal layer
 
 其实这也可以算是RPN的一部分，不过这部分不需要训练，所以单独拉出来讲
@@ -86,8 +83,7 @@ Faster RCNN则是专门训练了一个卷积神经网络来回归bounding box，
   * 将修正后的anchor按照前景概率从高到底排序，取前6000个
   * 边缘的anchor可能超出原图的范围，将严重超出边缘的anchor过滤掉
 
-![Anchor Filter](https://upload-images.jianshu.io/upload_images/1828517-30beac72a97b3fe8.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240)
-
+![](faster_rcnn_3.png)
 * 对anchor做非极大抑制，跟RCNN一样的操作
 * 再次将剩下的anchor按照anchor score从高到低排序（仍然可能有背景anchor的），取前300个作为proposals输出，如果不足300个就…也没啥关系，比如只有100个就100个来用，其实不足300个的情况很少的，你想Selective Search都有2000个。
 
@@ -97,8 +93,7 @@ Faster RCNN则是专门训练了一个卷积神经网络来回归bounding box，
 
 * 取一张图的128个proposal作为样本（有正有负），一张图可以取多次，直到proposal用完
 
-![](https://upload-images.jianshu.io/upload_images/1828517-59eabb44802971e9.png?imageMogr2/auto-orient/strip|imageView2/2/w/700)
-
+![](faster_rcnn_4.png)
 * 喂给Fast RCNN做分类和bounding box回归，这里跟RPN很像，但又有所不同，
   * BB regressor：拟合proposal和bounding box，而非拟合anchor和bounding box
   * Classifier：Object多分类，而非前景背景二分类
@@ -111,8 +106,7 @@ RPN和Fast RCNN其实是很像的，因此可以一定程度上共享初始权�
 
 * 将整个网络合起来一块训练，而不分步，但由于一开始训练时RPN还不稳定，所以训练Fast RCNN用的proposal是固定的anchor，最后效果差不多，训练速度也快。
 
-![Approximate joint training](https://upload-images.jianshu.io/upload_images/1828517-6b6aabc2a40fd690.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240)
-
+![](faster_rcnn_5.png)
 * 整个网络合起来一起训练，不分步，训练Fast RCNN用的proposals是RPN修正后的anchor，但这种动态的proposal数量不好处理，用的是一种RoI warping layer来解决，这又是另一篇论文的东西了。
 
 ## SUMMARY

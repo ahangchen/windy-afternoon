@@ -27,8 +27,7 @@ SPP-net中则提出只过一遍图，从最后的feature map裁剪出需要的�
 
 ## Fast RCNN architecture
 
-![Fast RCNN](https://upload-images.jianshu.io/upload_images/1828517-59eabb44802971e9.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240)
-
+![](fast_rcnn_0.png)
 * 首先将整个图片输入到一个基础卷积网络，经过max pooling得到整张图的feature map，
 * 然后用一个RoI pooling层为region proposal从feature map中提取一个**固定长度**的特征向量，
 * 每个特征会输入到一系列全连接层，得到一个RoI特征向量，
@@ -49,8 +48,7 @@ SPP-net中则提出只过一遍图，从最后的feature map裁剪出需要的�
 
 由于多个RoI会有重复区域，所以max pooling时，feature map里同一个值可能对应pooling output的多个值。所以BP算梯度的时候，从RoI pooling层output y到input x的梯度是这样求的
 
-![RoI gradient](https://upload-images.jianshu.io/upload_images/1828517-62b3d0e095c09bf3.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240)
-
+![](fast_rcnn_1.png)
 其中
 
 * $$i ^{*}(r, j) = argmax_{i'∈R(r,j)  }x_{i'}$$，也就是在$$R(r, j)$$这个区域中做max pooling得到的结果，
@@ -60,8 +58,7 @@ SPP-net中则提出只过一遍图，从最后的feature map裁剪出需要的�
 
 举例：
 
-![RoI pooling BP](https://upload-images.jianshu.io/upload_images/1828517-d6e9454ed136a247.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240)
-
+![](fast_rcnn_2.png)
 > 也就是说，将Loss对输出的梯度，传回到max pooling对应的那个feature unit上，再往回传
 
 其实这是SPPnet的一个特例，是Spatial pooling，没有pyramid，也因此计算量大大减少，能够实现FC到CNN的梯度反向传播，并且，实验发现其实feature pyramid对准确率提升不大。倒是原图层面的Pyramid作用大些：
@@ -86,8 +83,7 @@ $$smooth_{L1}(x) = 0.5x^{2} if |x|<1 otherwise |x|-0.5$$
 
 是一个软化的L1（画一下图像可以看出来，在\(-1,1\)的范围内是抛物线，没L1那么尖锐），如果采用L2 loss，需要仔细调节学习率防止梯度爆炸。
 
-![Smooth L1](https://upload-images.jianshu.io/upload_images/1828517-2d68b41954bb7a55.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240)
-
+![](fast_rcnn_3.png)
 整个模型的Loss就是：
 
 $$L(p, k, t^{k}, v) = L_{cls}(p, k) + λ|k ≥ 1| L_{Ioc}(t^{u}, v)$$
@@ -148,8 +144,7 @@ $$W ≈ U∑_{t}V^{T}$$
 * Image Pyramid是否必须？ 实际上，使用Pyramid在Fast RCNN上只提升了1%左右，所以这个也没被列为正式的创新点
 * 如果用SVM来分类会不会更好？
 
-![image.png](https://upload-images.jianshu.io/upload_images/1828517-fb7d8035a9a408b7.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240)
-
+![](fast_rcnn_4.png)
 S M L是由浅到深的三个网络，可以看到，只用Softmax分类也能达到不错的效果，在网络比较深的情况下，也有超越SVM的可能。
 
 * 模型泛化能力
@@ -160,8 +155,7 @@ S M L是由浅到深的三个网络，可以看到，只用Softmax分类也能�
 
 * 使用更多的Region Proposal效果会不会更好？（不是很想讲这方面，太玄学）
 
-![More Region Proposal](https://upload-images.jianshu.io/upload_images/1828517-0128b189b2788323.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240)
-
+![](fast_rcnn_5.png)
 图中红色线表示Average Recall，通常人们用Average Recall来评价Region Proposal的效果，然而，proposals越多，AR这个指标一直往上涨，但实际上的mAP并没有上升，所以使用AR这个指标比较各种方法的时候要小心，控制proposal的数量这个变量不变。
 
 图中蓝色线表示mAP\(= AVG\(AP for each object class\)\)，可以看到，

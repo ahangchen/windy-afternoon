@@ -19,8 +19,7 @@ Please cite this paper in your publications if it helps your research:
 
 代码：[https://github.com/ahangchen/TFusion](https://github.com/ahangchen/TFusion)
 
-![TFusion&#x67B6;&#x6784;](https://upload-images.jianshu.io/upload_images/1828517-e12da67722080fdf.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240)
-
+![](tfusion_0.png)
 * 解决的目标是跨数据集的Person Reid
 * 属于无监督学习
 * 方法是多模态数据融合 + 迁移学习
@@ -32,8 +31,7 @@ Please cite this paper in your publications if it helps your research:
 
 行人重识别\(Person Re-identification\)是一个图像检索问题，给定一组图片集\(probe\)，对于probe中的每张图片，从候选图片集（gallery）中找到最可能属于同一个行人的图片。
 
-![Person re-identification](https://upload-images.jianshu.io/upload_images/1828517-dceb0832370da28c.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240)
-
+![](tfusion_1.png)
 行人重识别数据集是由一系列监控摄像头拍摄得到，并用检测算法将行人抠出，做行人的匹配。在这些数据集中，人脸是十分模糊的，无法作为匹配特征，而且由于多个摄像头拍摄视角不同，同个人可能被拍到正面，侧面，背面，具有不同的视觉特征，因此是一个比较难的图像匹配问题。常用数据集有很多，可以在[这个网站](http://robustsystems.coe.neu.edu/sites/robustsystems.coe.neu.edu/files/systems/projectpages/reiddataset.html)查到。
 
 ## Related Work
@@ -46,8 +44,7 @@ Please cite this paper in your publications if it helps your research:
 
 #### 有监督学习
 
-![Supervised Learning](https://upload-images.jianshu.io/upload_images/1828517-effac2981e749051.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240)
-
+![](tfusion_2.png)
 这类方法通常需要提供行人图片和行人id标签（person1,person2等），训练模型，提取图像特征，根据两张图特征的距离大小（可以用余弦距离，欧氏距离之类的计算），为probe中的每张图和gallery中的每张图计算其相似度，根据相似度将gallery中的图片排序，排序越高越可能为同一个人。
 
 这方面的论文代表有TOMM2017: A Discriminatively Learned CNN Embedding for Person Re-identification，我们采用的基础图像分类器就是基于这篇论文用Keras实现的，后面细讲。
@@ -97,8 +94,7 @@ Please cite this paper in your publications if it helps your research:
 
 例如，Marke1501中一张图片的时空信息是写在图片名字中的：
 
-![Market1501 sample.png](https://upload-images.jianshu.io/upload_images/1828517-d38ed2876b191571.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240)
-
+![](tfusion_3.png)
 0007\_c3s3\_077419\_03.jpg：
 
 * 0007代表person id，
@@ -110,8 +106,7 @@ Please cite this paper in your publications if it helps your research:
 
 我们首先通过Market1501中的真实行人标签，计算训练集中所有`图片对`对应的`时空点对`对应的迁移时间，这里可视化了从摄像头1出发的行人，到达其他摄像头需要的时间的分布。
 
-![Market1501&#x8FC1;&#x79FB;&#x65F6;&#x95F4;&#x5206;&#x5E03;](https://upload-images.jianshu.io/upload_images/1828517-d0d7655cc7b92cd5.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240)
-
+![](tfusion_4.png)
 可以看到，到达不同目标摄像头的峰值位置不同，其中从摄像头1到摄像头1，意味着被单个摄像头拍到连续多帧，所以峰值集中在0附近，从摄像头1到摄像头2，峰值集中在-600附近，意味着大部分人是单向从摄像头2运动到摄像头1，等等，并且，说明这个数据集中存在显著可利用的时空规律。
 
 ### 无监督的时空模型构造
@@ -140,14 +135,12 @@ Please cite this paper in your publications if it helps your research:
 
 图像分类器上，我们这里用的是LiangZheng的Siamese网络，他们的源码是用MATLAB实现的，我用Keras[复现](https://github.com/ahangchen/rank-reid/blob/master/pretrain/pair_train.py#L139)了一把：
 
-![Siamese Network](https://upload-images.jianshu.io/upload_images/1828517-189e8b7bf7ea5cb1.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240)
-
+![](tfusion_5.png)
 时空模型的极大似然估计可以看[这里](https://github.com/ahangchen/TrackViz/blob/simfus/train/st_estim.py#L30)
 
 聪明的读者应该会注意到，这个图像分类器是在其他数据及上预训练的，由于特征空间中数据分布不同，这个图像分类器太弱了，对于目标数据集来说，前十里会有许多错的样本，导致构造出来的时空模型和真实的时空模型有偏差
 
-![Distribution estimated](https://upload-images.jianshu.io/upload_images/1828517-df7cd54990ccd68d.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240)
-
+![](tfusion_6.png)
 可以看到，构造的模型跟真实的模型还是有些差别的，但是峰值位置还是差不多，一定程度上应该还能用，但我们还是希望构造的模型尽量接近真实模型的。
 
 于是我们开始_思考_
@@ -159,8 +152,7 @@ Please cite this paper in your publications if it helps your research:
 
 于是我们可视化了一下随机的delta分布
 
-![Random Distribution](https://upload-images.jianshu.io/upload_images/1828517-2f9896e3a7bed9c7.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240)
-
+![](tfusion_7.png)
 可以发现，
 
 * 确实与估计模型和真实模型不同
@@ -285,8 +277,7 @@ $$Pr(S_{i}=S_{j}|v_{i},v_{j}) * Pr(c_{i},c_{j},∆_{ij}|S_{i}=S_{j}) /P(c_{i},c_
 
 在论文Table1,2,3,4,Fig6相关的实验中，α=β=0，并且，在Fig5中，我们设置了其他常数来检查模型对于这种近似的敏感性
 
-![Parameter Sensity](https://upload-images.jianshu.io/upload_images/1828517-6b184c67dcb77ec9.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240)
-
+![](tfusion_8.png)
 可以看到，虽然α和β较大时，准确率会有所下降，但是仍然能保持一定的水准，当你看到纯图像分类器的准确率之后，还会发现融合模型的准确率一直高于纯图像分类器。
 
 你可能注意到了，图中α+β都是小于1的，这是因为，只有当$$E_{p}+E_{n}<1$$且$$α+β<1$$时，融合模型的$$E_{p}+E_{n}$$才会小于图像模型的$$E_{p}+E_{n}$$，说人话就是，只有图像模型不是特别糟糕，且近似的参数也比较正常的时候，融合模型才会比单个的图像模型要准，融合才有意义。这个定理的具体的证明放到论文附录里了，有兴趣的可以邮件私信我拿附录去看，这里摆出来就太多了。
@@ -295,8 +286,7 @@ $$Pr(S_{i}=S_{j}|v_{i},v_{j}) * Pr(c_{i},c_{j},∆_{ij}|S_{i}=S_{j}) /P(c_{i},c_
 
 看一眼融合得到的时空分布图：
 
-![image.png](https://upload-images.jianshu.io/upload_images/1828517-5720d618df7f4285.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240)
-
+![](tfusion_9.png)
 再从数据上看一眼融合的模型有多强：
 
 | 源数据集 | 目标数据集 | 纯 | 图像 | 结果 |  | 融合 | 时空 | 结果 |
@@ -327,8 +317,7 @@ $$Pr(S_{i}=S_{j}|v_{i},v_{j}) * Pr(c_{i},c_{j},∆_{ij}|S_{i}=S_{j}) /P(c_{i},c_
 
 一个常用的无监督学习套路就是，根据融合评分的高低，将图片对分为正样本对和负样本对（打伪标签），然后喂给图像分类器学习。
 
-![Canonial Unsupervised Learning](https://upload-images.jianshu.io/upload_images/1828517-cadc341fdcacc6ef.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240)
-
+![](tfusion_10.png)
 我们也尝试了这种做法，但是发现，数据集中负样本远远多于正样本，融合分类器分对的负样本是挺多的，但是分对的正样本超级少，分错的正样本很多，错样本太多，训练出来效果极差，用上一些hard ming的技巧也不行。
 
 于是我们_思考_，
@@ -369,8 +358,7 @@ RankNet是Pair-wise Learning to Rank的一种方法，用一个神经网络去�
 
 > 具体的神经网络用[Keras实现](https://github.com/ahangchen/rank-reid/blob/master/transfer/simple_rank_transfer.py)并可视化出来长这样：
 
-![Keras-Ranknet](https://upload-images.jianshu.io/upload_images/1828517-127847c893cdfdfe.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240)
-
+![](tfusion_11.png)
 > * 输入是三张图片，分别用Resnet52提取特征并flatten
 > * flatten之后写一个Lambda层+全连接层算特征向量带权重的几何距离，得到score1和score2
 > * 用score1和score2和真实分数算交叉熵Loss（下面讲）
@@ -389,8 +377,7 @@ $$C(o_{bc}) = -P'_{bc}ln P_{bc} - (1-P'_{bc})ln (1 - P_{bc})$$
 
 > 整个Learning to rank过程如图
 
-![Learning to rank](https://upload-images.jianshu.io/upload_images/1828517-e6de1301e73c60a6.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240)
-
+![](tfusion_12.png)
 我们用融合分类器为目标数据集中的图片对评分，构造三元组输入RankNet，其中S_{i}是查询图，S_{j}是在与S_{i}融合相似度top1 - top25中抽取的图片，S_{k}是在与S\_{i}融合相似度top25 - top50中抽取的图片，喂给RankNet学习，使得resnet52部分卷积层能充分学习到目标场景上的视觉特征。
 
 ### Learning to Rank效果
@@ -467,18 +454,15 @@ $$C(o_{bc}) = -P'_{bc}ln P_{bc} - (1-P'_{bc})ln (1 - P_{bc})$$
 
 #### 多次迭代迁移学习
 
-![TFusion&#x67B6;&#x6784;](https://upload-images.jianshu.io/upload_images/1828517-e12da67722080fdf.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240)
-
+![](tfusion_13.png)
 回顾一下整个架构，我们用图像分类器估算时空模型，得到融合模型，用融合模型反过来提升图像分类器模型，图像分类器又能继续增强融合模型，形成一个`闭环`，理论上这个闭环循环多次，能让图像分类器无限逼近融合分类器，从而得到一个目标场景中也很强大的图像分类器，因此我们做了多次迭代的尝试：
 
-![Iteratively Learning](https://upload-images.jianshu.io/upload_images/1828517-8d08ac23fde1f63f.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240)
-
+![](tfusion_14.png)
 在从目前的实验效果看，第一次迁移学习提升比较大，后面提升就比较小了，这个现象往好了说可以是收敛快，但往坏了说，没有出现图像分类器接近融合分类器的现象，所以这里边应该还有东西可挖。
 
 ## 后记
 
-![My Github streak](https://upload-images.jianshu.io/upload_images/1828517-d413ef3d25204476.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240)
-
+![](tfusion_15.png)
 调研，可视化，找思路，找数据集，做实验，Debug，调参，写论文，九个月写一篇CVPR，这也是我们实验室第一篇CCF A类论文，算是来之不易的开山之作了。现在我们在Person Reid领域继续探索，正在搭建一个基于树莓派的摄像头网络，构造自己的数据集，并在这个基础上开展行人检测，多模态数据融合，轻量级深度模型，分布式协同终端，视频哈希，图像索引等一系列研究，欢迎follow我的[Github](https://github.com/ahangchen)，也欢迎持续关注我们[实验室的博客](http://blog.so-link.org)
 
 看了人家这么久，还不给我[Github](https://github.com/ahangchen/TFusion)点star！

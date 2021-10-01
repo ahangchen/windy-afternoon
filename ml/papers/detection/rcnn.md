@@ -13,15 +13,13 @@ Object Detection，顾名思义就是从图像中检测出目标对象，具体�
 
 ## RCNN Overview
 
-![RCNN Overview](http://upload-images.jianshu.io/upload_images/1828517-547577f8e0ff1dee.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240)
-
+![](rcnn_0.png)
 1. 输入图片
 2. 通过selective search给出2k个推荐区域（region proposal）
 
    > 检测问题的一个特点是，我们不仅需要知道一张图片中是否包含目标对象，而且需要知道目标对象所处位置，有几种方式，一种是回归图中检测框的位置\[38\]，但是准确率很低，一种是用滑动窗口的方法将图片切割成很多小块，再对小块做分析，但是对于CNN来说，每经过一层pooling，感受野就会变小，RCNN采用了一个五层卷积的结构，要求输入至少是195x195的尺寸，用滑窗不能保证这个输入大小。
 
-![Weight learning on regions](http://upload-images.jianshu.io/upload_images/1828517-989157bfbf3c19ce.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240)
-
+![](rcnn_1.png)
 > Selective search是一种比较好的数据筛选方式，首先对图像进行过分割切成很多很多小块，然后根据小块之间的颜色直方图、梯度直方图、面积和位置等基本特征，把相近的相邻对象进行拼接，从而选出画面中有一定语义的区域。关于Selective Search的更多信息可以查阅这篇论文：Recognition using Regions（CVPR2009）
 
 1. 将每个推荐区域传入CNN提取特征
@@ -39,18 +37,15 @@ Object Detection，顾名思义就是从图像中检测出目标对象，具体�
 
 RCNN试了两种CNN框架，一种是Hinton他们在NIPS2012上发表的AlexNet：ImageNet Classification with Deep Convolutional Neural Networks
 
-![AlexNet](http://upload-images.jianshu.io/upload_images/1828517-109d529bbb1f78e2.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240)
-
+![](rcnn_2.png)
 这是一个五层卷积+三层全连接的结构，输入是224x224的图片，输出是1000维one-hot的类别，
 
 一种是VGG16\(Very Deep Convolu- tional Networks for Large-Scale Image Recognition\)
 
-![VGG16](http://upload-images.jianshu.io/upload_images/1828517-643c409779b7eec9.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240)
-
+![](rcnn_3.png)
 这是两个网络的检测结果：
 
-![RCNN Result with AlexNet\(T\) and VGG16\(O\)](http://upload-images.jianshu.io/upload_images/1828517-bf89754fcf348ec7.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240)
-
+![](rcnn_4.png)
 VGG16精度更高一些，但是计算量比较大，实时性不如AlexNet，方便起见我们下面都以AlexNet为基础进行分析。
 
 ### Supervised Pretraining
@@ -65,8 +60,7 @@ VGG16精度更高一些，但是计算量比较大，实时性不如AlexNet，�
 
 但是这些输入大小不一，需要调整到目标输入尺寸224x224，在附录A中讨论了很多的预处理方法，
 
-![Preprocess](http://upload-images.jianshu.io/upload_images/1828517-e90b960783cf81a7.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240)
-
+![](rcnn_5.png)
 A. 原图 B. 等比例缩放，空缺部分用原图填充 C. 等比例缩放，空缺部分填充bounding box均值 D. 不等比例缩放到224x224 实验结果表明B的效果最好，但实际上还有很多的预处理方法可以用，比如空缺部分用区域重复。
 
 训练时，采用0.001的初始学习率（是上一步预训练的1/10），采用mini-batch SGD，每个batch有32个正样本（各种类混在一起），96个负样本进行训练。
@@ -121,16 +115,14 @@ $$t_h = log(G_h/P_h)$$
 
 在论文中还打开RCNN中卷积层分析它们的功能，在AlexNet的论文中，Hinton已经用可视化的方式为我们展示了第一层卷积描述的是对象的轮廓和颜色，但后面的层因为已经不能表示成图像，所以不能直接可视化，RBG的方法是，输入一张图片的各个区域，看pool5（最后一层卷积层的max pooling输出）中每个单元的响应度，将响应程度高的区域框出来：
 
-![Top regions for six pool5 units](http://upload-images.jianshu.io/upload_images/1828517-46008e67d22cc701.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240)
-
+![](rcnn_6.png)
 pool5的feature map大小为6x6x256，图中每行的16张图代表一个unit响应度最高的16张图，将每张图响应度较高的区域用白色框框出来了，这里只挑了6个unit进行展示（所以只有6行）。一个unit是6x6x256的张量中的一个实数，这个数越大，意味着对输入的响应越高。
 
 可以看到不同的unit有不同的分工，第一行的unit对person响应度比较高，第二行的unit对dog和dot array（点阵）的响应度比较高，可以从这个角度出发，用每个unit充当单独的一种object detector。
 
 附录D中还有更多的可视化结果
 
-![activation](http://upload-images.jianshu.io/upload_images/1828517-1823cf7e204207bc.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240)
-
+![](rcnn_7.png)
 之所以说是玄学是因为，虽然这种可视化一定程度上体现了CNN学习到的东西，但是仍然没有说明白为什么是这个单元学习到这种信息。
 
 ## Summary

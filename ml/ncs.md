@@ -2,8 +2,7 @@
 
 > 转载请注明作者[梦里茶](https://github.com/ahangchen)
 
-![NCS Pi](https://upload-images.jianshu.io/upload_images/1828517-1cda688b0ed4638e.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240)
-
+![](ncs_0.png)
 代码: 训练数据预处理： [https://gist.github.com/ahangchen/ae1b7562c1f93fdad1de58020e94fbdf](https://gist.github.com/ahangchen/ae1b7562c1f93fdad1de58020e94fbdf) 测试：[https://github.com/ahangchen/ncs\_detection](https://github.com/ahangchen/ncs_detection)
 
 > Star是一种美德。
@@ -12,8 +11,7 @@
 
 最近在做一个项目，要在树莓派上分析视频中的图片，检测目标，统计目标个数，这是一张样例图片：
 
-![Cattle Counting](https://upload-images.jianshu.io/upload_images/1828517-7405ed85dce8bfde.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240)
-
+![](ncs_1.png)
 ## Motivation
 
 当下效果最好的目标检测都是基于神经网络来做的，包括faster rcnn， ssd, yolo2等等，要在树莓派这种资源紧张的设备上运行检测模型，首先想到的就是用最轻量的MobileNet SSD，使用Tensorflow object detection api实现的MobileNet SSD虽然已经非常轻，但在树莓派上推导一张1280x720的图仍然需要2秒，有兴趣的同学可以参考这两个项目：

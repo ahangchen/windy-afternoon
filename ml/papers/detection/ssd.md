@@ -16,8 +16,7 @@
 
 ## Model
 
-![SSD](https://upload-images.jianshu.io/upload_images/1828517-89fe5dc4d9d31d24.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240)
-
+![](ssd_0.png)
 * 输入：300x300
 * 经过VGG-16（只到conv4\_3这一层）
 * 经过几层卷积，得到多层尺寸逐渐减小的feature map
@@ -53,8 +52,7 @@
 
 还是一如既往的location loss + classification loss，并为location loss添加了系数α（然而实际上α=1）进行平衡，并在batch维度进行平均
 
-![SSD Loss](https://upload-images.jianshu.io/upload_images/1828517-d6d2d65d71a11cb9.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240)
-
+![](ssd_1.png)
 * $$x$$是$$x_{ij}^{p}$$的集合$$x_{ij}^{p}={1,0}$$，用于判断第i个anchor是否是第j个bounding box上的p类样本
 * $$c$$是$$c_{i}^{p}$$的集合，$$c_{i}^{p}$$是第i个anchor预测为第p类的概率
 * l是预测的bounding box集合
@@ -62,14 +60,12 @@
 
 其中定位loss与faster rcnn相同
 
-![Location loss](https://upload-images.jianshu.io/upload_images/1828517-85b5465531c2b9bb.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240)
-
+![](ssd_2.png)
 这个式子里的k不是很明确，其实想表达不算背景0类的意思，且前景类只为match的类算location loss
 
 分类loss就是很常用的softmax交叉熵了
 
-![classification](https://upload-images.jianshu.io/upload_images/1828517-5f9a84cd98dce905.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240)
-
+![](ssd_3.png)
 > 核心的内容到这里就讲完了，其实跟YOLO和faster rcnn也很像，是一个用anchor box充当固定的proposal的rpn，并且用多尺度的anchor来适应多种尺度和形状的目标对象。
 
 ## Detail
@@ -86,8 +82,7 @@ Some improvements on deep convolutional neural network based image classificatio
 
 从切除实验中，可以看到data augmentaion是很重要的（从65.6到71.6）
 
-![Experiment](https://upload-images.jianshu.io/upload_images/1828517-3ddd324e48e37468.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240)
-
+![](ssd_4.png)
 这个表中还提到了atrous，其实是指空洞卷积，是图像分割（deeplab）领域首先提出的一个卷积层改进，主要是能让测试速度更快。具体可以参考 [ICLR2015 Deeplab](https://arxiv.org/pdf/1412.7062.pdf)
 
 从这个表中也可以看出多种形状的anchor可以提升准确率
