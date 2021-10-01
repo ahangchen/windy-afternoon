@@ -51,7 +51,7 @@ Towards perspective-free object counting with deep learning，这是一篇发在
 
 * 对质心图做一个高斯滤波，可以得到密度图，作为回归的目标，对质心图进行求和，反过来可以得到目标的数量
 
-![](ccnn_img/regress_density_gas.png)
+![](ccnn_img/regression_density_gas.png)
 
 > 进入正题，Hydra CCNN
 
