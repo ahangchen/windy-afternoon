@@ -39,3 +39,37 @@ hi Nontext ctermfg=252 ctermbg=none
 
 最主要的是ctermbg=none
 
+# VSCode
+
+## VSCode python配置
+- 安装插件python
+- ctrl+shift+P，创建launch.json
+- 参考如下配置：
+
+```html
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: img_utils",
+            "type": "python",
+            "request": "launch",
+            "program": "blog/img_utils.py",
+            "args": [
+
+            ],
+            "python": "/Users/cwh/anaconda3/bin/python",
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
+```
+
+## VSCode 远程服务器配置
+- 安装插件remote development
+- 添加ssh target
+- 打开远程服务器上的目录
+- 正常运行，代码就是跑在远程服务器上的了，配置文件里的python路径也设置成远程服务器上的python解释器路径，不需要另外配置SSH远程python解释器
