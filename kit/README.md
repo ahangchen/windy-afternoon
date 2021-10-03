@@ -10,3 +10,4 @@
 * [虚拟机](vmware.md)
 * ffmpeg
   - 图片list转视频：ffmpeg -y -f concat -safe 0 -i "imagepaths.txt" -c:v libx264 -vf "fps=25,format=yuv420p" "out.mp4"
+* ![Mac翻转普通鼠标](https://sspai.com/post/40596)
