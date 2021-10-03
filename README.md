@@ -21,7 +21,7 @@ description: weihang.chen's blog
 * [谷歌深度学习教程笔记](https://github.com/ahangchen/GDLnotes)
 * [CVPR 2018 TFusion](ml/papers/reid/tfusion.md)
 * [Sqlite在Android上的一个Bug](android/sqlite/sqlite-zai-android-shang-de-yi-ge-bug.md)
-* [【译】How to be a programmer](https://ahangchen.gitbooks.io/how-to-be-a-programmer-cn/content/)
+* [Pytorch实验代码的亿些小细节](ml/pratice/torch_best_practice.md)
 
 ## Paper List
 
