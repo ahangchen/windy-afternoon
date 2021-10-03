@@ -7,4 +7,4 @@ cd ../mysite
 git add -A
 git commit -a -m 'update from gitbook'
 git push origin master
-ssh cwh@cweihang.io "cd mysite;git pull"
+# ssh cwh@cweihang.io "cd mysite;git pull"
