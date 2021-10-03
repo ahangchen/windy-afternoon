@@ -23,7 +23,7 @@
     * [FaceBook: 1 hour training ImageNet](ml/trick/imgnet_1h.md)
     * [L2 Norm与L2 normalize](ml/trick/l2_normalize.md)
   * [实践](ml/ncs.md)
-    * [如何让炼丹更有条理](ml/pratice/torch_best_practice.md)
+    * [Pytorch实验代码的亿些小细节](ml/pratice/torch_best_practice.md)
   * [工具](ml/kit/README.md)
     * [Tensorflow学习笔记](https://github.com/ahangchen/GDLNotes)
     * [MXNet踩坑手记](ml/kit/mxnet.md)
