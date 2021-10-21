@@ -98,6 +98,7 @@ sudo apt-get install terminator
   ```text
   sudo apt-get install openssh-server
   ```
+* 添加autojump，快速访问常用目录，避免大量cd：https://github.com/wting/autojump
 
   **系统配置**
 

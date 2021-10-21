@@ -12,7 +12,7 @@ function publish_to()
     git push
 }
 
-publish_to mysite
+# publish_to mysite
 publish_to ahangchen.github.io
 
 rm -rf ../tmp_mysite
