@@ -54,7 +54,7 @@ hi Nontext ctermfg=252 ctermbg=none
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Python: img_utils",
+            "name": "Python: cur file",
             "type": "python",
             "request": "launch",
             "program": "blog/img_utils.py",
