@@ -73,3 +73,9 @@ hi Nontext ctermfg=252 ctermbg=none
 - 添加ssh target
 - 打开远程服务器上的目录
 - 正常运行，代码就是跑在远程服务器上的了，配置文件里的python路径也设置成远程服务器上的python解释器路径，不需要另外配置SSH远程python解释器
+
+## VSCode一些小设置
+- setting中搜new window，把open folder in new window设置为on，避免默认current window打开new folder丢失信息
+
+## VSCode的一些好用插件
+- comment line down：注释后指针自动下移一行，可以连续注释多行，符合jetbrain系列习惯
