@@ -452,3 +452,7 @@ make install
 export PATH=$HOME/cmake-install/bin:$PATH
 export CMAKE_PREFIX_PATH=$HOME/cmake-install:$CMAKE_PREFIX_PATH
 ```
+
+# Ubuntu拨号上网
+- sudo pppoeconf
+- 然后按提示输入账号密码即可
