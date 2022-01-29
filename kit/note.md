@@ -59,8 +59,12 @@ hi Nontext ctermfg=252 ctermbg=none
             "request": "launch",
             "program": "blog/img_utils.py",
             "args": [
-
+                "--name", "default"
             ],
+            "env": {
+                "CUDA_VISLBLE_DEVICES": "0,1,2,3",
+                "LD_LIBRARY_PATH": "/usr/local/cuda/lib64"
+            }
             "python": "/Users/cwh/anaconda3/bin/python",
             "cwd": "${workspaceFolder}"
         }
