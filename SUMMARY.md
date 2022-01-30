@@ -131,4 +131,5 @@
 * [我的收藏](star.md)
 * [琐记](pieces/README.md)
   * [论文心得](pieces/paper.md)
+  * [深圳买房攻略](house/README.md)
 * [赞赏支持](support.md)
