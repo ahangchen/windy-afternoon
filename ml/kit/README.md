@@ -1,5 +1,2 @@
-# 工具
-
-* TensorFlow
-* Caffe
+# 深度学习相关工具
 
