@@ -28,6 +28,7 @@
     * [Tensorflow学习笔记](https://github.com/ahangchen/GDLNotes)
     * [MXNet踩坑手记](ml/kit/mxnet.md)
     * [PyTorch踩坑手记](ml/kit/pytorch.md)
+    * [PyTorch模型剪枝](ml/kit/torch_prune.md)
     * [Keras踩坑手记](ml/kit/keras.md)
     * [mscnn](ml/kit/mscnn.md)
     * [Matlab](ml/kit/matlab/README.md)
