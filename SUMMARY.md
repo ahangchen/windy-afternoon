@@ -18,6 +18,7 @@
 * [Computer Vision](cv/README.md)
   * [特征提取](cv/feature.md)
   * [计算机视觉常用工具](cv/utils.md)
+  * [随笔](cv/notes.md)
 * [Machine Learning](ml/README.md)
   * [技巧](ml/trick/README.md)
     * [FaceBook: 1 hour training ImageNet](ml/trick/imgnet_1h.md)
