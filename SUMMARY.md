@@ -17,6 +17,7 @@
   * [琐碎的一些tips](android/note.md)
 * [Computer Vision](cv/README.md)
   * [特征提取](cv/feature.md)
+  * [三维视觉](cv/3d_vision.md)
   * [计算机视觉常用工具](cv/utils.md)
   * [随笔](cv/notes.md)
 * [Machine Learning](ml/README.md)
