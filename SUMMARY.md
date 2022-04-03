@@ -19,6 +19,7 @@
   * [特征提取](cv/feature.md)
   * [三维视觉](cv/3d_vision.md)
   * [计算机视觉常用工具](cv/utils.md)
+  * [浅谈深度学习数据集设计](cv/data.md)
   * [随笔](cv/notes.md)
 * [Machine Learning](ml/README.md)
   * [技巧](ml/trick/README.md)
