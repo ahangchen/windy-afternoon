@@ -80,6 +80,14 @@ hi Nontext ctermfg=252 ctermbg=none
 
 ## VSCode一些小设置
 - setting中搜new window，把open folder in new window设置为on，避免默认current window打开new folder丢失信息
+- 设置保存文件时自动优化python import顺序：
+```json
+"[python]": {
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": true
+    }
+}
+```
 
 ## VSCode的一些好用插件
 - comment line down：注释后指针自动下移一行，可以连续注释多行，符合jetbrain系列习惯
