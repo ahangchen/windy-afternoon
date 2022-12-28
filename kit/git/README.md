@@ -122,3 +122,9 @@ git branch --set-upstream-to origin/makfus makfus
 
 ## Github联动VSCode
 在github代码页面上，按’.‘,就能开启一个web版vscode写代码了
+
+## git reset single file
+
+> git checkout HEAD -- myfile.txt
+
+其中，`--` 表示将后续参数视为文件名
